@@ -1,0 +1,28 @@
+{
+  "stage_number": "04",
+  "stage_name": "quality_filter",
+  "source": "onlinekhabar",
+  "recorded_at_utc": "2026-08-20T16:28:28.895592+00:00",
+  "input_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/filtered/onlinekhabar_ne_filtered.txt",
+  "output_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/quality/onlinekhabar_ne_quality.txt",
+  "rejected_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/quality/onlinekhabar_ne_quality_rejected.txt",
+  "lines_processed": 297649,
+  "lines_kept": 288229,
+  "removal_reason_counts": {
+    "too_long": 6266,
+    "too_many_html_tags": 2980,
+    "max_repeated_char_length": 174
+  },
+  "elapsed_seconds": 435.71,
+  "cleanup_of_filtered_stage": {
+    "skipped": false,
+    "stage": "filtered",
+    "deleted_files": [
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/filtered/onlinekhabar_ne_filtered.txt",
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/filtered/onlinekhabar_ne_review.txt"
+    ],
+    "missing_files": [],
+    "freed_bytes": 1738970413,
+    "dry_run": false
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "stage_number": "03",
+  "stage_name": "filter_nepali",
+  "source": "khabarhub",
+  "recorded_at_utc": "2026-08-20T16:16:39.834191+00:00",
+  "input_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/normalized/khabarhub_ne_normalized.txt",
+  "output_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/filtered/khabarhub_ne_filtered.txt",
+  "review_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/filtered/khabarhub_ne_review.txt",
+  "lines_processed": 257041,
+  "lines_kept": 256792,
+  "lines_review": 238,
+  "lines_removed": 11,
+  "character_distribution": {
+    "devanagari": 336512538,
+    "latin": 302265,
+    "digits": 4245381,
+    "punctuation": 7383751,
+    "other": 85806
+  },
+  "elapsed_seconds": 205.7,
+  "cleanup_of_normalized_stage": {
+    "skipped": false,
+    "stage": "normalized",
+    "deleted_files": [
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/normalized/khabarhub_ne_normalized.txt"
+    ],
+    "missing_files": [],
+    "freed_bytes": 1103532055,
+    "dry_run": false
+  }
+}

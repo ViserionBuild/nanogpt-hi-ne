@@ -1,0 +1,31 @@
+{
+  "stage_number": "03",
+  "stage_name": "filter_nepali",
+  "source": "indiccorp",
+  "recorded_at_utc": "2026-08-20T16:08:17.624713+00:00",
+  "input_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/normalized/indiccorp_ne_normalized.txt",
+  "output_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/filtered/indiccorp_ne_filtered.txt",
+  "review_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/filtered/indiccorp_ne_review.txt",
+  "lines_processed": 14946717,
+  "lines_kept": 14855758,
+  "lines_review": 80125,
+  "lines_removed": 10834,
+  "character_distribution": {
+    "devanagari": 2660264960,
+    "latin": 7278432,
+    "digits": 30970697,
+    "punctuation": 63193181,
+    "other": 828886
+  },
+  "elapsed_seconds": 1351.88,
+  "cleanup_of_normalized_stage": {
+    "skipped": false,
+    "stage": "normalized",
+    "deleted_files": [
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/normalized/indiccorp_ne_normalized.txt"
+    ],
+    "missing_files": [],
+    "freed_bytes": 8722923250,
+    "dry_run": false
+  }
+}

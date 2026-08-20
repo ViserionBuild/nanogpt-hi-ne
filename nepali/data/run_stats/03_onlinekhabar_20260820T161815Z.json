@@ -1,0 +1,31 @@
+{
+  "stage_number": "03",
+  "stage_name": "filter_nepali",
+  "source": "onlinekhabar",
+  "recorded_at_utc": "2026-08-20T16:18:15.338379+00:00",
+  "input_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/normalized/onlinekhabar_ne_normalized.txt",
+  "output_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/filtered/onlinekhabar_ne_filtered.txt",
+  "review_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/filtered/onlinekhabar_ne_review.txt",
+  "lines_processed": 297891,
+  "lines_kept": 297649,
+  "lines_review": 236,
+  "lines_removed": 6,
+  "character_distribution": {
+    "devanagari": 528981638,
+    "latin": 612654,
+    "digits": 6312462,
+    "punctuation": 13060337,
+    "other": 189788
+  },
+  "elapsed_seconds": 311.12,
+  "cleanup_of_normalized_stage": {
+    "skipped": false,
+    "stage": "normalized",
+    "deleted_files": [
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/normalized/onlinekhabar_ne_normalized.txt"
+    ],
+    "missing_files": [],
+    "freed_bytes": 1739012831,
+    "dry_run": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "stage_number": "04",
+  "stage_name": "quality_filter",
+  "source": "indiccorp",
+  "recorded_at_utc": "2026-08-20T16:50:27.504338+00:00",
+  "input_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/filtered/indiccorp_ne_filtered.txt",
+  "output_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/quality/indiccorp_ne_quality.txt",
+  "rejected_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/quality/indiccorp_ne_quality_rejected.txt",
+  "lines_processed": 14855758,
+  "lines_kept": 14821096,
+  "removal_reason_counts": {
+    "too_few_words": 8948,
+    "too_short": 17749,
+    "max_repeated_char_length": 5442,
+    "too_many_html_tags": 1516,
+    "too_long": 953,
+    "high_url_ratio": 2,
+    "high_repeated_char_ratio": 52
+  },
+  "elapsed_seconds": 2257.3,
+  "cleanup_of_filtered_stage": {
+    "skipped": false,
+    "stage": "filtered",
+    "deleted_files": [
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/filtered/indiccorp_ne_filtered.txt",
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/filtered/indiccorp_ne_review.txt"
+    ],
+    "missing_files": [],
+    "freed_bytes": 8722322314,
+    "dry_run": false
+  }
+}

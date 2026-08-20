@@ -1,0 +1,12 @@
+{
+  "stage_number": "02",
+  "stage_name": "normalize",
+  "source": "indiccorp",
+  "recorded_at_utc": "2026-08-20T15:24:24.012170+00:00",
+  "input_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/raw/indiccorp/indiccorp_ne_500m_words_candidate.txt",
+  "output_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/normalized/indiccorp_ne_normalized.txt",
+  "lines_processed": 14946717,
+  "lines_modified": 908447,
+  "lines_unchanged": 14038270,
+  "elapsed_seconds": 2755.25
+}

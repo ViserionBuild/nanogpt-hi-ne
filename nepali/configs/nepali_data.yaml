@@ -1,0 +1,840 @@
+# =============================================================================
+# Nepali IndicCorpV2 Data Pipeline Configuration
+# =============================================================================
+# Central configuration for preprocessing, corpus selection, tokenizer
+# training, final tokenization, and verification.
+#
+# FINAL CORPUS TARGET:
+#   IndicCorpV2 Nepali : 400M BPE content tokens
+#   Manual Nepali      : 100M BPE content tokens
+#   ------------------------------------------
+#   Total             : 500M BPE content tokens
+#
+# IMPORTANT:
+#   "words" and "BPE content tokens" are different quantities.
+#
+#   The IndicCorp downloader uses whitespace-separated words only to obtain
+#   enough candidate data.
+#
+#   The final corpus target is measured using SentencePiece BPE CONTENT
+#   tokens. BOS/EOS are NOT included in the 500M target.
+#
+# Every script should read this file using --config.
+# =============================================================================
+
+
+language: nepali
+language_code: ne
+
+
+# -----------------------------------------------------------------------------
+# Paths
+# -----------------------------------------------------------------------------
+# All paths are relative to the repository root.
+# -----------------------------------------------------------------------------
+paths:
+  raw: nepali/data/raw
+  raw_indiccorp: nepali/data/raw/indiccorp
+
+  intermediate: nepali/data/intermediate
+  normalized: nepali/data/intermediate/normalized
+  filtered: nepali/data/intermediate/filtered
+  deduplicated: nepali/data/intermediate/deduplicated
+  selected: nepali/data/intermediate/selected
+
+  # Train-candidate split off BEFORE decontamination/selection/tokenizer
+  # training. validation.txt / test.txt are written straight to `final`
+  # (see below) since, once created, they must never be touched again.
+  split: nepali/data/intermediate/split
+
+  # Train-candidate AFTER decontamination against held-out validation/test.
+  # This is what corpus selection (script 10) reads from — never the raw
+  # deduplicated corpus.
+  decontaminated: nepali/data/intermediate/decontaminated
+
+  final: nepali/data/final
+  tokenized: nepali/data/tokenized
+
+  # One JSON summary per pipeline-stage run (03/04/05/06/...), written by
+  # shared/run_stats.py's record_run() — never deleted/overwritten by the
+  # disk-saving cleanup below, so a stage's counts/timings/paths survive
+  # even after its transient output files (normalized/filtered/quality)
+  # are removed. See shared/run_stats.py's module docstring.
+  run_stats: nepali/data/run_stats
+
+  metadata: nepali/metadata
+
+  tokenizer_model: nepali/tokenizer/model
+  tokenizer_vocab: nepali/tokenizer/vocab
+  tokenizer_config: nepali/tokenizer/config
+
+  reports: nepali/reports
+  figures: nepali/reports/figures
+  tables: nepali/reports/tables
+
+
+# -----------------------------------------------------------------------------
+# IndicCorpV2 Nepali Source
+# -----------------------------------------------------------------------------
+indiccorp:
+
+  # AI4Bharat IndicCorpV2 Nepali file from Hugging Face.
+  #
+  # These are PUBLIC data.
+  #
+  # Unlike Hindi (sharded into hi-1.txt/hi-2.txt/hi-3.txt because the
+  # language has a much larger corpus), IndicCorpV2 Nepali ships as a
+  # single file, data/ne.txt (~14.8 GB upstream, confirmed via the HF API
+  # tree listing and a Range-request probe: HTTP 206, Accept-Ranges: bytes).
+  # This is still a list — 01_download_indiccorp.py's multi-file loop
+  # works unchanged with one entry — so adding a second shard later (if
+  # AI4Bharat ever splits it) needs no code change, only another URL here.
+  #
+  # Files are processed in the configured order. Additional files are used
+  # when earlier files do not provide enough candidate data.
+  source_urls:
+    - "https://huggingface.co/datasets/ai4bharat/IndicCorpV2/resolve/main/data/ne.txt"
+
+  # Raw candidate corpus produced by the downloader.
+  candidate_filename: indiccorp_ne_500m_words_candidate.txt
+
+  # Legacy/downstream-compatible filename.
+  filename: indiccorp_ne_500m_words_candidate.txt
+
+  license: "CC BY-NC 4.0"
+  source_name: "AI4Bharat IndicCorpV2 (Nepali)"
+  source_paper: "Doddapaneni et al., 2022 — IndicNLPSuite"
+
+
+# -----------------------------------------------------------------------------
+# Corpus Selection
+# -----------------------------------------------------------------------------
+selection:
+
+  # ---------------------------------------------------------------------------
+  # IndicCorpV2 DOWNLOAD TARGET
+  # ---------------------------------------------------------------------------
+  # This is NOT the final token target.
+  #
+  # The downloader measures this using:
+  #
+  #     len(text.split())
+  #
+  # Therefore this is a WHITESPACE-WORD target.
+  #
+  # We collect approximately 470M words from IndicCorpV2 so that, after
+  # normalization, filtering, and deduplication, there should be enough
+  # material to obtain the required 400M BPE content tokens.
+  # ---------------------------------------------------------------------------
+  target_words: 470000000
+
+  # Acceptable word-count tolerance for the downloader.
+  tolerance_words: 5000000
+
+
+  # ---------------------------------------------------------------------------
+  # HTTP RANGE DOWNLOAD
+  # ---------------------------------------------------------------------------
+  # 512 MB chunks provide more sampling granularity than 1 GB chunks while
+  # avoiding an excessive number of HTTP requests.
+  # ---------------------------------------------------------------------------
+  chunk_size_bytes: 536870912
+
+
+  # ---------------------------------------------------------------------------
+  # DETERMINISTIC SELECTION
+  # ---------------------------------------------------------------------------
+  random_seed: 42
+
+  # Streaming deterministic hash selection.
+  # No large permutation arrays or complete line-index sets are required.
+  method: hash
+
+
+  # ---------------------------------------------------------------------------
+  # FINAL BPE CONTENT-TOKEN TARGETS
+  # ---------------------------------------------------------------------------
+  #
+  # These are the authoritative source-specific targets.
+  #
+  # IndicCorpV2 Nepali : 400M
+  # Manual Nepali      : 100M
+  # Total             : 500M
+  #
+  # These values are BPE CONTENT tokens measured using SentencePiece.
+  #
+  # BOS/EOS are excluded.
+  # ---------------------------------------------------------------------------
+  indiccorp_target_tokens: 400000000
+  manual_target_tokens: 100000000
+  total_target_tokens: 500000000
+
+  # -----------------------------------------------------------------------
+  # CL3410 Lecture 3: "Do deduplicate what you have collected, then count
+  # your tokens again. Report both numbers."
+  #
+  # `target_unit` makes the unit of `indiccorp_target_tokens` an explicit,
+  # machine-checkable declaration rather than an assumption. Scripts 11, 14,
+  # and 15 assert this equals "bpe_content_tokens" and fail loudly
+  # otherwise — this is what stops the 400M target from ever silently being
+  # interpreted as whitespace-word count, character count, or BOS/EOS-
+  # inclusive stored-token count.
+  # -----------------------------------------------------------------------
+  target_unit: bpe_content_tokens
+
+
+  # ---------------------------------------------------------------------------
+  # SENTENCE SELECTION OVERSHOOT
+  # ---------------------------------------------------------------------------
+  # Selection happens at complete-sentence/line boundaries.
+  # Therefore the selected corpus may slightly exceed the target.
+  #
+  # Example:
+  #   target = 400M
+  #   overshoot = 5%
+  #   acceptable selection can be somewhat above 400M.
+  #
+  # The exact final count is always measured again using the FINAL tokenizer.
+  # ---------------------------------------------------------------------------
+  overshoot_fraction: 0.05
+
+
+# -----------------------------------------------------------------------------
+# Unicode Normalization
+# -----------------------------------------------------------------------------
+normalization:
+
+  form: NFC
+
+  devanagari_range_start: 0x0900
+  devanagari_range_end: 0x097F
+
+  devanagari_extended_start: 0xA8E0
+  devanagari_extended_end: 0xA8FF
+
+  vedic_extensions_start: 0x1CD0
+  vedic_extensions_end: 0x1CFF
+
+  # Keep ZWNJ/ZWJ because they can be meaningful in Devanagari text.
+  remove_zero_width: false
+
+
+# -----------------------------------------------------------------------------
+# Nepali / Script Filtering
+# -----------------------------------------------------------------------------
+filtering:
+
+  # Lines with at least this Devanagari ratio are accepted.
+  min_devanagari_ratio: 0.70
+
+  # Lines between review_devanagari_ratio and min_devanagari_ratio are
+  # considered borderline/review data.
+  review_devanagari_ratio: 0.40
+
+  save_review_lines: true
+
+  review_filename: indiccorp_ne_review.txt
+
+  # Used only when 03_filter_devanagari_script.py is run with --source
+  # onlinekhabar/khabarhub. Same min_devanagari_ratio /
+  # review_devanagari_ratio / save_review_lines thresholds above apply to
+  # EVERY source — only the review filename differs per source, so no two
+  # sources' review lines ever overwrite each other.
+  onlinekhabar_review_filename: onlinekhabar_ne_review.txt
+  khabarhub_review_filename: khabarhub_ne_review.txt
+
+
+# -----------------------------------------------------------------------------
+# Quality Filtering
+# -----------------------------------------------------------------------------
+quality:
+
+  min_characters: 10
+  max_characters: 10000
+
+  max_url_ratio: 0.30
+  max_punctuation_ratio: 0.50
+
+  max_repeated_char_ratio: 0.30
+  max_repeated_char_length: 5
+
+  min_word_count: 2
+
+  max_digit_ratio: 0.50
+
+  html_pattern_threshold: 2
+
+  # CL3410 low-resource-language caution: "inspect what is removed" rather
+  # than silently deleting. Mirrors filtering.save_review_lines above —
+  # rejected lines (with their rejection reason) are saved to
+  # rejected_filename instead of being discarded with only an aggregate
+  # count. Only the counts are ever used to make filtering decisions; this
+  # file is for human inspection.
+  save_rejected_lines: true
+
+  rejected_filename: indiccorp_ne_quality_rejected.txt
+
+  # Shared output directory for every source's quality-filtered output
+  # (04_quality_filter.py, --source indiccorp/manual/onlinekhabar/
+  # khabarhub alike). All write here — side by side — so
+  # 05_deduplicate.py's cross-source pass finds each source's input in
+  # the same place.
+  output_dir: nepali/data/intermediate/quality
+
+  # Per-source filename/dir overrides. The same thresholds/blocklist rules
+  # above apply to EVERY source regardless of these — only the output
+  # location and rejected-file NAME differ, so one source's run can never
+  # overwrite another's quality/rejected files.
+  # <source>_output_dir defaults to `output_dir` above when not set.
+  # Consumed by 04_quality_filter.py (per-source runs) and
+  # 05_deduplicate.py (reads indiccorp/onlinekhabar/khabarhub's
+  # quality-stage outputs together — see 05_deduplicate.py's module
+  # docstring).
+  indiccorp_output_filename: indiccorp_ne_quality.txt
+  onlinekhabar_output_filename: onlinekhabar_ne_quality.txt
+  onlinekhabar_rejected_filename: onlinekhabar_ne_quality_rejected.txt
+  khabarhub_output_filename: khabarhub_ne_quality.txt
+  khabarhub_rejected_filename: khabarhub_ne_quality_rejected.txt
+
+  # ---------------------------------------------------------------------------
+  # Safety / profanity blocklist filtering (CL3410 Lecture 3 requirement 6:
+  # semantic/topic/safety filtering)
+  # ---------------------------------------------------------------------------
+  # CL3410's slides call for some form of semantic/topic/safety filtering.
+  # This project implements the simplest defensible version of that: a
+  # transparent, rule-based Nepali profanity/slur blocklist, matching the
+  # existing heuristic-filter style (not a learned toxicity classifier).
+  # A line is rejected as "blocklisted_term" when the fraction of its
+  # whitespace-split words that exact-match an entry in the blocklist
+  # (after stripping surrounding punctuation) exceeds max_blocklist_term_ratio.
+  #
+  # safety_blocklist_path is resolved relative to the repo root. If the file
+  # is missing, the filter is silently disabled (empty blocklist) rather
+  # than failing the pipeline — this keeps the safety filter additive and
+  # optional, matching requirement 6's "MEDIUM priority, independent of the
+  # rest of the pipeline" scope.
+  safety_blocklist_path: nepali/configs/ne_safety_blocklist.txt
+
+  # Any single blocklisted word rejects the line by default (0.0 means
+  # "ratio > 0", i.e. at least one match). Raise this to tolerate a low
+  # ratio of incidental matches in long lines.
+  max_blocklist_term_ratio: 0.0
+
+
+# -----------------------------------------------------------------------------
+# Deduplication (CL3410 Lecture 3 — exact + sub-document + near duplicates)
+# -----------------------------------------------------------------------------
+#
+# Runs on the normalized + Nepali-filtered + quality-filtered corpus (i.e.
+# the appropriate cleaned representation, not raw text). Devanagari, ZWNJ,
+# ZWJ, punctuation, and whitespace are exactly as produced by script 02
+# (normalize) — this stage only READS lines to hash/shingle them; kept
+# lines are written through byte-for-byte unchanged.
+#
+# Two passes, in order:
+#   1. EXACT duplicate removal (unchanged from before — SHA-256 line hash,
+#      SQLite- or memory-backed, see script 05).
+#   2. NEAR-duplicate / SUB-DOCUMENT-duplicate removal on the exact-deduped
+#      output, following the professor's slide:
+#        a. represent each line as its set of overlapping 3-WORD shingles
+#        b. summarize each shingle set with a MinHash signature
+#        c. use LSH banding for CANDIDATE GENERATION — an incoming line is
+#           only ever compared against previously-kept lines sharing a
+#           band, never the whole corpus (no O(N^2) comparison)
+#        d. CONFIRM each candidate with an actual similarity estimate
+#           before removing anything:
+#             - Jaccard estimate >= near_duplicate.similarity_threshold
+#               -> NEAR DUPLICATE
+#             - OR overlap/containment estimate >=
+#               near_duplicate.sub_document_overlap_threshold (one line's
+#               shingles almost entirely contained in a much longer one)
+#               -> SUB-DOCUMENT DUPLICATE (e.g. a repeated boilerplate
+#               sentence embedded in otherwise-different longer text)
+#      This two-step "candidate generation, then confirm by similarity"
+#      design is what keeps legitimate lines that merely share a common
+#      short phrase from being removed (band collision alone is never
+#      sufficient to remove anything).
+# -----------------------------------------------------------------------------
+deduplication:
+
+  exact:
+    enabled: true
+
+  near_duplicate:
+    enabled: true
+
+    # CL3410 Lecture 3: "overlapping 3-word shingles".
+    shingle_type: word
+    shingle_size: 3
+
+    # MinHash signature length. Higher = more accurate similarity
+    # estimates (less variance), at a small extra cost per line.
+    num_minhash_permutations: 32
+
+    # LSH banding for CANDIDATE GENERATION ONLY (bands*rows must equal
+    # num_minhash_permutations). Deliberately generous/high-recall — the
+    # actual accept/reject decision is made afterwards by the similarity
+    # thresholds below, so a high candidate-generation recall here does
+    # not by itself cause false-positive removals.
+    lsh_bands: 16
+    lsh_rows: 2
+
+    # Jaccard similarity estimate threshold for "near duplicate". 3-word
+    # shingles are sensitive to single-word edits (changing 1 word out of
+    # ~8 already changes up to 3 of the ~6 shingles), so this is
+    # deliberately lower than a whole-document/character-shingle
+    # threshold would be. Tuned so that a genuine single-word paraphrase
+    # (true Jaccard ~0.33 on an 8-word sentence) clears it, while
+    # unrelated sentences (~0.0) stay far below it.
+    similarity_threshold: 0.30
+
+    # Overlap/containment threshold for "sub-document duplicate" — how
+    # much of the SHORTER line's shingles must appear in the longer one.
+    sub_document_overlap_threshold: 0.85
+
+    # Only classify as "sub-document" (rather than "near duplicate") when
+    # the two lines' shingle counts differ by at least this much — i.e.
+    # one is meaningfully shorter than the other (containment), rather
+    # than two similarly-sized lines (near-duplicate).
+    sub_document_length_ratio_max: 0.70
+
+    # Lines with fewer words than this skip near-duplicate comparison
+    # entirely (always kept unless caught by exact dedup) — too short to
+    # form a reliable shingle set, and the most likely source of
+    # false-positive removals from incidental short-phrase overlap.
+    min_document_words: 4
+
+    seed: 42
+
+  # Fully-qualified name of the reusable index (see shared/near_dup.py).
+  # Documented here so it's discoverable from code.
+  implementation: shared.near_dup.MinHashDedupIndex
+
+
+# -----------------------------------------------------------------------------
+# Deduplication — MAC (Apple M4 / 24 GB) variant
+# -----------------------------------------------------------------------------
+# Read ONLY by nepali/scripts/05_deduplicate_mac.py — the Linux/8GB script
+# above (`deduplication:`) never reads this block, and this block never
+# affects 05_deduplicate.py. Same methodology (exact + MinHash/LSH near-dup
+# + sub-document + cross-source dedup + source precedence), different
+# near-duplicate INDEX implementation: in-memory (shared/near_dup_mac.py)
+# instead of SQLite, since the Mac has RAM to spare and disk/DB round-trips
+# for the LSH index are the main cost worth cutting on that machine.
+deduplication_mac:
+
+  exact:
+    enabled: true
+
+  near_duplicate:
+    enabled: true
+
+    shingle_type: word
+    shingle_size: 3
+
+    num_minhash_permutations: 32
+
+    # bands*rows must equal num_minhash_permutations (8*4=32). Brought
+    # down from 16x4 (64 perms) — that config made every line's candidate
+    # lookup/insert touch 2x the bands into buckets that also grow with
+    # corpus size (list-scan buckets in shared/near_dup_mac.py), which
+    # made the Nepali Mac run (larger corpus than Hindi: indiccorp_ne is
+    # 14.8M lines vs indiccorp_hi's 8.7M, plus 4 sources vs Hindi's 2)
+    # far slower than Hindi's equivalent run. Matches Hindi's
+    # deduplication_mac-less default (hindi_data.yaml's plain
+    # `deduplication:` block, which 06_deduplicate_mac.py falls back to
+    # when no deduplication_mac override exists) so both languages get
+    # the same near-dup recall/speed tradeoff on Mac.
+    lsh_bands: 8
+    lsh_rows: 4
+
+    similarity_threshold: 0.40
+
+    sub_document_overlap_threshold: 0.85
+    sub_document_length_ratio_max: 0.70
+
+    min_document_words: 4
+
+    seed: 42
+
+  # Fully-qualified name of the reusable in-memory index (see
+  # shared/near_dup_mac.py). Documented here so it's discoverable from
+  # config, not just code.
+  implementation: shared.near_dup_mac.InMemoryMinHashDedupIndex
+
+
+# -----------------------------------------------------------------------------
+# Train / Validation / Test Split
+# -----------------------------------------------------------------------------
+#
+# IMPORTANT — LEAKAGE-SAFE ORDERING (CL3410 Lecture 3, "Decontamination"):
+#
+#   This split now runs BEFORE the final tokenizer is trained, BEFORE corpus
+#   selection (script 10), and BEFORE decontamination — directly on the
+#   deduplicated public/manual corpora. validation.txt and test.txt are
+#   written to `paths.final` and are never modified, selected from, or
+#   trained on again by any later stage. Only the train-candidate output
+#   (`paths.split`) continues on to decontamination (08) and selection.
+# -----------------------------------------------------------------------------
+split:
+
+  train: 0.90
+  validation: 0.05
+  test: 0.05
+
+  random_seed: 42
+
+  # Streaming deterministic hash bucketing.
+  method: hash
+
+
+# -----------------------------------------------------------------------------
+# Decontamination (held-out validation/test vs. training corpus)
+# -----------------------------------------------------------------------------
+#
+# Implements the professor's "Decontamination" slide:
+#   1. Hold out the test set first (see `split` above — already done).
+#   2. Search the candidate training corpus for exact AND near-duplicate
+#      matches of the held-out validation/test data.
+#   3. Remove matches from the training corpus (never from validation/test).
+#   4. Do this before any tokenizer/vocabulary/selection statistics are
+#      computed from the training corpus.
+#
+# Near-duplicate matching reuses MinHash + LSH banding (shared/near_dup.py)
+# so paraphrased/near-identical test items are caught, not just exact
+# string matches. Both passes are streaming/SQLite-backed: only the
+# validation+test signatures are held in memory/on-disk index; the
+# training corpus is scanned once, line by line.
+# -----------------------------------------------------------------------------
+decontamination:
+
+  enabled: true
+
+  # Compare the training corpus against these held-out splits.
+  validation: true
+  test: true
+
+  # Exact-string-match removal (SHA-256 line hash, same mechanism as
+  # script 05's exact dedup).
+  exact_match: true
+
+  # Near-duplicate removal via MinHash/LSH (see shared/near_dup.py).
+  near_duplicate: true
+
+  near_duplicate_config:
+    # Character shingle length used to build MinHash signatures.
+    shingle_size: 5
+
+    # Number of MinHash permutations (signature length). Must equal
+    # lsh_bands * lsh_rows.
+    num_minhash_permutations: 16
+
+    # LSH banding: more bands / fewer rows = more sensitive (catches more
+    # near-duplicates, more false positives removed from training).
+    # bands=4, rows=4 (16 perms) targets an approx. similarity threshold of
+    # ~0.7 — (1/bands)^(1/rows) — tuned for genuine paraphrase-level
+    # near-duplicates rather than merely topically-similar sentences.
+    lsh_bands: 4
+    lsh_rows: 4
+
+    seed: 42
+
+
+# -----------------------------------------------------------------------------
+# Tokenizer Training
+# -----------------------------------------------------------------------------
+tokenizer:
+
+  # Train SentencePiece BPE from scratch.
+  algorithm: bpe
+
+  # Vocabulary sizes to evaluate.
+  vocab_sizes:
+    - 6000
+    - 8000
+    - 10000
+    - 12000
+    - 14000
+    - 16000
+
+  # Default/final vocabulary size.
+  default_vocab_size: 12000
+
+  character_coverage: 0.9995
+
+  max_sentence_length: 16384
+
+  num_threads: 4
+
+  seed: 42
+
+  # SentencePiece internal sampling cap.
+  input_sentence_size: 5000000
+
+  shuffle_input_sentence: true
+
+  # Preserve unknown Unicode bytes through byte fallback.
+  byte_fallback: true
+
+  special_tokens:
+
+    pad: "<pad>"
+    unk: "<unk>"
+    bos: "<bos>"
+    eos: "<eos>"
+
+  special_token_ids:
+
+    pad: 0
+    unk: 1
+    bos: 2
+    eos: 3
+
+
+# -----------------------------------------------------------------------------
+# Tokenization
+# -----------------------------------------------------------------------------
+tokenization:
+
+  # Store token IDs as uint32.
+  dtype: uint32
+
+  # Add BOS/EOS to stored sequences.
+  #
+  # IMPORTANT:
+  # BOS/EOS are stored tokens but DO NOT count toward the 500M content-token
+  # corpus target.
+  add_bos: true
+  add_eos: true
+
+  # Maximum number of token IDs buffered before flushing to binary output.
+  chunk_tokens: 1000000
+
+  # Perform streaming post-write verification.
+  verify: true
+
+
+# -----------------------------------------------------------------------------
+# Manual Data Requirement
+# -----------------------------------------------------------------------------
+#
+# FINAL TARGET:
+#
+#   IndicCorpV2 = 400M content tokens
+#   Manual      = 100M content tokens
+#   Total       = 500M content tokens
+#
+# Therefore:
+#
+#   Manual fraction = 100M / 500M = 20%
+#
+# The 20% value is kept as a safety requirement even though the explicit
+# source-specific target is 100M.
+#
+# IMPORTANT:
+#
+# The manual requirement is measured using ACTUAL SentencePiece BPE CONTENT
+# tokens.
+#
+# It is NOT measured using:
+#
+#   - number of files
+#   - number of lines
+#   - number of sentences
+#   - whitespace words
+#   - characters
+#
+# -----------------------------------------------------------------------------
+manual:
+
+  # Minimum manual fraction of FINAL BPE content tokens.
+  min_fraction: 0.20
+
+  # Fail if the final manual fraction is below 20%.
+  enforce: true
+
+  # ---------------------------------------------------------------------------
+  # News (nepali/scripts/manual/collect_news.py) — Onlinekhabar + Khabarhub
+  # ---------------------------------------------------------------------------
+  # Subcategory of "manual" — NOT a separate top-level corpus source. As of
+  # 2026-08-20, news is the ONLY manual subcategory: Wikipedia
+  # (collect_wikipedia.py) and Setopati were both REMOVED (not just
+  # disabled) from the active pipeline — see collect_news.py's module
+  # docstring for the full rationale (Wikipedia contributed a small
+  # fraction of manual tokens next to news volume; Setopati's
+  # discoverable-URL pool was nearly exhausted).
+  #
+  # SCOPE NOTE: an earlier iteration of this project explored government/
+  # textbooks/parliament/other_official as additional manual subcategories.
+  # Those are OUT OF SCOPE — their collectors were moved to
+  # nepali/scripts/manual/_deprecated_out_of_scope/ and are not referenced
+  # by SOURCE_TYPES (manual_common.py) anymore.
+  #
+  # Onlinekhabar and Khabarhub are both collected via the same open,
+  # unauthenticated WordPress REST API mechanism (see collect_news.py) and
+  # are genuinely distinct source_names, each with its own shard file
+  # sequence (onlinekhabar_*.jsonl / khabarhub_*.jsonl) and its own entry
+  # in every downstream pipeline script's MANUAL_SOURCES tuple.
+  news:
+
+    enabled: true
+
+    output_dir: nepali/data/raw/manual/news
+
+    # Sharded JSONL (~this many documents per shard file), one shard
+    # sequence per source_name (onlinekhabar_*.jsonl, khabarhub_*.jsonl).
+    max_docs_per_shard: 20000
+
+    onlinekhabar:
+
+      enabled: true
+
+      # Default cap on posts collected per run (--max_onlinekhabar
+      # overrides this on the CLI). Onlinekhabar's WordPress REST API
+      # (https://www.onlinekhabar.com/wp-json/wp/v2/posts) is the
+      # collection mechanism — see collect_news.py's module docstring
+      # for the robots.txt verification.
+      max_posts: 500
+
+      # Planning target only (not a guarantee). Range 40-70M FINAL BPE
+      # content tokens; 40M is the conservative floor used for
+      # planning/reporting.
+      target_tokens: 40000000
+
+      # convert_news_jsonl_to_raw.py output filename (one document per
+      # line, extracted from the onlinekhabar_*.jsonl shards' "text"
+      # field), written into news.output_dir alongside the shards. This
+      # is what 02_normalize.py --source onlinekhabar reads by default.
+      raw_text_filename: onlinekhabar_ne_raw.txt
+
+    khabarhub:
+
+      enabled: true
+
+      # Added 2026-08-19, promoted to a genuinely distinct source_name
+      # 2026-08-20 (own khabarhub_*.jsonl shards, own downstream pipeline
+      # accounting — see collect_news.py's module docstring for the
+      # robots.txt verification: khabarhub.com disallows only /wp-admin/,
+      # no AI-crawler block, no content-signal restriction; 260,328
+      # Devanagari-script Nepali posts confirmed live).
+      #
+      # Default cap on posts collected per run (--max_khabarhub overrides
+      # this on the CLI).
+      max_posts: 500
+
+      # Planning target only (not a guarantee) — mirrors onlinekhabar's
+      # range given the comparable post volume/site scale.
+      target_tokens: 40000000
+
+      # convert_news_jsonl_to_raw.py output filename — see onlinekhabar's
+      # raw_text_filename above for the equivalent explanation.
+      raw_text_filename: khabarhub_ne_raw.txt
+
+
+# -----------------------------------------------------------------------------
+# Single-Tokenizer Architecture
+# -----------------------------------------------------------------------------
+#
+# There is exactly ONE SentencePiece BPE tokenizer in this pipeline.
+#
+# Trained by script 10 on `final/train.txt` — the decontaminated,
+# combined (script 09) training corpus. Never sees validation/test text.
+#
+# Purpose:
+#   - the production tokenizer
+#   - tokenizer evaluation
+#   - final binary tokenization
+#   - model pretraining
+#
+# After training, script 10 reloads this SAME model and streams it
+# separately over `indiccorp_train.txt`, `manual_train.txt` (onlinekhabar +
+# khabarhub), and `train.txt` to report actual BPE content-token counts
+# (IndicCorp, manual, total), vocabulary size, a sum-consistency check,
+# and any shortfall against the ~400M IndicCorpV2 / ~100M manual targets.
+# No second tokenizer is ever trained to compensate for a shortfall.
+#
+#
+# Pipeline (leakage-safe order — see CL3410 Lecture 3 "Decontamination"):
+#
+#   01 Download IndicCorpV2
+#          ↓
+#   02 Validate
+#          ↓
+#   03 Normalize
+#          ↓
+#   04 Nepali filtering
+#          ↓
+#   05 Quality filtering
+#          ↓
+#   06 Deduplication (exact, corpus-wide — deterministic, no data-dependent
+#      tuning, so it cannot leak test-set information into training
+#      decisions; it also structurally prevents an exact-duplicate line
+#      from ever landing in two different splits at once)
+#          ↓
+#   07 Statistics
+#          ↓
+#   Manual collection + cleaning  (clean_normalize.py)
+#          ↓
+#   08 Train/validation/test split  ← Runs on the deduplicated public +
+#      manual corpora, BEFORE any tokenizer, vocabulary, or
+#      corpus-selection statistics are computed. validation.txt and
+#      test.txt are written to `final/` and are FROZEN from this point on.
+#      TEST SET CREATED / VALIDATION SET CREATED are logged here.
+#          ↓
+#   09 Decontamination — removes exact AND near-duplicate (MinHash/LSH)
+#      matches of the frozen validation/test sets from the
+#      train-candidate corpus (public + manual). Logs DECONTAMINATION
+#      STARTED / EXACT MATCHES REMOVED / NEAR DUPLICATES REMOVED / FINAL
+#      TRAINING CORPUS AFTER DECONTAMINATION.
+#          ↓
+#   11 Source-specific selection — decontaminated train-candidate only,
+#      writes directly to `final/train.txt`
+#          ↓
+#   10 Train the ONE final tokenizer — trained on `final/train.txt` only,
+#      then streams per-source token counts (IndicCorp / manual / total)
+#          ↓
+#   13 Tokenizer evaluation
+#          ↓
+#   14 Final binary tokenization
+#          ↓
+#   15 Final verification — INCLUDES leakage checks: fails loudly if any
+#      validation/test line is found (exact or near-duplicate) in
+#      `final/train.txt`, or if the tokenizer's recorded training input
+#      was anything other than `final/train.txt` / the decontaminated
+#      train-candidate files.
+#
+# Final authoritative token count:
+#
+#   FINAL TOKENIZER
+#          ↓
+#   train.txt + validation.txt + test.txt
+#          ↓
+#   actual BPE CONTENT token count
+#
+# This final count is the number reported as the final corpus size.
+#
+
+
+# -----------------------------------------------------------------------------
+# Storage
+# -----------------------------------------------------------------------------
+storage:
+
+  # Keep intermediate files during development.
+  #
+  # For the production run, this can be changed to false after the pipeline
+  # has been verified and storage requirements have been reviewed.
+  keep_intermediate_files: true
+
+
+# -----------------------------------------------------------------------------
+# Logging
+# -----------------------------------------------------------------------------
+logging:
+
+  level: INFO
+
+  format: "%(asctime)s %(levelname)s %(name)s: %(message)s"
+
+  # Progress update interval.
+  progress_interval: 1000000

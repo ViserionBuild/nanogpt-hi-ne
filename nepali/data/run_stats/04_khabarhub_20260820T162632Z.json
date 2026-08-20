@@ -1,0 +1,28 @@
+{
+  "stage_number": "04",
+  "stage_name": "quality_filter",
+  "source": "khabarhub",
+  "recorded_at_utc": "2026-08-20T16:26:32.398777+00:00",
+  "input_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/filtered/khabarhub_ne_filtered.txt",
+  "output_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/quality/khabarhub_ne_quality.txt",
+  "rejected_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/quality/khabarhub_ne_quality_rejected.txt",
+  "lines_processed": 256792,
+  "lines_kept": 254103,
+  "removal_reason_counts": {
+    "too_long": 1887,
+    "max_repeated_char_length": 51,
+    "too_many_html_tags": 751
+  },
+  "elapsed_seconds": 310.03,
+  "cleanup_of_filtered_stage": {
+    "skipped": false,
+    "stage": "filtered",
+    "deleted_files": [
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/filtered/khabarhub_ne_filtered.txt",
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/filtered/khabarhub_ne_review.txt"
+    ],
+    "missing_files": [],
+    "freed_bytes": 1103474809,
+    "dry_run": false
+  }
+}

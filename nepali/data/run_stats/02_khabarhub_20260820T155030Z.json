@@ -1,0 +1,12 @@
+{
+  "stage_number": "02",
+  "stage_name": "normalize",
+  "source": "khabarhub",
+  "recorded_at_utc": "2026-08-20T15:50:30.283275+00:00",
+  "input_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/raw/manual/news/khabarhub_ne_raw.txt",
+  "output_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/normalized/khabarhub_ne_normalized.txt",
+  "lines_processed": 257041,
+  "lines_modified": 1306,
+  "lines_unchanged": 255735,
+  "elapsed_seconds": 306.51
+}

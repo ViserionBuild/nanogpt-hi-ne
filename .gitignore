@@ -1,0 +1,59 @@
+# large artifacts — Drive links go in README instead
+*/checkpoints/*.pt
+*/data/raw/*
+*/data/manual/pdfs/*
+*/data/processed/*.txt
+!*/checkpoints/.gitkeep
+
+# Small state/summary files under data/raw/ are worth keeping despite the
+# blanket rule above (collection resume cursors, per-run summaries) — not
+# large data, just bookkeeping. Every ancestor directory on the path must
+# be re-included too (git never descends into an excluded directory to
+# check per-file negations), so this walks the whole path back down —
+# then re-excludes the actual large data files that live alongside them
+# (re-opening a directory makes everything in it visible again, not just
+# the two files being un-ignored).
+!*/data/raw/manual/
+!*/data/raw/manual/news/
+*/data/raw/manual/news/*.jsonl
+!*/data/raw/manual/news/collection_state.json
+!*/data/raw/manual/news/news_collection_summary.json
+
+# Hindi/Nepali IndicCorp pipeline outputs
+*/data/intermediate/*
+*/data/final/*.txt
+*/data/tokenized/*.bin
+*/tokenizer/model/*
+*/tokenizer/vocab/*
+*/tokenizer/config/*
+*/reports/figures/*
+*/reports/tables/*
+!*/data/intermediate/.gitkeep
+!*/data/final/.gitkeep
+!*/data/tokenized/.gitkeep
+!*/tokenizer/model/.gitkeep
+!*/tokenizer/vocab/.gitkeep
+!*/tokenizer/config/.gitkeep
+!*/reports/figures/.gitkeep
+!*/reports/tables/.gitkeep
+
+nepali/data/intermediate/*
+nepali/data/final/*.txt
+nepali/data/raw/*
+
+
+# NOTE: */data/run_stats/ and */metadata/ are deliberately NOT ignored —
+# small per-pipeline-stage-run JSON summaries and final analysis reports
+# (see shared/run_stats.py), not large data, tracked normally.
+
+# Deduplication database
+*.db
+
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.egg-info/
+.DS_Store
+venv/
+.env
+.venv/
