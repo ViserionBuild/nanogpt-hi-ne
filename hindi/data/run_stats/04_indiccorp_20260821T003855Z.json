@@ -1,0 +1,32 @@
+{
+  "stage_number": "04",
+  "stage_name": "quality_filter",
+  "source": "indiccorp",
+  "recorded_at_utc": "2026-08-21T00:38:55.507458+00:00",
+  "input_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/filtered/indiccorp_hi_filtered.txt",
+  "output_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/quality/indiccorp_hi_quality.txt",
+  "rejected_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/quality/indiccorp_hi_quality_rejected.txt",
+  "lines_processed": 8779002,
+  "lines_kept": 8742935,
+  "removal_reason_counts": {
+    "max_repeated_char_length": 23948,
+    "too_short": 6627,
+    "too_long": 3259,
+    "too_few_words": 1743,
+    "too_many_html_tags": 460,
+    "high_repeated_char_ratio": 23,
+    "high_url_ratio": 7
+  },
+  "elapsed_seconds": 1743.11,
+  "cleanup_of_filtered_stage": {
+    "skipped": false,
+    "stage": "filtered",
+    "deleted_files": [
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/filtered/indiccorp_hi_filtered.txt",
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/filtered/indiccorp_hi_review.txt"
+    ],
+    "missing_files": [],
+    "freed_bytes": 6610364490,
+    "dry_run": false
+  }
+}

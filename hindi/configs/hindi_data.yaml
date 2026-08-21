@@ -1,0 +1,1218 @@
+# =============================================================================
+# Hindi IndicCorpV2 Data Pipeline Configuration
+# =============================================================================
+# Central configuration for preprocessing, corpus selection, tokenizer
+# training, final tokenization, and verification.
+#
+# FINAL CORPUS TARGET:
+#   IndicCorpV2 Hindi : 400M BPE content tokens
+#   Manual Hindi      : 100M BPE content tokens
+#   ------------------------------------------
+#   Total             : 500M BPE content tokens
+#
+# IMPORTANT:
+#   "words" and "BPE content tokens" are different quantities.
+#
+#   The IndicCorp downloader uses whitespace-separated words only to obtain
+#   enough candidate data.
+#
+#   The final corpus target is measured using SentencePiece BPE CONTENT
+#   tokens. BOS/EOS are NOT included in the 500M target.
+#
+# Every script should read this file using --config.
+# =============================================================================
+
+
+language: hindi
+
+
+# -----------------------------------------------------------------------------
+# Paths
+# -----------------------------------------------------------------------------
+# All paths are relative to the repository root.
+# -----------------------------------------------------------------------------
+paths:
+  raw: hindi/data/raw
+  raw_indiccorp: hindi/data/raw/indiccorp
+
+  intermediate: hindi/data/intermediate
+  normalized: hindi/data/intermediate/normalized
+  filtered: hindi/data/intermediate/filtered
+  deduplicated: hindi/data/intermediate/deduplicated
+  selected: hindi/data/intermediate/selected
+
+  # Train-candidate split off BEFORE decontamination/selection/tokenizer
+  # training. validation.txt / test.txt are written straight to `final`
+  # (see below) since, once created, they must never be touched again.
+  split: hindi/data/intermediate/split
+
+  # Train-candidate AFTER decontamination against held-out validation/test.
+  # This is what corpus selection (script 10) reads from — never the raw
+  # deduplicated corpus.
+  decontaminated: hindi/data/intermediate/decontaminated
+
+  final: hindi/data/final
+  tokenized: hindi/data/tokenized
+
+  # One JSON summary per pipeline-stage run (03/04/05/06/...), written by
+  # shared/run_stats.py's record_run() — never deleted/overwritten by the
+  # disk-saving cleanup below, so a stage's counts/timings/paths survive
+  # even after its transient output files (normalized/filtered/quality)
+  # are removed. See shared/run_stats.py's module docstring.
+  run_stats: hindi/data/run_stats
+
+  metadata: hindi/metadata
+
+  tokenizer_model: hindi/tokenizer/model
+  tokenizer_vocab: hindi/tokenizer/vocab
+  tokenizer_config: hindi/tokenizer/config
+
+  manual: hindi/data/manual
+  manual_clean: hindi/data/intermediate/manual_clean
+
+  # manual/05_aggregate_news_corpus.py's combined-news output directory
+  # (news_raw.txt = validated/deduped output of ALL enabled news outlets,
+  # merged into ONE real per-source file immediately after collection —
+  # individual outlets remain metadata/provenance only, see
+  # news_provenance.jsonl's source_name). Feed into 02_normalize.py
+  # --source news (or --input/--output directly).
+  news_intermediate: hindi/data/intermediate/news
+
+  # Legacy path key — nothing writes here anymore as of the
+  # indiccorp/wikipedia/news 3-source restructuring (news moved to
+  # news_intermediate above; wikipedia was never written here, it has
+  # always been its own file under manual.wikipedia.output_dir). Kept only
+  # in case an external script/notebook still references this key; safe to
+  # remove once confirmed unused.
+  manual_intermediate: hindi/data/intermediate/manual
+
+  reports: hindi/reports
+  figures: hindi/reports/figures
+  tables: hindi/reports/tables
+
+
+# -----------------------------------------------------------------------------
+# IndicCorpV2 Hindi Source
+# -----------------------------------------------------------------------------
+indiccorp:
+
+  # AI4Bharat IndicCorpV2 Hindi files from Hugging Face.
+  #
+  # These are PUBLIC data.
+  #
+  # Files are processed in the configured order. Additional files are used
+  # when earlier files do not provide enough candidate data.
+  source_urls:
+    - "https://huggingface.co/datasets/ai4bharat/IndicCorpV2/resolve/main/data/hi-1.txt"
+    - "https://huggingface.co/datasets/ai4bharat/IndicCorpV2/resolve/main/data/hi-2.txt"
+    - "https://huggingface.co/datasets/ai4bharat/IndicCorpV2/resolve/main/data/hi-3.txt"
+
+  # Raw candidate corpus produced by the downloader.
+  candidate_filename: indiccorp_hi_500m_words_candidate.txt
+
+  # Legacy/downstream-compatible filename.
+  filename: indiccorp_hi_500m_words_candidate.txt
+
+  license: "CC BY-NC 4.0"
+  source_name: "AI4Bharat IndicCorpV2 (Hindi)"
+  source_paper: "Doddapaneni et al., 2022 — IndicNLPSuite"
+
+
+# -----------------------------------------------------------------------------
+# Corpus Selection
+# -----------------------------------------------------------------------------
+selection:
+
+  # ---------------------------------------------------------------------------
+  # IndicCorpV2 DOWNLOAD TARGET
+  # ---------------------------------------------------------------------------
+  # This is NOT the final token target.
+  #
+  # The downloader measures this using:
+  #
+  #     len(text.split())
+  #
+  # Therefore this is a WHITESPACE-WORD target.
+  #
+  # We collect approximately 500M words from IndicCorpV2 so that, after
+  # normalization, filtering, and deduplication, there should be enough
+  # material to obtain the required 400M BPE content tokens.
+  # ---------------------------------------------------------------------------
+  target_words: 500000000
+
+  # Acceptable word-count tolerance for the downloader.
+  tolerance_words: 5000000
+
+
+  # ---------------------------------------------------------------------------
+  # HTTP RANGE DOWNLOAD
+  # ---------------------------------------------------------------------------
+  # 512 MB chunks provide more sampling granularity than 1 GB chunks while
+  # avoiding an excessive number of HTTP requests.
+  # ---------------------------------------------------------------------------
+  chunk_size_bytes: 536870912
+
+
+  # ---------------------------------------------------------------------------
+  # DETERMINISTIC SELECTION
+  # ---------------------------------------------------------------------------
+  random_seed: 42
+
+  # Streaming deterministic hash selection.
+  # No large permutation arrays or complete line-index sets are required.
+  method: hash
+
+
+  # ---------------------------------------------------------------------------
+  # FINAL BPE CONTENT-TOKEN TARGETS
+  # ---------------------------------------------------------------------------
+  #
+  # These are the authoritative source-specific targets.
+  #
+  # IndicCorpV2 Hindi : 400M
+  # Manual Hindi      : 100M
+  # Total             : 500M
+  #
+  # These values are BPE CONTENT tokens measured using SentencePiece.
+  #
+  # BOS/EOS are excluded.
+  # ---------------------------------------------------------------------------
+  indiccorp_target_tokens: 400000000
+  manual_target_tokens: 100000000
+  total_target_tokens: 500000000
+
+  # -----------------------------------------------------------------------
+  # CL3410 Lecture 3: "Do deduplicate what you have collected, then count
+  # your tokens again. Report both numbers."
+  #
+  # `target_unit` makes the unit of `indiccorp_target_tokens` an explicit,
+  # machine-checkable declaration rather than an assumption. Scripts 11, 14,
+  # and 15 assert this equals "bpe_content_tokens" and fail loudly
+  # otherwise — this is what stops the 400M target from ever silently being
+  # interpreted as whitespace-word count, character count, or BOS/EOS-
+  # inclusive stored-token count.
+  # -----------------------------------------------------------------------
+  target_unit: bpe_content_tokens
+
+
+  # ---------------------------------------------------------------------------
+  # SENTENCE SELECTION OVERSHOOT
+  # ---------------------------------------------------------------------------
+  # Selection happens at complete-sentence/line boundaries.
+  # Therefore the selected corpus may slightly exceed the target.
+  #
+  # Example:
+  #   target = 400M
+  #   overshoot = 5%
+  #   acceptable selection can be somewhat above 400M.
+  #
+  # The exact final count is always measured again using the FINAL tokenizer.
+  # ---------------------------------------------------------------------------
+  overshoot_fraction: 0.05
+
+
+# -----------------------------------------------------------------------------
+# Unicode Normalization
+# -----------------------------------------------------------------------------
+normalization:
+
+  form: NFC
+
+  devanagari_range_start: 0x0900
+  devanagari_range_end: 0x097F
+
+  devanagari_extended_start: 0xA8E0
+  devanagari_extended_end: 0xA8FF
+
+  vedic_extensions_start: 0x1CD0
+  vedic_extensions_end: 0x1CFF
+
+  # Keep ZWNJ/ZWJ because they can be meaningful in Devanagari text.
+  remove_zero_width: false
+
+
+# -----------------------------------------------------------------------------
+# Hindi / Script Filtering
+# -----------------------------------------------------------------------------
+filtering:
+
+  # Lines with at least this Devanagari ratio are accepted.
+  min_devanagari_ratio: 0.60
+
+  # Lines between review_devanagari_ratio and min_devanagari_ratio are
+  # considered borderline/review data.
+  review_devanagari_ratio: 0.40
+
+  save_review_lines: true
+
+  review_filename: indiccorp_hi_review.txt
+
+  # Used when 03_filter_hindi.py is run with --source wikipedia/news. Same
+  # min_devanagari_ratio / review_devanagari_ratio / save_review_lines
+  # thresholds above apply to EVERY source — only the review filename
+  # differs per source, so no two sources' review lines ever overwrite
+  # each other. "news" is the combined ALL-enabled-outlets corpus produced
+  # by manual/05_aggregate_news_corpus.py (immediately after 03_collect_news.py) +
+  # 02_normalize.py; individual outlets are never a separate --source
+  # value downstream of that aggregation step.
+  wikipedia_review_filename: wikipedia_hi_review.txt
+  news_review_filename: news_hi_review.txt
+
+  # Legacy per-outlet/manual review filenames — orphaned as of the
+  # indiccorp/wikipedia/news restructuring (news outlets are pre-merged
+  # into ONE file by manual/05_aggregate_news_corpus.py before 03_filter_hindi.py
+  # ever runs, so individual outlets and the old combined "manual" are
+  # never --source values here anymore). Kept only for backward
+  # compatibility with anything external still referencing these keys.
+  manual_review_filename: manual_hi_review.txt
+  dainik_jagran_review_filename: dainik_jagran_hi_review.txt
+  hindustan_review_filename: hindustan_hi_review.txt
+  abp_review_filename: abp_hi_review.txt
+  amar_ujala_review_filename: amar_ujala_hi_review.txt
+  dainik_bhaskar_review_filename: dainik_bhaskar_hi_review.txt
+  navbharat_times_review_filename: navbharat_times_hi_review.txt
+  aaj_tak_review_filename: aaj_tak_hi_review.txt
+  ndtv_review_filename: ndtv_hi_review.txt
+  jansatta_review_filename: jansatta_hi_review.txt
+  prabhat_khabar_review_filename: prabhat_khabar_hi_review.txt
+
+
+# -----------------------------------------------------------------------------
+# Quality Filtering
+# -----------------------------------------------------------------------------
+quality:
+
+  min_characters: 10
+  max_characters: 10000
+
+  max_url_ratio: 0.30
+  max_punctuation_ratio: 0.50
+
+  max_repeated_char_ratio: 0.30
+  max_repeated_char_length: 5
+
+  min_word_count: 2
+
+  max_digit_ratio: 0.50
+
+  html_pattern_threshold: 2
+
+  # CL3410 low-resource-language caution: "inspect what is removed" rather
+  # than silently deleting. Mirrors filtering.save_review_lines above —
+  # rejected lines (with their rejection reason) are saved to
+  # rejected_filename instead of being discarded with only an aggregate
+  # count. Only the counts are ever used to make filtering decisions; this
+  # file is for human inspection.
+  save_rejected_lines: true
+
+  rejected_filename: indiccorp_hi_quality_rejected.txt
+
+  # Shared output directory for every source's quality-filtered output
+  # (04_quality_filter.py, --source indiccorp/wikipedia/news alike). All
+  # write here — side by side — so 05_deduplicate.py's cross-source pass
+  # finds each source's input in the same place.
+  output_dir: hindi/data/intermediate/quality
+
+  # Per-source filename/dir overrides. The same thresholds/blocklist rules
+  # above apply to EVERY source regardless of these — only the output
+  # location and rejected-file NAME differ, so one source's run can never
+  # overwrite another's quality/rejected files.
+  # <source>_output_dir defaults to `output_dir` above when not set.
+  indiccorp_output_filename: indiccorp_hi_quality.txt
+  wikipedia_output_filename: wikipedia_hi_quality.txt
+  wikipedia_rejected_filename: wikipedia_hi_quality_rejected.txt
+  news_output_filename: news_hi_quality.txt
+  news_rejected_filename: news_hi_quality_rejected.txt
+
+  # Legacy per-outlet/manual quality filenames — orphaned as of the
+  # indiccorp/wikipedia/news restructuring (see filtering.*_review_filename
+  # above for the same rationale: news outlets are pre-merged into ONE file
+  # before quality-filtering ever runs). Kept only for backward
+  # compatibility with anything external still referencing these keys.
+  manual_output_filename: manual_hi_quality.txt
+  manual_rejected_filename: manual_hi_quality_rejected.txt
+  dainik_jagran_output_filename: dainik_jagran_hi_quality.txt
+  dainik_jagran_rejected_filename: dainik_jagran_hi_quality_rejected.txt
+  hindustan_output_filename: hindustan_hi_quality.txt
+  hindustan_rejected_filename: hindustan_hi_quality_rejected.txt
+  abp_output_filename: abp_hi_quality.txt
+  abp_rejected_filename: abp_hi_quality_rejected.txt
+  amar_ujala_output_filename: amar_ujala_hi_quality.txt
+  amar_ujala_rejected_filename: amar_ujala_hi_quality_rejected.txt
+  dainik_bhaskar_output_filename: dainik_bhaskar_hi_quality.txt
+  dainik_bhaskar_rejected_filename: dainik_bhaskar_hi_quality_rejected.txt
+  navbharat_times_output_filename: navbharat_times_hi_quality.txt
+  navbharat_times_rejected_filename: navbharat_times_hi_quality_rejected.txt
+  aaj_tak_output_filename: aaj_tak_hi_quality.txt
+  aaj_tak_rejected_filename: aaj_tak_hi_quality_rejected.txt
+  ndtv_output_filename: ndtv_hi_quality.txt
+  ndtv_rejected_filename: ndtv_hi_quality_rejected.txt
+  jansatta_output_filename: jansatta_hi_quality.txt
+  jansatta_rejected_filename: jansatta_hi_quality_rejected.txt
+  prabhat_khabar_output_filename: prabhat_khabar_hi_quality.txt
+  prabhat_khabar_rejected_filename: prabhat_khabar_hi_quality_rejected.txt
+
+  # ---------------------------------------------------------------------------
+  # Safety / profanity blocklist filtering (CL3410 Lecture 3 requirement 6:
+  # semantic/topic/safety filtering)
+  # ---------------------------------------------------------------------------
+  # CL3410's slides call for some form of semantic/topic/safety filtering.
+  # This project implements the simplest defensible version of that: a
+  # transparent, rule-based Hindi profanity/slur blocklist, matching the
+  # existing heuristic-filter style (not a learned toxicity classifier).
+  # A line is rejected as "blocklisted_term" when the fraction of its
+  # whitespace-split words that exact-match an entry in the blocklist
+  # (after stripping surrounding punctuation) exceeds max_blocklist_term_ratio.
+  #
+  # safety_blocklist_path is resolved relative to the repo root. If the file
+  # is missing, the filter is silently disabled (empty blocklist) rather
+  # than failing the pipeline — this keeps the safety filter additive and
+  # optional, matching requirement 6's "MEDIUM priority, independent of the
+  # rest of the pipeline" scope.
+  safety_blocklist_path: hindi/configs/hi_safety_blocklist.txt
+
+  # Any single blocklisted word rejects the line by default (0.0 means
+  # "ratio > 0", i.e. at least one match). Raise this to tolerate a low
+  # ratio of incidental matches in long lines.
+  max_blocklist_term_ratio: 0.0
+
+
+# -----------------------------------------------------------------------------
+# Deduplication (CL3410 Lecture 3 — exact + sub-document + near duplicates)
+# -----------------------------------------------------------------------------
+#
+# Runs on the normalized + Hindi-filtered + quality-filtered corpus (i.e.
+# the appropriate cleaned representation, not raw text). Devanagari, ZWNJ,
+# ZWJ, punctuation, and whitespace are exactly as produced by script 02
+# (normalize) — this stage only READS lines to hash/shingle them; kept
+# lines are written through byte-for-byte unchanged.
+#
+# Two passes, in order:
+#   1. EXACT duplicate removal (unchanged from before — SHA-256 line hash,
+#      SQLite- or memory-backed, see script 05).
+#   2. NEAR-duplicate / SUB-DOCUMENT-duplicate removal on the exact-deduped
+#      output, following the professor's slide:
+#        a. represent each line as its set of overlapping 3-WORD shingles
+#        b. summarize each shingle set with a MinHash signature
+#        c. use LSH banding for CANDIDATE GENERATION — an incoming line is
+#           only ever compared against previously-kept lines sharing a
+#           band, never the whole corpus (no O(N^2) comparison)
+#        d. CONFIRM each candidate with an actual similarity estimate
+#           before removing anything:
+#             - Jaccard estimate >= near_duplicate.similarity_threshold
+#               -> NEAR DUPLICATE
+#             - OR overlap/containment estimate >=
+#               near_duplicate.sub_document_overlap_threshold (one line's
+#               shingles almost entirely contained in a much longer one)
+#               -> SUB-DOCUMENT DUPLICATE (e.g. a repeated boilerplate
+#               sentence embedded in otherwise-different longer text)
+#      This two-step "candidate generation, then confirm by similarity"
+#      design is what keeps legitimate lines that merely share a common
+#      short phrase from being removed (band collision alone is never
+#      sufficient to remove anything).
+#
+# Read by BOTH hindi/scripts/05_deduplicate.py (SQLite-backed near-dup
+# index, for constrained/~8GB RAM machines) and
+# hindi/scripts/05_deduplicate_mac.py (in-memory near-dup index, for
+# machines with more RAM to spare, e.g. Apple M4/24GB) — the Mac script
+# intentionally reuses these SAME parameters rather than introducing new
+# ones, since changing them would change deduplication QUALITY, not just
+# speed. To tune the Mac script independently, add an optional
+# `deduplication_mac:` block below with the same shape; it will be used
+# instead of this block, but is NOT required and does not exist by default.
+# -----------------------------------------------------------------------------
+deduplication:
+
+  exact:
+    enabled: true
+
+  near_duplicate:
+    enabled: true
+
+    # CL3410 Lecture 3: "overlapping 3-word shingles".
+    shingle_type: word
+    shingle_size: 3
+
+    # MinHash signature length. Higher = more accurate similarity
+    # estimates (less variance), at a small extra cost per line.
+    num_minhash_permutations: 32
+
+    # LSH banding for CANDIDATE GENERATION ONLY (bands*rows must equal
+    # num_minhash_permutations). Fewer bands / more rows = fewer band-key
+    # rows written/queried per line (smaller SQLite index, less I/O) at
+    # the cost of stricter candidate recall — tuned down from 16x2 to 8x4
+    # for an 8 GB machine, paired with a lower similarity_threshold below
+    # so genuine near-duplicates are still confirmed once found as
+    # candidates.
+    lsh_bands: 8
+    lsh_rows: 4
+
+    # Jaccard similarity estimate threshold for "near duplicate". Raised
+    # from 0.30 to 0.40 to compensate for 8x4 banding's stricter candidate
+    # generation (approx. share-at-least-one-band probability ~= 1 -
+    # (1 - s^rows)^bands): a genuine single-word paraphrase on an 8-word
+    # sentence (true Jaccard ~0.33-0.5 depending on which word changes)
+    # still clears both the candidate-generation and confirmation stages,
+    # while unrelated sentences (~0.0) stay far below.
+    similarity_threshold: 0.40
+
+    # Overlap/containment threshold for "sub-document duplicate" — how
+    # much of the SHORTER line's shingles must appear in the longer one.
+    sub_document_overlap_threshold: 0.85
+
+    # Only classify as "sub-document" (rather than "near duplicate") when
+    # the two lines' shingle counts differ by at least this much — i.e.
+    # one is meaningfully shorter than the other (containment), rather
+    # than two similarly-sized lines (near-duplicate).
+    sub_document_length_ratio_max: 0.70
+
+    # Lines with fewer words than this skip near-duplicate comparison
+    # entirely (always kept unless caught by exact dedup) — too short to
+    # form a reliable shingle set, and the most likely source of
+    # false-positive removals from incidental short-phrase overlap.
+    min_document_words: 4
+
+    seed: 42
+
+  # Fully-qualified name of the reusable index (see shared/near_dup.py).
+  # Documented here so it's discoverable from config, not just code.
+  implementation: shared.near_dup.MinHashDedupIndex
+
+
+# -----------------------------------------------------------------------------
+# Train / Validation / Test Split
+# -----------------------------------------------------------------------------
+#
+# IMPORTANT — LEAKAGE-SAFE ORDERING (CL3410 Lecture 3, "Decontamination"):
+#
+#   This split now runs BEFORE the final tokenizer is trained, BEFORE corpus
+#   selection (script 10), and BEFORE decontamination — directly on the
+#   deduplicated public/manual corpora. validation.txt and test.txt are
+#   written to `paths.final` and are never modified, selected from, or
+#   trained on again by any later stage. Only the train-candidate output
+#   (`paths.split`) continues on to decontamination (08) and selection.
+# -----------------------------------------------------------------------------
+split:
+
+  train: 0.90
+  validation: 0.05
+  test: 0.05
+
+  random_seed: 42
+
+  # Streaming deterministic hash bucketing.
+  method: hash
+
+
+# -----------------------------------------------------------------------------
+# Decontamination (held-out validation/test vs. training corpus)
+# -----------------------------------------------------------------------------
+#
+# Implements the professor's "Decontamination" slide:
+#   1. Hold out the test set first (see `split` above — already done).
+#   2. Search the candidate training corpus for exact AND near-duplicate
+#      matches of the held-out validation/test data.
+#   3. Remove matches from the training corpus (never from validation/test).
+#   4. Do this before any tokenizer/vocabulary/selection statistics are
+#      computed from the training corpus.
+#
+# Near-duplicate matching reuses MinHash + LSH banding (shared/near_dup.py)
+# so paraphrased/near-identical test items are caught, not just exact
+# string matches. Both passes are streaming/SQLite-backed: only the
+# validation+test signatures are held in memory/on-disk index; the
+# training corpus is scanned once, line by line.
+# -----------------------------------------------------------------------------
+decontamination:
+
+  enabled: true
+
+  # Compare the training corpus against these held-out splits.
+  validation: true
+  test: true
+
+  # Exact-string-match removal (SHA-256 line hash, same mechanism as
+  # script 05's exact dedup).
+  exact_match: true
+
+  # Near-duplicate removal via MinHash/LSH (see shared/near_dup.py).
+  near_duplicate: true
+
+  near_duplicate_config:
+    # Character shingle length used to build MinHash signatures.
+    shingle_size: 5
+
+    # Number of MinHash permutations (signature length). Must equal
+    # lsh_bands * lsh_rows.
+    num_minhash_permutations: 16
+
+    # LSH banding: more bands / fewer rows = more sensitive (catches more
+    # near-duplicates, more false positives removed from training).
+    # bands=4, rows=4 (16 perms) targets an approx. similarity threshold of
+    # ~0.7 — (1/bands)^(1/rows) — tuned for genuine paraphrase-level
+    # near-duplicates rather than merely topically-similar sentences.
+    lsh_bands: 4
+    lsh_rows: 4
+
+    seed: 42
+
+  # Fail the pipeline loudly if this decontamination pass itself still
+  # finds validation/test text in the training corpus (there is no
+  # separate post-decontamination re-verification stage — this is the one
+  # authoritative check).
+  fail_on_residual_contamination: true
+
+
+# -----------------------------------------------------------------------------
+# Tokenizer Training
+# -----------------------------------------------------------------------------
+tokenizer:
+
+  # Train SentencePiece BPE from scratch.
+  algorithm: bpe
+
+  # Vocabulary sizes to evaluate.
+  vocab_sizes:
+    - 8000
+    - 10000
+    - 12000
+    - 14000
+    - 16000
+
+  # Default/final vocabulary size.
+  default_vocab_size: 12000
+
+  character_coverage: 0.9995
+
+  max_sentence_length: 16384
+
+  num_threads: 4
+
+  seed: 42
+
+  # SentencePiece internal sampling cap.
+  input_sentence_size: 5000000
+
+  shuffle_input_sentence: true
+
+  # Preserve unknown Unicode bytes through byte fallback.
+  byte_fallback: true
+
+  special_tokens:
+
+    pad: "<pad>"
+    unk: "<unk>"
+    bos: "<bos>"
+    eos: "<eos>"
+
+  special_token_ids:
+
+    pad: 0
+    unk: 1
+    bos: 2
+    eos: 3
+
+
+# -----------------------------------------------------------------------------
+# Tokenization
+# -----------------------------------------------------------------------------
+tokenization:
+
+  # Store token IDs as uint32.
+  dtype: uint32
+
+  # Add BOS/EOS to stored sequences.
+  #
+  # IMPORTANT:
+  # BOS/EOS are stored tokens but DO NOT count toward the 500M content-token
+  # corpus target.
+  add_bos: true
+  add_eos: true
+
+  # Maximum number of token IDs buffered before flushing to binary output.
+  chunk_tokens: 1000000
+
+  # Perform streaming post-write verification.
+  verify: true
+
+
+# -----------------------------------------------------------------------------
+# Manual Data Requirement
+# -----------------------------------------------------------------------------
+#
+# FINAL TARGET:
+#
+#   IndicCorpV2 = 400M content tokens
+#   Manual      = 100M content tokens
+#   Total       = 500M content tokens
+#
+# Therefore:
+#
+#   Manual fraction = 100M / 500M = 20%
+#
+# The 20% value is kept as a safety requirement even though the explicit
+# source-specific target is 100M.
+#
+# IMPORTANT:
+#
+# The manual requirement is measured using ACTUAL SentencePiece BPE CONTENT
+# tokens.
+#
+# It is NOT measured using:
+#
+#   - number of files
+#   - number of lines
+#   - number of sentences
+#   - whitespace words
+#   - characters
+#
+# -----------------------------------------------------------------------------
+manual:
+
+  # Minimum manual fraction of FINAL BPE content tokens.
+  min_fraction: 0.20
+
+  # Fail if the final manual fraction is below 20%.
+  enforce: true
+
+  # ---------------------------------------------------------------------------
+  # Hindi Wikipedia `pages-articles` dump (manual/01_download_wikipedia.py)
+  # ---------------------------------------------------------------------------
+  # Downloaded as raw compressed XML only — NOT extracted, filtered, or
+  # tokenized by this stage. This is ONE manual subcategory (the other is
+  # news, see manual.news below) and, as of the indiccorp/wikipedia/news
+  # restructuring, its own first-class top-level pipeline source — its
+  # extracted text (wikipedia_hi_raw.txt, produced directly by
+  # manual/02_extract_wikipedia.py, no merge step needed) still needs to pass
+  # through 03-06 before it counts toward the manual token target.
+  #
+  # Only the current-revision "pages-articles" dump is ever downloaded.
+  # pages-meta-history / full revision-history dumps are explicitly never
+  # requested.
+  wikipedia:
+
+    enabled: true
+
+    # "auto" (recommended): dynamically resolve the newest hiwiki dump
+    # date whose pages-articles job is COMPLETE (dumpstatus.json status
+    # == "done"), rather than hardcoding a date that will eventually go
+    # stale. Set to a concrete URL to pin an exact dump instead.
+    dump_url: "auto"
+
+    # Only used when dump_url is a concrete (non-"auto") URL.
+    dump_date: null
+    dump_filename: null
+
+    # Where the compressed dump is stored — deliberately separate from
+    # IndicCorp's raw directory (paths.raw_indiccorp).
+    output_dir: hindi/data/raw/manual/wikipedia
+
+    # Resume an interrupted download via HTTP Range instead of
+    # redownloading from byte 0.
+    resume: true
+
+    # ---------------------------------------------------------------------
+    # 02_extract_wikipedia.py output (Wikipedia-specific extraction only —
+    # this text still has to pass through the common pipeline, 03-09,
+    # before it counts toward the manual token target).
+    # ---------------------------------------------------------------------
+    raw_text_filename: wikipedia_hi_raw.txt
+
+    extraction_report_path: hindi/data/metadata/wikipedia_extraction_report.json
+
+    # Planning target only (not a guarantee) — see manual/01_download_wikipedia.py.
+    target_tokens: 20000000
+
+  # ---------------------------------------------------------------------------
+  # News (hindi/scripts/manual/03_collect_news.py)
+  # ---------------------------------------------------------------------------
+  # Subcategory of "manual" — NOT a separate top-level corpus source.
+  # IndicCorp remains the separate, existing top-level public source.
+  #
+  # Discovery is SEPARATE from article fetching (see 03_collect_news.py's
+  # module docstring "DISCOVERY ARCHITECTURE" for the full design). Each
+  # enabled source picks a discovery mechanism via its own
+  # `discovery.type` block below:
+  #   sitemap_rolling      — only a rolling recent-window sitemap exists
+  #                          (dainik_jagran); walked each run, no
+  #                          historical backfill possible.
+  #   sitemap_index_dated  — the source's sitemap index is itself dated
+  #                          per-day (abp); older days are reached by
+  #                          continuing that SAME verified filename
+  #                          template backward, resumably, down to
+  #                          historical_discovery.start_date.
+  #   sitemap_index_static — the source exposes an already-populated
+  #                          historical sitemapindex (hindustan) that is
+  #                          walked as-is.
+  # Every discovered URL is persisted to a per-source inventory under
+  # <output_dir>/_discovery/ that survives across runs — a run's FETCH
+  # phase (bounded by that source's `max_articles`) only ever pulls from
+  # URLs already in that inventory which are not yet collected, so
+  # repeated runs progress backward through history / accumulate newly
+  # published articles rather than repeatedly re-discovering the same
+  # recent window. Article text is extracted with the same generic
+  # <article>/<p> (falling back to all <p> tags) heuristic used by
+  # Nepali's Setopati collector — see 03_collect_news.py's module docstring
+  # for per-source verification notes (robots.txt check date, sitemap
+  # reachability, live extraction sample).
+  #
+  # Reaching the 120-150M raw/quality token target still benefits from
+  # running this collector repeatedly over time (e.g. a periodic
+  # invocation) — each run both advances any historical backward walk
+  # AND picks up newly published articles — but a single run against a
+  # historical-capable source (abp, hindustan) can now discover many more
+  # than the ~1000-4000 URLs a single rolling-window sitemap exposes.
+  #
+  # Sources are individually enabled/disabled here. "Do not assume all
+  # sources will work" — 4 of the 10 sources named in the project's
+  # candidate list are DISABLED BY DEFAULT because they were found to be
+  # not technically accessible/appropriate on verification (see each
+  # source's `disabled_reason` below, and 03_collect_news.py's docstring for
+  # the exact robots.txt/live-sample evidence). Re-verify and flip
+  # `enabled: true` if a disabled source's situation changes.
+  news:
+
+    enabled: true
+
+    output_dir: hindi/data/raw/manual/news
+
+    # Sharded JSONL (~this many documents per shard file), one shard
+    # sequence per source_name.
+    max_docs_per_shard: 20000
+
+    # Bound on how many sitemap XML *documents* (not articles) are fetched
+    # per source PER RUN — protects against a misbehaving/huge sitemap
+    # index (or a long dated-pattern backward walk, see
+    # historical_discovery below) consuming the whole run on discovery
+    # alone. Discovery is resumable (see 03_collect_news.py's DiscoveryStore),
+    # so raising this only changes how much progress ONE run makes, not
+    # how far back the collector can eventually reach — running the
+    # collector again continues from where it left off.
+    max_sitemap_documents: 60
+
+    # ---------------------------------------------------------------------
+    # HISTORICAL DISCOVERY (module docstring "DISCOVERY ARCHITECTURE" has
+    # the full design). Global defaults here; any of these may be
+    # overridden per source under that source's own `historical:` block.
+    # ---------------------------------------------------------------------
+    historical_discovery:
+      enabled: true
+
+      # Do not walk further back than this date. 2023-10-01 is the
+      # earliest date VERIFIED (2026-08-18, live sampling of
+      # abplive.com's dated per-day sitemaps) to carry a real, substantial
+      # article volume across the sources enabled here — see each
+      # source's `historical.verified_range` below for its own evidence.
+      start_date: "2023-10-01"
+
+      # null = through "today" (the run's current date).
+      end_date: null
+
+      # Per-source, PER-RUN cap on how many NEW URLs the discovery phase
+      # will add to that source's persisted URL inventory. A safety bound
+      # on run duration/memory, not a lifetime cap — the inventory persists
+      # across runs (see output_dir's _discovery/ subdirectory).
+      max_discovered_urls: 20000
+
+      # For dated-pattern backward traversal (see abp below): stop
+      # walking further back once this many CONSECUTIVE probed days come
+      # back with an empty/near-empty sitemap (0-1 URLs) — the publisher
+      # very likely has no real archive before that point, so continuing
+      # to probe would just be wasted requests. `start_date` above is
+      # still an absolute floor even if this never triggers.
+      stop_when_no_older_sitemaps: true
+      consecutive_empty_days_to_stop: 14
+
+      # A sitemap document's covered period is treated as fully "closed"
+      # (never re-fetched again once its URLs are captured) once its
+      # newest possible date is this many days in the past. Kept small
+      # because these are historical documents whose content, once
+      # published, does not change — re-fetching them every run would
+      # only re-download bytes already mined into the persisted URL
+      # inventory.
+      closed_after_days: 3
+
+    # ---------------------------------------------------------------------
+    # Article fetching performance (03_collect_news.py). Article fetch is
+    # I/O-bound (waiting on HTTP responses), so this is a bounded thread
+    # pool, not multiprocessing — see 03_collect_news.py's module docstring
+    # "CONCURRENT ARTICLE FETCHING" for the full design (single writer
+    # thread, per-source HTTP connection pooling, per-worker politeness
+    # pacing). Start conservative: 8 concurrent workers is a deliberate
+    # default, not a ceiling to raise casually — a higher value risks
+    # HTTP 429s / IP blocking on the target site. Override per source with
+    # a `concurrency:` key under that source's own block below, or for a
+    # single run with `--concurrency`.
+    #
+    # NOTE: concurrency governs ARTICLE FETCHING only. Discovery (sitemap
+    # document fetching) is deliberately sequential regardless of this
+    # value — see module docstring "Do NOT solve slow discovery by
+    # raising concurrency"; discovery's own budget knobs
+    # (max_sitemap_documents / max_discovered_urls above) are what widen
+    # the historical inventory, not thread count.
+    # ---------------------------------------------------------------------
+    collection:
+      concurrency: 8
+
+    # ---------------------------------------------------------------------
+    # ENABLED BY DEFAULT — verified 2026-08-18: robots.txt (User-agent: *)
+    # is permissive (no disallow on article paths, no explicit
+    # ClaudeBot/anthropic-ai/CCBot/GPTBot block), the listed sitemap
+    # returned real article URLs, and a live sample article fetched with a
+    # plain HTTP GET yielded non-empty Devanagari body text via the
+    # <article>/<p> (or fallback <p>) extractor.
+    #
+    # `discovery.type` selects which discovery mechanism 03_collect_news.py
+    # uses for that source (see module docstring):
+    #   sitemap_rolling      — only a rolling recent-window sitemap is
+    #                          exposed; no verified historical mechanism.
+    #   sitemap_index_dated  — the source's own sitemap index is itself a
+    #                          per-day dated file (news-DD-MM-YYYY.xml);
+    #                          older days are reached by continuing that
+    #                          SAME verified filename template backward.
+    #   sitemap_index_static — the source exposes a real, already-populated
+    #                          historical sitemapindex (dated buckets going
+    #                          back years); traversed as-is, no invented URLs.
+    # ---------------------------------------------------------------------
+    dainik_jagran:
+      enabled: true
+      base_url: "https://www.jagran.com"
+      sitemap_urls:
+        - "https://www.jagran.com/news-sitemap.xml"
+        - "https://www.jagran.com/all-news-sitemap.xml"
+      max_articles: 20000
+      target_tokens: 25000000
+      raw_text_filename: dainik_jagran_hi_raw.txt
+      discovery:
+        type: sitemap_rolling
+      historical:
+        supported: false
+        reason: >-
+          jagran.com/robots.txt names exactly three sitemaps
+          (news-sitemap.xml, all-news-sitemap.xml, sitemap.xml — verified
+          2026-08-18); none is a sitemap INDEX with dated/day/month child
+          sitemaps, and sitemap.xml itself is a flat ~129-URL list of
+          category/section pages, not articles. Both news sitemaps are a
+          ROLLING window of the ~2000-2500 most recent articles with no
+          older/index counterpart exposed anywhere. Per requirement 13
+          ("do not invent historical sitemap URLs"), this collector does
+          NOT guess a dated-archive URL scheme for jagran.com — growing
+          this source's inventory beyond the rolling window requires
+          running the collector repeatedly over time so each run's newly
+          published articles accumulate in the persisted discovery store
+          (see 03_collect_news.py's DiscoveryStore), not a single run's
+          historical traversal.
+
+    hindustan:
+      enabled: true
+      base_url: "https://www.livehindustan.com"
+      sitemap_urls:
+        - "https://www.livehindustan.com/news-sitemap.xml"
+      max_articles: 20000
+      target_tokens: 25000000
+      raw_text_filename: hindustan_hi_raw.txt
+      discovery:
+        type: sitemap_index_static
+        # Rolling near-real-time feed (most recent hours) — always walked
+        # each run in addition to the historical index below, so the
+        # newest articles are never missed while the index's newest
+        # bucket is still "open" (see closed_after_days).
+        rolling_sitemap_urls:
+          - "https://www.livehindustan.com/news-sitemap.xml"
+        # A REAL, currently-published sitemapindex (named in robots.txt as
+        # `Sitemap: https://www.livehindustan.com/sitemap-index.xml`) whose
+        # <sitemap><loc> children are dated buckets under
+        # /lhfeed/sitemap/<year>/<mon>-<n>.xml. Verified live 2026-08-18:
+        # 364 child sitemaps listed, spanning 2024/jan-1.xml through
+        # 2026/aug-8.xml; the oldest bucket's articles carry
+        # <lastmod>2024-01-01T00:00:08+05:30</lastmod> — a real historical
+        # archive, not a guess.
+        index_url: "https://www.livehindustan.com/sitemap-index.xml"
+      historical:
+        supported: true
+        verified_range:
+          start: "2024-01-01"
+          end: "2026-08-18"
+        note: >-
+          sitemap-index.xml is the publisher's own exposed sitemap index
+          (declared in robots.txt), not derived/guessed — every child URL
+          it lists is followed as-is. Dates before 2024-01-01 are simply
+          not listed in the index at all (nothing to derive), so
+          start_date below this floor has no effect for this source.
+
+    abp:
+      enabled: true
+      base_url: "https://www.abplive.com"
+      # news-sitemap.xml is itself a sitemapindex of daily article
+      # sitemaps (news-DD-MM-YYYY.xml, verified 2026-08-18) — its own
+      # listed children already cover roughly the most recent window;
+      # 03_collect_news.py's sitemap_index_dated discovery continues the
+      # SAME verified filename template backward day-by-day beyond the
+      # oldest date the index itself lists (see historical.note below).
+      sitemap_urls:
+        - "https://www.abplive.com/news-sitemap.xml"
+      max_articles: 40000
+      target_tokens: 35000000
+      raw_text_filename: abp_hi_raw.txt
+      discovery:
+        type: sitemap_index_dated
+        index_url: "https://www.abplive.com/news-sitemap.xml"
+        # {dd}/{mm}/{yyyy} are substituted with zero-padded day/month and
+        # 4-digit year. This is the EXACT template observed in
+        # news-sitemap.xml's own <sitemap><loc> entries (e.g.
+        # news-18-08-2026.xml) — extended backward, not invented.
+        dated_pattern: "https://www.abplive.com/news-{dd}-{mm}-{yyyy}.xml"
+      historical:
+        supported: true
+        verified_range:
+          start: "2023-10-01"
+          end: "2026-08-18"
+        note: >-
+          Live-sampled 2026-08-18: daily sitemaps from 2023-10-01 onward
+          carry a substantial, real article count (~340-470 <url> entries
+          per day sampled across Oct-Dec 2023). Sampled dates from
+          2023-09-01 back through at least 2015-01-01 return HTTP 200 but
+          an EMPTY/near-empty <urlset> (0-1 URLs) rather than a 404 — the
+          server does not signal "no data" via status code for this
+          pattern, so this collector treats `historical_discovery.
+          start_date` (2023-10-01) as the authoritative floor rather than
+          relying solely on consecutive-empty-day detection, and
+          additionally stops early via consecutive_empty_days_to_stop as
+          a second safeguard.
+
+    # ---------------------------------------------------------------------
+    # DISABLED BY DEFAULT — kept fully configured so a future run can
+    # re-verify and enable them individually. Each `disabled_reason` is
+    # what was found on verification (2026-08-18); see 03_collect_news.py's
+    # module docstring for the underlying evidence (robots.txt excerpts,
+    # sample-fetch results).
+    # ---------------------------------------------------------------------
+    amar_ujala:
+      enabled: false
+      disabled_reason: >-
+        robots.txt explicitly disallows ClaudeBot, Claude-Web, and
+        anthropic-ai (plus CCBot/GPTBot/several other AI crawlers) —
+        automated collection by this project would violate the
+        publisher's stated crawling policy for AI agents.
+      base_url: "https://www.amarujala.com"
+      sitemap_urls: []
+      max_articles: 20000
+      target_tokens: 0
+      raw_text_filename: amar_ujala_hi_raw.txt
+
+    dainik_bhaskar:
+      enabled: false
+      disabled_reason: >-
+        robots.txt explicitly disallows anthropic-ai, CCBot, and GPTBot
+        (plus Google-Extended) — automated collection by this project
+        would violate the publisher's stated crawling policy for AI
+        agents, even though `User-agent: *` itself is permissive.
+      base_url: "https://www.bhaskar.com"
+      sitemap_urls: []
+      max_articles: 20000
+      target_tokens: 0
+      raw_text_filename: dainik_bhaskar_hi_raw.txt
+
+    navbharat_times:
+      enabled: false
+      disabled_reason: >-
+        robots.txt is permissive and its sitemap-48hours.xml sitemap
+        index resolves to real article URLs, BUT a live sample article's
+        body text is rendered by page JavaScript, not present in the raw
+        HTML — the generic <article>/<p> extractor recovers zero
+        Devanagari characters from it. Would need a site-specific
+        extractor (e.g. locating its embedded JSON state) before this can
+        be safely enabled; not implemented here.
+      base_url: "https://navbharattimes.indiatimes.com"
+      sitemap_urls:
+        - "https://navbharattimes.indiatimes.com/staticsitemap/nbt/news/sitemap-48hours.xml"
+      max_articles: 20000
+      target_tokens: 0
+      raw_text_filename: navbharat_times_hi_raw.txt
+
+    aaj_tak:
+      enabled: false
+      disabled_reason: >-
+        robots.txt is permissive, but no working article/news sitemap was
+        found at any of the standard locations tried
+        (news-sitemap.xml redirects to the homepage, sitemap.xml is the
+        SPA shell, google-news-sitemap.xml/sitemap/news.xml both 404) —
+        discovery would require category-page pagination scraping instead,
+        which has not been implemented/verified for this site.
+      base_url: "https://www.aajtak.in"
+      sitemap_urls: []
+      max_articles: 20000
+      target_tokens: 0
+      raw_text_filename: aaj_tak_hi_raw.txt
+
+    ndtv:
+      enabled: false
+      disabled_reason: >-
+        www.ndtv.com/robots.txt returns an Akamai "Access Denied" page to
+        a plain automated HTTP GET (edge-level bot blocking), and
+        hindi.ndtv.com did not resolve at all — not technically
+        accessible with this project's collection approach.
+      base_url: "https://hindi.ndtv.com"
+      sitemap_urls: []
+      max_articles: 2000
+      target_tokens: 0
+      raw_text_filename: ndtv_hi_raw.txt
+
+    jansatta:
+      enabled: false
+      disabled_reason: >-
+        robots.txt explicitly disallows ClaudeBot, Claude-Web,
+        anthropic-ai, and PerplexityBot — automated collection by this
+        project would violate the publisher's stated crawling policy for
+        AI agents.
+      base_url: "https://www.jansatta.com"
+      sitemap_urls: []
+      max_articles: 20000
+      target_tokens: 0
+      raw_text_filename: jansatta_hi_raw.txt
+
+    prabhat_khabar:
+      enabled: false
+      disabled_reason: >-
+        robots.txt is permissive and it publishes several working article
+        sitemaps (news-sitemap.xml, sitemap-today.xml), BUT the site is a
+        fully client-side-rendered (Next.js) app — a live sample article's
+        raw HTML contains ZERO Devanagari characters anywhere (confirmed
+        by direct scan), so no text is recoverable via a plain HTTP GET +
+        static HTML parse. Would require JavaScript rendering (a headless
+        browser), which is out of scope for this collector.
+      base_url: "https://www.prabhatkhabar.com"
+      sitemap_urls:
+        - "https://www.prabhatkhabar.com/news-sitemap.xml"
+      max_articles: 20000
+      target_tokens: 0
+      raw_text_filename: prabhat_khabar_hi_raw.txt
+
+
+# -----------------------------------------------------------------------------
+# Single-Tokenizer Architecture
+# -----------------------------------------------------------------------------
+#
+# There is exactly ONE SentencePiece BPE tokenizer in this pipeline.
+#
+# Trained by script 09 on `final/train.txt` — the decontaminated,
+# combined (script 10) training corpus. Never sees validation/test text.
+#
+# Purpose:
+#   - the production tokenizer
+#   - tokenizer evaluation
+#   - final binary tokenization
+#   - model pretraining
+#
+# After training, script 09 reloads this SAME model and streams it
+# separately over `indiccorp_train.txt`, `wikipedia_train.txt`,
+# `news_train.txt` (already a combined file across every enabled news
+# outlet — see manual/05_aggregate_news_corpus.py), `manual_train.txt`
+# (= wikipedia_train.txt + news_train.txt), and `train.txt` to report
+# actual BPE content-token counts (IndicCorp, Wikipedia, News,
+# total manual, total), vocabulary size, a sum-consistency check, and any
+# shortfall against the ~400M IndicCorpV2 / ~100M manual targets. No
+# second tokenizer is ever trained to compensate for a shortfall.
+#
+#
+# Pipeline (leakage-safe order — see CL3410 Lecture 3 "Decontamination"):
+#
+#   01 Download IndicCorpV2
+#          ↓
+#   02 Validate
+#          ↓
+#   03 Normalize
+#          ↓
+#   04 Hindi filtering
+#          ↓
+#   05 Quality filtering
+#          ↓
+#   06 Deduplication (exact, corpus-wide — deterministic, no data-dependent
+#      tuning, so it cannot leak test-set information into training
+#      decisions; it also structurally prevents an exact-duplicate line
+#      from ever landing in two different splits at once)
+#          ↓
+#   07 Statistics
+#          ↓
+#   Wikipedia collection (hindi/scripts/manual/01_download_wikipedia.py +
+#   02_extract_wikipedia.py) — already produces ONE file
+#   (wikipedia_hi_raw.txt), no merge step needed — and News collection
+#   (hindi/scripts/manual/03_collect_news.py) + manual/05_aggregate_news_corpus.py
+#   (merges every ENABLED news outlet into ONE file, news_raw.txt,
+#   immediately after collection) + cleaning (03-06, same as every other
+#   source). Wikipedia and News are now two SEPARATE top-level sources,
+#   alongside IndicCorp — three sources total, kept separate through the
+#   whole pipeline below. "Manual" remains only as the GROUPING/accounting
+#   term for wikipedia+news COMBINED target-token/fraction bookkeeping
+#   (see the `manual:` block below) — it is never a merged file/source
+#   after this restructuring.
+#          ↓
+#   08 Train/validation/test split  ← Runs on the deduplicated indiccorp +
+#      wikipedia + news corpora (three separate files), BEFORE any
+#      tokenizer, vocabulary, or corpus-selection statistics are computed.
+#      validation.txt and test.txt are written to `final/` (all three
+#      sources combined) and are FROZEN from this point on. TEST SET
+#      CREATED / VALIDATION SET CREATED are logged here.
+#          ↓
+#   09 Decontamination — removes exact AND near-duplicate (MinHash/LSH)
+#      matches of the frozen validation/test sets from each source's
+#      train-candidate corpus (indiccorp, wikipedia, news — independently).
+#      Logs DECONTAMINATION STARTED / EXACT MATCHES REMOVED / NEAR
+#      DUPLICATES REMOVED / FINAL TRAINING CORPUS AFTER DECONTAMINATION.
+#          ↓
+#   11 Source-specific selection/combination — decontaminated
+#      train-candidate files only; concatenates wikipedia_train.txt +
+#      news_train.txt into manual_train.txt, then indiccorp_train.txt +
+#      manual_train.txt into `final/train.txt`
+#          ↓
+#   10 Train the ONE final tokenizer — trained on `final/train.txt` only,
+#      then streams per-source token counts natively over each real final
+#      file (IndicCorp / Wikipedia / News / combined manual / total)
+#          ↓
+#   13 Tokenizer evaluation
+#          ↓
+#   14 Final binary tokenization
+#          ↓
+#   15 Final verification — INCLUDES leakage checks: fails loudly if any
+#      validation/test line is found (exact or near-duplicate) in
+#      `final/train.txt`, or if the tokenizer's recorded training input
+#      was anything other than `final/train.txt` / the decontaminated
+#      train-candidate files.
+#
+# Final authoritative token count:
+#
+#   FINAL TOKENIZER
+#          ↓
+#   train.txt + validation.txt + test.txt
+#          ↓
+#   actual BPE CONTENT token count
+#
+# This final count is the number reported as the final corpus size.
+#
+
+
+# -----------------------------------------------------------------------------
+# Storage
+# -----------------------------------------------------------------------------
+storage:
+
+  # Keep intermediate files during development.
+  #
+  # For the production run, this can be changed to false after the pipeline
+  # has been verified and storage requirements have been reviewed.
+  keep_intermediate_files: true
+
+
+# -----------------------------------------------------------------------------
+# Logging
+# -----------------------------------------------------------------------------
+logging:
+
+  level: INFO
+
+  format: "%(asctime)s %(levelname)s %(name)s: %(message)s"
+
+  # Progress update interval (lines). 100K keeps large single-source
+  # stages (e.g. Wikipedia's ~808K-line near-dup pass) from running to
+  # completion without a single progress message -- 1M was too coarse for
+  # a source of that size.
+  progress_interval: 100000

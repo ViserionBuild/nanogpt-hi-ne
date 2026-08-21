@@ -62,54 +62,34 @@ lma-project/
 ## Setup
 
 ```bash
-pip install -r requirements.txt --break-system-packages
+pip install -r requirements.txt
 ```
 
 ## Reproduction steps (per phase)
 
 ### Phase 1 — Data & Tokenizer
 
-The canonical, fully-streaming data pipeline lives in `hindi/scripts/`
-(and the analogous `nepali/scripts/`). See `hindi/README.md` for the
-complete walkthrough; the numbered order is:
+Each language has its own fully-streaming, from-scratch corpus pipeline
+under `hindi/scripts/` and `nepali/scripts/`: download public data
+(AI4Bharat IndicCorpV2), collect manual data (Hindi: Wikipedia + news
+outlets; Nepali: news via a shared WordPress API), then run every source
+through the same preprocessing stages — Unicode normalization,
+language-script filtering, quality filtering, cross-source
+deduplication (exact + MinHash/LSH near-dup) — before splitting into
+train/validation/test, decontaminating the train split against the
+frozen validation/test sets, and concatenating everything into the final
+training corpus. A single SentencePiece BPE tokenizer is then trained
+from scratch on that final corpus (never on validation/test), evaluated
+across candidate vocabulary sizes (fertility, UNK rate, chars/token), and
+used to tokenize the final corpus into binary token-id files. No
+pretrained tokenizer or vocabulary is used, and Hindi/Nepali never share
+data, tokenizer, or vocabulary at any stage.
 
-```bash
-python hindi/scripts/01_download_indiccorp.py --config hindi/configs/hindi_data.yaml
-python hindi/scripts/02_validate_raw.py       --config hindi/configs/hindi_data.yaml
-python hindi/scripts/03_normalize.py          --config hindi/configs/hindi_data.yaml
-python hindi/scripts/04_filter_hindi.py       --config hindi/configs/hindi_data.yaml
-python hindi/scripts/05_quality_filter.py     --config hindi/configs/hindi_data.yaml
-python hindi/scripts/06_deduplicate.py        --config hindi/configs/hindi_data.yaml
-python hindi/scripts/07_statistics.py         --config hindi/configs/hindi_data.yaml
-python hindi/scripts/08_split_dataset.py      --config hindi/configs/hindi_data.yaml
-python hindi/scripts/09_decontaminate.py      --config hindi/configs/hindi_data.yaml
-python hindi/scripts/11_select_corpus.py      --config hindi/configs/hindi_data.yaml
-python hindi/scripts/10_train_tokenizer.py    --config hindi/configs/hindi_data.yaml --vocab-sizes 16000 32000 48000
-python hindi/scripts/13_evaluate_tokenizer.py --config hindi/configs/hindi_data.yaml
-python hindi/scripts/14_tokenize_corpus.py    --config hindi/configs/hindi_data.yaml
-python hindi/scripts/15_verify_final_corpus.py --config hindi/configs/hindi_data.yaml
-```
+Full step-by-step run instructions (exact commands, config keys, targets,
+and pre-run checklists) are documented separately per language:
 
-(`11_select_corpus.py` combines the decontaminated IndicCorp and
-Wikipedia/manual train-candidate corpora into `final/train.txt`.
-`10_train_tokenizer.py` then trains the ONE SentencePiece BPE tokenizer
-on `final/train.txt` and immediately re-loads that same model to run a
-streaming token-count pass over `indiccorp_train.txt`, `wikipedia_train.txt`,
-and `train.txt`, reporting per-source/total BPE token counts and any
-shortfall against the 400M/100M targets — no second tokenizer is ever
-trained. See `hindi/README.md` for the full walkthrough, including manual
-data collection and the leakage-safe split/decontamination ordering.)
-
-Pipeline unit tests (no pytest needed):
-
-```bash
-python hindi/tests/test_pipeline.py
-```
-
-Simpler collection helpers (`collect_public.py`, `collect_manual.py`,
-`clean_normalize.py`, `make_splits.py`) remain available under
-`hindi/scripts/` for the manual/public data paths — they are streaming
-and disk-backed (SQLite dedup) as well.
+- **Hindi**: [`hindi/Hindi_Corpus_Pipeline_Run_Instructions.md`](hindi/Hindi_Corpus_Pipeline_Run_Instructions.md)
+- **Nepali**: [`nepali/nepali_pipeline_run_guide.md`](nepali/nepali_pipeline_run_guide.md) 
 
 ### Phase 2 — Model, Pretraining, Evaluation
 ```bash

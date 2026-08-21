@@ -41,6 +41,10 @@ nepali/data/intermediate/*
 nepali/data/final/*.txt
 nepali/data/raw/*
 
+hindi/data/intermediate/*
+hindi/data/final/*.txt
+hindi/data/raw/*
+
 
 # NOTE: */data/run_stats/ and */metadata/ are deliberately NOT ignored —
 # small per-pipeline-stage-run JSON summaries and final analysis reports

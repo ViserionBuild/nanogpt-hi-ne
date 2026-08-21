@@ -1,0 +1,32 @@
+{
+  "stage_number": "04",
+  "stage_name": "quality_filter",
+  "source": "wikipedia",
+  "recorded_at_utc": "2026-08-20T23:33:46.742211+00:00",
+  "input_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/filtered/wikipedia_hi_filtered.txt",
+  "output_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/quality/wikipedia_hi_quality.txt",
+  "rejected_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/quality/wikipedia_hi_quality_rejected.txt",
+  "lines_processed": 884851,
+  "lines_kept": 820086,
+  "removal_reason_counts": {
+    "too_short": 60830,
+    "too_few_words": 1112,
+    "too_many_html_tags": 1824,
+    "max_repeated_char_length": 783,
+    "too_long": 51,
+    "high_repeated_char_ratio": 121,
+    "high_url_ratio": 44
+  },
+  "elapsed_seconds": 195.19,
+  "cleanup_of_filtered_stage": {
+    "skipped": false,
+    "stage": "filtered",
+    "deleted_files": [
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/filtered/wikipedia_hi_filtered.txt",
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/filtered/wikipedia_hi_review.txt"
+    ],
+    "missing_files": [],
+    "freed_bytes": 687875814,
+    "dry_run": false
+  }
+}

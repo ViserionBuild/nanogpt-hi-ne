@@ -1,0 +1,12 @@
+{
+  "stage_number": "02",
+  "stage_name": "normalize",
+  "source": "news",
+  "recorded_at_utc": "2026-08-20T23:31:51.944331+00:00",
+  "input_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/news/news_raw.txt",
+  "output_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/normalized/news_hi_normalized.txt",
+  "lines_processed": 340892,
+  "lines_modified": 149225,
+  "lines_unchanged": 191667,
+  "elapsed_seconds": 343.35
+}

@@ -1,0 +1,31 @@
+{
+  "stage_number": "03",
+  "stage_name": "filter_hindi",
+  "source": "news",
+  "recorded_at_utc": "2026-08-20T23:40:20.965847+00:00",
+  "input_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/normalized/news_hi_normalized.txt",
+  "output_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/filtered/news_hi_filtered.txt",
+  "review_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/filtered/news_hi_review.txt",
+  "lines_processed": 340892,
+  "lines_kept": 283287,
+  "lines_review": 57396,
+  "lines_removed": 209,
+  "character_distribution": {
+    "devanagari": 308835880,
+    "latin": 20056413,
+    "digits": 3878112,
+    "punctuation": 10023441,
+    "other": 742628
+  },
+  "elapsed_seconds": 194.15,
+  "cleanup_of_normalized_stage": {
+    "skipped": false,
+    "stage": "normalized",
+    "deleted_files": [
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/normalized/news_hi_normalized.txt"
+    ],
+    "missing_files": [],
+    "freed_bytes": 1047716246,
+    "dry_run": false
+  }
+}

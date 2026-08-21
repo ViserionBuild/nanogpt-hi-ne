@@ -1,0 +1,30 @@
+{
+  "stage_number": "04",
+  "stage_name": "quality_filter",
+  "source": "news",
+  "recorded_at_utc": "2026-08-20T23:48:16.239011+00:00",
+  "input_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/filtered/news_hi_filtered.txt",
+  "output_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/quality/news_hi_quality.txt",
+  "rejected_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/quality/news_hi_quality_rejected.txt",
+  "lines_processed": 283287,
+  "lines_kept": 277305,
+  "removal_reason_counts": {
+    "too_long": 401,
+    "max_repeated_char_length": 1137,
+    "too_short": 2105,
+    "too_few_words": 2263,
+    "too_many_html_tags": 76
+  },
+  "elapsed_seconds": 286.05,
+  "cleanup_of_filtered_stage": {
+    "skipped": false,
+    "stage": "filtered",
+    "deleted_files": [
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/filtered/news_hi_filtered.txt",
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/filtered/news_hi_review.txt"
+    ],
+    "missing_files": [],
+    "freed_bytes": 1047639038,
+    "dry_run": false
+  }
+}

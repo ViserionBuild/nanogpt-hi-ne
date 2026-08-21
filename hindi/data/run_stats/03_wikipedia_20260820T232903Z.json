@@ -1,0 +1,31 @@
+{
+  "stage_number": "03",
+  "stage_name": "filter_hindi",
+  "source": "wikipedia",
+  "recorded_at_utc": "2026-08-20T23:29:03.348810+00:00",
+  "input_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/normalized/wikipedia_hi_normalized.txt",
+  "output_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/filtered/wikipedia_hi_filtered.txt",
+  "review_path": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/filtered/wikipedia_hi_review.txt",
+  "lines_processed": 936593,
+  "lines_kept": 884851,
+  "lines_review": 11775,
+  "lines_removed": 39967,
+  "character_distribution": {
+    "devanagari": 206302069,
+    "latin": 8409980,
+    "digits": 4448698,
+    "punctuation": 8477645,
+    "other": 401062
+  },
+  "elapsed_seconds": 142.01,
+  "cleanup_of_normalized_stage": {
+    "skipped": false,
+    "stage": "normalized",
+    "deleted_files": [
+      "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/data/intermediate/normalized/wikipedia_hi_normalized.txt"
+    ],
+    "missing_files": [],
+    "freed_bytes": 698154187,
+    "dry_run": false
+  }
+}
