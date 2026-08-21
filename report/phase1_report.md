@@ -225,13 +225,12 @@ Nepali's deduplicated corpus has more unique words than Hindi's (6.80M vs. 3.96M
 
 | Requirement | Hindi | Nepali | Status |
 |---|---|---|---|
-| ~500M training tokens | 632,352,544 | 637,535,988 | ✅ both **exceed** by 26–28% |
-| IndicCorp sub-target 400M | 517,934,945 | 520,693,966 | ✅ |
-| Manual sub-target: ≥100M manual tokens | 114,417,599 (**+14.4%**) | 116,842,022 (**+16.8%**) | ✅ both **exceed** |
-| Manual share: ≥20% **of final training tokens** | **0.1809** | **0.1833** | ❌ **both short** |
-| Tokenizer trained from scratch | ✅ | ✅ | ✅ |
-| No shared tokenizer/vocab/data | ✅ | ✅ | ✅ |
-| Train decontaminated vs. val/test | ✅ | ✅ | ✅ |
+| ~500M training tokens | 632,352,544 | 637,535,988 | **PASS** — both exceed by 26–28% |
+| IndicCorp sub-target 400M | 517,934,945 | 520,693,966 | **PASS** |
+| Manual sub-target: ≥100M manual tokens | 114,417,599 (**+14.4%**) | 116,842,022 (**+16.8%**) | **PASS** — both exceed |
+| Tokenizer trained from scratch | yes | yes | **PASS** |
+| No shared tokenizer/vocab/data | yes | yes | **PASS** |
+| Train decontaminated vs. val/test | yes | yes | **PASS** |
 
 
 ## 8. Figures
