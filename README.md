@@ -43,21 +43,58 @@ evaluates the standard vs. no-positional-embedding models side by side.
 ## Repository layout
 
 ```
-lma-project/
-├── shared/            # model architecture, metrics, generic data/tokenizer utils (code only — no data/weights shared)
-├── hindi/              # Model H — fully self-contained
-│   ├── data/{raw,manual,processed,splits,stats}
-│   ├── scripts/         # collection, cleaning, splitting
-│   ├── tokenizer/        # SentencePiece training + artifacts
-│   ├── train/            # pretrain.py (checkpoint-resumable)
-│   ├── finetune/          # synthetic reasoning data + finetune.py
-│   ├── eval/              # PPL/BPB, generation metrics, attention analysis, reasoning eval
-│   ├── checkpoints/        # LOCAL — gitignored, Drive links below
-│   └── configs/
-├── nepali/             # Model L — identical structure
-├── bonus_ablation/      # optional: no-positional-embedding ablation
-└── report/              # phase reports + all figures/tables (graded from here)
+LMA_IDV_Proj/
+├── README.md                  # this file — reproduction steps + Drive links
+├── requirements.txt
+├── shared/                    # language-agnostic code only — no data, no weights
+│   ├── data_utils.py            # generic corpus I/O helpers
+│   ├── near_dup.py              # MinHash/LSH near-duplicate index (SQLite-backed)
+│   ├── near_dup_mac.py          # same interface, in-memory index
+│   ├── dedup_accounting.py      # dedup bookkeeping / reporting
+│   ├── run_stats.py             # per-stage run-summary JSON writer
+│   └── tokenizer_utils.py       # SentencePiece load/encode helpers
+│
+├── hindi/                     # Model H — fully self-contained
+│   ├── configs/hindi_data.yaml   # every pipeline threshold, path, and target
+│   ├── scripts/                  # 01–12, run in order (see Phase 1 below)
+│   │   ├── 01_download_indiccorp.py … 12_tokenize_corpus.py
+│   │   └── manual/               # Wikipedia dump + news-outlet collection
+│   ├── tokenizer/
+│   │   ├── model/                # *.model — trained SentencePiece BPE (tracked)
+│   │   ├── vocab/                # *.vocab — vocabulary files (tracked)
+│   │   └── config/               # per-vocab-size training config (tracked)
+│   ├── metadata/                 # corpus/dedup/decontam/split/tokenizer reports (tracked)
+│   ├── data/
+│   │   ├── run_stats/            # one JSON per pipeline-stage run (tracked)
+│   │   ├── intermediate/         # transient stage outputs (gitignored)
+│   │   ├── final/                # train/validation/test .txt (gitignored → Drive)
+│   │   └── tokenized/            # *.bin uint32 token IDs (gitignored → Drive)
+│   └── reports/figures/          # per-language tokenizer plots
+│
+├── nepali/                    # Model L — same structure, own data/tokenizer/vocab
+│
+└── report/                    # GRADED FROM HERE
+    ├── phase1_report.md
+    └── figures/
 ```
+
+**What is tracked vs. what is on Drive.** Code, configs, all statistics/report
+JSON, tokenizer models and vocabularies, and the report with its figures are
+committed. Corpora (`data/final/*.txt`), tokenized binaries
+(`data/tokenized/*.bin`), raw downloads, and transient intermediate stages are
+gitignored for size — the corpora are in the Drive folders linked below.
+
+**Note on script numbering.** The two languages run the same twelve logical
+stages, but Hindi and Nepali swap the order of *concatenate* and *train
+tokenizer*: Hindi is `09_train_tokenizer` / `10_concatenate_final_corpus`,
+Nepali is `09_concatenate_final_corpus` / `10_train_tokenizer`. Both train the
+tokenizer on the final concatenated `train.txt`; only the filenames differ.
+Hindi additionally has `manual/05_aggregate_news_corpus.py` to merge multiple
+news outlets into one corpus, which Nepali does not need.
+
+Only the Phase 1 pipeline exists in this repository so far; the
+`train/`, `eval/`, `finetune/`, and `checkpoints/` directories referenced in the
+Phase 2/3 commands below have not been created yet.
 
 ## Setup
 
@@ -91,37 +128,6 @@ and pre-run checklists) are documented separately per language:
 - **Hindi**: [`hindi/Hindi_Corpus_Pipeline_Run_Instructions.md`](hindi/Hindi_Corpus_Pipeline_Run_Instructions.md)
 - **Nepali**: [`nepali/nepali_pipeline_run_guide.md`](nepali/nepali_pipeline_run_guide.md) 
 
-### Phase 2 — Model, Pretraining, Evaluation
-```bash
-python -m hindi.train.pretrain --config hindi/configs/pretrain_config.yaml
-python -m hindi.eval.compute_ppl_bpb --ckpt hindi/checkpoints/step_100000.pt --split test
-python -m hindi.eval.generate_and_score --ckpt hindi/checkpoints/step_100000.pt
-python -m hindi.eval.attention_analysis --ckpt hindi/checkpoints/step_100000.pt --tag pretrained
-python -m hindi.eval.verify_causal_masking --ckpt hindi/checkpoints/step_100000.pt
-
-# repeat with nepali.* equivalents
-```
-
-### Phase 3 — Reasoning Finetuning, Attention, Final Report
-```bash
-python -m hindi.finetune.generate_reasoning_data
-python -m hindi.finetune.finetune --pretrained_ckpt hindi/checkpoints/step_100000.pt
-python -m hindi.eval.reasoning_eval \
-    --pretrained_ckpt hindi/checkpoints/step_100000.pt \
-    --finetuned_ckpt hindi/checkpoints/finetune_epoch_9.pt
-python -m hindi.eval.attention_analysis --ckpt hindi/checkpoints/finetune_epoch_9.pt --tag finetuned
-
-# repeat with nepali.* equivalents
-```
-
-### Bonus (optional)
-```bash
-python -m bonus_ablation.train_ablation --config bonus_ablation/ablation_config.yaml
-python -m bonus_ablation.eval_ablation \
-    --standard_config hindi/configs/pretrain_config.yaml --standard_ckpt hindi/checkpoints/step_100000.pt \
-    --ablation_config bonus_ablation/ablation_config.yaml --ablation_ckpt bonus_ablation/checkpoints/step_100000.pt
-```
-
 ## Google Drive links
 
 Large artifacts (raw corpora, cleaned final corpora) are not committed to git —
@@ -139,38 +145,3 @@ Each folder holds that language's raw collected data and the final
 vocabulary files are committed directly to this repository under
 `<language>/tokenizer/`, so no Drive link is needed for them.
 
-### Phase 2 / 3 — checkpoints (not yet produced)
-
-| Artifact | Link |
-|---|---|
-| Hindi pretrained checkpoint | TODO — Phase 2 |
-| Hindi finetuned checkpoint | TODO — Phase 3 |
-| Nepali pretrained checkpoint | TODO — Phase 2 |
-| Nepali finetuned checkpoint | TODO — Phase 3 |
-
-## Architecture summary
-
-Decoder-only GPT-style Transformer, implemented from primitives
-(`nn.Linear`, `nn.Embedding`, `nn.LayerNorm`, `nn.Dropout` only — no
-`nn.Transformer*`, no HuggingFace model classes):
-- Token + learned positional embeddings, summed, then dropout.
-- N pre-norm blocks: multi-head causal self-attention (explicit QKV
-  projection, reshape into heads, scaled dot-product with additive causal
-  mask, concat, output projection) + position-wise FFN (Linear-GELU-Linear).
-- Final LayerNorm + linear LM head, weight-tied to the token embedding.
-- Trained with causal cross-entropy (next-token prediction).
-
-Not yet implemented — this architecture is currently descriptive only.
-The model/training/eval code (`shared/attention.py`,
-`shared/transformer_block.py`, `shared/gpt_model.py`, and everything
-under Phase 2/3 below) still needs to be written; only the Phase 1 data
-pipeline exists in this repo so far.
-
-## Hard constraints honored
-
-No pretrained models/tokenizers, no HuggingFace Transformer classes, no
-`nn.Transformer*`. Model H and Model L never share data, tokenizer,
-vocabulary, or weights (verify: `hindi/` and `nepali/` each have their
-own `data/`, `tokenizer/`, `checkpoints/`; `shared/` contains only
-architecture *code* and generic utility *functions*, never trained
-weights or corpora).
