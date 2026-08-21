@@ -33,8 +33,8 @@ manual target applies to the COMBINED manual corpus (Onlinekhabar + Khabarhub
 together) — neither source alone is ever required or expected to reach it
 on its own, and manual is never treated as if it were a single source
 alone anywhere in this script. This report is informational — there is no
-separate independent re-verification stage for Nepali (see
-13_analyze_tokenizer_and_corpus.py's module docstring).
+separate independent re-verification or post-hoc analysis stage for
+Nepali; this is the one authoritative token-count report.
 
 A manual source whose final/<source>_train.txt does not exist yet (e.g. not
 collected/decontaminated) contributes 0 tokens to manual_tokens rather than

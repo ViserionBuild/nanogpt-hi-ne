@@ -78,13 +78,7 @@ python nepali/scripts/12_tokenize_corpus.py \
     --tokenizer-model nepali/tokenizer/model/nepali_bpe_12000.model
 ```
 
-## 14. Analyze tokenizer + corpus
-
-```bash
-python nepali/scripts/13_analyze_tokenizer_and_corpus.py \
-    --config nepali/configs/nepali_data.yaml
-```
-
-Final, read-only analysis/report — reads the outputs of every prior
-stage and writes `tokenizer_corpus_analysis.json` / `.txt` (+ optional
-figures) to `nepali/metadata/`. Does not modify anything.
+This is the final step — `12_tokenize_corpus.py` is the last stage in the
+pipeline. There is no separate post-hoc analysis/verification stage;
+`10_train_tokenizer.py`'s own token-count report is the one authoritative
+check.

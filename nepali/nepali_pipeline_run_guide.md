@@ -17,7 +17,6 @@
 10. 10_train_tokenizer.py
 11. 11_evaluate_tokenizer.py
 12. 12_tokenize_corpus.py
-13. 13_analyze_tokenizer_and_corpus.py
 ```
 
 TWO SOURCES ONLY: `indiccorp` (public, AI4Bharat IndicCorpV2) and manual
@@ -258,16 +257,10 @@ python nepali/scripts/12_tokenize_corpus.py \
     --tokenizer-model nepali/tokenizer/model/nepali_bpe_12000.model
 ```
 
-## 14. Analyze tokenizer + corpus
-
-```bash
-python nepali/scripts/13_analyze_tokenizer_and_corpus.py \
-    --config nepali/configs/nepali_data.yaml
-```
-
-Final, read-only analysis/report — reads the outputs of every prior
-stage and writes `tokenizer_corpus_analysis.json` / `.txt` (+ optional
-figures) to `nepali/metadata/`. Does not modify anything.
+Step 13 (`12_tokenize_corpus.py`) is the final step in the pipeline.
+There is no separate post-hoc analysis/verification stage —
+`10_train_tokenizer.py`'s own token-count report is the one authoritative
+check.
 
 ## Pre-production checks
 
@@ -325,9 +318,6 @@ python nepali/scripts/11_evaluate_tokenizer.py --config nepali/configs/nepali_da
 
 # Then tokenize using ONLY the selected tokenizer (example: 32K)
 python nepali/scripts/12_tokenize_corpus.py --config nepali/configs/nepali_data.yaml --tokenizer-model nepali/tokenizer/model/nepali_bpe_32000.model
-
-# Final tokenizer + corpus analysis/report
-python nepali/scripts/13_analyze_tokenizer_and_corpus.py --config nepali/configs/nepali_data.yaml
 ```
 
 **Important:** `05_deduplicate_mac.py` and `shared/near_dup_mac.py` are the only Mac-specific components (the exact-duplicate logic is shared verbatim with `05_deduplicate.py`; only the near-duplicate index storage differs — in-memory vs. SQLite). The rest of the pipeline is unchanged between platforms.

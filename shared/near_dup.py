@@ -169,94 +169,6 @@ def line_band_keys(
     return lsh_band_keys(sig, bands, rows)
 
 
-def _exact_hash(line: str) -> str:
-    return hashlib.sha256(line.encode("utf-8")).hexdigest()
-
-
-def check_no_leakage(
-    train_path: str,
-    holdout_paths: dict,
-    near_duplicate: bool,
-    nd_cfg: dict,
-    logger=None,
-    progress_interval: int = 1_000_000,
-) -> dict:
-    """Independently re-verify (does NOT trust script 09's own report) that
-    ``train_path`` contains no exact or near-duplicate of any line in
-    ``holdout_paths`` (name -> file, e.g. {"validation": ..., "test": ...}).
-
-    Builds an in-memory exact-hash + LSH band-key index from the (small)
-    held-out files — validation.txt/test.txt are only 5%/5% of the
-    pre-selection pool, so their hash/band-key sets fit comfortably in RAM
-    — then streams ``train_path`` (which can be hundreds of millions of
-    lines) once, checking membership with plain dict lookups. This is the
-    same algorithm/guarantees as a SQLite-backed index, just without a
-    per-line synchronous DB round-trip for every line of the (much larger)
-    training corpus — that per-call overhead, multiplied by one exact-hash
-    query plus one query per LSH band per line, is what made this check
-    slow at full-corpus scale. Only the held-out index is materialized;
-    train_path is still streamed line-by-line, never loaded into RAM.
-
-    Returns a dict with exact/near-dup match counts per holdout name, plus
-    a couple of example offending lines (truncated) for debugging.
-    """
-    from shared.data_utils import iter_lines
-
-    minhasher = None
-    shingle_size = nd_cfg.get("shingle_size", 5)
-    bands = nd_cfg.get("lsh_bands", 4)
-    rows = nd_cfg.get("lsh_rows", 4)
-    if near_duplicate:
-        minhasher = MinHasher(
-            num_perm=nd_cfg.get("num_minhash_permutations", 16),
-            seed=nd_cfg.get("seed", 42),
-        )
-
-    exact_hashes: dict = {}
-    band_keys: dict = {}
-
-    for name, path in holdout_paths.items():
-        if not path or not os.path.exists(path):
-            continue
-        for line in iter_lines(path):
-            if not line:
-                continue
-            exact_hashes.setdefault(_exact_hash(line), name)
-            if near_duplicate:
-                for key in line_band_keys(line, minhasher, bands, rows, shingle_size):
-                    band_keys.setdefault(key, name)
-
-    exact_matches = {name: 0 for name in holdout_paths}
-    near_dup_matches = {name: 0 for name in holdout_paths}
-    example_offenders = []
-
-    if os.path.exists(train_path):
-        for idx, line in enumerate(iter_lines(train_path)):
-            if line:
-                source = exact_hashes.get(_exact_hash(line))
-                if source is not None:
-                    exact_matches[source] = exact_matches.get(source, 0) + 1
-                    if len(example_offenders) < 5:
-                        example_offenders.append({"type": "exact", "source": source, "text": line[:80]})
-                elif near_duplicate:
-                    for key in line_band_keys(line, minhasher, bands, rows, shingle_size):
-                        source = band_keys.get(key)
-                        if source is not None:
-                            near_dup_matches[source] = near_dup_matches.get(source, 0) + 1
-                            if len(example_offenders) < 5:
-                                example_offenders.append({"type": "near_dup", "source": source, "text": line[:80]})
-                            break
-
-            if logger and (idx + 1) % progress_interval == 0:
-                logger.info(f"  leakage check: {idx + 1:>12,} train lines scanned")
-
-    return {
-        "exact_matches": exact_matches,
-        "near_dup_matches": near_dup_matches,
-        "example_offenders": example_offenders,
-    }
-
-
 def signature_and_shingle_count(
     text: str, minhasher: MinHasher, shingle_size: int, shingle_type: str = "word",
 ):
@@ -408,9 +320,9 @@ class MinHashDedupIndex:
     def _blob_keys(band_keys: list) -> list:
         """Convert lsh_band_keys()'s hex-string band keys to compact 8-byte
         BLOBs for storage/lookup. lsh_band_keys() itself is left returning
-        hex strings unchanged (it's shared with 09_decontaminate.py /
-        15_verify_final_corpus.py's own hand-rolled TEXT-keyed tables) —
-        this conversion is purely internal to this index."""
+        hex strings unchanged (it's shared with every decontaminate.py
+        script's own hand-rolled TEXT-keyed tables) — this conversion is
+        purely internal to this index."""
         return [bytes.fromhex(bk) for bk in band_keys]
 
     def find_candidates(self, band_keys: list) -> list:
