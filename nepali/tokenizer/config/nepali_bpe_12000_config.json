@@ -1,0 +1,18 @@
+{
+  "vocab_size": 12000,
+  "requested_vocab_size": 12000,
+  "algorithm": "bpe",
+  "character_coverage": 0.9995,
+  "max_sentence_length": 16384,
+  "input_sentence_size": 5000000,
+  "training_time_seconds": 57.13,
+  "input_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/final/train.txt",
+  "model_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/tokenizer/model/nepali_bpe_12000.model",
+  "vocab_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/tokenizer/vocab/nepali_bpe_12000.vocab",
+  "special_tokens": {
+    "<pad>": 0,
+    "<unk>": 1,
+    "<bos>": 2,
+    "<eos>": 3
+  }
+}

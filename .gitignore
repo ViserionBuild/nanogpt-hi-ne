@@ -23,19 +23,18 @@
 */data/intermediate/*
 */data/final/*.txt
 */data/tokenized/*.bin
-*/tokenizer/model/*
-*/tokenizer/vocab/*
-*/tokenizer/config/*
-*/reports/figures/*
 */reports/tables/*
 !*/data/intermediate/.gitkeep
 !*/data/final/.gitkeep
 !*/data/tokenized/.gitkeep
-!*/tokenizer/model/.gitkeep
-!*/tokenizer/vocab/.gitkeep
-!*/tokenizer/config/.gitkeep
-!*/reports/figures/.gitkeep
 !*/reports/tables/.gitkeep
+
+# Tokenizer artifacts ARE required Phase 1 deliverables (spec 1.3, items 6 & 7:
+# "Vocabulary files (one per language)", "Tokenizer model files (one per
+# language)"). They are small (~8MB total for every trained vocab size across
+# both languages), so they are committed directly rather than linked from Drive.
+# Figures under */reports/figures/ are likewise graded artifacts and tracked.
+
 
 nepali/data/intermediate/*
 nepali/data/final/*.txt

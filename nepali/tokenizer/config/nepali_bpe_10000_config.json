@@ -1,0 +1,18 @@
+{
+  "vocab_size": 10000,
+  "requested_vocab_size": 10000,
+  "algorithm": "bpe",
+  "character_coverage": 0.9995,
+  "max_sentence_length": 16384,
+  "input_sentence_size": 5000000,
+  "training_time_seconds": 57.25,
+  "input_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/nepali/data/final/train.txt",
+  "model_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/nepali/tokenizer/model/nepali_bpe_10000.model",
+  "vocab_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/nepali/tokenizer/vocab/nepali_bpe_10000.vocab",
+  "special_tokens": {
+    "<pad>": 0,
+    "<unk>": 1,
+    "<bos>": 2,
+    "<eos>": 3
+  }
+}

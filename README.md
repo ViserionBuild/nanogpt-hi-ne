@@ -122,16 +122,31 @@ python -m bonus_ablation.eval_ablation \
     --ablation_config bonus_ablation/ablation_config.yaml --ablation_ckpt bonus_ablation/checkpoints/step_100000.pt
 ```
 
-## Google Drive links (fill in before submission)
+## Google Drive links
+
+Large artifacts (raw corpora, cleaned final corpora) are not committed to git —
+see `.gitignore`. They live in the per-language Drive folders below.
+
+### Phase 1 — datasets
 
 | Artifact | Link |
 |---|---|
-| Hindi raw/manual corpus (if large) | TODO |
-| Hindi pretrained checkpoint | TODO |
-| Hindi finetuned checkpoint | TODO |
-| Nepali raw/manual corpus (if large) | TODO |
-| Nepali pretrained checkpoint | TODO |
-| Nepali finetuned checkpoint | TODO |
+| **Hindi (Model H)** — raw + final corpus | https://drive.google.com/drive/folders/1q2lJ2yE4S5MIJbcyKl9PsZo2VQP9qs7C?usp=sharing |
+| **Nepali (Model L)** — raw + final corpus | https://drive.google.com/drive/folders/1YbEHnHQ9fM2apbD4US284-_USKcwmIz4?usp=sharing |
+
+Each folder holds that language's raw collected data and the final
+`train.txt` / `validation.txt` / `test.txt` splits. Tokenizer model and
+vocabulary files are committed directly to this repository under
+`<language>/tokenizer/`, so no Drive link is needed for them.
+
+### Phase 2 / 3 — checkpoints (not yet produced)
+
+| Artifact | Link |
+|---|---|
+| Hindi pretrained checkpoint | TODO — Phase 2 |
+| Hindi finetuned checkpoint | TODO — Phase 3 |
+| Nepali pretrained checkpoint | TODO — Phase 2 |
+| Nepali finetuned checkpoint | TODO — Phase 3 |
 
 ## Architecture summary
 

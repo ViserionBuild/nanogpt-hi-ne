@@ -1,0 +1,18 @@
+{
+  "vocab_size": 12000,
+  "requested_vocab_size": 12000,
+  "algorithm": "bpe",
+  "character_coverage": 0.9995,
+  "max_sentence_length": 16384,
+  "input_sentence_size": 5000000,
+  "training_time_seconds": 60.88,
+  "input_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/final/train.txt",
+  "model_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/tokenizer/model/hindi_bpe_12000.model",
+  "vocab_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/tokenizer/vocab/hindi_bpe_12000.vocab",
+  "special_tokens": {
+    "<pad>": 0,
+    "<unk>": 1,
+    "<bos>": 2,
+    "<eos>": 3
+  }
+}
