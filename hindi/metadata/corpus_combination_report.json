@@ -1,0 +1,68 @@
+{
+  "note": "Word/line/character counts only — this pipeline has a single tokenizer (script 09), so no BPE token counts exist yet at this stage. See metadata/token_count_check.json (written by script 10) for actual BPE content-token counts per source and vs. targets.",
+  "manual_composition": [
+    "wikipedia",
+    "news"
+  ],
+  "sources": {
+    "indiccorp": {
+      "input_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/decontaminated/indiccorp_train_decontam.txt",
+      "output_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/final/indiccorp_train.txt",
+      "lines": 7169358,
+      "words": 402017069,
+      "characters": 2048058021,
+      "present": true
+    },
+    "wikipedia": {
+      "input_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/decontaminated/wikipedia_train_decontam.txt",
+      "output_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/final/wikipedia_train.txt",
+      "lines": 575485,
+      "words": 39572783,
+      "characters": 212779806,
+      "present": true
+    },
+    "news": {
+      "input_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/decontaminated/news_train_decontam.txt",
+      "output_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/final/news_train.txt",
+      "lines": 85172,
+      "words": 41801090,
+      "characters": 218536919,
+      "present": true
+    }
+  },
+  "manual_combined": {
+    "output_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/final/manual_train.txt",
+    "composition": [
+      "wikipedia",
+      "news"
+    ],
+    "lines": 660657,
+    "words": 81373873,
+    "characters": 431316725
+  },
+  "combined": {
+    "output_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/final/train.txt",
+    "composition": [
+      "indiccorp",
+      "manual"
+    ],
+    "lines": 7830015,
+    "words": 483390942,
+    "characters": 2479374746
+  },
+  "line_count_reconciliation": {
+    "indiccorp_lines": 7169358,
+    "manual_lines": 660657,
+    "train_txt_lines": 7830015,
+    "reconciled": true
+  },
+  "targets": {
+    "note": "Informational only — enforced/measured by script 09, not here.",
+    "indiccorp_target_tokens": 400000000,
+    "manual_target_tokens": 100000000,
+    "total_target_tokens": 500000000,
+    "manual_min_fraction": 0.2
+  },
+  "missing_sources": [],
+  "subsampling_applied": false
+}

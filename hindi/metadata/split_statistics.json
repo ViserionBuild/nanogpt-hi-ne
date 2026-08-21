@@ -1,0 +1,94 @@
+{
+  "seed": 42,
+  "method": "hash",
+  "hash": "blake2b(seed:line_index) normalized to [0,1)",
+  "ratios": {
+    "train": 0.9,
+    "validation": 0.05,
+    "test": 0.05
+  },
+  "note": "This split runs BEFORE the final tokenizer is trained, corpus selection, and decontamination. validation.txt/test.txt are combined across all three sources and frozen; {source}_train_candidate.txt files still require decontamination (script 08) before any tokenizer or selection step reads them.",
+  "public_source": "indiccorp",
+  "manual_sources": [
+    "wikipedia",
+    "news"
+  ],
+  "source_enabled": {
+    "indiccorp": true,
+    "wikipedia": true,
+    "news": true
+  },
+  "sources": {
+    "indiccorp": {
+      "input_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/deduplicated/indiccorp_hi_deduplicated.txt",
+      "train_candidate_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/split/indiccorp_train_candidate.txt",
+      "total_lines": 8520630,
+      "counts": {
+        "train_candidate": 7668144,
+        "validation": 426635,
+        "test": 425851
+      },
+      "characters": {
+        "train_candidate": 2195855264,
+        "validation": 122430771,
+        "test": 121817876
+      },
+      "approx_words": {
+        "train_candidate": 431085319,
+        "validation": 24034123,
+        "test": 23911942
+      }
+    },
+    "wikipedia": {
+      "input_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/deduplicated/wikipedia_hi_deduplicated.txt",
+      "train_candidate_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/split/wikipedia_train_candidate.txt",
+      "total_lines": 672411,
+      "counts": {
+        "train_candidate": 605562,
+        "validation": 33341,
+        "test": 33508
+      },
+      "characters": {
+        "train_candidate": 222231783,
+        "validation": 12248173,
+        "test": 12358040
+      },
+      "approx_words": {
+        "train_candidate": 41331925,
+        "validation": 2276940,
+        "test": 2297222
+      }
+    },
+    "news": {
+      "input_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/deduplicated/news_hi_deduplicated.txt",
+      "train_candidate_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/split/news_train_candidate.txt",
+      "total_lines": 147487,
+      "counts": {
+        "train_candidate": 132808,
+        "validation": 7252,
+        "test": 7427
+      },
+      "characters": {
+        "train_candidate": 331081956,
+        "validation": 18247807,
+        "test": 18546200
+      },
+      "approx_words": {
+        "train_candidate": 63025142,
+        "validation": 3474781,
+        "test": 3528562
+      }
+    }
+  },
+  "combined": {
+    "validation": {
+      "file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/final/validation.txt",
+      "lines": 467228
+    },
+    "test": {
+      "file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/final/test.txt",
+      "lines": 466786
+    },
+    "train_candidate_lines": 8406514
+  }
+}

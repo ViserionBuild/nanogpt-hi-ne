@@ -1,0 +1,66 @@
+{
+  "enabled": true,
+  "config": {
+    "exact_match": true,
+    "near_duplicate": true,
+    "validation": true,
+    "test": true,
+    "near_duplicate_config": {
+      "shingle_size": 5,
+      "num_minhash_permutations": 16,
+      "lsh_bands": 4,
+      "lsh_rows": 4,
+      "seed": 42
+    }
+  },
+  "held_out": {
+    "validation_examples": 467228,
+    "test_examples": 466786,
+    "validation_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/final/validation.txt",
+    "test_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/final/test.txt"
+  },
+  "sources": {
+    "indiccorp": {
+      "input_lines": 7668144,
+      "exact_removed": 0,
+      "near_dup_removed": 498786,
+      "kept": 7169358,
+      "kept_words": 402017069
+    },
+    "wikipedia": {
+      "input_lines": 605562,
+      "exact_removed": 0,
+      "near_dup_removed": 30077,
+      "kept": 575485,
+      "kept_words": 39572783
+    },
+    "news": {
+      "input_lines": 132808,
+      "exact_removed": 0,
+      "near_dup_removed": 47636,
+      "kept": 85172,
+      "kept_words": 41801090
+    }
+  },
+  "totals": {
+    "exact_matches_removed": 0,
+    "near_duplicates_removed": 576499,
+    "final_training_lines": 7830015,
+    "final_training_words": 483390942
+  },
+  "public_source": "indiccorp",
+  "manual_sources": [
+    "wikipedia",
+    "news"
+  ],
+  "source_enabled": {
+    "indiccorp": true,
+    "wikipedia": true,
+    "news": true
+  },
+  "outputs": {
+    "indiccorp": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/decontaminated/indiccorp_train_decontam.txt",
+    "wikipedia": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/decontaminated/wikipedia_train_decontam.txt",
+    "news": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/decontaminated/news_train_decontam.txt"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "tokenizer_model": "tokenizer/model/hindi_bpe_12000.model",
+  "vocab_size": 12000,
+  "dtype": "uint32",
+  "add_bos": true,
+  "add_eos": true,
+  "special_token_ids": {
+    "pad": 0,
+    "unk": 1,
+    "bos": 2,
+    "eos": 3
+  },
+  "token_counts": {
+    "train": {
+      "lines": null,
+      "content_tokens": null,
+      "bos_tokens": null,
+      "eos_tokens": null,
+      "stored_tokens": 648012574,
+      "from_existing_bin": true
+    },
+    "validation": {
+      "lines": null,
+      "content_tokens": null,
+      "bos_tokens": null,
+      "eos_tokens": null,
+      "stored_tokens": 39781899,
+      "from_existing_bin": true
+    },
+    "test": {
+      "lines": 466786,
+      "content_tokens": 38769359,
+      "bos_tokens": 466786,
+      "eos_tokens": 466786,
+      "stored_tokens": 39702931
+    }
+  },
+  "source_breakdown": {
+    "indiccorp_tokens": 517934945,
+    "wikipedia_tokens": 59965651,
+    "news_tokens": 54451948,
+    "manual_tokens": 114417599,
+    "manual_fraction": 0.1809,
+    "manual_min_fraction": 0.2,
+    "invariant_ok": true
+  },
+  "total_content_tokens": 38769359,
+  "total_bos_tokens": 466786,
+  "total_eos_tokens": 466786,
+  "total_stored_tokens": 727497404,
+  "train_content_tokens": 632352544,
+  "target_content_tokens": 500000000,
+  "indiccorp_target_tokens": 400000000,
+  "manual_target_tokens": 100000000,
+  "total_target_tokens": 500000000,
+  "target_unit": "bpe_content_tokens",
+  "difference_from_target": 132352544,
+  "percentage_from_target": 26.4705,
+  "note": "target_content_tokens/difference_from_target/percentage_from_target compare TRAIN-split CONTENT tokens (BOS/EOS excluded, validation/test excluded) against the COMBINED total_target_tokens (indiccorp_target_tokens + manual_target_tokens) — train.txt is IndicCorp + Wikipedia + News together, never IndicCorp alone."
+}

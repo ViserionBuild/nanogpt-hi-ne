@@ -1,0 +1,59 @@
+{
+  "tokenizer_model": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/tokenizer/model/hindi_bpe_12000.model",
+  "vocab_size": 12000,
+  "source_files": {
+    "indiccorp": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/final/indiccorp_train.txt",
+    "wikipedia": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/final/wikipedia_train.txt",
+    "news": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/final/news_train.txt",
+    "manual": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/final/manual_train.txt",
+    "combined": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/final/train.txt"
+  },
+  "manual_composition": [
+    "wikipedia",
+    "news"
+  ],
+  "indiccorp_tokens": 517934945,
+  "wikipedia_tokens": 59965651,
+  "news_tokens": 54451948,
+  "manual_tokens": 114417599,
+  "manual_file_tokens": 114417599,
+  "total_tokens": 632352544,
+  "manual_sum_check": {
+    "wikipedia_plus_news": 114417599,
+    "manual_train_txt": 114417599,
+    "passed": true
+  },
+  "sum_check": {
+    "indiccorp_plus_manual": 632352544,
+    "total": 632352544,
+    "passed": true
+  },
+  "targets": {
+    "indiccorp_target_tokens": 400000000,
+    "manual_target_tokens": 100000000,
+    "total_target_tokens": 500000000,
+    "target_unit": "bpe_content_tokens",
+    "note": "manual_target_tokens applies to the COMBINED manual corpus (wikipedia + news), not to any single manual source."
+  },
+  "shortfall": {
+    "indiccorp_shortfall_tokens": 0,
+    "manual_shortfall_tokens": 0,
+    "total_shortfall_tokens": 0,
+    "note": "Shortfalls are reported only — this pipeline trains exactly ONE final tokenizer and never retrains a second one to compensate for a shortfall."
+  },
+  "meets_indiccorp_target": true,
+  "meets_manual_target": true,
+  "meets_total_target": true,
+  "manual_fraction": 0.18094,
+  "manual_min_fraction": 0.2,
+  "meets_manual_fraction_requirement": false,
+  "counting_method": "sentencepiece_bpe_content_tokens (EncodeAsIds, no BOS/EOS)",
+  "fertility": {
+    "indiccorp": 1.2883,
+    "wikipedia": 1.5153,
+    "news": 1.3026,
+    "manual": 1.4061,
+    "combined": 1.3082
+  },
+  "generated_at_utc": "2026-08-21T04:11:46.174156+00:00"
+}

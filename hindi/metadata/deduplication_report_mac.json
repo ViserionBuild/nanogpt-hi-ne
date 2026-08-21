@@ -1,0 +1,132 @@
+{
+  "input_lines": 9840326,
+  "exact_duplicates_removed": 242381,
+  "near_duplicates_removed": 257417,
+  "near_duplicate_breakdown": {
+    "near_duplicate": 205718,
+    "sub_document_duplicate": 51699
+  },
+  "total_removed": 499798,
+  "final_lines": 9340528,
+  "estimated_words": 594965956,
+  "removal_percentage": 5.0791,
+  "algorithm": {
+    "exact": {
+      "method": "sha256",
+      "enabled": true
+    },
+    "near_duplicate": {
+      "enabled": true,
+      "shingle_type": "word",
+      "shingle_size": 3,
+      "num_minhash_permutations": 32,
+      "lsh_bands": 8,
+      "lsh_rows": 4,
+      "similarity_threshold": 0.4,
+      "sub_document_overlap_threshold": 0.85,
+      "sub_document_length_ratio_max": 0.7,
+      "min_document_words": 4,
+      "seed": 42,
+      "index": "in_memory (Mac)"
+    }
+  },
+  "input_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/quality/indiccorp_hi_quality.txt",
+  "output_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/deduplicated/indiccorp_hi_deduplicated.txt",
+  "cross_source": true,
+  "source_precedence": [
+    "wikipedia",
+    "news",
+    "indiccorp"
+  ],
+  "source_precedence_rationale": "Wikipedia > News > IndicCorp. Manual sources (wikipedia/news) are deduplicated BEFORE IndicCorp (public); when identical/near-identical text exists in both a manual source and IndicCorp, the manual copy survives, protecting the project's >=20% manual-content-token requirement (config manual.min_fraction / manual.enforce). Within manual sources: Wikipedia before News because Wikipedia is a single curated, already-deduplicated-by-construction source, while News aggregates up to 10 outlets that plausibly syndicate overlapping content — see 05_deduplicate.py's module docstring for the full rationale, including the alternative ordering considered and rejected.",
+  "exact_duplicates_removed_cross_source": 43681,
+  "sources": {
+    "wikipedia": {
+      "input_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/quality/wikipedia_hi_quality.txt",
+      "output_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/deduplicated/wikipedia_hi_deduplicated.txt",
+      "input_lines": 820086,
+      "exact_duplicates_removed": 78851,
+      "exact_duplicates_removed_cross_source": 0,
+      "near_duplicates_removed": 61657,
+      "sub_document_duplicates_removed": 7167,
+      "final_lines": 672411
+    },
+    "news": {
+      "input_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/quality/news_hi_quality.txt",
+      "output_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/deduplicated/news_hi_deduplicated.txt",
+      "input_lines": 277305,
+      "exact_duplicates_removed": 111693,
+      "exact_duplicates_removed_cross_source": 10,
+      "near_duplicates_removed": 14568,
+      "sub_document_duplicates_removed": 3557,
+      "final_lines": 147487
+    },
+    "indiccorp": {
+      "input_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/quality/indiccorp_hi_quality.txt",
+      "output_file": "/Users/hritikranjan/Desktop/ Folder/VIKASH/hindi_for_mac/hindi/data/intermediate/deduplicated/indiccorp_hi_deduplicated.txt",
+      "input_lines": 8742935,
+      "exact_duplicates_removed": 51837,
+      "exact_duplicates_removed_cross_source": 43671,
+      "near_duplicates_removed": 129493,
+      "sub_document_duplicates_removed": 40975,
+      "final_lines": 8520630
+    }
+  },
+  "candidate_stats": {
+    "total_scanned": 9597945,
+    "eligible_documents": 9525314,
+    "short_lines_skipped": 72631,
+    "candidates_generated": 1761332,
+    "documents_with_candidates": 321668,
+    "comparisons_performed": 1372489,
+    "max_candidates_single_doc": 402,
+    "avg_candidates_per_eligible_doc": 0.1849,
+    "throughput_lines_per_sec": 7853.64,
+    "elapsed_seconds": 1222.1,
+    "index_memory_report": {
+      "kept_lines_indexed": 9267897,
+      "unique_band_keys": 74077400,
+      "band_postings_entries": 74143176
+    },
+    "peak_rss_mb": 12631.84375,
+    "by_source": {
+      "wikipedia": {
+        "eligible_documents": 730027,
+        "candidates_generated": 215763,
+        "documents_with_candidates": 72644,
+        "comparisons_performed": 174702,
+        "max_candidates_single_doc": 78,
+        "avg_candidates_per_eligible_doc": 0.2956
+      },
+      "news": {
+        "eligible_documents": 165523,
+        "candidates_generated": 1047572,
+        "documents_with_candidates": 25018,
+        "comparisons_performed": 723606,
+        "max_candidates_single_doc": 402,
+        "avg_candidates_per_eligible_doc": 6.3289
+      },
+      "indiccorp": {
+        "eligible_documents": 8629764,
+        "candidates_generated": 497997,
+        "documents_with_candidates": 224006,
+        "comparisons_performed": 474181,
+        "max_candidates_single_doc": 203,
+        "avg_candidates_per_eligible_doc": 0.0577
+      }
+    }
+  },
+  "benchmark": {
+    "sample_lines_cap": null,
+    "total_elapsed_seconds": 1309.11,
+    "overall_lines_per_second": 7516.8
+  },
+  "manual_totals": {
+    "sources": [
+      "wikipedia",
+      "news"
+    ],
+    "final_lines": 819898,
+    "input_lines": 1097391
+  }
+}
