@@ -1,0 +1,58 @@
+{
+  "tokenizer_model": "nepali/tokenizer/model/nepali_bpe_12000.model",
+  "vocab_size": 12000,
+  "dtype": "uint32",
+  "add_bos": true,
+  "add_eos": true,
+  "special_token_ids": {
+    "pad": 0,
+    "unk": 1,
+    "bos": 2,
+    "eos": 3
+  },
+  "token_counts": {
+    "train": {
+      "lines": 10981726,
+      "content_tokens": 637535988,
+      "bos_tokens": 10981726,
+      "eos_tokens": 10981726,
+      "stored_tokens": 659499440
+    },
+    "validation": {
+      "lines": 692772,
+      "content_tokens": 42326843,
+      "bos_tokens": 692772,
+      "eos_tokens": 692772,
+      "stored_tokens": 43712387
+    },
+    "test": {
+      "lines": 691877,
+      "content_tokens": 42396121,
+      "bos_tokens": 691877,
+      "eos_tokens": 691877,
+      "stored_tokens": 43779875
+    }
+  },
+  "source_breakdown": {
+    "indiccorp_tokens": 520693966,
+    "onlinekhabar_tokens": 70435290,
+    "khabarhub_tokens": 46406732,
+    "manual_tokens": 116842022,
+    "manual_fraction": 0.1833,
+    "manual_min_fraction": 0.2,
+    "sum_check_passed": true
+  },
+  "total_content_tokens": 722258952,
+  "total_bos_tokens": 12366375,
+  "total_eos_tokens": 12366375,
+  "total_stored_tokens": 746991702,
+  "train_content_tokens": 637535988,
+  "target_content_tokens": 500000000,
+  "indiccorp_target_tokens": 400000000,
+  "manual_target_tokens": 100000000,
+  "total_target_tokens": 500000000,
+  "target_unit": "bpe_content_tokens",
+  "difference_from_target": 137535988,
+  "percentage_from_target": 27.5072,
+  "note": "target_content_tokens/difference_from_target/percentage_from_target compare TRAIN-split CONTENT tokens (BOS/EOS excluded, validation/test excluded) against the COMBINED total_target_tokens (indiccorp_target_tokens + manual_target_tokens) — train.txt is IndicCorp + Onlinekhabar + Khabarhub together, never IndicCorp alone."
+}

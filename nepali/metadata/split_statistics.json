@@ -1,0 +1,94 @@
+{
+  "seed": 42,
+  "method": "hash",
+  "hash": "blake2b(seed:line_index) normalized to [0,1)",
+  "ratios": {
+    "train": 0.9,
+    "validation": 0.05,
+    "test": 0.05
+  },
+  "note": "This split runs BEFORE the final tokenizer is trained, corpus selection, and decontamination. validation.txt/test.txt are combined across all three sources and frozen; {source}_train_candidate.txt files still require decontamination (script 08) before any tokenizer or selection step reads them.",
+  "public_source": "indiccorp",
+  "manual_sources": [
+    "onlinekhabar",
+    "khabarhub"
+  ],
+  "source_enabled": {
+    "indiccorp": true,
+    "onlinekhabar": true,
+    "khabarhub": true
+  },
+  "sources": {
+    "indiccorp": {
+      "input_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/deduplicated/indiccorp_ne_deduplicated.txt",
+      "train_candidate_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/split/indiccorp_train_candidate.txt",
+      "total_lines": 13329271,
+      "counts": {
+        "train_candidate": 11996006,
+        "validation": 667254,
+        "test": 666011
+      },
+      "characters": {
+        "train_candidate": 2613608348,
+        "validation": 144931644,
+        "test": 144845842
+      },
+      "approx_words": {
+        "train_candidate": 406427502,
+        "validation": 22533018,
+        "test": 22522591
+      }
+    },
+    "onlinekhabar": {
+      "input_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/deduplicated/onlinekhabar_ne_deduplicated.txt",
+      "train_candidate_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/split/onlinekhabar_train_candidate.txt",
+      "total_lines": 282629,
+      "counts": {
+        "train_candidate": 254527,
+        "validation": 13964,
+        "test": 14138
+      },
+      "characters": {
+        "train_candidate": 487573794,
+        "validation": 26907171,
+        "test": 27105514
+      },
+      "approx_words": {
+        "train_candidate": 76334731,
+        "validation": 4213241,
+        "test": 4241089
+      }
+    },
+    "khabarhub": {
+      "input_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/deduplicated/khabarhub_ne_deduplicated.txt",
+      "train_candidate_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/split/khabarhub_train_candidate.txt",
+      "total_lines": 233910,
+      "counts": {
+        "train_candidate": 210628,
+        "validation": 11554,
+        "test": 11728
+      },
+      "characters": {
+        "train_candidate": 315773480,
+        "validation": 17301457,
+        "test": 17504805
+      },
+      "approx_words": {
+        "train_candidate": 48500126,
+        "validation": 2659703,
+        "test": 2689230
+      }
+    }
+  },
+  "combined": {
+    "validation": {
+      "file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/final/validation.txt",
+      "lines": 692772
+    },
+    "test": {
+      "file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/final/test.txt",
+      "lines": 691877
+    },
+    "train_candidate_lines": 12461161
+  }
+}

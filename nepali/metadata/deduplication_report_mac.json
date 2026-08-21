@@ -1,0 +1,89 @@
+{
+  "input_lines": 15363428,
+  "exact_duplicates_removed": 323984,
+  "near_duplicates_removed": 1193634,
+  "near_duplicate_breakdown": {
+    "near_duplicate": 895595,
+    "sub_document_duplicate": 298039
+  },
+  "total_removed": 1517618,
+  "final_lines": 13845810,
+  "estimated_words": 590121231,
+  "removal_percentage": 9.8781,
+  "algorithm": {
+    "exact": {
+      "method": "sha256",
+      "enabled": true
+    },
+    "near_duplicate": {
+      "shingle_type": "word",
+      "shingle_size": 3,
+      "num_minhash_permutations": 32,
+      "lsh_bands": 8,
+      "lsh_rows": 4,
+      "similarity_threshold": 0.4,
+      "sub_document_overlap_threshold": 0.85,
+      "sub_document_length_ratio_max": 0.7,
+      "min_document_words": 4,
+      "seed": 42,
+      "enabled": true,
+      "index": "in_memory (Mac)"
+    }
+  },
+  "input_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/quality/indiccorp_ne_quality.txt",
+  "output_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/deduplicated/indiccorp_ne_deduplicated.txt",
+  "cross_source": true,
+  "source_precedence": [
+    "onlinekhabar",
+    "khabarhub",
+    "indiccorp"
+  ],
+  "exact_duplicates_removed_cross_source": 61,
+  "sources": {
+    "onlinekhabar": {
+      "input_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/quality/onlinekhabar_ne_quality.txt",
+      "output_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/deduplicated/onlinekhabar_ne_deduplicated.txt",
+      "input_lines": 288229,
+      "exact_duplicates_removed": 1720,
+      "exact_duplicates_removed_cross_source": 0,
+      "near_duplicates_removed": 3661,
+      "sub_document_duplicates_removed": 219,
+      "final_lines": 282629
+    },
+    "khabarhub": {
+      "input_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/quality/khabarhub_ne_quality.txt",
+      "output_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/deduplicated/khabarhub_ne_deduplicated.txt",
+      "input_lines": 254103,
+      "exact_duplicates_removed": 606,
+      "exact_duplicates_removed_cross_source": 1,
+      "near_duplicates_removed": 18943,
+      "sub_document_duplicates_removed": 644,
+      "final_lines": 233910
+    },
+    "indiccorp": {
+      "input_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/quality/indiccorp_ne_quality.txt",
+      "output_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/deduplicated/indiccorp_ne_deduplicated.txt",
+      "input_lines": 14821096,
+      "exact_duplicates_removed": 321658,
+      "exact_duplicates_removed_cross_source": 60,
+      "near_duplicates_removed": 872991,
+      "sub_document_duplicates_removed": 297176,
+      "final_lines": 13329271
+    }
+  },
+  "benchmark": {
+    "candidates_generated": 1922149,
+    "comparisons_performed": 1810324,
+    "lines_evaluated": 14745053,
+    "avg_candidates_per_document": 0.1304,
+    "index_memory_report": {
+      "kept_lines_indexed": 13551419,
+      "unique_band_keys": 108300650,
+      "band_postings_entries": 108411352
+    },
+    "peak_rss_mb": 8731.703125,
+    "sample_lines_cap": null,
+    "total_elapsed_seconds": 2725.32,
+    "overall_lines_per_second": 5637.29
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "note": "Word/line/character counts only — this pipeline has a single tokenizer (script 10), so no BPE token counts exist yet at this stage. See metadata/token_count_check.json (written by script 11) for actual BPE content-token counts per source and vs. targets.",
+  "manual_composition": [
+    "onlinekhabar",
+    "khabarhub"
+  ],
+  "sources": {
+    "indiccorp": {
+      "input_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/decontaminated/indiccorp_train_decontam.txt",
+      "output_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/final/indiccorp_train.txt",
+      "lines": 10656979,
+      "words": 355278674,
+      "characters": 2278620235,
+      "present": true
+    },
+    "onlinekhabar": {
+      "input_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/decontaminated/onlinekhabar_train_decontam.txt",
+      "output_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/final/onlinekhabar_train.txt",
+      "lines": 175998,
+      "words": 50048987,
+      "characters": 318983047,
+      "present": true
+    },
+    "khabarhub": {
+      "input_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/intermediate/decontaminated/khabarhub_train_decontam.txt",
+      "output_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/final/khabarhub_train.txt",
+      "lines": 148749,
+      "words": 33007488,
+      "characters": 214577259,
+      "present": true
+    }
+  },
+  "manual_combined": {
+    "output_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/final/manual_train.txt",
+    "composition": [
+      "onlinekhabar",
+      "khabarhub"
+    ],
+    "lines": 324747,
+    "words": 83056475,
+    "characters": 533560306
+  },
+  "combined": {
+    "output_file": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/final/train.txt",
+    "composition": [
+      "indiccorp",
+      "manual"
+    ],
+    "lines": 10981726,
+    "words": 438335149,
+    "characters": 2812180541
+  },
+  "missing_sources": [],
+  "subsampling_applied": false
+}

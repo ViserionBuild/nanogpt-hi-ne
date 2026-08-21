@@ -1,0 +1,11 @@
+{
+  "indiccorp_content_tokens": 520693966,
+  "manual_content_tokens": 116842022,
+  "manual_sources": {
+    "onlinekhabar": 70435290,
+    "khabarhub": 46406732
+  },
+  "total_content_tokens": 637535988,
+  "test_content_tokens": 42396121,
+  "note": "BOS/EOS excluded. manual_content_tokens = sum of manual_sources. test_content_tokens is test.txt's own count (combined across sources, not part of total_content_tokens)."
+}

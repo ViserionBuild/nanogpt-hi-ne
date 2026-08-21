@@ -1,0 +1,51 @@
+{
+  "tokenizer_model": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/tokenizer/model/nepali_bpe_12000.model",
+  "vocab_size": 12000,
+  "source_files": {
+    "indiccorp": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/final/indiccorp_train.txt",
+    "onlinekhabar": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/final/onlinekhabar_train.txt",
+    "khabarhub": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/final/khabarhub_train.txt",
+    "combined": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/data/final/train.txt"
+  },
+  "manual_composition": [
+    "onlinekhabar",
+    "khabarhub"
+  ],
+  "indiccorp_tokens": 520693966,
+  "onlinekhabar_tokens": 70435290,
+  "khabarhub_tokens": 46406732,
+  "manual_tokens": 116842022,
+  "total_tokens": 637535988,
+  "sum_check": {
+    "indiccorp_plus_manual": 637535988,
+    "total": 637535988,
+    "passed": true
+  },
+  "targets": {
+    "indiccorp_target_tokens": 400000000,
+    "manual_target_tokens": 100000000,
+    "total_target_tokens": 500000000,
+    "target_unit": "bpe_content_tokens",
+    "note": "manual_target_tokens applies to the COMBINED manual corpus (onlinekhabar + khabarhub), not to any single manual source."
+  },
+  "shortfall": {
+    "indiccorp_shortfall_tokens": 0,
+    "manual_shortfall_tokens": 0,
+    "total_shortfall_tokens": 0,
+    "note": "Shortfalls are reported only — this pipeline trains exactly ONE final tokenizer and never retrains a second one to compensate for a shortfall."
+  },
+  "meets_indiccorp_target": true,
+  "meets_manual_target": true,
+  "meets_total_target": true,
+  "manual_fraction": 0.183271,
+  "manual_min_fraction": 0.2,
+  "meets_manual_fraction_requirement": false,
+  "counting_method": "sentencepiece_bpe_content_tokens (EncodeAsIds, no BOS/EOS)",
+  "fertility": {
+    "indiccorp": 1.4656,
+    "onlinekhabar": 1.4073,
+    "khabarhub": 1.4059,
+    "combined": 1.4544
+  },
+  "generated_at_utc": "2026-08-20T20:54:08.180955+00:00"
+}

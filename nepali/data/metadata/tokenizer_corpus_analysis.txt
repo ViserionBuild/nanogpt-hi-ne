@@ -1,0 +1,114 @@
+============================================================
+FINAL TOKENIZER + CORPUS ANALYSIS
+NEPALI
+============================================================
+
+TOKENIZER
+  Model:              /home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/tokenizer/model/nepali_bpe_12000.model
+  Vocabulary:         12000
+  Actual vocabulary:  12000
+  Character coverage: 0.9995
+  Byte fallback:      True
+
+CORPUS
+  Train lines:            10,981,726
+  Train words:            438,335,149
+  Train characters:       2,812,180,541
+  Train BPE tokens:       637,535,988
+  Validation BPE tokens:  42,326,843
+  Test BPE tokens:        42,396,121
+  Total BPE tokens:       722,258,952
+
+SOURCES
+  IndicCorp: 520,693,966
+  Manual:    116,842,022
+    Onlinekhabar: 70,435,290
+    Khabarhub: 46,406,732
+  Manual fraction: 18.33%
+  Total: 637,535,988
+
+TOKENIZER QUALITY (measured on validation)
+  Fertility:              1.4394
+  Tokens/word:            1.4394
+  UNK rate:               0.000000%
+  Unique IDs used:        11,894
+  Vocabulary utilization: 99.12%
+
+TOKEN FREQUENCY (measured on train)
+  Unique IDs:    11,902
+  Top 20 coverage:  15.88%
+  Top 50 coverage:  21.79%
+  Top 100 coverage: 27.24%
+  Singleton IDs: 1
+  <=5 frequency:  4
+  <=10 frequency: 4
+
+BINARY CORPUS
+  Content tokens: 637535988
+  BOS:            10981726
+  EOS:            10981726
+  Stored tokens:  659499440
+  Binary size:    2515.7907 MB
+  Bytes/token:    4
+
+TARGETS
+  IndicCorp: 520,693,966 / 400,000,000 [PASS]
+  Manual:    116,842,022 / 100,000,000 [PASS]
+  Total:     637,535,988 / 500,000,000 [PASS]
+  Manual fraction: 18.33% / >= 20% [FAIL]
+  Overall: FAIL
+
+INTEGRITY
+  Token count reconciliation: PASS
+  BOS/EOS reconciliation:     True
+  Leakage:                    not available (run script 15)
+  Binary validation:          True
+  Overall status:             FAIL
+
+============================================================
+TOKENIZATION EXAMPLES
+============================================================
+
+[normal_sentence] नेपाल एक सुन्दर र विविधतापूर्ण देश हो।
+  pieces: ['▁नेपाल', '▁एक', '▁सुन्दर', '▁र', '▁विविधता', 'पूर्ण', '▁देश', '▁हो', '।']
+  words=7 tokens=9 fertility=1.2857 chars/token=4.2222
+
+[punctuation] तपाईं कस्तो हुनुहुन्छ? म बिल्कुल ठिक छु!
+  pieces: ['▁तपाईं', '▁कस्तो', '▁हुनुहुन्छ', '?', '▁म', '▁बिल्', 'कुल', '▁ठिक', '▁छु', '!']
+  words=7 tokens=10 fertility=1.4286 chars/token=4.0000
+
+[numbers] मसँग २५ वटा किताब र १०० रुपैयाँ छ।
+  pieces: ['▁म', 'सँग', '▁२५', '▁वटा', '▁किताब', '▁र', '▁१००', '▁रुपैयाँ', '▁छ', '।']
+  words=8 tokens=10 fertility=1.2500 chars/token=3.4000
+
+[dates] आजको मिति २०८१ साल हो।
+  pieces: ['▁आजको', '▁मिति', '▁२०८', '१', '▁साल', '▁हो', '।']
+  words=5 tokens=7 fertility=1.4000 chars/token=3.1429
+
+[named_entities] पृथ्वीनारायण शाहको जन्म गोरखामा भएको थियो।
+  pieces: ['▁पृथ्वीनारायण', '▁शाहको', '▁जन्म', '▁गोरखा', 'मा', '▁भएको', '▁थियो', '।']
+  words=6 tokens=8 fertility=1.3333 chars/token=5.2500
+
+[long_word] अन्तर्राष्ट्रियकरण
+  pieces: ['▁अन्तर्राष्ट्रिय', 'करण']
+  words=1 tokens=2 fertility=2.0000 chars/token=9.0000
+
+[short_word] छ
+  pieces: ['▁छ']
+  words=1 tokens=1 fertility=1.0000 chars/token=1.0000
+
+[common_word] र
+  pieces: ['▁र']
+  words=1 tokens=1 fertility=1.0000 chars/token=1.0000
+
+[rare_word] सापेक्षतावाद
+  pieces: ['▁सा', 'पेक्ष', 'ता', 'वाद']
+  words=1 tokens=4 fertility=4.0000 chars/token=3.0000
+
+[mixed_script] मैले COVID-19 खोपको दुवै डोज लगाएको छु।
+  pieces: ['▁मैले', '▁', '<0x43>', '<0x4F>', '<0x56>', '<0x49>', '<0x44>', '-1', '9', '▁खोपको', '▁दुवै', '▁डोज', '▁लगाएको', '▁छु', '।']
+  words=7 tokens=15 fertility=2.1429 chars/token=2.6000
+
+============================================================
+END
+============================================================
