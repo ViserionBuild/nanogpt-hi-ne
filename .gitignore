@@ -75,3 +75,6 @@ bonus_ablation/checkpoints/**/*.pt
 # Evaluation results from untrained/placeholder runs are not results.
 # Real ones are committed explicitly once a trained checkpoint exists.
 */eval/results/attention_analysis.json
+
+# Packaging output for Kaggle — rebuilt by ./package_for_kaggle.sh
+dist/
