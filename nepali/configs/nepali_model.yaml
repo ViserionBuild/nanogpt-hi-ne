@@ -12,6 +12,11 @@
 
 language: nepali
 
+# Display strings used by the shared plotting/eval code, which must not
+# branch on language itself.
+figure_code: nep
+model_label: Model L (Nepali)
+
 paths:
   # Phase 1 outputs (train.bin/validation.bin/test.bin are gitignored and
   # live on Drive / as a Kaggle Dataset — see README).
