@@ -1,0 +1,102 @@
+# =============================================================================
+# Model L — Nepali decoder-only Transformer (Phase 2)
+# =============================================================================
+# Self-contained: every value needed to build and train this model is in
+# this file. Nothing is inherited from a base config and nothing is shared
+# with nepali/configs/nepali_model.yaml — the two models must remain
+# independent in data, tokenizer, vocabulary, and weights.
+#
+# Parameter count with these settings: 25,321,472 (verified by
+# nepali/train/count_params.py, which asserts the exact integer).
+# =============================================================================
+
+language: nepali
+
+paths:
+  # Phase 1 outputs (train.bin/validation.bin/test.bin are gitignored and
+  # live on Drive / as a Kaggle Dataset — see README).
+  tokenized: nepali/data/tokenized
+  train_bin: nepali/data/tokenized/train.bin
+  validation_bin: nepali/data/tokenized/validation.bin
+  test_bin: nepali/data/tokenized/test.bin
+
+  # .txt splits, needed ONLY for the UTF-8 byte counts that BPB divides by.
+  validation_txt: nepali/data/final/validation.txt
+  test_txt: nepali/data/final/test.txt
+
+  tokenizer_model: nepali/tokenizer/model/nepali_bpe_12000.model
+
+  checkpoints: nepali/checkpoints
+  logs: nepali/logs
+  eval_results: nepali/eval/results
+  figures: report/figures
+
+# Held-out UTF-8 byte counts, recorded here because the .txt files are not
+# in git. BPB = (CE_nats * n_tokens) / (ln2 * n_bytes).
+byte_counts:
+  validation: 507018981
+  test: 507858111
+
+model:
+  vocab_size: 12000          # from Phase 1; Nepali's own vocabulary
+  n_layer: 6
+  n_head: 8                  # head_dim = 512/8 = 64
+  d_model: 512
+  d_ff: 2048                 # 4 x d_model
+  block_size: 512            # hard cap: learned positional table has 512 rows
+
+  dropout: 0.1
+  attn_dropout: 0.1
+  embd_dropout: 0.1
+
+  positional: learned        # learned | sinusoidal | none
+  norm_position: pre         # pre-norm: stable gradients for deep stacks
+  activation: gelu
+  tie_weights: true          # saves 12000*512 = 6,144,000 parameters
+  bias: true
+
+  pad_id: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  init_std: 0.02
+
+  language: nepali
+  tokenizer_model: nepali/tokenizer/model/nepali_bpe_12000.model
+
+training:
+  learning_rate: 0.0006
+  min_learning_rate: 0.00006
+  weight_decay: 0.1          # applied to 2-D weights only
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+
+  warmup_ratio: 0.02         # ~264 steps
+  decay_style: cosine
+
+  # One epoch over 659,499,440 train tokens at 24*512*4 = 49,152 tokens/step.
+  # Hindi's count differs (13,183) because its corpus differs — equal step
+  # counts would NOT be equal data.
+  max_steps: 13417
+
+  micro_batch_size: 24       # fits a 16GB P100; drop to 16 w/ accum 6 if OOM
+  grad_accum_steps: 4
+
+  eval_interval: 500
+  eval_batches: 100
+  checkpoint_interval: 1000
+  log_interval: 10
+
+  seed: 42
+  amp: true                  # fp16 — P100/T4 have no bf16
+  device: cuda
+  num_workers: 2
+
+evaluation:
+  n_generation_samples: 500
+  prefix_tokens: 32
+  max_new_tokens: 128
+  generation_batch_size: 16
+  attention_seq_len: 24
+  attention_layers: [0, 5]   # one early, one late — spec minimum

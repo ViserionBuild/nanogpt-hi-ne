@@ -60,3 +60,18 @@ __pycache__/
 venv/
 .env
 .venv/
+
+# --- Phase 2 ---
+# Checkpoints are large (~300MB each) -> Google Drive, links in README.
+*/checkpoints/**/*.pt
+bonus_ablation/checkpoints/**/*.pt
+!*/checkpoints/**/.gitkeep
+
+# Training logs, loss-curve CSVs, metric JSON and figures are GRADED
+# artifacts and must live in the branch — the spec is explicit that
+# graders will not open Drive or external dashboards to find them.
+# Nothing under */logs/, */eval/results/ or report/figures/ is ignored.
+
+# Evaluation results from untrained/placeholder runs are not results.
+# Real ones are committed explicitly once a trained checkpoint exists.
+*/eval/results/attention_analysis.json
