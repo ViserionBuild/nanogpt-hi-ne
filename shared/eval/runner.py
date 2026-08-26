@@ -241,24 +241,26 @@ def analyze_attention(
                        "appear as boxes")
 
     figdir = resolve(repo_root, paths.get("figures", "report/figures"))
-    code = {"hindi": "hin", "nepali": "nep"}.get(lang, lang[:3])
+    # Figure suffix and display label come from the config, not from a
+    # language branch here -- shared/ must stay language-agnostic.
+    code = cfg.get("figure_code", lang[:3])
+    label = cfg.get("model_label", lang.title())
     attns = capture_attention(model, input_ids, device)
 
     for layer in ecfg.get("attention_layers", [0, mc.n_layer - 1]):
         if layer >= len(attns):
             continue
         plots.plot_attention_heatmap(
-            attns[layer][0].cpu().numpy(), pieces, layer,
-            f"Model {'H' if lang == 'hindi' else 'L'} ({lang.title()})",
+            attns[layer][0].cpu().numpy(), pieces, layer, label,
             f"attention_heatmap_{code}_L{layer}.png", figdir,
         )
 
     ent = np.array(analysis["entropy_by_layer_head"])
     dist = np.array(analysis["distance_by_layer_head"])
-    plots.plot_by_layer(ent, f"{lang.title()} — attention entropy by layer",
+    plots.plot_by_layer(ent, f"{label} — attention entropy by layer",
                         "Attention entropy (nats)",
                         f"attention_entropy_by_layer_{code}.png", figdir)
-    plots.plot_by_layer(dist, f"{lang.title()} — mean attention distance by layer",
+    plots.plot_by_layer(dist, f"{label} — mean attention distance by layer",
                         "Mean attention distance (tokens)",
                         f"attention_distance_by_layer_{code}.png", figdir)
 

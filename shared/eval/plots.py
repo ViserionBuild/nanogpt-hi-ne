@@ -32,8 +32,8 @@ FIGDIR = "report/figures"
 
 # One colour per model, held constant across every figure so the two are
 # visually identifiable at a glance throughout the report.
-COLOR_H = "#1f77b4"      # Model H (Hindi)
-COLOR_L = "#d62728"      # Model L (Nepali)
+COLOR_H = "#1f77b4"      # first model (higher-resource)
+COLOR_L = "#d62728"      # second model (lower-resource)
 COLOR_ABL = "#7f7f7f"    # ablation
 
 # Fonts known to carry Devanagari, most preferred first.
@@ -155,8 +155,8 @@ def plot_loss_curves(log_csv: str, language: str, out_name: str,
 
 def plot_loss_curves_both(log_h: str, log_l: str, out_name: str,
                           outdir: str = FIGDIR,
-                          label_h: str = "Model H (Hindi)",
-                          label_l: str = "Model L (Nepali)") -> str:
+                          label_h: str = "Model H",
+                          label_l: str = "Model L") -> str:
     """F3: both models overlaid — the headline comparison figure."""
     import pandas as pd
     fig, ax = plt.subplots(figsize=(9, 5.5))
@@ -180,12 +180,14 @@ def plot_loss_curves_both(log_h: str, log_l: str, out_name: str,
 
 def plot_metric_curves_both(log_h: str, log_l: str, column: str,
                             ylabel: str, title: str, out_name: str,
-                            outdir: str = FIGDIR) -> str:
+                            outdir: str = FIGDIR,
+                            label_h: str = "Model H",
+                            label_l: str = "Model L") -> str:
     """F4/F5: validation perplexity or BPB vs. step, both models."""
     import pandas as pd
     fig, ax = plt.subplots(figsize=(8.5, 5))
-    for path, color, label in ((log_h, COLOR_H, "Model H (Hindi)"),
-                               (log_l, COLOR_L, "Model L (Nepali)")):
+    for path, color, label in ((log_h, COLOR_H, label_h),
+                               (log_l, COLOR_L, label_l)):
         if not os.path.exists(path):
             continue
         df = pd.read_csv(path)
@@ -386,11 +388,13 @@ def plot_by_layer(matrix: np.ndarray, title: str, ylabel: str,
 
 
 def plot_head_taxonomy(analysis_h: Dict, analysis_l: Optional[Dict],
-                       out_name: str, outdir: str = FIGDIR) -> str:
+                       out_name: str, outdir: str = FIGDIR,
+                       label_h: str = "Model H",
+                       label_l: str = "Model L") -> str:
     """F20: entropy vs. distance scatter — head specialisation at a glance."""
     fig, ax = plt.subplots(figsize=(8.5, 6))
-    for analysis, color, label in ((analysis_h, COLOR_H, "Model H (Hindi)"),
-                                   (analysis_l, COLOR_L, "Model L (Nepali)")):
+    for analysis, color, label in ((analysis_h, COLOR_H, label_h),
+                                   (analysis_l, COLOR_L, label_l)):
         if not analysis:
             continue
         heads = analysis["heads"]

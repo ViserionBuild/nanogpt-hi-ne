@@ -1,5 +1,10 @@
 """Assemble report/phase2_report.md from the JSON that evaluation wrote.
 
+Lives under report/ rather than shared/ because it is specific to THIS
+project's two models -- it names Hindi and Nepali, and knows their token
+counts. Everything under shared/ must stay language-agnostic (enforced by
+tests/test_shared_agnostic).
+
 Every table in the Phase 2 report is generated from the metric JSON files
 rather than typed by hand, so the report cannot drift from the numbers the
 scripts actually produced. Missing results are rendered as an explicit
