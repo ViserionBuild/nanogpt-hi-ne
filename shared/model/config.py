@@ -149,6 +149,9 @@ class TrainConfig:
     seed: int = 42
     amp: bool = True
     device: str = "cuda"
+    # Use every visible GPU via DataParallel when more than one is present
+    # (Kaggle's "GPU T4 x2"). Set false to pin training to a single device.
+    data_parallel: bool = True
     compile_model: bool = False
     num_workers: int = 2
 

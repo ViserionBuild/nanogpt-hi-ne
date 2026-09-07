@@ -13,32 +13,31 @@ requirements.
 
 ## Status of this repo
 
-This is a **complete, runnable pipeline skeleton** — every stage (data
-cleaning, tokenizer training, model, pretraining loop with checkpoint
-resume, synthetic reasoning generation, finetuning, and all evaluation:
-PPL/BPB, BLEU/chrF/ROUGE-L, diversity, attention heatmaps/entropy/distance)
-is implemented and has been smoke-tested end-to-end on tiny sample data
-(see `smoke_test_report.md`). What is **not** done yet, and requires your
-own work:
+**Phase 1 (data + tokenizer) is complete.** Both corpora are collected,
+cleaned, split, decontaminated, and tokenized; both tokenizers are trained
+from scratch and evaluated. See [`report/phase1_report.md`](report/phase1_report.md).
 
-- [ ] Real data collection at ~500M-token scale for both languages (public
-      + your own manual OCR/scraping — see `hindi/scripts/collect_public.py`
-      and `collect_manual.py`, and their Nepali equivalents)
-- [ ] Actually running pretraining to convergence (needs a Colab GPU over
-      real time — the loop supports resuming across sessions)
-- [ ] Reviewing/refining the Hindi and Nepali reasoning-data templates in
-      `*/finetune/generate_reasoning_data.py` for natural phrasing (they
-      are functional but were not written by a native speaker)
-- [ ] Uploading real checkpoints/datasets to Google Drive and filling in
-      the links below
-- [ ] Writing the actual per-phase reports in `report/`
+**Phase 2 (model + pretraining + evaluation) is implemented but not yet
+trained.** The architecture, training loop, and full evaluation suite are
+written and their correctness gates pass; no GPU run has happened yet.
 
-Additional pieces implemented beyond the initial skeleton: an explicit
-causal-masking verification script (`*/eval/verify_causal_masking.py`,
-sweeps every sequence position and confirms perturbing token t+1 never
-changes logits at position ≤ t — required by the spec), and a
-bonus-ablation comparison script (`bonus_ablation/eval_ablation.py`) that
-evaluates the standard vs. no-positional-embedding models side by side.
+| | Status |
+|---|---|
+| Corpora, splits, decontamination | done — 648.0M (Hindi) / 659.5M (Nepali) train tokens |
+| Tokenizers (SentencePiece BPE, vocab 12,000 each) | done |
+| Transformer implementation | done — **25,321,472** parameters, verified |
+| Causal-masking verification | **passes**, max delta exactly 0.0 |
+| Checkpoint/resume | **bit-exact**, verified by killing and resuming a run |
+| Test suite | 22 gates, all passing (`tests/test_phase2.py`) |
+| Pretraining Model H / Model L | **not started** — ~2-3 GPU-hours each on 2x T4 |
+| Phase 2 evaluation results | pending training |
+| Phase 3 (reasoning finetuning) | not started |
+| Bonus ablation (no positional embeddings) | not started |
+
+To run Phase 2, follow [`RUN_PHASE2.md`](RUN_PHASE2.md) — a step-by-step
+checklist — with [`notebooks/phase2_kaggle.ipynb`](notebooks/phase2_kaggle.ipynb)
+on Kaggle. [`KAGGLE_SETUP.md`](KAGGLE_SETUP.md) explains the reasoning and
+covers troubleshooting.
 
 ## Repository layout
 
@@ -92,9 +91,10 @@ tokenizer on the final concatenated `train.txt`; only the filenames differ.
 Hindi additionally has `manual/05_aggregate_news_corpus.py` to merge multiple
 news outlets into one corpus, which Nepali does not need.
 
-Only the Phase 1 pipeline exists in this repository so far; the
-`train/`, `eval/`, `finetune/`, and `checkpoints/` directories referenced in the
-Phase 2/3 commands below have not been created yet.
+Phase 2 adds `shared/model/`, `shared/train/`, and `shared/eval/` (all
+language-agnostic — the two models share architecture *code* but no data,
+tokenizer, vocabulary, or weights), plus per-language `train/`, `eval/`,
+`checkpoints/`, and `logs/` directories. `finetune/` arrives in Phase 3.
 
 ## Setup
 

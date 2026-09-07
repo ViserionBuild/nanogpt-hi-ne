@@ -1,0 +1,10 @@
+{
+  "language": "hindi",
+  "final_step": 13183,
+  "tokens_seen": 647970816,
+  "final_val_loss": 3.2736536502838134,
+  "final_val_perplexity": 26.40764760694621,
+  "best_val_loss": 3.2748516249656676,
+  "elapsed_seconds": 9225.04542350769,
+  "parameters": 25321472
+}

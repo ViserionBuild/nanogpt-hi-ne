@@ -74,11 +74,18 @@ if [[ "$WHAT" == "all" || "$WHAT" == "data" ]]; then
 
     # Stored paths stay repo-relative so extraction on Kaggle reproduces
     # the same layout the configs expect.
+    #
+    # The tokenizer .model/.vocab ride along even though they are also in
+    # lma-code.zip: under 1 MB against 1.3 GB, and it makes each data
+    # dataset self-contained rather than silently depending on the code
+    # dataset being attached too.
     zip -q -1 -X "$OUT" \
       "$BINDIR"/train.bin \
       "$BINDIR"/validation.bin \
       "$BINDIR"/test.bin \
-      "$BINDIR"/tokenization_metadata.json
+      "$BINDIR"/tokenization_metadata.json \
+      "$LANG"/tokenizer/model/"$LANG"_bpe_12000.model \
+      "$LANG"/tokenizer/vocab/"$LANG"_bpe_12000.vocab
 
     echo "    $(basename "$OUT")  $(human "$OUT")"
   done

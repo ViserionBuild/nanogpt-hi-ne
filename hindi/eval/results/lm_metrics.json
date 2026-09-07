@@ -1,0 +1,34 @@
+{
+  "language": "hindi",
+  "checkpoint": "hindi/checkpoints/best.pt",
+  "checkpoint_step": 13000,
+  "parameters": 25321472,
+  "vocab_size": 12000,
+  "block_size": 512,
+  "splits": {
+    "validation": {
+      "split": "validation",
+      "cross_entropy_nats": 3.266244,
+      "bits_per_token": 4.712194,
+      "perplexity": 26.2127,
+      "n_tokens_evaluated": 39780352,
+      "n_tokens_in_split": 39781899,
+      "n_batches": 2428,
+      "n_bytes": 390820005,
+      "bits_per_byte": 0.479658,
+      "bytes_per_token": 9.8241
+    },
+    "test": {
+      "split": "test",
+      "cross_entropy_nats": 3.26527,
+      "bits_per_token": 4.710789,
+      "perplexity": 26.1872,
+      "n_tokens_evaluated": 39698432,
+      "n_tokens_in_split": 39702931,
+      "n_batches": 2423,
+      "n_bytes": 390355261,
+      "bits_per_byte": 0.479133,
+      "bytes_per_token": 9.8319
+    }
+  }
+}

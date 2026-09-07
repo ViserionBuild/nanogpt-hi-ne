@@ -34,7 +34,7 @@ paths:
   checkpoints: nepali/checkpoints
   logs: nepali/logs
   eval_results: nepali/eval/results
-  figures: report/figures
+  figures: report/figures/nepali
 
 # Held-out UTF-8 byte counts, recorded here because the .txt files are not
 # in git. BPB = (CE_nats * n_tokens) / (ln2 * n_bytes).
@@ -85,8 +85,11 @@ training:
   # counts would NOT be equal data.
   max_steps: 13417
 
-  micro_batch_size: 24       # fits a 16GB P100; drop to 16 w/ accum 6 if OOM
-  grad_accum_steps: 4
+  # 32 x 512 x 3 = 49,152 tokens/step — the SAME effective batch as the
+  # original 24 x 512 x 4, but 32 splits evenly across Kaggle's 2x T4 so
+  # each card gets 16 sequences. Drop to 16 with accum 6 if OOM.
+  micro_batch_size: 32
+  grad_accum_steps: 3
 
   eval_interval: 500
   eval_batches: 100
@@ -94,7 +97,8 @@ training:
   log_interval: 10
 
   seed: 42
-  amp: true                  # fp16 — P100/T4 have no bf16
+  amp: true                  # fp16 — T4/P100 have no bf16
+  data_parallel: true        # use both GPUs when 2 are visible
   device: cuda
   num_workers: 2
 

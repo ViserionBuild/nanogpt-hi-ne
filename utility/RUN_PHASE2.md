@@ -84,17 +84,19 @@ Set all three **Private**. Kaggle unzips automatically.
 Then in the right-hand sidebar:
 
 - [ ] **Input → Add Input**: add all three datasets
-- [ ] **Accelerator**: **GPU P100**
+- [ ] **Accelerator**: **GPU T4 x2**
 - [ ] **Persistence**: **Files only**
 - [ ] **Internet**: **On**
 
-> Choose P100 over T4 x2. A 25.3M-parameter model fits in a fraction of one
-> 16 GB card, so a second GPU adds DataParallel overhead and a harder
-> resume path for no speedup.
+> **Choose `GPU T4 x2`.** T4 has tensor cores (~65 TFLOPS fp16); P100 predates
+> them (~19 TFLOPS fp16) and this training uses AMP fp16, which is exactly what
+> tensor cores accelerate — so a single T4 already beats a P100 by roughly 3x.
+> The trainer wraps the model in `DataParallel` when it sees two GPUs, splitting
+> each 32-sequence micro-batch 16/16 across the cards, so both are used.
 
 ---
 
-## Step 5 — Train Model H, Hindi (~6 h)
+## Step 5 — Train Model H, Hindi (~2-3 h)
 
 In the notebook, Cell 2:
 
@@ -106,7 +108,7 @@ Then **Run All**. Watch for:
 
 | Cell | Expect |
 |---|---|
-| 1 | `GPU: Tesla P100-PCIE-16GB`, `hindi: 648,012,574 train tokens` |
+| 1 | `GPU: 2 x Tesla T4`, `hindi: 648,012,574 train tokens` |
 | 3 | `22 passed`, `25,321,472 — CONFIRMED`, `PASSED` |
 | 4 | loss falling from ~9.4 (= `ln 12000`, the uniform baseline) |
 | 5 | a `hindi_phase2_*.zip` in the Output tab |
@@ -125,7 +127,7 @@ Then **Run All**. Watch for:
 
 ---
 
-## Step 6 — Train Model L, Nepali (~6 h, new session)
+## Step 6 — Train Model L, Nepali (~2-3 h, new session)
 
 Same notebook, Cell 2:
 
@@ -190,7 +192,7 @@ to write them:
 
 ---
 
-## Optional — Bonus ablation (~6 h)
+## Optional — Bonus ablation (~3 h)
 
 Recovers marks lost elsewhere. Set `positional: none` in a copied config
 and rerun the full evaluation suite. Expect the loss to plateau well above
@@ -205,11 +207,11 @@ Kaggle gives **30 GPU-hours/week**, 12 h per session.
 
 | | Hours |
 |---|---|
-| Hindi | ~6 |
-| Nepali | ~6 |
+| Hindi | ~2-3 |
+| Nepali | ~2-3 |
 | Evaluation | ~1 |
-| Ablation (optional) | ~6 |
-| **Total** | **~19**, leaving ~11 h spare |
+| Ablation (optional) | ~3 |
+| **Total** | **~10**, leaving ~20 h spare |
 
 ---
 

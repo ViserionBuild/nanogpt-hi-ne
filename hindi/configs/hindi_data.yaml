@@ -87,7 +87,7 @@ paths:
   manual_intermediate: hindi/data/intermediate/manual
 
   reports: hindi/reports
-  figures: hindi/reports/figures
+  figures: report/figures/hindi
   tables: hindi/reports/tables
 
 

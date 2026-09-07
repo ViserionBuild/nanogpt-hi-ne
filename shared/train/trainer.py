@@ -73,6 +73,33 @@ class Trainer:
             self.device = "cpu"
         self.model.to(self.device)
 
+        # --- optional multi-GPU (Kaggle offers 2x T4) ---------------------
+        # DataParallel replicates the model on each visible GPU, splits the
+        # micro-batch across them, and all-reduces the gradients. For a 25M
+        # model the sync cost is ~101 MB/step against a several-hundred-ms
+        # step, so it is a real speedup rather than a wash.
+        #
+        # `self.model` stays the UNWRAPPED module: state_dict() must not gain
+        # DataParallel's "module." key prefix, or checkpoints written on two
+        # GPUs would fail to load on one (and vice versa). Only the forward
+        # pass goes through the wrapper.
+        self.parallel_model = self.model
+        self.n_gpu = 1
+        if (self.device.startswith("cuda")
+                and getattr(train_config, "data_parallel", True)
+                and torch.cuda.device_count() > 1):
+            self.n_gpu = torch.cuda.device_count()
+            self.parallel_model = torch.nn.DataParallel(self.model)
+            names = ", ".join(torch.cuda.get_device_name(i)
+                              for i in range(self.n_gpu))
+            self._log(f"[multi-gpu] DataParallel across {self.n_gpu} devices: {names}")
+            if train_config.micro_batch_size % self.n_gpu != 0:
+                self._log(
+                    f"[multi-gpu] WARNING micro_batch_size "
+                    f"{train_config.micro_batch_size} is not divisible by "
+                    f"{self.n_gpu}; the last device gets a smaller shard."
+                )
+
         self.optimizer = model.configure_optimizers(
             weight_decay=train_config.weight_decay,
             learning_rate=train_config.learning_rate,
@@ -145,7 +172,9 @@ class Trainer:
             self.tcfg.micro_batch_size, n_batches, self.device, seed=1234
         ):
             with torch.amp.autocast("cuda", enabled=self.use_amp):
-                loss = self.model(x, y)["loss"]
+                loss = self.parallel_model(x, y)["loss"]
+                if loss.dim() > 0:
+                    loss = loss.mean()
             total += loss.item()
             count += 1
 
@@ -199,7 +228,12 @@ class Trainer:
                     self.tcfg.micro_batch_size, self.device
                 )
                 with torch.amp.autocast("cuda", enabled=self.use_amp):
-                    loss = self.model(x, y)["loss"]
+                    out = self.parallel_model(x, y)
+                    loss = out["loss"]
+                    # DataParallel returns one loss per device (it gathers
+                    # along dim 0); average them back into a scalar.
+                    if loss.dim() > 0:
+                        loss = loss.mean()
                     # so the accumulated gradient is that of the MEAN loss
                     loss = loss / self.tcfg.grad_accum_steps
                 self.scaler.scale(loss).backward()

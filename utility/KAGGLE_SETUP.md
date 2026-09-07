@@ -84,15 +84,22 @@ Google Drive links from the README, not Kaggle.
 **New Notebook**, then in the right-hand sidebar:
 
 - **Input → Add Input** → add all three datasets
-- **Accelerator → GPU P100**
+- **Accelerator → GPU T4 x2**
 - **Persistence → Files only** (keeps `/kaggle/working` between runs)
 - **Internet → On** (only needed if you `pip install sacrebleu`)
 
-### Why P100 and not T4 x2
+### Why T4 x2 and not P100
 
-The model is 25.3M parameters. It fits in a fraction of one 16 GB card, so
-a second GPU adds `DataParallel` overhead, gradient-sync complexity, and a
-harder checkpoint/resume path — for no speedup. Pick the single P100.
+**Choose `GPU T4 x2`.** T4 has tensor cores (~65 TFLOPS fp16); P100 predates
+them (~19 TFLOPS fp16) and this training uses AMP fp16, which is exactly what
+tensor cores accelerate — so a single T4 already beats a P100 by roughly 3x.
+The trainer wraps the model in `DataParallel` when it sees two GPUs, splitting
+each 32-sequence micro-batch 16/16 across the cards, so both are used.
+
+Memory is not the constraint either way — the job needs ~1.5 GB of 16 GB.
+Checkpoints stay portable: the trainer saves the *unwrapped* module, so a
+`state_dict` written on two GPUs has no `module.` key prefix and loads
+fine on one GPU.
 
 ### Cell 1 — set up
 
@@ -129,7 +136,7 @@ print("VRAM GB:", round(torch.cuda.get_device_properties(0).total_memory/1e9, 1)
       if torch.cuda.is_available() else 0)
 ```
 
-Expected: `GPU: Tesla P100-PCIE-16GB`, `VRAM GB: 17.1`.
+Expected: `GPU: 2 x Tesla T4` and a `[multi-gpu] DataParallel across 2 devices` line in Cell 4.
 
 ### Cell 2 — gates before spending GPU time
 
@@ -141,7 +148,7 @@ Expected: `GPU: Tesla P100-PCIE-16GB`, `VRAM GB: 17.1`.
 
 Expect `22 passed`, `Target 25,321,472 — CONFIRMED`, and `PASSED` with max
 delta `0.0`. **If any of these fail, stop.** They take under a minute and
-they catch the bugs that would otherwise waste a six-hour session.
+they catch the bugs that would otherwise waste the whole session.
 
 ### Cell 3 — train
 
@@ -149,7 +156,7 @@ they catch the bugs that would otherwise waste a six-hour session.
 !python hindi/train/pretrain.py
 ```
 
-Runs 13,183 steps (~5–6 h on P100). Re-running the exact same command after
+Runs 13,183 steps (~2–3 h on 2x T4). Re-running the exact same command after
 a session dies resumes from `hindi/checkpoints/latest.pt` automatically.
 
 Then, in a later session, `!python nepali/train/pretrain.py` (13,417 steps).
@@ -192,11 +199,11 @@ Kaggle gives **30 GPU-hours/week**, 12 h maximum per session.
 
 | Work | Hours |
 |---|---|
-| Hindi pretraining | ~6 |
-| Nepali pretraining | ~6 |
+| Hindi pretraining | ~2-3 |
+| Nepali pretraining | ~2-3 |
 | Evaluation, both models | ~1 |
-| Bonus ablation (optional) | ~6 |
-| **Total** | **~19**, leaving ~11 h of headroom |
+| Bonus ablation (optional) | ~3 |
+| **Total** | **~10**, leaving ~20 h of headroom |
 
 One epoch per language is the right budget on its own merits, not just to
 fit: Chinchilla-optimal for 25M parameters is ~500M tokens and both corpora
