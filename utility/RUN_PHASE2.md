@@ -7,7 +7,7 @@ sessions.
 Companion files:
 - [`notebooks/phase2_kaggle.ipynb`](notebooks/phase2_kaggle.ipynb) — the notebook to upload
 - [`KAGGLE_SETUP.md`](KAGGLE_SETUP.md) — reference for *why*, and troubleshooting
-- [`report/phase2_plan.md`](report/phase2_plan.md) — the full design and figure/table spec
+- [`phase2_workflow.md`](phase2_workflow.md) — what Phase 1 handed over and how Phase 2 built on it
 
 ---
 

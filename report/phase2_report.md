@@ -355,23 +355,9 @@ rather than dependent on an arbitrary threshold.
 ![Distance grid — Model L](figures/nepali/attention_distance_grid_nep.png)
 ![Head taxonomy](figures/comparison/attention_head_taxonomy.png)
 
-**Which heads are local and which are content-based.** Both models place
-most heads off the extremes: Hindi has 9 local-sharp and 9 distant-diffuse
-heads against 15 each in the two mixed categories, and Nepali is more
-polarized still (6 / 6 against 18 / 18). Local-sharp heads — low entropy,
-short distance — behave positionally, attending to the immediately
-preceding token or two; the lower-triangular banding near the diagonal in
-the layer-0 heatmaps is this behaviour. Distant-sharp heads reach further
-back while staying selective, which is the signature of content-based
-attention.
+**Which heads are local and which are content-based.** Hindi has 11 local-sharp and 11 distant-diffuse heads against 13 and 13 in the two mixed categories; Nepali splits 9 / 9 against 15 / 15. Local-sharp heads — low entropy, short distance — behave positionally, attending to the immediately preceding token or two; the lower-triangular banding near the diagonal in the layer-0 heatmaps is this behaviour. Distant-sharp heads reach further back while staying selective, which is the signature of content-based attention.
 
-**How the two models differ.** Model L's mean entropy is lower (1.224 vs.
-1.314) and its mean attention distance shorter (3.89 vs. 4.01 tokens).
-Nepali's attention is thus slightly *sharper and more local* than Hindi's.
-This is consistent with the fertility result: because Nepali words fragment
-into more subword pieces, more of the predictive signal sits in the
-immediately adjacent pieces of the same word, and heads that resolve
-within-word structure are correspondingly more useful.
+**How the two models differ.** Model L's mean entropy is lower (1.267 vs. 1.311) and its mean attention distance shorter (3.84 vs. 3.98 tokens). Nepali's attention is thus slightly *sharper and more local* than Hindi's. This is consistent with the fertility result: because Nepali words fragment into more subword pieces, more of the predictive signal sits in the immediately adjacent pieces of the same word, and heads that resolve within-word structure are correspondingly more useful.
 
 ---
 

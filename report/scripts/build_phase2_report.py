@@ -263,6 +263,49 @@ def table_t7(d: Dict) -> str:
     return "\n".join(out)
 
 
+def attention_discussion(d: Dict) -> str:
+    ah, an = d["hindi"]["attn"], d["nepali"]["attn"]
+    if not ah or not an:
+        return "_Attention analysis not yet run for both models._"
+
+    def hc(a, k):
+        return a.get("head_type_counts", {}).get(k, PENDING)
+
+    heads_para = (
+        f"**Which heads are local and which are content-based.** Hindi has "
+        f"{hc(ah, 'local_sharp')} local-sharp and {hc(ah, 'distant_diffuse')} "
+        f"distant-diffuse heads against {hc(ah, 'local_diffuse')} and "
+        f"{hc(ah, 'distant_sharp')} in the two mixed categories; Nepali "
+        f"splits {hc(an, 'local_sharp')} / {hc(an, 'distant_diffuse')} "
+        f"against {hc(an, 'local_diffuse')} / {hc(an, 'distant_sharp')}. "
+        f"Local-sharp heads — low entropy, short distance — behave "
+        f"positionally, attending to the immediately preceding token or "
+        f"two; the lower-triangular banding near the diagonal in the "
+        f"layer-0 heatmaps is this behaviour. Distant-sharp heads reach "
+        f"further back while staying selective, which is the signature of "
+        f"content-based attention."
+    )
+
+    he, ne = ah["overall_mean_entropy"], an["overall_mean_entropy"]
+    hdist, ndist = ah["overall_mean_distance"], an["overall_mean_distance"]
+    l_lower = ne < he
+    sharper = "sharper and more local" if l_lower else "more diffuse and longer-range"
+    diff_para = (
+        f"**How the two models differ.** Model {'L' if l_lower else 'H'}'s "
+        f"mean entropy is lower ({min(he, ne):.3f} vs. {max(he, ne):.3f}) "
+        f"and its mean attention distance "
+        f"{'shorter' if l_lower else 'longer'} "
+        f"({(ndist if l_lower else hdist):.2f} vs. "
+        f"{(hdist if l_lower else ndist):.2f} tokens). Nepali's attention "
+        f"is thus slightly *{sharper}* than Hindi's. This is consistent "
+        f"with the fertility result: because Nepali words fragment into "
+        f"more subword pieces, more of the predictive signal sits in the "
+        f"immediately adjacent pieces of the same word, and heads that "
+        f"resolve within-word structure are correspondingly more useful."
+    )
+    return f"{heads_para}\n\n{diff_para}"
+
+
 def qualitative(d: Dict, lang: str, n: int = 2) -> str:
     s = d[lang]["samples"]
     if not s:
@@ -553,23 +596,7 @@ rather than dependent on an arbitrary threshold.
 ![Distance grid — Model L](figures/nepali/attention_distance_grid_nep.png)
 ![Head taxonomy](figures/comparison/attention_head_taxonomy.png)
 
-**Which heads are local and which are content-based.** Both models place
-most heads off the extremes: Hindi has 9 local-sharp and 9 distant-diffuse
-heads against 15 each in the two mixed categories, and Nepali is more
-polarized still (6 / 6 against 18 / 18). Local-sharp heads — low entropy,
-short distance — behave positionally, attending to the immediately
-preceding token or two; the lower-triangular banding near the diagonal in
-the layer-0 heatmaps is this behaviour. Distant-sharp heads reach further
-back while staying selective, which is the signature of content-based
-attention.
-
-**How the two models differ.** Model L's mean entropy is lower (1.224 vs.
-1.314) and its mean attention distance shorter (3.89 vs. 4.01 tokens).
-Nepali's attention is thus slightly *sharper and more local* than Hindi's.
-This is consistent with the fertility result: because Nepali words fragment
-into more subword pieces, more of the predictive signal sits in the
-immediately adjacent pieces of the same word, and heads that resolve
-within-word structure are correspondingly more useful.
+{attention_discussion(d)}
 
 ---
 
