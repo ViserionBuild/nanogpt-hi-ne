@@ -1,0 +1,100 @@
+{
+  "language": "nepali",
+  "checkpoint": "nepali/checkpoints/best.pt",
+  "split": "validation",
+  "n_samples": 500,
+  "settings": {
+    "greedy": {
+      "n_samples": 500,
+      "bleu_4": 0.2835,
+      "bleu_brevity_penalty": 0.1424,
+      "bleu_precisions": [
+        12.1572,
+        3.0633,
+        1.0491,
+        0.4014
+      ],
+      "chrf": 6.7098,
+      "rouge_l_f": 4.6255,
+      "rouge_l_precision": 32.7022,
+      "rouge_l_recall": 3.5975,
+      "distinct_1": 0.078561,
+      "distinct_2": 0.164543,
+      "repetition_rate_3gram": 0.764171,
+      "mean_generation_tokens": 42.08,
+      "n_gram_order": 4,
+      "tokenization": "sentencepiece (language-specific, not whitespace)",
+      "sacrebleu_bleu": 0.25,
+      "sacrebleu_chrf": 6.7098
+    },
+    "temp_0.5": {
+      "n_samples": 500,
+      "bleu_4": 0.1415,
+      "bleu_brevity_penalty": 0.0485,
+      "bleu_precisions": [
+        19.6132,
+        4.7016,
+        1.4374,
+        0.5489
+      ],
+      "chrf": 7.3959,
+      "rouge_l_f": 5.1052,
+      "rouge_l_precision": 30.4836,
+      "rouge_l_recall": 3.8361,
+      "distinct_1": 0.168938,
+      "distinct_2": 0.447123,
+      "repetition_rate_3gram": 0.391334,
+      "mean_generation_tokens": 30.82,
+      "n_gram_order": 4,
+      "tokenization": "sentencepiece (language-specific, not whitespace)",
+      "sacrebleu_bleu": 0.1536,
+      "sacrebleu_chrf": 7.3959
+    },
+    "temp_1.0": {
+      "n_samples": 500,
+      "bleu_4": 0.381,
+      "bleu_brevity_penalty": 0.284,
+      "bleu_precisions": [
+        15.5022,
+        2.302,
+        0.5134,
+        0.1768
+      ],
+      "chrf": 13.7403,
+      "rouge_l_f": 5.4345,
+      "rouge_l_precision": 15.7125,
+      "rouge_l_recall": 4.5018,
+      "distinct_1": 0.238614,
+      "distinct_2": 0.847055,
+      "repetition_rate_3gram": 0.012985,
+      "mean_generation_tokens": 54.93,
+      "n_gram_order": 4,
+      "tokenization": "sentencepiece (language-specific, not whitespace)",
+      "sacrebleu_bleu": 0.2824,
+      "sacrebleu_chrf": 13.7403
+    },
+    "temp_1.5": {
+      "n_samples": 500,
+      "bleu_4": 0.0916,
+      "bleu_brevity_penalty": 0.8301,
+      "bleu_precisions": [
+        7.0148,
+        0.3667,
+        0.0292,
+        0.002
+      ],
+      "chrf": 20.8412,
+      "rouge_l_f": 3.8668,
+      "rouge_l_precision": 5.5192,
+      "rouge_l_recall": 3.7207,
+      "distinct_1": 0.19335,
+      "distinct_2": 0.958538,
+      "repetition_rate_3gram": 0.000273,
+      "mean_generation_tokens": 104.61,
+      "n_gram_order": 4,
+      "tokenization": "sentencepiece (language-specific, not whitespace)",
+      "sacrebleu_bleu": 0.0792,
+      "sacrebleu_chrf": 20.8412
+    }
+  }
+}

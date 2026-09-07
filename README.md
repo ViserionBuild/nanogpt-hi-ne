@@ -13,32 +13,56 @@ requirements.
 
 ## Status of this repo
 
-This is a **complete, runnable pipeline skeleton** — every stage (data
-cleaning, tokenizer training, model, pretraining loop with checkpoint
-resume, synthetic reasoning generation, finetuning, and all evaluation:
-PPL/BPB, BLEU/chrF/ROUGE-L, diversity, attention heatmaps/entropy/distance)
-is implemented and has been smoke-tested end-to-end on tiny sample data
-(see `smoke_test_report.md`). What is **not** done yet, and requires your
-own work:
+**Phase 1 (data + tokenizer) is complete.** Both corpora are collected,
+cleaned, split, decontaminated, and tokenized; both tokenizers are trained
+from scratch and evaluated. See [`report/phase1_report.md`](report/phase1_report.md)
+and [`utility/phase1_workflow.md`](utility/phase1_workflow.md) for how it
+was built.
 
-- [ ] Real data collection at ~500M-token scale for both languages (public
-      + your own manual OCR/scraping — see `hindi/scripts/collect_public.py`
-      and `collect_manual.py`, and their Nepali equivalents)
-- [ ] Actually running pretraining to convergence (needs a Colab GPU over
-      real time — the loop supports resuming across sessions)
-- [ ] Reviewing/refining the Hindi and Nepali reasoning-data templates in
-      `*/finetune/generate_reasoning_data.py` for natural phrasing (they
-      are functional but were not written by a native speaker)
-- [ ] Uploading real checkpoints/datasets to Google Drive and filling in
-      the links below
-- [ ] Writing the actual per-phase reports in `report/`
+**Phase 2 (model + pretraining + evaluation) is complete.** Both models
+are trained end-to-end and evaluated on validation *and* test. See
+[`report/phase2_report.md`](report/phase2_report.md) for the full results
+and [`utility/phase2_workflow.md`](utility/phase2_workflow.md) for how it
+was built.
 
-Additional pieces implemented beyond the initial skeleton: an explicit
-causal-masking verification script (`*/eval/verify_causal_masking.py`,
-sweeps every sequence position and confirms perturbing token t+1 never
-changes logits at position ≤ t — required by the spec), and a
-bonus-ablation comparison script (`bonus_ablation/eval_ablation.py`) that
-evaluates the standard vs. no-positional-embedding models side by side.
+| | Status |
+|---|---|
+| Corpora, splits, decontamination | done — 648.0M (Hindi) / 659.5M (Nepali) train tokens |
+| Tokenizers (SentencePiece BPE, vocab 12,000 each) | done |
+| Transformer implementation | done — **25,321,472** parameters, verified |
+| Causal-masking verification | **passes**, max delta exactly 0.0 |
+| Checkpoint/resume | **bit-exact**, verified by killing and resuming a run |
+| Test suite | 22 gates, all passing (`tests/test_phase2.py`) |
+| Pretraining Model H (Hindi) | **done** — 13,183 steps, ~2.6h on 2×T4 |
+| Pretraining Model L (Nepali) | **done** — 13,417 steps, ~2.6h on 2×T4 |
+| Phase 2 evaluation (validation + test, both models) | **done** — see [`report/phase2_report.md`](report/phase2_report.md) |
+| Phase 3 (reasoning finetuning) | not started |
+| Bonus ablation (no positional embeddings) | not started |
+
+## How to run Phase 2
+
+Everything needed to reproduce the Phase 2 run lives under
+[`utility/`](utility/):
+
+| File | What it's for |
+|---|---|
+| [`utility/RUN_PHASE2.md`](utility/RUN_PHASE2.md) | step-by-step checklist, start here |
+| [`utility/KAGGLE_SETUP.md`](utility/KAGGLE_SETUP.md) | why 2×T4 over other GPUs, dataset upload, troubleshooting |
+| [`utility/phase2_workflow.md`](utility/phase2_workflow.md) | what Phase 1 handed over and how Phase 2 built on it |
+| [`notebooks/phase2_kaggle.ipynb`](notebooks/phase2_kaggle.ipynb) | the notebook actually run on Kaggle |
+
+The short version: upload `hindi/`, `nepali/`, and `shared/` as a Kaggle
+Dataset (packaged by `utility/package_for_kaggle.sh`), attach it plus the
+tokenized-corpus datasets to the notebook, set `LANGUAGE = 'hindi'` (or
+`'nepali'`) in Cell 2, and Run All on a **GPU T4 x2** accelerator. Each
+language takes one notebook session, ~2.6 hours. Locally-runnable
+correctness gates (no GPU needed):
+
+```bash
+python hindi/train/count_params.py            # asserts 25,321,472 params
+python hindi/eval/verify_causal_masking.py    # asserts max delta 0.0
+python -m pytest tests/test_phase2.py -v      # 22 correctness gates
+```
 
 ## Repository layout
 
@@ -47,16 +71,16 @@ LMA_IDV_Proj/
 ├── README.md                  # this file — reproduction steps + Drive links
 ├── requirements.txt
 ├── shared/                    # language-agnostic code only — no data, no weights
-│   ├── data_utils.py            # generic corpus I/O helpers
-│   ├── near_dup.py              # MinHash/LSH near-duplicate index (SQLite-backed)
-│   ├── near_dup_mac.py          # same interface, in-memory index
-│   ├── dedup_accounting.py      # dedup bookkeeping / reporting
-│   ├── run_stats.py             # per-stage run-summary JSON writer
-│   └── tokenizer_utils.py       # SentencePiece load/encode helpers
+│   ├── data_utils.py, near_dup.py, dedup_accounting.py, run_stats.py,
+│   │   tokenizer_utils.py       # Phase 1: corpus I/O, dedup, run-stats
+│   ├── model/                    # Phase 2: attention.py, block.py, feedforward.py,
+│   │                             #   transformer.py, positional.py, config.py
+│   ├── train/                    # Phase 2: dataset.py, scheduler.py, checkpoint.py, trainer.py
+│   └── eval/                     # Phase 2: lm_metrics.py, gen_metrics.py, attention_tools.py, plots.py
 │
 ├── hindi/                     # Model H — fully self-contained
-│   ├── configs/hindi_data.yaml   # every pipeline threshold, path, and target
-│   ├── scripts/                  # 01–12, run in order (see Phase 1 below)
+│   ├── configs/{hindi_data,hindi_model}.yaml  # every pipeline/model threshold, path, target
+│   ├── scripts/                  # Phase 1: 01–12, run in order
 │   │   ├── 01_download_indiccorp.py … 12_tokenize_corpus.py
 │   │   └── manual/               # Wikipedia dump + news-outlet collection
 │   ├── tokenizer/
@@ -69,13 +93,28 @@ LMA_IDV_Proj/
 │   │   ├── intermediate/         # transient stage outputs (gitignored)
 │   │   ├── final/                # train/validation/test .txt (gitignored → Drive)
 │   │   └── tokenized/            # *.bin uint32 token IDs (gitignored → Drive)
-│   └── reports/figures/          # per-language tokenizer plots
+│   ├── train/pretrain.py, count_params.py     # Phase 2
+│   ├── eval/evaluate_lm.py, evaluate_generation.py,
+│   │   analyze_attention.py, verify_causal_masking.py  # Phase 2
+│   ├── eval/results/             # metric JSON (tracked)
+│   ├── checkpoints/               # best.pt, latest.pt (gitignored → Drive)
+│   └── logs/                     # training_log_*.csv, training_summary_*.json (tracked)
 │
-├── nepali/                    # Model L — same structure, own data/tokenizer/vocab
+├── nepali/                    # Model L — same structure, own data/tokenizer/vocab/weights
 │
-└── report/                    # GRADED FROM HERE
-    ├── phase1_report.md
+├── utility/                   # Kaggle run guides, packaging script, workflow docs
+│   ├── RUN_PHASE2.md, KAGGLE_SETUP.md, package_for_kaggle.sh
+│   └── phase1_workflow.md, phase2_workflow.md
+│
+├── notebooks/phase2_kaggle.ipynb  # the notebook run on Kaggle
+│
+└── report/                    # the report and its figures — read this first
+    ├── phase1_report.md, phase2_report.md
+    ├── scripts/                   # make_phase2_figures.py, build_phase2_report.py — regenerate
+    │                               #   the figures/report from tracked logs and eval JSON, no GPU
     └── figures/
+        ├── hindi/, nepali/         # per-model figures
+        └── comparison/             # both-model comparison figures
 ```
 
 **What is tracked vs. what is on Drive.** Code, configs, all statistics/report
@@ -92,9 +131,13 @@ tokenizer on the final concatenated `train.txt`; only the filenames differ.
 Hindi additionally has `manual/05_aggregate_news_corpus.py` to merge multiple
 news outlets into one corpus, which Nepali does not need.
 
-Only the Phase 1 pipeline exists in this repository so far; the
-`train/`, `eval/`, `finetune/`, and `checkpoints/` directories referenced in the
-Phase 2/3 commands below have not been created yet.
+**`shared/model|train|eval/` is language-agnostic by construction, not just
+by convention** — an AST-level test
+(`tests/test_phase2.py::test_shared_code_never_names_a_language`) fails if
+any file under `shared/` names either language in executable code. The two
+models share architecture *code* only; data, tokenizer, vocabulary, and
+weights stay fully separate in `hindi/` and `nepali/`. `finetune/` arrives
+in Phase 3.
 
 ## Setup
 
@@ -144,4 +187,17 @@ Each folder holds that language's raw collected data and the final
 `train.txt` / `validation.txt` / `test.txt` splits. Tokenizer model and
 vocabulary files are committed directly to this repository under
 `<language>/tokenizer/`, so no Drive link is needed for them.
+
+### Phase 2 — checkpoints
+
+| Artifact | Link |
+|---|---|
+| **Hindi (Model H)** — `best.pt`, `latest.pt` | https://drive.google.com/drive/folders/1lxbJCPTvOzcO2AihRrQJxxqBg58mVzXo?usp=sharing |
+| **Nepali (Model L)** — `best.pt`, `latest.pt` | https://drive.google.com/drive/folders/18SYXQlJcohxqjVkoPfMMBfzXgjgUI5RN?usp=sharing |
+
+Checkpoints are gitignored (~290 MB each) per the spec's "do not commit
+large binary artifacts" rule. Training logs, loss curves, and every metric
+JSON they produced are committed and do not require Drive —
+see [`hindi/logs/`](hindi/logs/), [`nepali/logs/`](nepali/logs/), and
+[`report/phase2_report.md`](report/phase2_report.md).
 

@@ -9,3 +9,9 @@ pdf2image>=1.16
 tqdm>=4.66
 datasketch>=1.6
 xxhash>=3.4
+# --- Phase 2: model, training, evaluation ---
+torch>=2.0
+sacrebleu>=2.4          # BLEU-4 and chrF (metric library, not a pretrained model)
+rouge-score>=0.1.2      # ROUGE-L
+seaborn>=0.13           # attention heatmaps
+pandas>=2.0             # training-log CSV handling

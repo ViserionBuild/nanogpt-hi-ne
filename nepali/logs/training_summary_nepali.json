@@ -1,0 +1,10 @@
+{
+  "language": "nepali",
+  "final_step": 13417,
+  "tokens_seen": 659472384,
+  "final_val_loss": 3.7363241028785708,
+  "final_val_perplexity": 41.943526354598475,
+  "best_val_loss": 3.739649908542633,
+  "elapsed_seconds": 9423.353453159332,
+  "parameters": 25321472
+}

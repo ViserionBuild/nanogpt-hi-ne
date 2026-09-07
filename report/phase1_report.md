@@ -239,19 +239,19 @@ All four figures are produced by stage 11 (`11_evaluate_tokenizer.py`) and measu
 
 **Figure 1 — Hindi (Model H) tokenizer variant comparison.** Fertility (tokens per whitespace word, left) and characters per token (right) for each of the five candidate vocabulary sizes. Fertility falls and chars/token rises monotonically with vocabulary size; this is the data behind the "Why 12,000" argument in §5. Note that the x-axis is ordered alphabetically by label (`10K, 12K, 14K, 16K, 8K`), so 8K appears at the right-hand end rather than the left — the numerically ordered values are in the §5 sweep table.
 
-![Figure 1 — Hindi tokenizer variant comparison: fertility and chars/token across vocabulary sizes](figures/tokenizer_comparison_hin.png)
+![Figure 1 — Hindi tokenizer variant comparison: fertility and chars/token across vocabulary sizes](figures/hindi/tokenizer_comparison_hin.png)
 
 **Figure 2 — Nepali (Model L) tokenizer variant comparison.** The same two panels for Nepali's six candidate vocabulary sizes. The same alphabetical x-axis ordering applies (`10K, 12K, 14K, 16K, 6K, 8K`), placing 6K and 8K at the right-hand end. Comparing against Figure 1 at matched vocabulary sizes shows Nepali's consistently higher fertility and higher chars/token — the morphology effect discussed in §5 and §6.
 
-![Figure 2 — Nepali tokenizer variant comparison: fertility and chars/token across vocabulary sizes](figures/tokenizer_comparison_nep.png)
+![Figure 2 — Nepali tokenizer variant comparison: fertility and chars/token across vocabulary sizes](figures/nepali/tokenizer_comparison_nep.png)
 
 **Figure 3 — Hindi (Model H) token frequency distribution.** Zipf plot, log token rank against log frequency, with one curve per trained vocabulary size. The near-linear central region confirms the tokenizer produces a natural-language-like frequency distribution rather than a degenerate one. The sharp cliff at the right of each curve is that variant's vocabulary ceiling — larger vocabularies extend further right before dropping, which is simply the tail of rarer merges being available.
 
-![Figure 3 — Hindi token frequency distribution (Zipf plot, log-log, one curve per vocabulary size)](figures/token_frequency_hin.png)
+![Figure 3 — Hindi token frequency distribution (Zipf plot, log-log, one curve per vocabulary size)](figures/hindi/token_frequency_hin.png)
 
 **Figure 4 — Nepali (Model L) token frequency distribution.** The same Zipf plot for Nepali. The curves for different vocabulary sizes separate more visibly in the mid-rank region than Hindi's do, reflecting that Nepali's richer surface-form inventory gives each additional 2,000 merges more distinct material to absorb.
 
-![Figure 4 — Nepali token frequency distribution (Zipf plot, log-log, one curve per vocabulary size)](figures/token_frequency_nep.png)
+![Figure 4 — Nepali token frequency distribution (Zipf plot, log-log, one curve per vocabulary size)](figures/nepali/token_frequency_nep.png)
 
 ## 9. Where automation substitutes for human judgment
 

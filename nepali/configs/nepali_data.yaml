@@ -69,7 +69,7 @@ paths:
   tokenizer_config: nepali/tokenizer/config
 
   reports: nepali/reports
-  figures: nepali/reports/figures
+  figures: report/figures/nepali
   tables: nepali/reports/tables
 
 

@@ -1,5 +1,5 @@
 """run_stats.py — Per-pipeline-stage run-summary logging + prior-stage
-cleanup, shared by every numbered nepali/scripts/0N_*.py stage script.
+cleanup, shared by every numbered <language>/scripts/0N_*.py stage script.
 
 Disk is the limiting resource on a single laptop-scale pipeline run, not
 CPU/RAM, and each stage (02_normalize, 03_filter_nepali, 04_quality_filter,
@@ -7,7 +7,7 @@ CPU/RAM, and each stage (02_normalize, 03_filter_nepali, 04_quality_filter,
 disk simultaneously does not fit. Two things address that:
 
   1. record_run() — writes one JSON summary per (stage, source, run) to
-     paths.run_stats_dir (default nepali/data/run_stats/), so the
+     paths.run_stats (required; no default — see _run_stats_dir), so the
      numbers a stage produced are never lost even after its output files
      are deleted. One file per invocation, named
      "{stage_number}_{source}_{timestamp}.json" — never overwritten by a
@@ -60,7 +60,21 @@ PROTECTED_STAGES = ("raw", "raw_indiccorp", "deduplicated", "split", "decontamin
 
 
 def _run_stats_dir(config: Dict[str, Any], repo_root: Path) -> Path:
-    d = repo_root / config.get("paths", {}).get("run_stats", "nepali/data/run_stats")
+    """Resolve ``paths.run_stats`` from *config*.
+
+    No language-specific default: every module under ``shared/`` must stay
+    language-agnostic (see tests/test_shared_agnostic.py), and a default
+    pointing at one language's tree would silently write the other
+    language's statistics into it. A missing key is a config bug, so fail
+    loudly rather than guessing.
+    """
+    rel = config.get("paths", {}).get("run_stats")
+    if not rel:
+        raise KeyError(
+            "config['paths']['run_stats'] is required — shared/ has no "
+            "language-specific default. Set it in the language's YAML."
+        )
+    d = repo_root / rel
     d.mkdir(parents=True, exist_ok=True)
     return d
 

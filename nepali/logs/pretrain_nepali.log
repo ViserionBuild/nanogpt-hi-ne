@@ -1,0 +1,168 @@
+13:21:43 | INFO    | config: /kaggle/working/LMA_IDV_Proj/nepali/configs/nepali_model.yaml
+13:21:44 | INFO    | model: 25,321,472 parameters (18,915,328 non-embedding)
+13:21:44 | INFO    | train 659,499,440 tokens | validation 43,712,387 tokens
+13:21:44 | INFO    | 49,152 tokens/step x 13,417 steps = 659,472,384 tokens (1.00 epochs)
+13:21:44 | INFO    | [multi-gpu] DataParallel across 2 devices: Tesla T4, Tesla T4
+13:21:45 | INFO    | [resume] no checkpoint found — starting fresh
+13:21:45 | INFO    | [train] nepali | device=cuda | amp=True | params=25,321,472 | steps 0->13,417 | 49,152 tokens/step
+13:23:33 | INFO    |   step     100/13,417 | loss 7.4020 | lr 2.24e-04 | 53,806 tok/s | 4,915,200 tokens
+13:24:57 | INFO    |   step     200/13,417 | loss 6.4256 | lr 4.48e-04 | 62,599 tok/s | 9,830,400 tokens
+13:26:16 | INFO    |   step     300/13,417 | loss 5.8634 | lr 6.00e-04 | 58,212 tok/s | 14,745,600 tokens
+13:27:32 | INFO    |   step     400/13,417 | loss 5.4987 | lr 6.00e-04 | 65,701 tok/s | 19,660,800 tokens
+13:28:44 | INFO    |   step     500/13,417 | loss 5.2841 | lr 6.00e-04 | 69,046 tok/s | 24,576,000 tokens
+13:28:57 | INFO    |   [eval] step 500 | val_loss 5.1951 | val_ppl 180.38  <- best
+13:30:08 | INFO    |   step     600/13,417 | loss 5.1589 | lr 5.99e-04 | 70,888 tok/s | 29,491,200 tokens
+13:31:17 | INFO    |   step     700/13,417 | loss 5.0356 | lr 5.99e-04 | 70,722 tok/s | 34,406,400 tokens
+13:32:26 | INFO    |   step     800/13,417 | loss 4.9249 | lr 5.98e-04 | 70,845 tok/s | 39,321,600 tokens
+13:33:35 | INFO    |   step     900/13,417 | loss 4.7870 | lr 5.97e-04 | 71,909 tok/s | 44,236,800 tokens
+13:34:43 | INFO    |   step   1,000/13,417 | loss 4.7605 | lr 5.96e-04 | 72,374 tok/s | 49,152,000 tokens
+13:34:52 | INFO    |   [eval] step 1,000 | val_loss 4.6488 | val_ppl 104.46  <- best
+13:36:02 | INFO    |   step   1,100/13,417 | loss 4.7438 | lr 5.95e-04 | 72,726 tok/s | 54,067,200 tokens
+13:37:10 | INFO    |   step   1,200/13,417 | loss 4.6470 | lr 5.93e-04 | 72,282 tok/s | 58,982,400 tokens
+13:38:18 | INFO    |   step   1,300/13,417 | loss 4.6317 | lr 5.92e-04 | 72,272 tok/s | 63,897,600 tokens
+13:39:25 | INFO    |   step   1,400/13,417 | loss 4.6254 | lr 5.90e-04 | 72,900 tok/s | 68,812,800 tokens
+13:40:33 | INFO    |   step   1,500/13,417 | loss 4.6103 | lr 5.88e-04 | 72,274 tok/s | 73,728,000 tokens
+13:40:42 | INFO    |   [eval] step 1,500 | val_loss 4.3982 | val_ppl 81.30  <- best
+13:41:51 | INFO    |   step   1,600/13,417 | loss 4.4472 | lr 5.86e-04 | 72,825 tok/s | 78,643,200 tokens
+13:42:58 | INFO    |   step   1,700/13,417 | loss 4.4579 | lr 5.84e-04 | 72,887 tok/s | 83,558,400 tokens
+13:44:06 | INFO    |   step   1,800/13,417 | loss 4.4566 | lr 5.82e-04 | 72,713 tok/s | 88,473,600 tokens
+13:45:13 | INFO    |   step   1,900/13,417 | loss 4.3981 | lr 5.80e-04 | 72,919 tok/s | 93,388,800 tokens
+13:46:21 | INFO    |   step   2,000/13,417 | loss 4.3592 | lr 5.77e-04 | 72,909 tok/s | 98,304,000 tokens
+13:46:30 | INFO    |   [eval] step 2,000 | val_loss 4.2687 | val_ppl 71.43  <- best
+13:47:39 | INFO    |   step   2,100/13,417 | loss 4.3985 | lr 5.75e-04 | 72,941 tok/s | 103,219,200 tokens
+13:48:46 | INFO    |   step   2,200/13,417 | loss 4.3513 | lr 5.72e-04 | 72,905 tok/s | 108,134,400 tokens
+13:49:54 | INFO    |   step   2,300/13,417 | loss 4.3286 | lr 5.69e-04 | 72,873 tok/s | 113,049,600 tokens
+13:51:01 | INFO    |   step   2,400/13,417 | loss 4.3496 | lr 5.66e-04 | 72,979 tok/s | 117,964,800 tokens
+13:52:09 | INFO    |   step   2,500/13,417 | loss 4.3053 | lr 5.63e-04 | 72,720 tok/s | 122,880,000 tokens
+13:52:18 | INFO    |   [eval] step 2,500 | val_loss 4.1846 | val_ppl 65.66  <- best
+13:53:26 | INFO    |   step   2,600/13,417 | loss 4.3132 | lr 5.59e-04 | 72,960 tok/s | 127,795,200 tokens
+13:54:33 | INFO    |   step   2,700/13,417 | loss 4.3215 | lr 5.56e-04 | 72,365 tok/s | 132,710,400 tokens
+13:55:41 | INFO    |   step   2,800/13,417 | loss 4.2707 | lr 5.52e-04 | 72,948 tok/s | 137,625,600 tokens
+13:56:48 | INFO    |   step   2,900/13,417 | loss 4.2216 | lr 5.48e-04 | 73,077 tok/s | 142,540,800 tokens
+13:57:56 | INFO    |   step   3,000/13,417 | loss 4.1990 | lr 5.45e-04 | 72,816 tok/s | 147,456,000 tokens
+13:58:05 | INFO    |   [eval] step 3,000 | val_loss 4.1194 | val_ppl 61.52  <- best
+13:59:14 | INFO    |   step   3,100/13,417 | loss 4.2593 | lr 5.41e-04 | 72,904 tok/s | 152,371,200 tokens
+14:00:21 | INFO    |   step   3,200/13,417 | loss 4.2960 | lr 5.36e-04 | 72,970 tok/s | 157,286,400 tokens
+14:01:28 | INFO    |   step   3,300/13,417 | loss 4.2607 | lr 5.32e-04 | 72,752 tok/s | 162,201,600 tokens
+14:02:36 | INFO    |   step   3,400/13,417 | loss 4.2875 | lr 5.28e-04 | 72,777 tok/s | 167,116,800 tokens
+14:03:43 | INFO    |   step   3,500/13,417 | loss 4.1385 | lr 5.23e-04 | 73,003 tok/s | 172,032,000 tokens
+14:03:52 | INFO    |   [eval] step 3,500 | val_loss 4.0673 | val_ppl 58.40  <- best
+14:05:01 | INFO    |   step   3,600/13,417 | loss 4.2263 | lr 5.19e-04 | 72,864 tok/s | 176,947,200 tokens
+14:06:08 | INFO    |   step   3,700/13,417 | loss 4.1622 | lr 5.14e-04 | 72,937 tok/s | 181,862,400 tokens
+14:07:16 | INFO    |   step   3,800/13,417 | loss 4.1854 | lr 5.09e-04 | 73,234 tok/s | 186,777,600 tokens
+14:08:23 | INFO    |   step   3,900/13,417 | loss 4.1545 | lr 5.05e-04 | 72,817 tok/s | 191,692,800 tokens
+14:09:30 | INFO    |   step   4,000/13,417 | loss 4.1739 | lr 5.00e-04 | 73,158 tok/s | 196,608,000 tokens
+14:09:39 | INFO    |   [eval] step 4,000 | val_loss 4.0301 | val_ppl 56.26  <- best
+14:10:48 | INFO    |   step   4,100/13,417 | loss 4.1910 | lr 4.95e-04 | 72,942 tok/s | 201,523,200 tokens
+14:11:56 | INFO    |   step   4,200/13,417 | loss 4.1584 | lr 4.89e-04 | 73,264 tok/s | 206,438,400 tokens
+14:13:03 | INFO    |   step   4,300/13,417 | loss 4.2139 | lr 4.84e-04 | 72,881 tok/s | 211,353,600 tokens
+14:14:11 | INFO    |   step   4,400/13,417 | loss 4.1495 | lr 4.79e-04 | 72,856 tok/s | 216,268,800 tokens
+14:15:18 | INFO    |   step   4,500/13,417 | loss 4.1095 | lr 4.73e-04 | 72,405 tok/s | 221,184,000 tokens
+14:15:27 | INFO    |   [eval] step 4,500 | val_loss 3.9959 | val_ppl 54.38  <- best
+14:16:35 | INFO    |   step   4,600/13,417 | loss 4.1586 | lr 4.68e-04 | 72,840 tok/s | 226,099,200 tokens
+14:17:43 | INFO    |   step   4,700/13,417 | loss 4.1543 | lr 4.62e-04 | 72,739 tok/s | 231,014,400 tokens
+14:18:50 | INFO    |   step   4,800/13,417 | loss 4.0386 | lr 4.57e-04 | 72,989 tok/s | 235,929,600 tokens
+14:19:58 | INFO    |   step   4,900/13,417 | loss 4.0956 | lr 4.51e-04 | 72,931 tok/s | 240,844,800 tokens
+14:21:05 | INFO    |   step   5,000/13,417 | loss 4.1481 | lr 4.45e-04 | 72,815 tok/s | 245,760,000 tokens
+14:21:14 | INFO    |   [eval] step 5,000 | val_loss 3.9652 | val_ppl 52.73  <- best
+14:22:23 | INFO    |   step   5,100/13,417 | loss 4.0525 | lr 4.39e-04 | 72,955 tok/s | 250,675,200 tokens
+14:23:31 | INFO    |   step   5,200/13,417 | loss 4.0884 | lr 4.33e-04 | 73,034 tok/s | 255,590,400 tokens
+14:24:38 | INFO    |   step   5,300/13,417 | loss 4.1171 | lr 4.27e-04 | 72,926 tok/s | 260,505,600 tokens
+14:25:46 | INFO    |   step   5,400/13,417 | loss 4.0403 | lr 4.21e-04 | 72,591 tok/s | 265,420,800 tokens
+14:26:53 | INFO    |   step   5,500/13,417 | loss 4.0924 | lr 4.15e-04 | 72,773 tok/s | 270,336,000 tokens
+14:27:02 | INFO    |   [eval] step 5,500 | val_loss 3.9394 | val_ppl 51.39  <- best
+14:28:10 | INFO    |   step   5,600/13,417 | loss 4.0591 | lr 4.09e-04 | 72,628 tok/s | 275,251,200 tokens
+14:29:18 | INFO    |   step   5,700/13,417 | loss 4.1012 | lr 4.03e-04 | 72,978 tok/s | 280,166,400 tokens
+14:30:25 | INFO    |   step   5,800/13,417 | loss 4.0368 | lr 3.97e-04 | 72,924 tok/s | 285,081,600 tokens
+14:31:33 | INFO    |   step   5,900/13,417 | loss 4.1307 | lr 3.90e-04 | 72,842 tok/s | 289,996,800 tokens
+14:32:40 | INFO    |   step   6,000/13,417 | loss 4.0421 | lr 3.84e-04 | 72,825 tok/s | 294,912,000 tokens
+14:32:49 | INFO    |   [eval] step 6,000 | val_loss 3.9179 | val_ppl 50.29  <- best
+14:33:58 | INFO    |   step   6,100/13,417 | loss 4.0827 | lr 3.78e-04 | 72,750 tok/s | 299,827,200 tokens
+14:35:06 | INFO    |   step   6,200/13,417 | loss 3.9975 | lr 3.71e-04 | 72,004 tok/s | 304,742,400 tokens
+14:36:13 | INFO    |   step   6,300/13,417 | loss 4.0167 | lr 3.65e-04 | 73,057 tok/s | 309,657,600 tokens
+14:37:21 | INFO    |   step   6,400/13,417 | loss 4.0581 | lr 3.59e-04 | 72,931 tok/s | 314,572,800 tokens
+14:38:28 | INFO    |   step   6,500/13,417 | loss 4.0714 | lr 3.52e-04 | 72,876 tok/s | 319,488,000 tokens
+14:38:37 | INFO    |   [eval] step 6,500 | val_loss 3.8948 | val_ppl 49.15  <- best
+14:39:46 | INFO    |   step   6,600/13,417 | loss 4.0597 | lr 3.46e-04 | 72,868 tok/s | 324,403,200 tokens
+14:40:53 | INFO    |   step   6,700/13,417 | loss 4.0153 | lr 3.39e-04 | 72,758 tok/s | 329,318,400 tokens
+14:42:01 | INFO    |   step   6,800/13,417 | loss 4.0647 | lr 3.33e-04 | 72,819 tok/s | 334,233,600 tokens
+14:43:08 | INFO    |   step   6,900/13,417 | loss 4.0634 | lr 3.26e-04 | 72,756 tok/s | 339,148,800 tokens
+14:44:16 | INFO    |   step   7,000/13,417 | loss 4.0096 | lr 3.20e-04 | 72,795 tok/s | 344,064,000 tokens
+14:44:25 | INFO    |   [eval] step 7,000 | val_loss 3.8747 | val_ppl 48.17  <- best
+14:45:34 | INFO    |   step   7,100/13,417 | loss 3.9628 | lr 3.13e-04 | 72,009 tok/s | 348,979,200 tokens
+14:46:41 | INFO    |   step   7,200/13,417 | loss 4.0009 | lr 3.07e-04 | 72,884 tok/s | 353,894,400 tokens
+14:47:48 | INFO    |   step   7,300/13,417 | loss 4.0508 | lr 3.01e-04 | 72,723 tok/s | 358,809,600 tokens
+14:48:56 | INFO    |   step   7,400/13,417 | loss 3.9824 | lr 2.94e-04 | 72,904 tok/s | 363,724,800 tokens
+14:50:03 | INFO    |   step   7,500/13,417 | loss 3.9333 | lr 2.88e-04 | 73,031 tok/s | 368,640,000 tokens
+14:50:12 | INFO    |   [eval] step 7,500 | val_loss 3.8555 | val_ppl 47.25  <- best
+14:51:21 | INFO    |   step   7,600/13,417 | loss 3.9426 | lr 2.81e-04 | 72,810 tok/s | 373,555,200 tokens
+14:52:28 | INFO    |   step   7,700/13,417 | loss 3.9722 | lr 2.75e-04 | 73,009 tok/s | 378,470,400 tokens
+14:53:36 | INFO    |   step   7,800/13,417 | loss 3.9652 | lr 2.69e-04 | 72,903 tok/s | 383,385,600 tokens
+14:54:43 | INFO    |   step   7,900/13,417 | loss 3.9265 | lr 2.63e-04 | 73,075 tok/s | 388,300,800 tokens
+14:55:50 | INFO    |   step   8,000/13,417 | loss 3.9953 | lr 2.56e-04 | 72,836 tok/s | 393,216,000 tokens
+14:55:59 | INFO    |   [eval] step 8,000 | val_loss 3.8398 | val_ppl 46.52  <- best
+14:57:08 | INFO    |   step   8,100/13,417 | loss 4.0048 | lr 2.50e-04 | 72,767 tok/s | 398,131,200 tokens
+14:58:16 | INFO    |   step   8,200/13,417 | loss 3.9984 | lr 2.44e-04 | 72,982 tok/s | 403,046,400 tokens
+14:59:23 | INFO    |   step   8,300/13,417 | loss 3.9720 | lr 2.38e-04 | 72,980 tok/s | 407,961,600 tokens
+15:00:31 | INFO    |   step   8,400/13,417 | loss 3.9708 | lr 2.32e-04 | 72,996 tok/s | 412,876,800 tokens
+15:01:38 | INFO    |   step   8,500/13,417 | loss 4.0299 | lr 2.26e-04 | 72,938 tok/s | 417,792,000 tokens
+15:01:47 | INFO    |   [eval] step 8,500 | val_loss 3.8234 | val_ppl 45.76  <- best
+15:02:56 | INFO    |   step   8,600/13,417 | loss 3.9747 | lr 2.20e-04 | 72,861 tok/s | 422,707,200 tokens
+15:04:03 | INFO    |   step   8,700/13,417 | loss 3.9535 | lr 2.14e-04 | 72,908 tok/s | 427,622,400 tokens
+15:05:10 | INFO    |   step   8,800/13,417 | loss 3.9666 | lr 2.08e-04 | 72,768 tok/s | 432,537,600 tokens
+15:06:18 | INFO    |   step   8,900/13,417 | loss 3.9396 | lr 2.03e-04 | 72,840 tok/s | 437,452,800 tokens
+15:07:25 | INFO    |   step   9,000/13,417 | loss 3.9482 | lr 1.97e-04 | 72,922 tok/s | 442,368,000 tokens
+15:07:34 | INFO    |   [eval] step 9,000 | val_loss 3.8090 | val_ppl 45.11  <- best
+15:08:43 | INFO    |   step   9,100/13,417 | loss 3.9459 | lr 1.91e-04 | 72,706 tok/s | 447,283,200 tokens
+15:09:51 | INFO    |   step   9,200/13,417 | loss 3.9919 | lr 1.86e-04 | 73,023 tok/s | 452,198,400 tokens
+15:10:58 | INFO    |   step   9,300/13,417 | loss 3.9004 | lr 1.80e-04 | 72,734 tok/s | 457,113,600 tokens
+15:12:06 | INFO    |   step   9,400/13,417 | loss 3.9357 | lr 1.75e-04 | 72,866 tok/s | 462,028,800 tokens
+15:13:13 | INFO    |   step   9,500/13,417 | loss 3.9760 | lr 1.70e-04 | 73,067 tok/s | 466,944,000 tokens
+15:13:22 | INFO    |   [eval] step 9,500 | val_loss 3.7953 | val_ppl 44.49  <- best
+15:14:30 | INFO    |   step   9,600/13,417 | loss 3.9936 | lr 1.65e-04 | 72,892 tok/s | 471,859,200 tokens
+15:15:38 | INFO    |   step   9,700/13,417 | loss 3.9696 | lr 1.60e-04 | 72,883 tok/s | 476,774,400 tokens
+15:16:45 | INFO    |   step   9,800/13,417 | loss 3.9190 | lr 1.55e-04 | 72,968 tok/s | 481,689,600 tokens
+15:17:53 | INFO    |   step   9,900/13,417 | loss 3.9220 | lr 1.50e-04 | 72,894 tok/s | 486,604,800 tokens
+15:19:00 | INFO    |   step  10,000/13,417 | loss 3.8852 | lr 1.45e-04 | 73,053 tok/s | 491,520,000 tokens
+15:19:09 | INFO    |   [eval] step 10,000 | val_loss 3.7831 | val_ppl 43.95  <- best
+15:20:18 | INFO    |   step  10,100/13,417 | loss 3.9766 | lr 1.40e-04 | 72,906 tok/s | 496,435,200 tokens
+15:21:26 | INFO    |   step  10,200/13,417 | loss 3.9177 | lr 1.36e-04 | 72,953 tok/s | 501,350,400 tokens
+15:22:33 | INFO    |   step  10,300/13,417 | loss 3.9525 | lr 1.32e-04 | 72,837 tok/s | 506,265,600 tokens
+15:23:41 | INFO    |   step  10,400/13,417 | loss 3.9214 | lr 1.27e-04 | 72,908 tok/s | 511,180,800 tokens
+15:24:48 | INFO    |   step  10,500/13,417 | loss 3.8949 | lr 1.23e-04 | 72,834 tok/s | 516,096,000 tokens
+15:24:57 | INFO    |   [eval] step 10,500 | val_loss 3.7714 | val_ppl 43.44  <- best
+15:26:06 | INFO    |   step  10,600/13,417 | loss 3.9071 | lr 1.19e-04 | 72,817 tok/s | 521,011,200 tokens
+15:27:13 | INFO    |   step  10,700/13,417 | loss 3.8563 | lr 1.15e-04 | 72,732 tok/s | 525,926,400 tokens
+15:28:21 | INFO    |   step  10,800/13,417 | loss 3.8934 | lr 1.11e-04 | 72,888 tok/s | 530,841,600 tokens
+15:29:28 | INFO    |   step  10,900/13,417 | loss 3.9462 | lr 1.07e-04 | 72,873 tok/s | 535,756,800 tokens
+15:30:36 | INFO    |   step  11,000/13,417 | loss 3.8865 | lr 1.04e-04 | 72,850 tok/s | 540,672,000 tokens
+15:30:45 | INFO    |   [eval] step 11,000 | val_loss 3.7640 | val_ppl 43.12  <- best
+15:31:54 | INFO    |   step  11,100/13,417 | loss 3.9166 | lr 1.00e-04 | 72,931 tok/s | 545,587,200 tokens
+15:33:01 | INFO    |   step  11,200/13,417 | loss 3.8833 | lr 9.70e-05 | 72,872 tok/s | 550,502,400 tokens
+15:34:09 | INFO    |   step  11,300/13,417 | loss 3.8818 | lr 9.38e-05 | 72,787 tok/s | 555,417,600 tokens
+15:35:16 | INFO    |   step  11,400/13,417 | loss 3.8741 | lr 9.08e-05 | 72,781 tok/s | 560,332,800 tokens
+15:36:24 | INFO    |   step  11,500/13,417 | loss 3.8471 | lr 8.79e-05 | 72,843 tok/s | 565,248,000 tokens
+15:36:33 | INFO    |   [eval] step 11,500 | val_loss 3.7552 | val_ppl 42.74  <- best
+15:37:41 | INFO    |   step  11,600/13,417 | loss 3.8843 | lr 8.51e-05 | 72,654 tok/s | 570,163,200 tokens
+15:38:49 | INFO    |   step  11,700/13,417 | loss 3.9106 | lr 8.24e-05 | 72,075 tok/s | 575,078,400 tokens
+15:39:56 | INFO    |   step  11,800/13,417 | loss 3.8897 | lr 7.99e-05 | 72,941 tok/s | 579,993,600 tokens
+15:41:04 | INFO    |   step  11,900/13,417 | loss 3.9077 | lr 7.76e-05 | 72,817 tok/s | 584,908,800 tokens
+15:42:11 | INFO    |   step  12,000/13,417 | loss 3.8735 | lr 7.53e-05 | 72,825 tok/s | 589,824,000 tokens
+15:42:20 | INFO    |   [eval] step 12,000 | val_loss 3.7486 | val_ppl 42.46  <- best
+15:43:29 | INFO    |   step  12,100/13,417 | loss 3.8339 | lr 7.33e-05 | 72,721 tok/s | 594,739,200 tokens
+15:44:37 | INFO    |   step  12,200/13,417 | loss 3.9045 | lr 7.14e-05 | 73,005 tok/s | 599,654,400 tokens
+15:45:44 | INFO    |   step  12,300/13,417 | loss 3.9304 | lr 6.96e-05 | 72,797 tok/s | 604,569,600 tokens
+15:46:52 | INFO    |   step  12,400/13,417 | loss 3.7999 | lr 6.79e-05 | 72,861 tok/s | 609,484,800 tokens
+15:47:59 | INFO    |   step  12,500/13,417 | loss 3.8442 | lr 6.65e-05 | 72,713 tok/s | 614,400,000 tokens
+15:48:08 | INFO    |   [eval] step 12,500 | val_loss 3.7439 | val_ppl 42.26  <- best
+15:49:17 | INFO    |   step  12,600/13,417 | loss 3.8614 | lr 6.51e-05 | 72,844 tok/s | 619,315,200 tokens
+15:50:24 | INFO    |   step  12,700/13,417 | loss 3.8997 | lr 6.40e-05 | 72,895 tok/s | 624,230,400 tokens
+15:51:32 | INFO    |   step  12,800/13,417 | loss 3.8718 | lr 6.29e-05 | 72,879 tok/s | 629,145,600 tokens
+15:52:39 | INFO    |   step  12,900/13,417 | loss 3.8361 | lr 6.21e-05 | 72,844 tok/s | 634,060,800 tokens
+15:53:47 | INFO    |   step  13,000/13,417 | loss 3.8848 | lr 6.13e-05 | 72,729 tok/s | 638,976,000 tokens
+15:53:56 | INFO    |   [eval] step 13,000 | val_loss 3.7396 | val_ppl 42.08  <- best
+15:55:05 | INFO    |   step  13,100/13,417 | loss 3.8999 | lr 6.08e-05 | 72,601 tok/s | 643,891,200 tokens
+15:56:12 | INFO    |   step  13,200/13,417 | loss 3.9182 | lr 6.04e-05 | 72,726 tok/s | 648,806,400 tokens
+15:57:20 | INFO    |   step  13,300/13,417 | loss 3.8893 | lr 6.01e-05 | 72,726 tok/s | 653,721,600 tokens
+15:58:28 | INFO    |   step  13,400/13,417 | loss 3.8814 | lr 6.00e-05 | 72,721 tok/s | 658,636,800 tokens
+15:58:49 | INFO    | [done] 13,417 steps | val_loss 3.7363 | ppl 41.94 | 2.62 h
