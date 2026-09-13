@@ -79,5 +79,8 @@ bonus_ablation/checkpoints/**/*.pt
 # Packaging output for Kaggle — rebuilt by ./package_for_kaggle.sh
 dist/
 
-# Personal scratch 
+# Personal scratch
 MY_KAGGLE_LINKS.md
+
+# Course PDFs (copyrighted course materials) — reference-only, never committed
+course_pdfs/
