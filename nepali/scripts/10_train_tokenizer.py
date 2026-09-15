@@ -64,7 +64,7 @@ import sentencepiece as spm
 import yaml
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
-from shared.tokenizer_utils import count_tokens_streaming
+from shared.tokenizer.tokenizer_utils import count_tokens_streaming
 
 
 # ---------------------------------------------------------------------------

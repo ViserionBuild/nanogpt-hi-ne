@@ -107,8 +107,8 @@ from pathlib import Path
 from typing import Any, Dict, Iterator, Optional, Set
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
-from shared.data_utils import iter_lines, count_lines
-from shared.near_dup import (
+from shared.tokenizer.data_utils import iter_lines, count_lines
+from shared.tokenizer.near_dup import (
     MinHasher,
     jaccard_estimate,
     lsh_band_keys,
@@ -117,11 +117,11 @@ from shared.near_dup import (
 )
 # THE MAC OPTIMIZATION: same shared/near_dup_mac.py module already created
 # and validated for Nepali — NOT a new/duplicate in-memory index.
-from shared.near_dup_mac import InMemoryMinHashDedupIndex
+from shared.tokenizer.near_dup_mac import InMemoryMinHashDedupIndex
 # Same accounting-reconciliation check the Linux script uses — reused, not
 # reimplemented, so there is one validation implementation shared by both.
-from shared.dedup_accounting import validate_dedup_accounting
-from shared.run_stats import cleanup_prior_stage_files
+from shared.tokenizer.dedup_accounting import validate_dedup_accounting
+from shared.tokenizer.run_stats import cleanup_prior_stage_files
 
 try:
     import resource
@@ -153,7 +153,7 @@ def peak_memory_mb() -> Optional[float]:
 
 
 def capped_lines(path: str, limit: Optional[int]) -> Iterator[str]:
-    """Like shared.data_utils.iter_lines(path), but stops after *limit*
+    """Like shared.tokenizer.data_utils.iter_lines(path), but stops after *limit*
     lines when limit is not None. Used only for --sample-lines
     benchmarking; the full run (limit=None) streams every line exactly as
     05_deduplicate.py does."""

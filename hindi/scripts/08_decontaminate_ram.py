@@ -82,8 +82,8 @@ from typing import Any, Dict, List, Optional
 import yaml
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
-from shared.data_utils import count_lines, iter_lines
-from shared.near_dup import MinHasher, line_band_keys
+from shared.tokenizer.data_utils import count_lines, iter_lines
+from shared.tokenizer.near_dup import MinHasher, line_band_keys
 
 
 # ---------------------------------------------------------------------------

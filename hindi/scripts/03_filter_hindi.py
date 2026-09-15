@@ -8,8 +8,8 @@ import unicodedata
 from pathlib import Path
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-from shared.data_utils import count_lines, iter_lines
-from shared.run_stats import cleanup_prior_stage_files, record_run
+from shared.tokenizer.data_utils import count_lines, iter_lines
+from shared.tokenizer.run_stats import cleanup_prior_stage_files, record_run
 
 # Exactly three logical/top-level corpus sources — see 05_deduplicate.py's
 # module docstring. "news" already contains every enabled news outlet

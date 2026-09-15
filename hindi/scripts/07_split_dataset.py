@@ -77,7 +77,7 @@ from typing import Any, Dict, Optional
 import yaml
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
-from shared.data_utils import count_lines, line_hash
+from shared.tokenizer.data_utils import count_lines, line_hash
 
 
 # ---------------------------------------------------------------------------

@@ -10,8 +10,8 @@ from pathlib import Path
 
 # Add shared to path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-from shared.data_utils import count_lines, iter_lines
-from shared.run_stats import record_run
+from shared.tokenizer.data_utils import count_lines, iter_lines
+from shared.tokenizer.run_stats import record_run
 
 # Exactly three logical/top-level corpus sources — see 05_deduplicate.py's
 # module docstring for the full rationale. "wikipedia" is read directly

@@ -10,7 +10,7 @@ from typing import Dict, Any, List
 
 # Add repository root to path
 sys.path.append(str(Path(__file__).resolve().parent.parent.parent))
-from shared.data_utils import iter_lines
+from shared.tokenizer.data_utils import iter_lines
 
 def load_config(config_path: str) -> Dict[str, Any]:
     """Load configuration from a YAML file."""

@@ -39,7 +39,7 @@ import sentencepiece as spm
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent))
-from shared.tokenizer_utils import count_tokens_streaming
+from shared.tokenizer.tokenizer_utils import count_tokens_streaming
 
 # PUBLIC_SOURCE + MANUAL_SOURCES together define every final/<source>_train.txt
 # this script scans for the source breakdown — matches script 10's constants
