@@ -1,0 +1,1195 @@
+{
+  "language": "nepali",
+  "pretrained_checkpoint": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/checkpoints/best.pt",
+  "finetuned_checkpoint": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/checkpoints_ft/best.pt",
+  "before_finetuning": {
+    "three_way_accuracy": {
+      "test_seen": {
+        "accuracies_per_seed": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0
+        },
+        "mean_accuracy": 0.0,
+        "min_accuracy": 0.0,
+        "max_accuracy": 0.0,
+        "n_examples": 320,
+        "per_bucket": {
+          "pairwise/age": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/height": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/height": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/price": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/quantity": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/age": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/price": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/quantity": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          }
+        },
+        "qualitative_examples": [
+          {
+            "prompt": "दिइएको छ: पवन मोहनभन्दा कान्छो छ। भन्नुहोस्, यीमध्ये कान्छो को हो?",
+            "gold": "पवन",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिइएको छ: महेश रमेशभन्दा जेठो छ। भन्नुहोस्, यीमध्ये जेठो को हो?",
+            "gold": "महेश",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिइएको छ: रोहित तरुणभन्दा अग्लो छ। भन्नुहोस्, यीमध्ये होचो को हो?",
+            "gold": "तरुण",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिइएको छ: मधु राजेशभन्दा अग्ली छ। भन्नुहोस्, यीमध्ये होचो को हो?",
+            "gold": "राजेश",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिइएको छ: तरुण सुरेशभन्दा होचो छ। भन्नुहोस्, यीमध्ये अग्लो को हो?",
+            "gold": "सुरेश",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "राजेश गोपालभन्दा होचो छ। गोपाल अमितभन्दा अग्लो छ। यीमध्ये बीचको को हो?",
+            "gold": "अमित",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "सुरेश गीताभन्दा अग्लो छ। गीता संजयभन्दा अग्ली छ। यीमध्ये बीचको को हो?",
+            "gold": "गीता",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिइएको छ: साबुन रुखकटहरभन्दा महँगो छ। भन्नुहोस्, यीमध्ये सस्तो कुन हो?",
+            "gold": "रुखकटहर",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिइएको छ: बयर जौभन्दा महँगो छ। भन्नुहोस्, यीमध्ये सस्तो कुन हो?",
+            "gold": "जौ",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिइएको छ: गाजर साइकलभन्दा महँगी छ। भन्नुहोस्, यीमध्ये सस्तो कुन हो?",
+            "gold": "साइकल",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिइएको छ: आँप कलमभन्दा महँगो छ। भन्नुहोस्, यीमध्ये महँगो कुन हो?",
+            "gold": "आँप",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिइएको छ: जौ तौलियाभन्दा महँगो छ। भन्नुहोस्, यीमध्ये महँगो कुन हो?",
+            "gold": "जौ",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिइएको छ: डायरी मोबाइलभन्दा महँगी छ। भन्नुहोस्, यीमध्ये महँगो कुन हो?",
+            "gold": "डायरी",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिइएको छ: पालुङ्गो चामलभन्दा सस्तो छ। भन्नुहोस्, यीमध्ये महँगो कुन हो?",
+            "gold": "चामल",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि भिन्डी पालुङ्गोभन्दा धेरै छ भने, यीमध्ये कसको मात्रा धेरै छ?",
+            "gold": "भिन्डी",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिइएको छ: सुन्तला मोबाइलभन्दा थोरै छ। भन्नुहोस्, यीमध्ये कसको मात्रा थोरै छ?",
+            "gold": "सुन्तला",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि नरिवल स्कार्फभन्दा थोरै छ भने, यीमध्ये कसको मात्रा थोरै छ?",
+            "gold": "नरिवल",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि नासपाती स्कार्फभन्दा थोरै छ भने, यीमध्ये कसको मात्रा थोरै छ?",
+            "gold": "नासपाती",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "महेश हरिभन्दा कान्छो छ। यीमध्ये कान्छो को हो?",
+            "gold": "महेश",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अनिल विष्णुभन्दा कान्छो छ। यीमध्ये जेठो को हो?",
+            "gold": "विष्णु",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          }
+        ]
+      },
+      "test_unseen_entity": {
+        "accuracies_per_seed": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0
+        },
+        "mean_accuracy": 0.0,
+        "min_accuracy": 0.0,
+        "max_accuracy": 0.0,
+        "n_examples": 320,
+        "per_bucket": {
+          "pairwise/age": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/height": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/price": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/quantity": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/age": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/height": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/price": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/quantity": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          }
+        },
+        "qualitative_examples": [
+          {
+            "prompt": "यदि उर्मिला रेखाभन्दा जेठी छ भने, यीमध्ये जेठो को हो?",
+            "gold": "उर्मिला",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि आरती यशभन्दा जेठी छ भने, यीमध्ये कान्छो को हो?",
+            "gold": "यश",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि मंजू प्रियाभन्दा कान्छी छ भने, यीमध्ये कान्छो को हो?",
+            "gold": "मंजू",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि गायत्री आरतीभन्दा कान्छी छ भने, यीमध्ये जेठो को हो?",
+            "gold": "आरती",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि राधा सुमितभन्दा कान्छी छ भने, यीमध्ये जेठो को हो?",
+            "gold": "सुमित",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि शीला प्रियाभन्दा अग्ली छ भने, यीमध्ये होचो को हो?",
+            "gold": "प्रिया",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि निखिल किशोरभन्दा होचो छ भने, यीमध्ये होचो को हो?",
+            "gold": "निखिल",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि सिमी भुइँकटहरभन्दा सस्ती छ भने, यीमध्ये महँगो कुन हो?",
+            "gold": "भुइँकटहर",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि भुइँकटहर थैलोभन्दा सस्तो छ भने, यीमध्ये महँगो कुन हो?",
+            "gold": "थैलो",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिइएको छ: केरा झोलाभन्दा सस्तो छ। भन्नुहोस्, यीमध्ये महँगो कुन हो?",
+            "gold": "झोला",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "गोलभेडा भुइँकटहरभन्दा थोरै छ। यीमध्ये कसको मात्रा धेरै छ?",
+            "gold": "भुइँकटहर",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि कंघी टेबलभन्दा थोरै छ भने, यीमध्ये कसको मात्रा थोरै छ?",
+            "gold": "कंघी",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि बट्टा ऐनाभन्दा धेरै छ भने, यीमध्ये कसको मात्रा थोरै छ?",
+            "gold": "ऐना",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "भण्टा कम्बलभन्दा धेरै छ। यीमध्ये कसको मात्रा धेरै छ?",
+            "gold": "भण्टा",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "कंघी गोलभेडाभन्दा थोरै छ। यीमध्ये कसको मात्रा धेरै छ?",
+            "gold": "गोलभेडा",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि कम्बल जुत्ताभन्दा थोरै छ भने, यीमध्ये कसको मात्रा थोरै छ?",
+            "gold": "कम्बल",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि कंघी झोलाभन्दा धेरै छ भने, यीमध्ये कसको मात्रा थोरै छ?",
+            "gold": "झोला",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि चना बट्टाभन्दा धेरै छ भने, यीमध्ये कसको मात्रा धेरै छ?",
+            "gold": "चना",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि भण्टा टेबलभन्दा धेरै छ भने, यीमध्ये कसको मात्रा धेरै छ?",
+            "gold": "भण्टा",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "यदि दराज ऐनाभन्दा थोरै छ भने, यीमध्ये कसको मात्रा धेरै छ?",
+            "gold": "ऐना",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          }
+        ]
+      },
+      "test_unseen_wording": {
+        "accuracies_per_seed": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0
+        },
+        "mean_accuracy": 0.0,
+        "min_accuracy": 0.0,
+        "max_accuracy": 0.0,
+        "n_examples": 320,
+        "per_bucket": {
+          "pairwise/age": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/height": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/price": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/quantity": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/age": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/price": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/height": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/quantity": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          }
+        },
+        "qualitative_examples": [
+          {
+            "prompt": "तुलना: शीला र गायत्री। शीला गायत्रीभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+            "gold": "गायत्री",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: सुमित र राधा। सुमित राधाभन्दा कान्छो छ। प्रश्न — यीमध्ये कान्छो को हो?",
+            "gold": "सुमित",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: राधा र शीला। राधा शीलाभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+            "gold": "शीला",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: ललिता र सुमन। ललिता सुमनभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+            "gold": "सुमन",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: प्रीति र सन्तोष। प्रीति सन्तोषभन्दा कान्छी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+            "gold": "प्रीति",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: निखिल र किशोर। निखिल किशोरभन्दा जेठो छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "निखिल",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: दीपक र ललिता। दीपक ललिताभन्दा जेठो छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "दीपक",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: यश र राधा। यश राधाभन्दा जेठो छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "यश",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: राधा र प्रिया। राधा प्रियाभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "राधा",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: रेखा र प्रीति। रेखा प्रीतिभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "रेखा",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: गायत्री र सुमित। गायत्री सुमितभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "गायत्री",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: सुमित र आरती। सुमित आरतीभन्दा कान्छो छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "आरती",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: स्नेहा र सुमन। स्नेहा सुमनभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+            "gold": "सुमन",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: प्रीति र दीपक। प्रीति दीपकभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "प्रीति",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: प्रीति र सन्तोष। प्रीति सन्तोषभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "प्रीति",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: सन्तोष र उर्मिला। सन्तोष उर्मिलाभन्दा जेठो छ। प्रश्न — यीमध्ये कान्छो को हो?",
+            "gold": "उर्मिला",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: उर्मिला र किशोर। उर्मिला किशोरभन्दा अग्ली छ। प्रश्न — यीमध्ये होचो को हो?",
+            "gold": "किशोर",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: प्रिया र आरती। प्रिया आरतीभन्दा होची छ। प्रश्न — यीमध्ये होचो को हो?",
+            "gold": "प्रिया",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: ललिता र दीपक। ललिता दीपकभन्दा होची छ। प्रश्न — यीमध्ये होचो को हो?",
+            "gold": "ललिता",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: रबर र थैलो। रबर थैलोभन्दा सस्तो छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+            "gold": "रबर",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          }
+        ]
+      }
+    },
+    "pretraining_perplexity": {
+      "cross_entropy_nats": 3.7453769063949585,
+      "perplexity": 42.32495675977611,
+      "n_batches": 50,
+      "n_tokens_evaluated": 819200
+    }
+  },
+  "after_finetuning": {
+    "three_way_accuracy": {
+      "test_seen": {
+        "accuracies_per_seed": {
+          "0": 0.434375,
+          "1": 0.434375,
+          "2": 0.434375
+        },
+        "mean_accuracy": 0.434375,
+        "min_accuracy": 0.434375,
+        "max_accuracy": 0.434375,
+        "n_examples": 320,
+        "per_bucket": {
+          "pairwise/age": {
+            "accuracy": 0.5,
+            "correct": 20,
+            "total": 40
+          },
+          "pairwise/height": {
+            "accuracy": 0.475,
+            "correct": 19,
+            "total": 40
+          },
+          "transitive3/height": {
+            "accuracy": 0.4,
+            "correct": 16,
+            "total": 40
+          },
+          "pairwise/price": {
+            "accuracy": 0.6,
+            "correct": 24,
+            "total": 40
+          },
+          "pairwise/quantity": {
+            "accuracy": 0.475,
+            "correct": 19,
+            "total": 40
+          },
+          "transitive3/age": {
+            "accuracy": 0.3,
+            "correct": 12,
+            "total": 40
+          },
+          "transitive3/price": {
+            "accuracy": 0.35,
+            "correct": 14,
+            "total": 40
+          },
+          "transitive3/quantity": {
+            "accuracy": 0.375,
+            "correct": 15,
+            "total": 40
+          }
+        },
+        "qualitative_examples": [
+          {
+            "prompt": "दिइएको छ: पवन मोहनभन्दा कान्छो छ। भन्नुहोस्, यीमध्ये कान्छो को हो?",
+            "gold": "पवन",
+            "predicted": "पवन",
+            "correct": true,
+            "raw_generated": "उत्तर: पवन"
+          },
+          {
+            "prompt": "दिइएको छ: महेश रमेशभन्दा जेठो छ। भन्नुहोस्, यीमध्ये जेठो को हो?",
+            "gold": "महेश",
+            "predicted": "रमेश",
+            "correct": false,
+            "raw_generated": "उत्तर: रमेश"
+          },
+          {
+            "prompt": "दिइएको छ: रोहित तरुणभन्दा अग्लो छ। भन्नुहोस्, यीमध्ये होचो को हो?",
+            "gold": "तरुण",
+            "predicted": "तरुण",
+            "correct": true,
+            "raw_generated": "उत्तर: तरुण"
+          },
+          {
+            "prompt": "दिइएको छ: मधु राजेशभन्दा अग्ली छ। भन्नुहोस्, यीमध्ये होचो को हो?",
+            "gold": "राजेश",
+            "predicted": "मधु",
+            "correct": false,
+            "raw_generated": "उत्तर: मधु"
+          },
+          {
+            "prompt": "दिइएको छ: तरुण सुरेशभन्दा होचो छ। भन्नुहोस्, यीमध्ये अग्लो को हो?",
+            "gold": "सुरेश",
+            "predicted": "सुरेश",
+            "correct": true,
+            "raw_generated": "उत्तर: सुरेश"
+          },
+          {
+            "prompt": "राजेश गोपालभन्दा होचो छ। गोपाल अमितभन्दा अग्लो छ। यीमध्ये बीचको को हो?",
+            "gold": "अमित",
+            "predicted": "गोपाल",
+            "correct": false,
+            "raw_generated": "उत्तर: गोपाल"
+          },
+          {
+            "prompt": "सुरेश गीताभन्दा अग्लो छ। गीता संजयभन्दा अग्ली छ। यीमध्ये बीचको को हो?",
+            "gold": "गीता",
+            "predicted": "गीता",
+            "correct": true,
+            "raw_generated": "उत्तर: गीता"
+          },
+          {
+            "prompt": "दिइएको छ: साबुन रुखकटहरभन्दा महँगो छ। भन्नुहोस्, यीमध्ये सस्तो कुन हो?",
+            "gold": "रुखकटहर",
+            "predicted": "रुखकटहर",
+            "correct": true,
+            "raw_generated": "उत्तर: रुखकटहर"
+          },
+          {
+            "prompt": "दिइएको छ: बयर जौभन्दा महँगो छ। भन्नुहोस्, यीमध्ये सस्तो कुन हो?",
+            "gold": "जौ",
+            "predicted": "जौ",
+            "correct": true,
+            "raw_generated": "उत्तर: जौ"
+          },
+          {
+            "prompt": "दिइएको छ: गाजर साइकलभन्दा महँगी छ। भन्नुहोस्, यीमध्ये सस्तो कुन हो?",
+            "gold": "साइकल",
+            "predicted": "साइकल",
+            "correct": true,
+            "raw_generated": "उत्तर: साइकल"
+          },
+          {
+            "prompt": "दिइएको छ: आँप कलमभन्दा महँगो छ। भन्नुहोस्, यीमध्ये महँगो कुन हो?",
+            "gold": "आँप",
+            "predicted": "कलम",
+            "correct": false,
+            "raw_generated": "उत्तर: कलम"
+          },
+          {
+            "prompt": "दिइएको छ: जौ तौलियाभन्दा महँगो छ। भन्नुहोस्, यीमध्ये महँगो कुन हो?",
+            "gold": "जौ",
+            "predicted": "तौलिया",
+            "correct": false,
+            "raw_generated": "उत्तर: तौलिया"
+          },
+          {
+            "prompt": "दिइएको छ: डायरी मोबाइलभन्दा महँगी छ। भन्नुहोस्, यीमध्ये महँगो कुन हो?",
+            "gold": "डायरी",
+            "predicted": "मोबाइल",
+            "correct": false,
+            "raw_generated": "उत्तर: मोबाइल"
+          },
+          {
+            "prompt": "दिइएको छ: पालुङ्गो चामलभन्दा सस्तो छ। भन्नुहोस्, यीमध्ये महँगो कुन हो?",
+            "gold": "चामल",
+            "predicted": "चामल",
+            "correct": true,
+            "raw_generated": "उत्तर: चामल"
+          },
+          {
+            "prompt": "यदि भिन्डी पालुङ्गोभन्दा धेरै छ भने, यीमध्ये कसको मात्रा धेरै छ?",
+            "gold": "भिन्डी",
+            "predicted": "भिन्डी",
+            "correct": true,
+            "raw_generated": "उत्तर: भिन्डी"
+          },
+          {
+            "prompt": "दिइएको छ: सुन्तला मोबाइलभन्दा थोरै छ। भन्नुहोस्, यीमध्ये कसको मात्रा थोरै छ?",
+            "gold": "सुन्तला",
+            "predicted": "सुन्तला",
+            "correct": true,
+            "raw_generated": "उत्तर: सुन्तला"
+          },
+          {
+            "prompt": "यदि नरिवल स्कार्फभन्दा थोरै छ भने, यीमध्ये कसको मात्रा थोरै छ?",
+            "gold": "नरिवल",
+            "predicted": "नरिवल",
+            "correct": true,
+            "raw_generated": "उत्तर: नरिवल"
+          },
+          {
+            "prompt": "यदि नासपाती स्कार्फभन्दा थोरै छ भने, यीमध्ये कसको मात्रा थोरै छ?",
+            "gold": "नासपाती",
+            "predicted": "नासपाती",
+            "correct": true,
+            "raw_generated": "उत्तर: नासपाती"
+          },
+          {
+            "prompt": "महेश हरिभन्दा कान्छो छ। यीमध्ये कान्छो को हो?",
+            "gold": "महेश",
+            "predicted": "महेश",
+            "correct": true,
+            "raw_generated": "उत्तर: महेश"
+          },
+          {
+            "prompt": "अनिल विष्णुभन्दा कान्छो छ। यीमध्ये जेठो को हो?",
+            "gold": "विष्णु",
+            "predicted": "अनिल",
+            "correct": false,
+            "raw_generated": "उत्तर: अनिल"
+          }
+        ]
+      },
+      "test_unseen_entity": {
+        "accuracies_per_seed": {
+          "0": 0.190625,
+          "1": 0.190625,
+          "2": 0.190625
+        },
+        "mean_accuracy": 0.19062499999999996,
+        "min_accuracy": 0.190625,
+        "max_accuracy": 0.190625,
+        "n_examples": 320,
+        "per_bucket": {
+          "pairwise/age": {
+            "accuracy": 0.3,
+            "correct": 12,
+            "total": 40
+          },
+          "pairwise/height": {
+            "accuracy": 0.25,
+            "correct": 10,
+            "total": 40
+          },
+          "pairwise/price": {
+            "accuracy": 0.15,
+            "correct": 6,
+            "total": 40
+          },
+          "pairwise/quantity": {
+            "accuracy": 0.275,
+            "correct": 11,
+            "total": 40
+          },
+          "transitive3/age": {
+            "accuracy": 0.2,
+            "correct": 8,
+            "total": 40
+          },
+          "transitive3/height": {
+            "accuracy": 0.1,
+            "correct": 4,
+            "total": 40
+          },
+          "transitive3/price": {
+            "accuracy": 0.1,
+            "correct": 4,
+            "total": 40
+          },
+          "transitive3/quantity": {
+            "accuracy": 0.15,
+            "correct": 6,
+            "total": 40
+          }
+        },
+        "qualitative_examples": [
+          {
+            "prompt": "यदि उर्मिला रेखाभन्दा जेठी छ भने, यीमध्ये जेठो को हो?",
+            "gold": "उर्मिला",
+            "predicted": "रीता",
+            "correct": false,
+            "raw_generated": "उत्तर: रीता"
+          },
+          {
+            "prompt": "यदि आरती यशभन्दा जेठी छ भने, यीमध्ये कान्छो को हो?",
+            "gold": "यश",
+            "predicted": "जश",
+            "correct": false,
+            "raw_generated": "उत्तर: जश"
+          },
+          {
+            "prompt": "यदि मंजू प्रियाभन्दा कान्छी छ भने, यीमध्ये कान्छो को हो?",
+            "gold": "मंजू",
+            "predicted": "संजय",
+            "correct": false,
+            "raw_generated": "उत्तर: संजय"
+          },
+          {
+            "prompt": "यदि गायत्री आरतीभन्दा कान्छी छ भने, यीमध्ये जेठो को हो?",
+            "gold": "आरती",
+            "predicted": "लस",
+            "correct": false,
+            "raw_generated": "उत्तर: लस"
+          },
+          {
+            "prompt": "यदि राधा सुमितभन्दा कान्छी छ भने, यीमध्ये जेठो को हो?",
+            "gold": "सुमित",
+            "predicted": "सुमित",
+            "correct": true,
+            "raw_generated": "उत्तर: सुमित"
+          },
+          {
+            "prompt": "यदि शीला प्रियाभन्दा अग्ली छ भने, यीमध्ये होचो को हो?",
+            "gold": "प्रिया",
+            "predicted": "सुनीता",
+            "correct": false,
+            "raw_generated": "उत्तर: सुनीता"
+          },
+          {
+            "prompt": "यदि निखिल किशोरभन्दा होचो छ भने, यीमध्ये होचो को हो?",
+            "gold": "निखिल",
+            "predicted": "तरुण",
+            "correct": false,
+            "raw_generated": "उत्तर: तरुण"
+          },
+          {
+            "prompt": "यदि सिमी भुइँकटहरभन्दा सस्ती छ भने, यीमध्ये महँगो कुन हो?",
+            "gold": "भुइँकटहर",
+            "predicted": "सिमी",
+            "correct": false,
+            "raw_generated": "उत्तर: सिमी"
+          },
+          {
+            "prompt": "यदि भुइँकटहर थैलोभन्दा सस्तो छ भने, यीमध्ये महँगो कुन हो?",
+            "gold": "थैलो",
+            "predicted": "कुर्सी",
+            "correct": false,
+            "raw_generated": "उत्तर: कुर्सी"
+          },
+          {
+            "prompt": "दिइएको छ: केरा झोलाभन्दा सस्तो छ। भन्नुहोस्, यीमध्ये महँगो कुन हो?",
+            "gold": "झोला",
+            "predicted": "स्याउ",
+            "correct": false,
+            "raw_generated": "उत्तर: स्याउ"
+          },
+          {
+            "prompt": "गोलभेडा भुइँकटहरभन्दा थोरै छ। यीमध्ये कसको मात्रा धेरै छ?",
+            "gold": "भुइँकटहर",
+            "predicted": "कोदो",
+            "correct": false,
+            "raw_generated": "उत्तर: कोदो"
+          },
+          {
+            "prompt": "यदि कंघी टेबलभन्दा थोरै छ भने, यीमध्ये कसको मात्रा थोरै छ?",
+            "gold": "कंघी",
+            "predicted": "कसको",
+            "correct": false,
+            "raw_generated": "उत्तर: कसको"
+          },
+          {
+            "prompt": "यदि बट्टा ऐनाभन्दा धेरै छ भने, यीमध्ये कसको मात्रा थोरै छ?",
+            "gold": "ऐना",
+            "predicted": "बट्टा",
+            "correct": false,
+            "raw_generated": "उत्तर: बट्टा"
+          },
+          {
+            "prompt": "भण्टा कम्बलभन्दा धेरै छ। यीमध्ये कसको मात्रा धेरै छ?",
+            "gold": "भण्टा",
+            "predicted": "भाण्टा",
+            "correct": false,
+            "raw_generated": "उत्तर: भाण्टा"
+          },
+          {
+            "prompt": "कंघी गोलभेडाभन्दा थोरै छ। यीमध्ये कसको मात्रा धेरै छ?",
+            "gold": "गोलभेडा",
+            "predicted": "कसको",
+            "correct": false,
+            "raw_generated": "उत्तर: कसको"
+          },
+          {
+            "prompt": "यदि कम्बल जुत्ताभन्दा थोरै छ भने, यीमध्ये कसको मात्रा थोरै छ?",
+            "gold": "कम्बल",
+            "predicted": "कम्बल",
+            "correct": true,
+            "raw_generated": "उत्तर: कम्बल"
+          },
+          {
+            "prompt": "यदि कंघी झोलाभन्दा धेरै छ भने, यीमध्ये कसको मात्रा थोरै छ?",
+            "gold": "झोला",
+            "predicted": "कसको",
+            "correct": false,
+            "raw_generated": "उत्तर: कसको"
+          },
+          {
+            "prompt": "यदि चना बट्टाभन्दा धेरै छ भने, यीमध्ये कसको मात्रा धेरै छ?",
+            "gold": "चना",
+            "predicted": "चना",
+            "correct": true,
+            "raw_generated": "उत्तर: चना"
+          },
+          {
+            "prompt": "यदि भण्टा टेबलभन्दा धेरै छ भने, यीमध्ये कसको मात्रा धेरै छ?",
+            "gold": "भण्टा",
+            "predicted": "चक्कु",
+            "correct": false,
+            "raw_generated": "उत्तर: चक्कु"
+          },
+          {
+            "prompt": "यदि दराज ऐनाभन्दा थोरै छ भने, यीमध्ये कसको मात्रा धेरै छ?",
+            "gold": "ऐना",
+            "predicted": "चेस",
+            "correct": false,
+            "raw_generated": "उत्तर: चेस"
+          }
+        ]
+      },
+      "test_unseen_wording": {
+        "accuracies_per_seed": {
+          "0": 0.203125,
+          "1": 0.203125,
+          "2": 0.203125
+        },
+        "mean_accuracy": 0.203125,
+        "min_accuracy": 0.203125,
+        "max_accuracy": 0.203125,
+        "n_examples": 320,
+        "per_bucket": {
+          "pairwise/age": {
+            "accuracy": 0.225,
+            "correct": 9,
+            "total": 40
+          },
+          "pairwise/height": {
+            "accuracy": 0.2,
+            "correct": 8,
+            "total": 40
+          },
+          "pairwise/price": {
+            "accuracy": 0.275,
+            "correct": 11,
+            "total": 40
+          },
+          "pairwise/quantity": {
+            "accuracy": 0.325,
+            "correct": 13,
+            "total": 40
+          },
+          "transitive3/age": {
+            "accuracy": 0.125,
+            "correct": 5,
+            "total": 40
+          },
+          "transitive3/price": {
+            "accuracy": 0.275,
+            "correct": 11,
+            "total": 40
+          },
+          "transitive3/height": {
+            "accuracy": 0.1,
+            "correct": 4,
+            "total": 40
+          },
+          "transitive3/quantity": {
+            "accuracy": 0.1,
+            "correct": 4,
+            "total": 40
+          }
+        },
+        "qualitative_examples": [
+          {
+            "prompt": "तुलना: शीला र गायत्री। शीला गायत्रीभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+            "gold": "गायत्री",
+            "predicted": "गिलास",
+            "correct": false,
+            "raw_generated": "उत्तर: गिलास"
+          },
+          {
+            "prompt": "तुलना: सुमित र राधा। सुमित राधाभन्दा कान्छो छ। प्रश्न — यीमध्ये कान्छो को हो?",
+            "gold": "सुमित",
+            "predicted": "सुमित",
+            "correct": true,
+            "raw_generated": "उत्तर: सुमित"
+          },
+          {
+            "prompt": "तुलना: राधा र शीला। राधा शीलाभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+            "gold": "शीला",
+            "predicted": "राधा",
+            "correct": false,
+            "raw_generated": "उत्तर: राधा"
+          },
+          {
+            "prompt": "तुलना: ललिता र सुमन। ललिता सुमनभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+            "gold": "सुमन",
+            "predicted": "ललिता",
+            "correct": false,
+            "raw_generated": "उत्तर: ललिता"
+          },
+          {
+            "prompt": "तुलना: प्रीति र सन्तोष। प्रीति सन्तोषभन्दा कान्छी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+            "gold": "प्रीति",
+            "predicted": "करण",
+            "correct": false,
+            "raw_generated": "उत्तर: करण"
+          },
+          {
+            "prompt": "तुलना: निखिल र किशोर। निखिल किशोरभन्दा जेठो छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "निखिल",
+            "predicted": "तरुण",
+            "correct": false,
+            "raw_generated": "उत्तर: तरुण"
+          },
+          {
+            "prompt": "तुलना: दीपक र ललिता। दीपक ललिताभन्दा जेठो छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "दीपक",
+            "predicted": "ललिता",
+            "correct": false,
+            "raw_generated": "उत्तर: ललिता"
+          },
+          {
+            "prompt": "तुलना: यश र राधा। यश राधाभन्दा जेठो छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "यश",
+            "predicted": "राधा",
+            "correct": false,
+            "raw_generated": "उत्तर: राधा"
+          },
+          {
+            "prompt": "तुलना: राधा र प्रिया। राधा प्रियाभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "राधा",
+            "predicted": "राधा",
+            "correct": true,
+            "raw_generated": "उत्तर: राधा"
+          },
+          {
+            "prompt": "तुलना: रेखा र प्रीति। रेखा प्रीतिभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "रेखा",
+            "predicted": "रेखा",
+            "correct": true,
+            "raw_generated": "उत्तर: रेखा"
+          },
+          {
+            "prompt": "तुलना: गायत्री र सुमित। गायत्री सुमितभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "गायत्री",
+            "predicted": "सुमित",
+            "correct": false,
+            "raw_generated": "उत्तर: सुमित"
+          },
+          {
+            "prompt": "तुलना: सुमित र आरती। सुमित आरतीभन्दा कान्छो छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "आरती",
+            "predicted": "सुमित",
+            "correct": false,
+            "raw_generated": "उत्तर: सुमित"
+          },
+          {
+            "prompt": "तुलना: स्नेहा र सुमन। स्नेहा सुमनभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+            "gold": "सुमन",
+            "predicted": "स्नेहा",
+            "correct": false,
+            "raw_generated": "उत्तर: स्नेहा"
+          },
+          {
+            "prompt": "तुलना: प्रीति र दीपक। प्रीति दीपकभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "प्रीति",
+            "predicted": "प्रकाश",
+            "correct": false,
+            "raw_generated": "उत्तर: प्रकाश"
+          },
+          {
+            "prompt": "तुलना: प्रीति र सन्तोष। प्रीति सन्तोषभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+            "gold": "प्रीति",
+            "predicted": "करण",
+            "correct": false,
+            "raw_generated": "उत्तर: करण"
+          },
+          {
+            "prompt": "तुलना: सन्तोष र उर्मिला। सन्तोष उर्मिलाभन्दा जेठो छ। प्रश्न — यीमध्ये कान्छो को हो?",
+            "gold": "उर्मिला",
+            "predicted": "तरुण",
+            "correct": false,
+            "raw_generated": "उत्तर: तरुण"
+          },
+          {
+            "prompt": "तुलना: उर्मिला र किशोर। उर्मिला किशोरभन्दा अग्ली छ। प्रश्न — यीमध्ये होचो को हो?",
+            "gold": "किशोर",
+            "predicted": "तरुण",
+            "correct": false,
+            "raw_generated": "उत्तर: तरुण"
+          },
+          {
+            "prompt": "तुलना: प्रिया र आरती। प्रिया आरतीभन्दा होची छ। प्रश्न — यीमध्ये होचो को हो?",
+            "gold": "प्रिया",
+            "predicted": "वरुण",
+            "correct": false,
+            "raw_generated": "उत्तर: वरुण"
+          },
+          {
+            "prompt": "तुलना: ललिता र दीपक। ललिता दीपकभन्दा होची छ। प्रश्न — यीमध्ये होचो को हो?",
+            "gold": "ललिता",
+            "predicted": "ललिता",
+            "correct": true,
+            "raw_generated": "उत्तर: ललिता"
+          },
+          {
+            "prompt": "तुलना: रबर र थैलो। रबर थैलोभन्दा सस्तो छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+            "gold": "रबर",
+            "predicted": "करेला",
+            "correct": false,
+            "raw_generated": "उत्तर: करेला"
+          }
+        ]
+      }
+    },
+    "pretraining_perplexity": {
+      "cross_entropy_nats": 4.181557264328003,
+      "perplexity": 65.46772442510402,
+      "n_batches": 50,
+      "n_tokens_evaluated": 819200
+    }
+  }
+}

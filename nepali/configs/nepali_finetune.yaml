@@ -1,0 +1,43 @@
+# =============================================================================
+# Model L — Nepali reasoning SFT (Phase 3)
+# =============================================================================
+# Mirrors hindi/configs/hindi_finetune.yaml exactly (same hyperparameters,
+# so any Model H vs. Model L difference in the results is attributable to
+# data/language, not to a finetuning-recipe difference between the two).
+# Starts from nepali/checkpoints/best.pt; tokenizer/vocabulary unchanged
+# from Phase 2 per spec 3.1.
+# =============================================================================
+
+language: nepali
+
+paths:
+  pretrained_checkpoint: nepali/checkpoints/best.pt
+  reasoning_data: nepali/reasoning_data
+  checkpoints: nepali/checkpoints_ft
+  logs: nepali/logs
+  eval_results: nepali/eval/results
+  figures: report/figures/nepali
+
+finetune:
+  # Round 2 — see hindi/configs/hindi_finetune.yaml for the full rationale
+  # (round 1's 24-name pool + 6 epochs memorized training names: 0.422 on
+  # test_seen but 0.000 on both unseen splits). Same fix applied here for
+  # parity: 80-name entity pools plus lower epochs/LR plus a per-epoch
+  # unseen-entity accuracy probe.
+  learning_rate: 0.0001
+  min_learning_rate: 0.00001
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  n_epochs: 4
+  batch_size: 16
+  grad_clip: 1.0
+  eval_every_n_steps: 50
+  max_length: 128
+  seed: 42
+  device: cuda
+
+evaluation:
+  max_new_tokens: 12
+  eval_batch_size: 32
+  accuracy_seeds: [0, 1, 2]
+  pretrain_ppl_batches: 50

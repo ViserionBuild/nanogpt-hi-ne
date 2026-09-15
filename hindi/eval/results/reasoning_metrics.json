@@ -1,0 +1,1195 @@
+{
+  "language": "hindi",
+  "pretrained_checkpoint": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/checkpoints/best.pt",
+  "finetuned_checkpoint": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/checkpoints_ft/best.pt",
+  "before_finetuning": {
+    "three_way_accuracy": {
+      "test_seen": {
+        "accuracies_per_seed": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0
+        },
+        "mean_accuracy": 0.0,
+        "min_accuracy": 0.0,
+        "max_accuracy": 0.0,
+        "n_examples": 320,
+        "per_bucket": {
+          "pairwise/age": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/age": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/height": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/height": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/price": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/quantity": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/price": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/quantity": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          }
+        },
+        "qualitative_examples": [
+          {
+            "prompt": "दिया गया है: निखिल ममता से छोटा है। बताइए, इनमें से छोटा कौन है?",
+            "gold": "निखिल",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "निखिल करण से छोटा है। करण अमित से बड़ा है। इनमें से बीच वाला कौन है?",
+            "gold": "निखिल",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "मधु गीता से बड़ी है। गीता स्वाति से छोटी है। इनमें से सबसे छोटा कौन है?",
+            "gold": "गीता",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अर्जुन करण से बड़ा है। करण इंदु से छोटा है। इनमें से सबसे बड़ा कौन है?",
+            "gold": "इंदु",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "राजू संजय से छोटा है। संजय वंदना से बड़ा है। इनमें से सबसे छोटा कौन है?",
+            "gold": "वंदना",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "रीता आकाश से छोटी है। आकाश आरती से बड़ा है। इनमें से सबसे बड़ा कौन है?",
+            "gold": "आकाश",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिया गया है: रोहित निखिल से छोटा है। बताइए, इनमें से लंबा कौन है?",
+            "gold": "निखिल",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिया गया है: रमेश वंदना से छोटा है। बताइए, इनमें से छोटा कौन है?",
+            "gold": "रमेश",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिया गया है: ज्योति सुधा से छोटी है। बताइए, इनमें से लंबा कौन है?",
+            "gold": "सुधा",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिया गया है: निखिल गोपाल से लंबा है। बताइए, इनमें से छोटा कौन है?",
+            "gold": "गोपाल",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "सरिता मुकेश से लंबी है। मुकेश राकेश से लंबा है। इनमें से सबसे छोटा कौन है?",
+            "gold": "राकेश",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "इंदु ज्योति से छोटी है। ज्योति सरोज से लंबी है। इनमें से सबसे छोटा कौन है?",
+            "gold": "इंदु",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "रीता मीना से छोटी है। मीना मोहन से लंबी है। इनमें से सबसे छोटा कौन है?",
+            "gold": "मोहन",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "प्रीति सुरेश से छोटी है। इनमें से छोटा कौन है?",
+            "gold": "प्रीति",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अर्जुन सुरेश से बड़ा है। इनमें से बड़ा कौन है?",
+            "gold": "अर्जुन",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "नरेश नेहा से बड़ा है। इनमें से बड़ा कौन है?",
+            "gold": "नरेश",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "सीता रोहित से बड़ी है। इनमें से छोटा कौन है?",
+            "gold": "रोहित",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "मोहन पूजा से बड़ा है। इनमें से छोटा कौन है?",
+            "gold": "पूजा",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "आरती मोहित से बड़ी है। इनमें से छोटा कौन है?",
+            "gold": "मोहित",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "दिनेश सुनीता से लंबा है। इनमें से छोटा कौन है?",
+            "gold": "सुनीता",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          }
+        ]
+      },
+      "test_unseen_entity": {
+        "accuracies_per_seed": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0
+        },
+        "mean_accuracy": 0.0,
+        "min_accuracy": 0.0,
+        "max_accuracy": 0.0,
+        "n_examples": 320,
+        "per_bucket": {
+          "pairwise/age": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/height": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/price": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/quantity": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/age": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/height": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/price": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/quantity": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          }
+        },
+        "qualitative_examples": [
+          {
+            "prompt": "अगर अभिषेक शीला से बड़ा है, तो इनमें से बड़ा कौन है?",
+            "gold": "अभिषेक",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अगर किरण ललिता से बड़ी है, तो इनमें से बड़ा कौन है?",
+            "gold": "किरण",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अगर प्रिया स्नेहा से छोटी है, तो इनमें से बड़ा कौन है?",
+            "gold": "स्नेहा",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अगर सुमित शीला से छोटा है, तो इनमें से छोटा कौन है?",
+            "gold": "सुमित",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अगर ललिता राजेश से छोटी है, तो इनमें से छोटा कौन है?",
+            "gold": "ललिता",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अगर ललिता राधा से बड़ी है, तो इनमें से छोटा कौन है?",
+            "gold": "राधा",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अगर ललिता मंजू से बड़ी है, तो इनमें से बड़ा कौन है?",
+            "gold": "ललिता",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अगर सोनू शीला से छोटा है, तो इनमें से बड़ा कौन है?",
+            "gold": "शीला",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अगर शीला गणेश से छोटी है, तो इनमें से छोटा कौन है?",
+            "gold": "शीला",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अगर गणेश अंजलि से छोटा है, तो इनमें से बड़ा कौन है?",
+            "gold": "अंजलि",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अगर शांति स्नेहा से छोटी है, तो इनमें से बड़ा कौन है?",
+            "gold": "स्नेहा",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अगर किरण अंजलि से छोटी है, तो इनमें से छोटा कौन है?",
+            "gold": "किरण",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अगर अंजलि गणेश से छोटी है, तो इनमें से लंबा कौन है?",
+            "gold": "गणेश",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "टोपी दर्पण से सस्ती है। इनमें से महंगा कौन सा है?",
+            "gold": "दर्पण",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "केला कंबल से सस्ता है। इनमें से सस्ता कौन सा है?",
+            "gold": "केला",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "मेज़ बैंगन से महंगी है। इनमें से सस्ता कौन सा है?",
+            "gold": "बैंगन",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "टमाटर डिब्बा से सस्ता है। इनमें से महंगा कौन सा है?",
+            "gold": "डिब्बा",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "केला राजमा से सस्ता है। इनमें से सस्ता कौन सा है?",
+            "gold": "केला",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "केला बैंगन से सस्ता है। इनमें से महंगा कौन सा है?",
+            "gold": "बैंगन",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "अमरूद चना से महंगा है। इनमें से सस्ता कौन सा है?",
+            "gold": "चना",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          }
+        ]
+      },
+      "test_unseen_wording": {
+        "accuracies_per_seed": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0
+        },
+        "mean_accuracy": 0.0,
+        "min_accuracy": 0.0,
+        "max_accuracy": 0.0,
+        "n_examples": 320,
+        "per_bucket": {
+          "pairwise/age": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/height": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/quantity": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/age": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/height": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/price": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/quantity": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/price": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          }
+        },
+        "qualitative_examples": [
+          {
+            "prompt": "तुलना: संदीप और गणेश। संदीप गणेश से बड़ा है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "गणेश",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: सुमन और प्रिया। सुमन प्रिया से बड़ी है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "सुमन",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: राजेश और सोनू। राजेश सोनू से छोटा है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "राजेश",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: शांति और संदीप। शांति संदीप से बड़ी है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "संदीप",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: श्याम और राधा। श्याम राधा से बड़ा है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "राधा",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: श्याम और सोनू। श्याम सोनू से बड़ा है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "सोनू",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: राधा और सुमित। राधा सुमित से छोटी है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "राधा",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: मंजू और कमला। मंजू कमला से बड़ी है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "मंजू",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: गणेश और मंजू। गणेश मंजू से छोटा है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "मंजू",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: प्रिया और श्याम। प्रिया श्याम से बड़ी है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "प्रिया",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: प्रिया और संदीप। प्रिया संदीप से छोटी है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "प्रिया",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: कमला और सुमन। कमला सुमन से बड़ी है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "कमला",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: राजेश और सोनू। राजेश सोनू से बड़ा है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "राजेश",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: राजेश और प्रिया। राजेश प्रिया से छोटा है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "प्रिया",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: सोनू और सुमित। सोनू सुमित से बड़ा है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "सुमित",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: शांति और राजेश। शांति राजेश से बड़ी है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "शांति",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: हरीश और सोनू। हरीश सोनू से बड़ा है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "सोनू",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: राजेश और अभिषेक। राजेश अभिषेक से छोटा है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "राजेश",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: राधा और प्रिया। राधा प्रिया से बड़ी है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "राधा",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          },
+          {
+            "prompt": "तुलना: राधा और सुमित। राधा सुमित से बड़ी है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "राधा",
+            "predicted": "",
+            "correct": false,
+            "raw_generated": ""
+          }
+        ]
+      }
+    },
+    "pretraining_perplexity": {
+      "cross_entropy_nats": 3.2726019763946534,
+      "perplexity": 26.37988997203215,
+      "n_batches": 50,
+      "n_tokens_evaluated": 819200
+    }
+  },
+  "after_finetuning": {
+    "three_way_accuracy": {
+      "test_seen": {
+        "accuracies_per_seed": {
+          "0": 0.4125,
+          "1": 0.4125,
+          "2": 0.4125
+        },
+        "mean_accuracy": 0.4124999999999999,
+        "min_accuracy": 0.4125,
+        "max_accuracy": 0.4125,
+        "n_examples": 320,
+        "per_bucket": {
+          "pairwise/age": {
+            "accuracy": 0.5,
+            "correct": 20,
+            "total": 40
+          },
+          "transitive3/age": {
+            "accuracy": 0.325,
+            "correct": 13,
+            "total": 40
+          },
+          "pairwise/height": {
+            "accuracy": 0.5,
+            "correct": 20,
+            "total": 40
+          },
+          "transitive3/height": {
+            "accuracy": 0.375,
+            "correct": 15,
+            "total": 40
+          },
+          "pairwise/price": {
+            "accuracy": 0.6,
+            "correct": 24,
+            "total": 40
+          },
+          "pairwise/quantity": {
+            "accuracy": 0.4,
+            "correct": 16,
+            "total": 40
+          },
+          "transitive3/price": {
+            "accuracy": 0.375,
+            "correct": 15,
+            "total": 40
+          },
+          "transitive3/quantity": {
+            "accuracy": 0.225,
+            "correct": 9,
+            "total": 40
+          }
+        },
+        "qualitative_examples": [
+          {
+            "prompt": "दिया गया है: निखिल ममता से छोटा है। बताइए, इनमें से छोटा कौन है?",
+            "gold": "निखिल",
+            "predicted": "निखिल",
+            "correct": true,
+            "raw_generated": "उत्तर: निखिल"
+          },
+          {
+            "prompt": "निखिल करण से छोटा है। करण अमित से बड़ा है। इनमें से बीच वाला कौन है?",
+            "gold": "निखिल",
+            "predicted": "निखिल",
+            "correct": true,
+            "raw_generated": "उत्तर: निखिल"
+          },
+          {
+            "prompt": "मधु गीता से बड़ी है। गीता स्वाति से छोटी है। इनमें से सबसे छोटा कौन है?",
+            "gold": "गीता",
+            "predicted": "स्वाति",
+            "correct": false,
+            "raw_generated": "उत्तर: स्वाति"
+          },
+          {
+            "prompt": "अर्जुन करण से बड़ा है। करण इंदु से छोटा है। इनमें से सबसे बड़ा कौन है?",
+            "gold": "इंदु",
+            "predicted": "अर्जुन",
+            "correct": false,
+            "raw_generated": "उत्तर: अर्जुन"
+          },
+          {
+            "prompt": "राजू संजय से छोटा है। संजय वंदना से बड़ा है। इनमें से सबसे छोटा कौन है?",
+            "gold": "वंदना",
+            "predicted": "संजय",
+            "correct": false,
+            "raw_generated": "उत्तर: संजय"
+          },
+          {
+            "prompt": "रीता आकाश से छोटी है। आकाश आरती से बड़ा है। इनमें से सबसे बड़ा कौन है?",
+            "gold": "आकाश",
+            "predicted": "आकाश",
+            "correct": true,
+            "raw_generated": "उत्तर: आकाश"
+          },
+          {
+            "prompt": "दिया गया है: रोहित निखिल से छोटा है। बताइए, इनमें से लंबा कौन है?",
+            "gold": "निखिल",
+            "predicted": "निखिल",
+            "correct": true,
+            "raw_generated": "उत्तर: निखिल"
+          },
+          {
+            "prompt": "दिया गया है: रमेश वंदना से छोटा है। बताइए, इनमें से छोटा कौन है?",
+            "gold": "रमेश",
+            "predicted": "वंदना",
+            "correct": false,
+            "raw_generated": "उत्तर: वंदना"
+          },
+          {
+            "prompt": "दिया गया है: ज्योति सुधा से छोटी है। बताइए, इनमें से लंबा कौन है?",
+            "gold": "सुधा",
+            "predicted": "सुधा",
+            "correct": true,
+            "raw_generated": "उत्तर: सुधा"
+          },
+          {
+            "prompt": "दिया गया है: निखिल गोपाल से लंबा है। बताइए, इनमें से छोटा कौन है?",
+            "gold": "गोपाल",
+            "predicted": "गोपाल",
+            "correct": true,
+            "raw_generated": "उत्तर: गोपाल"
+          },
+          {
+            "prompt": "सरिता मुकेश से लंबी है। मुकेश राकेश से लंबा है। इनमें से सबसे छोटा कौन है?",
+            "gold": "राकेश",
+            "predicted": "मुकेश",
+            "correct": false,
+            "raw_generated": "उत्तर: मुकेश"
+          },
+          {
+            "prompt": "इंदु ज्योति से छोटी है। ज्योति सरोज से लंबी है। इनमें से सबसे छोटा कौन है?",
+            "gold": "इंदु",
+            "predicted": "इंदु",
+            "correct": true,
+            "raw_generated": "उत्तर: इंदु"
+          },
+          {
+            "prompt": "रीता मीना से छोटी है। मीना मोहन से लंबी है। इनमें से सबसे छोटा कौन है?",
+            "gold": "मोहन",
+            "predicted": "मीना",
+            "correct": false,
+            "raw_generated": "उत्तर: मीना"
+          },
+          {
+            "prompt": "प्रीति सुरेश से छोटी है। इनमें से छोटा कौन है?",
+            "gold": "प्रीति",
+            "predicted": "प्रीति",
+            "correct": true,
+            "raw_generated": "उत्तर: प्रीति"
+          },
+          {
+            "prompt": "अर्जुन सुरेश से बड़ा है। इनमें से बड़ा कौन है?",
+            "gold": "अर्जुन",
+            "predicted": "अर्जुन",
+            "correct": true,
+            "raw_generated": "उत्तर: अर्जुन"
+          },
+          {
+            "prompt": "नरेश नेहा से बड़ा है। इनमें से बड़ा कौन है?",
+            "gold": "नरेश",
+            "predicted": "नेहा",
+            "correct": false,
+            "raw_generated": "उत्तर: नेहा"
+          },
+          {
+            "prompt": "सीता रोहित से बड़ी है। इनमें से छोटा कौन है?",
+            "gold": "रोहित",
+            "predicted": "सीता",
+            "correct": false,
+            "raw_generated": "उत्तर: सीता"
+          },
+          {
+            "prompt": "मोहन पूजा से बड़ा है। इनमें से छोटा कौन है?",
+            "gold": "पूजा",
+            "predicted": "पूजा",
+            "correct": true,
+            "raw_generated": "उत्तर: पूजा"
+          },
+          {
+            "prompt": "आरती मोहित से बड़ी है। इनमें से छोटा कौन है?",
+            "gold": "मोहित",
+            "predicted": "मोहित",
+            "correct": true,
+            "raw_generated": "उत्तर: मोहित"
+          },
+          {
+            "prompt": "दिनेश सुनीता से लंबा है। इनमें से छोटा कौन है?",
+            "gold": "सुनीता",
+            "predicted": "दिनेश",
+            "correct": false,
+            "raw_generated": "उत्तर: दिनेश"
+          }
+        ]
+      },
+      "test_unseen_entity": {
+        "accuracies_per_seed": {
+          "0": 0.065625,
+          "1": 0.065625,
+          "2": 0.065625
+        },
+        "mean_accuracy": 0.065625,
+        "min_accuracy": 0.065625,
+        "max_accuracy": 0.065625,
+        "n_examples": 320,
+        "per_bucket": {
+          "pairwise/age": {
+            "accuracy": 0.025,
+            "correct": 1,
+            "total": 40
+          },
+          "pairwise/height": {
+            "accuracy": 0.1,
+            "correct": 4,
+            "total": 40
+          },
+          "pairwise/price": {
+            "accuracy": 0.125,
+            "correct": 5,
+            "total": 40
+          },
+          "pairwise/quantity": {
+            "accuracy": 0.125,
+            "correct": 5,
+            "total": 40
+          },
+          "transitive3/age": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/height": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/price": {
+            "accuracy": 0.1,
+            "correct": 4,
+            "total": 40
+          },
+          "transitive3/quantity": {
+            "accuracy": 0.05,
+            "correct": 2,
+            "total": 40
+          }
+        },
+        "qualitative_examples": [
+          {
+            "prompt": "अगर अभिषेक शीला से बड़ा है, तो इनमें से बड़ा कौन है?",
+            "gold": "अभिषेक",
+            "predicted": "अमित",
+            "correct": false,
+            "raw_generated": "उत्तर: अमित"
+          },
+          {
+            "prompt": "अगर किरण ललिता से बड़ी है, तो इनमें से बड़ा कौन है?",
+            "gold": "किरण",
+            "predicted": "तरिता",
+            "correct": false,
+            "raw_generated": "उत्तर: तरिता"
+          },
+          {
+            "prompt": "अगर प्रिया स्नेहा से छोटी है, तो इनमें से बड़ा कौन है?",
+            "gold": "स्नेहा",
+            "predicted": "नेहा",
+            "correct": false,
+            "raw_generated": "उत्तर: नेहा"
+          },
+          {
+            "prompt": "अगर सुमित शीला से छोटा है, तो इनमें से छोटा कौन है?",
+            "gold": "सुमित",
+            "predicted": "अमित",
+            "correct": false,
+            "raw_generated": "उत्तर: अमित"
+          },
+          {
+            "prompt": "अगर ललिता राजेश से छोटी है, तो इनमें से छोटा कौन है?",
+            "gold": "ललिता",
+            "predicted": "अमित",
+            "correct": false,
+            "raw_generated": "उत्तर: अमित"
+          },
+          {
+            "prompt": "अगर ललिता राधा से बड़ी है, तो इनमें से छोटा कौन है?",
+            "gold": "राधा",
+            "predicted": "अमित",
+            "correct": false,
+            "raw_generated": "उत्तर: अमित"
+          },
+          {
+            "prompt": "अगर ललिता मंजू से बड़ी है, तो इनमें से बड़ा कौन है?",
+            "gold": "ललिता",
+            "predicted": "तरुण",
+            "correct": false,
+            "raw_generated": "उत्तर: तरुण"
+          },
+          {
+            "prompt": "अगर सोनू शीला से छोटा है, तो इनमें से बड़ा कौन है?",
+            "gold": "शीला",
+            "predicted": "जैकी",
+            "correct": false,
+            "raw_generated": "उत्तर: जैकी"
+          },
+          {
+            "prompt": "अगर शीला गणेश से छोटी है, तो इनमें से छोटा कौन है?",
+            "gold": "शीला",
+            "predicted": "अमित",
+            "correct": false,
+            "raw_generated": "उत्तर: अमित"
+          },
+          {
+            "prompt": "अगर गणेश अंजलि से छोटा है, तो इनमें से बड़ा कौन है?",
+            "gold": "अंजलि",
+            "predicted": "अमित",
+            "correct": false,
+            "raw_generated": "उत्तर: अमित"
+          },
+          {
+            "prompt": "अगर शांति स्नेहा से छोटी है, तो इनमें से बड़ा कौन है?",
+            "gold": "स्नेहा",
+            "predicted": "स्नेहा",
+            "correct": true,
+            "raw_generated": "उत्तर: स्नेहा"
+          },
+          {
+            "prompt": "अगर किरण अंजलि से छोटी है, तो इनमें से छोटा कौन है?",
+            "gold": "किरण",
+            "predicted": "नेहा",
+            "correct": false,
+            "raw_generated": "उत्तर: नेहा"
+          },
+          {
+            "prompt": "अगर अंजलि गणेश से छोटी है, तो इनमें से लंबा कौन है?",
+            "gold": "गणेश",
+            "predicted": "अमित",
+            "correct": false,
+            "raw_generated": "उत्तर: अमित"
+          },
+          {
+            "prompt": "टोपी दर्पण से सस्ती है। इनमें से महंगा कौन सा है?",
+            "gold": "दर्पण",
+            "predicted": "जैकी",
+            "correct": false,
+            "raw_generated": "उत्तर: जैकी"
+          },
+          {
+            "prompt": "केला कंबल से सस्ता है। इनमें से सस्ता कौन सा है?",
+            "gold": "केला",
+            "predicted": "मक्का",
+            "correct": false,
+            "raw_generated": "उत्तर: मक्का"
+          },
+          {
+            "prompt": "मेज़ बैंगन से महंगी है। इनमें से सस्ता कौन सा है?",
+            "gold": "बैंगन",
+            "predicted": "संतरा",
+            "correct": false,
+            "raw_generated": "उत्तर: संतरा"
+          },
+          {
+            "prompt": "टमाटर डिब्बा से सस्ता है। इनमें से महंगा कौन सा है?",
+            "gold": "डिब्बा",
+            "predicted": "टमाटर",
+            "correct": false,
+            "raw_generated": "उत्तर: टमाटर"
+          },
+          {
+            "prompt": "केला राजमा से सस्ता है। इनमें से सस्ता कौन सा है?",
+            "gold": "केला",
+            "predicted": "नरेश",
+            "correct": false,
+            "raw_generated": "उत्तर: नरेश"
+          },
+          {
+            "prompt": "केला बैंगन से सस्ता है। इनमें से महंगा कौन सा है?",
+            "gold": "बैंगन",
+            "predicted": "संतरा",
+            "correct": false,
+            "raw_generated": "उत्तर: संतरा"
+          },
+          {
+            "prompt": "अमरूद चना से महंगा है। इनमें से सस्ता कौन सा है?",
+            "gold": "चना",
+            "predicted": "गिलास",
+            "correct": false,
+            "raw_generated": "उत्तर: गिलास"
+          }
+        ]
+      },
+      "test_unseen_wording": {
+        "accuracies_per_seed": {
+          "0": 0.059375,
+          "1": 0.059375,
+          "2": 0.059375
+        },
+        "mean_accuracy": 0.05937499999999999,
+        "min_accuracy": 0.059375,
+        "max_accuracy": 0.059375,
+        "n_examples": 320,
+        "per_bucket": {
+          "pairwise/age": {
+            "accuracy": 0.1,
+            "correct": 4,
+            "total": 40
+          },
+          "pairwise/height": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "pairwise/quantity": {
+            "accuracy": 0.1,
+            "correct": 4,
+            "total": 40
+          },
+          "transitive3/age": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/height": {
+            "accuracy": 0.0,
+            "correct": 0,
+            "total": 40
+          },
+          "transitive3/price": {
+            "accuracy": 0.1,
+            "correct": 4,
+            "total": 40
+          },
+          "transitive3/quantity": {
+            "accuracy": 0.025,
+            "correct": 1,
+            "total": 40
+          },
+          "pairwise/price": {
+            "accuracy": 0.15,
+            "correct": 6,
+            "total": 40
+          }
+        },
+        "qualitative_examples": [
+          {
+            "prompt": "तुलना: संदीप और गणेश। संदीप गणेश से बड़ा है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "गणेश",
+            "predicted": "विजय",
+            "correct": false,
+            "raw_generated": "उत्तर: विजय"
+          },
+          {
+            "prompt": "तुलना: सुमन और प्रिया। सुमन प्रिया से बड़ी है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "सुमन",
+            "predicted": "नेहा",
+            "correct": false,
+            "raw_generated": "उत्तर: नेहा"
+          },
+          {
+            "prompt": "तुलना: राजेश और सोनू। राजेश सोनू से छोटा है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "राजेश",
+            "predicted": "राकेश",
+            "correct": false,
+            "raw_generated": "उत्तर: राकेश"
+          },
+          {
+            "prompt": "तुलना: शांति और संदीप। शांति संदीप से बड़ी है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "संदीप",
+            "predicted": "विकास",
+            "correct": false,
+            "raw_generated": "उत्तर: विकास"
+          },
+          {
+            "prompt": "तुलना: श्याम और राधा। श्याम राधा से बड़ा है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "राधा",
+            "predicted": "गोपाल",
+            "correct": false,
+            "raw_generated": "उत्तर: गोपाल"
+          },
+          {
+            "prompt": "तुलना: श्याम और सोनू। श्याम सोनू से बड़ा है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "सोनू",
+            "predicted": "राकेश",
+            "correct": false,
+            "raw_generated": "उत्तर: राकेश"
+          },
+          {
+            "prompt": "तुलना: राधा और सुमित। राधा सुमित से छोटी है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "राधा",
+            "predicted": "सुमित",
+            "correct": false,
+            "raw_generated": "उत्तर: सुमित"
+          },
+          {
+            "prompt": "तुलना: मंजू और कमला। मंजू कमला से बड़ी है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "मंजू",
+            "predicted": "दीपा",
+            "correct": false,
+            "raw_generated": "उत्तर: दीपा"
+          },
+          {
+            "prompt": "तुलना: गणेश और मंजू। गणेश मंजू से छोटा है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "मंजू",
+            "predicted": "विजय",
+            "correct": false,
+            "raw_generated": "उत्तर: विजय"
+          },
+          {
+            "prompt": "तुलना: प्रिया और श्याम। प्रिया श्याम से बड़ी है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "प्रिया",
+            "predicted": "नेहा",
+            "correct": false,
+            "raw_generated": "उत्तर: नेहा"
+          },
+          {
+            "prompt": "तुलना: प्रिया और संदीप। प्रिया संदीप से छोटी है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "प्रिया",
+            "predicted": "नेहा",
+            "correct": false,
+            "raw_generated": "उत्तर: नेहा"
+          },
+          {
+            "prompt": "तुलना: कमला और सुमन। कमला सुमन से बड़ी है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "कमला",
+            "predicted": "सरोज",
+            "correct": false,
+            "raw_generated": "उत्तर: सरोज"
+          },
+          {
+            "prompt": "तुलना: राजेश और सोनू। राजेश सोनू से बड़ा है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "राजेश",
+            "predicted": "राकेश",
+            "correct": false,
+            "raw_generated": "उत्तर: राकेश"
+          },
+          {
+            "prompt": "तुलना: राजेश और प्रिया। राजेश प्रिया से छोटा है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "प्रिया",
+            "predicted": "अमित",
+            "correct": false,
+            "raw_generated": "उत्तर: अमित"
+          },
+          {
+            "prompt": "तुलना: सोनू और सुमित। सोनू सुमित से बड़ा है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "सुमित",
+            "predicted": "राजू",
+            "correct": false,
+            "raw_generated": "उत्तर: राजू"
+          },
+          {
+            "prompt": "तुलना: शांति और राजेश। शांति राजेश से बड़ी है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "शांति",
+            "predicted": "अमित",
+            "correct": false,
+            "raw_generated": "उत्तर: अमित"
+          },
+          {
+            "prompt": "तुलना: हरीश और सोनू। हरीश सोनू से बड़ा है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "सोनू",
+            "predicted": "रमेश",
+            "correct": false,
+            "raw_generated": "उत्तर: रमेश"
+          },
+          {
+            "prompt": "तुलना: राजेश और अभिषेक। राजेश अभिषेक से छोटा है। प्रश्न — इनमें से छोटा कौन है?",
+            "gold": "राजेश",
+            "predicted": "अमित",
+            "correct": false,
+            "raw_generated": "उत्तर: अमित"
+          },
+          {
+            "prompt": "तुलना: राधा और प्रिया। राधा प्रिया से बड़ी है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "राधा",
+            "predicted": "नेहा",
+            "correct": false,
+            "raw_generated": "उत्तर: नेहा"
+          },
+          {
+            "prompt": "तुलना: राधा और सुमित। राधा सुमित से बड़ी है। प्रश्न — इनमें से बड़ा कौन है?",
+            "gold": "राधा",
+            "predicted": "सुमित",
+            "correct": false,
+            "raw_generated": "उत्तर: सुमित"
+          }
+        ]
+      }
+    },
+    "pretraining_perplexity": {
+      "cross_entropy_nats": 3.6518742990493775,
+      "perplexity": 38.546846701966665,
+      "n_batches": 50,
+      "n_tokens_evaluated": 819200
+    }
+  }
+}

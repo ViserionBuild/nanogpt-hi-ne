@@ -1,0 +1,32 @@
+{
+  "step": 600,
+  "tokens_seen": 0,
+  "best_val_loss": 0.3722268742891169,
+  "config": {
+    "model": {
+      "vocab_size": 12000,
+      "n_layer": 6,
+      "n_head": 8,
+      "d_model": 512,
+      "d_ff": 2048,
+      "block_size": 512,
+      "dropout": 0.1,
+      "attn_dropout": 0.1,
+      "embd_dropout": 0.1,
+      "positional": "learned",
+      "norm_position": "pre",
+      "activation": "gelu",
+      "tie_weights": true,
+      "bias": true,
+      "pad_id": 0,
+      "unk_id": 1,
+      "bos_id": 2,
+      "eos_id": 3,
+      "init_std": 0.02,
+      "language": "hindi",
+      "tokenizer_model": "hindi/tokenizer/model/hindi_bpe_12000.model"
+    },
+    "language": "hindi",
+    "pretrain_step": 13000
+  }
+}

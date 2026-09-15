@@ -1,0 +1,28 @@
+{
+  "language": "hindi",
+  "example_text": "दिया गया है: निखिल ममता से छोटा है। बताइए, इनमें से छोटा कौन है?",
+  "pretrained_checkpoint": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/checkpoints/best.pt",
+  "finetuned_checkpoint": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/checkpoints_ft/best.pt",
+  "before": {
+    "overall_mean_entropy": 1.5936,
+    "overall_mean_distance": 4.8632,
+    "head_type_counts": {
+      "local_sharp": 14,
+      "local_diffuse": 10,
+      "distant_sharp": 10,
+      "distant_diffuse": 14
+    }
+  },
+  "after": {
+    "overall_mean_entropy": 1.5585,
+    "overall_mean_distance": 5.0179,
+    "head_type_counts": {
+      "local_sharp": 10,
+      "local_diffuse": 14,
+      "distant_sharp": 14,
+      "distant_diffuse": 10
+    }
+  },
+  "entropy_delta": -0.03509999999999991,
+  "distance_delta": 0.15470000000000006
+}

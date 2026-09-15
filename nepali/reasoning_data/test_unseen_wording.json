@@ -1,0 +1,5762 @@
+[
+  {
+    "prompt": "तुलना: शीला र गायत्री। शीला गायत्रीभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: गायत्री",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "शीला",
+      "गायत्री"
+    ],
+    "values": [
+      69,
+      27
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: गणेश र रेखा। गणेश रेखाभन्दा कान्छो छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: रेखा",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "गणेश",
+      "रेखा"
+    ],
+    "values": [
+      11,
+      35
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: श्याम र दीपक। श्याम दीपकभन्दा जेठो छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "श्याम",
+      "दीपक"
+    ],
+    "values": [
+      61,
+      13
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: श्याम र मंजू। श्याम मंजूभन्दा जेठो छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "श्याम",
+      "मंजू"
+    ],
+    "values": [
+      70,
+      26
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: गणेश र सुमित। गणेश सुमितभन्दा कान्छो छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "गणेश",
+      "सुमित"
+    ],
+    "values": [
+      46,
+      49
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सुमित र उर्मिला। सुमित उर्मिलाभन्दा जेठो छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "सुमित",
+      "उर्मिला"
+    ],
+    "values": [
+      31,
+      14
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सुमित र राधा। सुमित राधाभन्दा कान्छो छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "सुमित",
+      "राधा"
+    ],
+    "values": [
+      14,
+      33
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सुमित र सन्तोष। सुमित सन्तोषभन्दा जेठो छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "सुमित",
+      "सन्तोष"
+    ],
+    "values": [
+      50,
+      38
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: प्रिया र सुमन। प्रिया सुमनभन्दा कान्छी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "प्रिया",
+      "सुमन"
+    ],
+    "values": [
+      65,
+      80
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: राधा र शीला। राधा शीलाभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: शीला",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "राधा",
+      "शीला"
+    ],
+    "values": [
+      79,
+      43
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: ललिता र प्रीति। ललिता प्रीतिभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: प्रीति",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "ललिता",
+      "प्रीति"
+    ],
+    "values": [
+      69,
+      61
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: ललिता र सुमन। ललिता सुमनभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: सुमन",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "ललिता",
+      "सुमन"
+    ],
+    "values": [
+      79,
+      58
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: यश र दीपक। यश दीपकभन्दा जेठो छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: दीपक",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "यश",
+      "दीपक"
+    ],
+    "values": [
+      46,
+      17
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: प्रीति र सन्तोष। प्रीति सन्तोषभन्दा कान्छी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: प्रीति",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "प्रीति",
+      "सन्तोष"
+    ],
+    "values": [
+      32,
+      36
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: निखिल र किशोर। निखिल किशोरभन्दा जेठो छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: निखिल",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "निखिल",
+      "किशोर"
+    ],
+    "values": [
+      78,
+      45
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: गायत्री र निखिल। गायत्री निखिलभन्दा कान्छी छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: निखिल",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "गायत्री",
+      "निखिल"
+    ],
+    "values": [
+      12,
+      70
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: दीपक र ललिता। दीपक ललिताभन्दा जेठो छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: दीपक",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "दीपक",
+      "ललिता"
+    ],
+    "values": [
+      46,
+      41
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: रेखा र सुमन। रेखा सुमनभन्दा कान्छी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: रेखा",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "रेखा",
+      "सुमन"
+    ],
+    "values": [
+      44,
+      70
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: दीपक र शीला। दीपक शीलाभन्दा कान्छो छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: दीपक",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "दीपक",
+      "शीला"
+    ],
+    "values": [
+      47,
+      51
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: उर्मिला र सुमित। उर्मिला सुमितभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "उर्मिला",
+      "सुमित"
+    ],
+    "values": [
+      66,
+      24
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: किशोर र श्याम। किशोर श्यामभन्दा जेठो छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: किशोर",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "किशोर",
+      "श्याम"
+    ],
+    "values": [
+      66,
+      14
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: प्रिया र सुमन। प्रिया सुमनभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "प्रिया",
+      "सुमन"
+    ],
+    "values": [
+      58,
+      29
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: आरती र उर्मिला। आरती उर्मिलाभन्दा कान्छी छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: उर्मिला",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "आरती",
+      "उर्मिला"
+    ],
+    "values": [
+      11,
+      67
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: प्रिया र दीपक। प्रिया दीपकभन्दा कान्छी छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: दीपक",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "प्रिया",
+      "दीपक"
+    ],
+    "values": [
+      55,
+      57
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: यश र सुमन। यश सुमनभन्दा जेठो छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: यश",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "यश",
+      "सुमन"
+    ],
+    "values": [
+      80,
+      51
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सुमन र सन्तोष। सुमन सन्तोषभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: सन्तोष",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "सुमन",
+      "सन्तोष"
+    ],
+    "values": [
+      80,
+      67
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: यश र राधा। यश राधाभन्दा जेठो छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: यश",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "यश",
+      "राधा"
+    ],
+    "values": [
+      65,
+      6
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: राधा र प्रिया। राधा प्रियाभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: राधा",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "राधा",
+      "प्रिया"
+    ],
+    "values": [
+      52,
+      44
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: रेखा र प्रीति। रेखा प्रीतिभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: रेखा",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "रेखा",
+      "प्रीति"
+    ],
+    "values": [
+      64,
+      45
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: गायत्री र सुमित। गायत्री सुमितभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: गायत्री",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "गायत्री",
+      "सुमित"
+    ],
+    "values": [
+      54,
+      39
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सुमित र आरती। सुमित आरतीभन्दा कान्छो छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: आरती",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "सुमित",
+      "आरती"
+    ],
+    "values": [
+      23,
+      33
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सन्तोष र मंजू। सन्तोष मंजूभन्दा जेठो छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: मंजू",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "सन्तोष",
+      "मंजू"
+    ],
+    "values": [
+      56,
+      6
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: स्नेहा र सुमन। स्नेहा सुमनभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: सुमन",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "स्नेहा",
+      "सुमन"
+    ],
+    "values": [
+      71,
+      38
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: प्रिया र उर्मिला। प्रिया उर्मिलाभन्दा कान्छी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "प्रिया",
+      "उर्मिला"
+    ],
+    "values": [
+      56,
+      63
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: प्रीति र दीपक। प्रीति दीपकभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: प्रीति",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "प्रीति",
+      "दीपक"
+    ],
+    "values": [
+      51,
+      30
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: प्रीति र सन्तोष। प्रीति सन्तोषभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: प्रीति",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "प्रीति",
+      "सन्तोष"
+    ],
+    "values": [
+      78,
+      69
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: राधा र स्नेहा। राधा स्नेहाभन्दा जेठी छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: राधा",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "राधा",
+      "स्नेहा"
+    ],
+    "values": [
+      23,
+      7
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सन्तोष र उर्मिला। सन्तोष उर्मिलाभन्दा जेठो छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: उर्मिला",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "सन्तोष",
+      "उर्मिला"
+    ],
+    "values": [
+      41,
+      29
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: गायत्री र श्याम। गायत्री श्यामभन्दा कान्छी छ। प्रश्न — यीमध्ये जेठो को हो?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "गायत्री",
+      "श्याम"
+    ],
+    "values": [
+      52,
+      57
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: राधा र ललिता। राधा ललिताभन्दा जेठी छ। प्रश्न — यीमध्ये कान्छो को हो?",
+    "answer": "उत्तर: ललिता",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "राधा",
+      "ललिता"
+    ],
+    "values": [
+      59,
+      45
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: सन्तोष विरुद्ध गणेश — जेठो; गणेश विरुद्ध दीपक — कान्छो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा कान्छो को हो?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "सन्तोष",
+      "गणेश",
+      "दीपक"
+    ],
+    "values": [
+      20,
+      17,
+      21
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: आरती विरुद्ध प्रिया — जेठी; प्रिया विरुद्ध प्रीति — जेठी। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "आरती",
+      "प्रिया",
+      "प्रीति"
+    ],
+    "values": [
+      26,
+      14,
+      12
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: निखिल विरुद्ध प्रीति — कान्छो; प्रीति विरुद्ध सन्तोष — जेठी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा कान्छो को हो?",
+    "answer": "उत्तर: निखिल",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "निखिल",
+      "प्रीति",
+      "सन्तोष"
+    ],
+    "values": [
+      13,
+      77,
+      30
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: आरती विरुद्ध दीपक — कान्छी; दीपक विरुद्ध सुमन — जेठो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: सुमन",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "आरती",
+      "दीपक",
+      "सुमन"
+    ],
+    "values": [
+      23,
+      59,
+      51
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: सुमित विरुद्ध दीपक — कान्छो; दीपक विरुद्ध आरती — जेठो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा कान्छो को हो?",
+    "answer": "उत्तर: आरती",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "सुमित",
+      "दीपक",
+      "आरती"
+    ],
+    "values": [
+      30,
+      42,
+      22
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: किशोर विरुद्ध प्रिया — कान्छो; प्रिया विरुद्ध राधा — जेठी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा जेठो को हो?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "किशोर",
+      "प्रिया",
+      "राधा"
+    ],
+    "values": [
+      12,
+      76,
+      46
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: प्रिया विरुद्ध राधा — जेठी; राधा विरुद्ध रेखा — जेठी। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: राधा",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "प्रिया",
+      "राधा",
+      "रेखा"
+    ],
+    "values": [
+      62,
+      12,
+      8
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: उर्मिला विरुद्ध सुमित — जेठी; सुमित विरुद्ध स्नेहा — कान्छो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा जेठो को हो?",
+    "answer": "उत्तर: उर्मिला",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "उर्मिला",
+      "सुमित",
+      "स्नेहा"
+    ],
+    "values": [
+      74,
+      37,
+      69
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: किशोर विरुद्ध आरती — कान्छो; आरती विरुद्ध ललिता — कान्छी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा जेठो को हो?",
+    "answer": "उत्तर: ललिता",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "किशोर",
+      "आरती",
+      "ललिता"
+    ],
+    "values": [
+      17,
+      49,
+      75
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: मंजू विरुद्ध श्याम — कान्छी; श्याम विरुद्ध शीला — जेठो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: शीला",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "मंजू",
+      "श्याम",
+      "शीला"
+    ],
+    "values": [
+      33,
+      78,
+      60
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: उर्मिला विरुद्ध निखिल — कान्छी; निखिल विरुद्ध सुमित — जेठो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा कान्छो को हो?",
+    "answer": "उत्तर: उर्मिला",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "उर्मिला",
+      "निखिल",
+      "सुमित"
+    ],
+    "values": [
+      9,
+      56,
+      29
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: आरती विरुद्ध गणेश — कान्छी; गणेश विरुद्ध सुमित — कान्छो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "आरती",
+      "गणेश",
+      "सुमित"
+    ],
+    "values": [
+      18,
+      25,
+      78
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: राधा विरुद्ध प्रिया — जेठी; प्रिया विरुद्ध गणेश — कान्छी। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "राधा",
+      "प्रिया",
+      "गणेश"
+    ],
+    "values": [
+      52,
+      5,
+      51
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: किशोर विरुद्ध उर्मिला — जेठो; उर्मिला विरुद्ध मंजू — कान्छी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा जेठो को हो?",
+    "answer": "उत्तर: किशोर",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "किशोर",
+      "उर्मिला",
+      "मंजू"
+    ],
+    "values": [
+      38,
+      9,
+      11
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: प्रिया विरुद्ध गायत्री — जेठी; गायत्री विरुद्ध रेखा — कान्छी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा जेठो को हो?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "प्रिया",
+      "गायत्री",
+      "रेखा"
+    ],
+    "values": [
+      58,
+      8,
+      56
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: गणेश विरुद्ध प्रीति — जेठो; प्रीति विरुद्ध रेखा — कान्छी। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: रेखा",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "गणेश",
+      "प्रीति",
+      "रेखा"
+    ],
+    "values": [
+      55,
+      15,
+      25
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: मंजू विरुद्ध दीपक — कान्छी; दीपक विरुद्ध श्याम — कान्छो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा कान्छो को हो?",
+    "answer": "उत्तर: मंजू",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "मंजू",
+      "दीपक",
+      "श्याम"
+    ],
+    "values": [
+      21,
+      37,
+      41
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: प्रीति विरुद्ध दीपक — जेठी; दीपक विरुद्ध स्नेहा — जेठो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा जेठो को हो?",
+    "answer": "उत्तर: प्रीति",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "प्रीति",
+      "दीपक",
+      "स्नेहा"
+    ],
+    "values": [
+      80,
+      77,
+      41
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: स्नेहा विरुद्ध प्रीति — जेठी; प्रीति विरुद्ध सन्तोष — कान्छी। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: स्नेहा",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "स्नेहा",
+      "प्रीति",
+      "सन्तोष"
+    ],
+    "values": [
+      44,
+      5,
+      66
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: प्रिया विरुद्ध उर्मिला — कान्छी; उर्मिला विरुद्ध निखिल — जेठी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा जेठो को हो?",
+    "answer": "उत्तर: उर्मिला",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "प्रिया",
+      "उर्मिला",
+      "निखिल"
+    ],
+    "values": [
+      19,
+      61,
+      29
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: मंजू विरुद्ध गणेश — जेठी; गणेश विरुद्ध उर्मिला — जेठो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "मंजू",
+      "गणेश",
+      "उर्मिला"
+    ],
+    "values": [
+      61,
+      56,
+      18
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: सुमित विरुद्ध आरती — जेठो; आरती विरुद्ध सन्तोष — कान्छी। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: सन्तोष",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "सुमित",
+      "आरती",
+      "सन्तोष"
+    ],
+    "values": [
+      76,
+      58,
+      69
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: गणेश विरुद्ध प्रीति — जेठो; प्रीति विरुद्ध सुमन — कान्छी। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: सुमन",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "गणेश",
+      "प्रीति",
+      "सुमन"
+    ],
+    "values": [
+      77,
+      10,
+      21
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: श्याम विरुद्ध सन्तोष — कान्छो; सन्तोष विरुद्ध गणेश — कान्छो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: सन्तोष",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "श्याम",
+      "सन्तोष",
+      "गणेश"
+    ],
+    "values": [
+      6,
+      10,
+      43
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: सुमित विरुद्ध गायत्री — जेठो; गायत्री विरुद्ध गणेश — कान्छी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा जेठो को हो?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "सुमित",
+      "गायत्री",
+      "गणेश"
+    ],
+    "values": [
+      80,
+      11,
+      31
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: शीला विरुद्ध आरती — जेठी; आरती विरुद्ध स्नेहा — जेठी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा जेठो को हो?",
+    "answer": "उत्तर: शीला",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "शीला",
+      "आरती",
+      "स्नेहा"
+    ],
+    "values": [
+      65,
+      33,
+      7
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: सुमन विरुद्ध किशोर — जेठी; किशोर विरुद्ध ललिता — कान्छो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा जेठो को हो?",
+    "answer": "उत्तर: सुमन",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "सुमन",
+      "किशोर",
+      "ललिता"
+    ],
+    "values": [
+      78,
+      50,
+      51
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: रेखा विरुद्ध किशोर — कान्छी; किशोर विरुद्ध शीला — कान्छो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: किशोर",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "रेखा",
+      "किशोर",
+      "शीला"
+    ],
+    "values": [
+      19,
+      21,
+      67
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: श्याम विरुद्ध शीला — जेठो; शीला विरुद्ध गणेश — कान्छी। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "श्याम",
+      "शीला",
+      "गणेश"
+    ],
+    "values": [
+      44,
+      22,
+      49
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: किशोर विरुद्ध मंजू — कान्छो; मंजू विरुद्ध रेखा — जेठी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा कान्छो को हो?",
+    "answer": "उत्तर: रेखा",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "किशोर",
+      "मंजू",
+      "रेखा"
+    ],
+    "values": [
+      71,
+      76,
+      35
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: रेखा विरुद्ध सन्तोष — जेठी; सन्तोष विरुद्ध गायत्री — कान्छो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा कान्छो को हो?",
+    "answer": "उत्तर: सन्तोष",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "रेखा",
+      "सन्तोष",
+      "गायत्री"
+    ],
+    "values": [
+      80,
+      19,
+      30
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: रेखा विरुद्ध प्रीति — जेठी; प्रीति विरुद्ध राधा — जेठी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा कान्छो को हो?",
+    "answer": "उत्तर: राधा",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "रेखा",
+      "प्रीति",
+      "राधा"
+    ],
+    "values": [
+      68,
+      63,
+      13
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: किशोर विरुद्ध प्रिया — जेठो; प्रिया विरुद्ध मंजू — कान्छी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा कान्छो को हो?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "किशोर",
+      "प्रिया",
+      "मंजू"
+    ],
+    "values": [
+      75,
+      22,
+      50
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: शीला विरुद्ध उर्मिला — जेठी; उर्मिला विरुद्ध मंजू — कान्छी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा जेठो को हो?",
+    "answer": "उत्तर: मंजू",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "शीला",
+      "उर्मिला",
+      "मंजू"
+    ],
+    "values": [
+      25,
+      18,
+      52
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: शीला विरुद्ध सुमन — कान्छी; सुमन विरुद्ध मंजू — कान्छी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा कान्छो को हो?",
+    "answer": "उत्तर: शीला",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "शीला",
+      "सुमन",
+      "मंजू"
+    ],
+    "values": [
+      27,
+      45,
+      65
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: यश विरुद्ध निखिल — जेठो; निखिल विरुद्ध श्याम — कान्छो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा जेठो को हो?",
+    "answer": "उत्तर: यश",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "यश",
+      "निखिल",
+      "श्याम"
+    ],
+    "values": [
+      72,
+      26,
+      65
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: किशोर विरुद्ध उर्मिला — जेठो; उर्मिला विरुद्ध सन्तोष — जेठी। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: उर्मिला",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "किशोर",
+      "उर्मिला",
+      "सन्तोष"
+    ],
+    "values": [
+      66,
+      21,
+      5
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: आरती विरुद्ध निखिल — कान्छी; निखिल विरुद्ध गायत्री — कान्छो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: निखिल",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "आरती",
+      "निखिल",
+      "गायत्री"
+    ],
+    "values": [
+      10,
+      68,
+      80
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: सुमित विरुद्ध दीपक — कान्छो; दीपक विरुद्ध स्नेहा — जेठो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा कान्छो को हो?",
+    "answer": "उत्तर: स्नेहा",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "सुमित",
+      "दीपक",
+      "स्नेहा"
+    ],
+    "values": [
+      54,
+      74,
+      35
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: शीला विरुद्ध किशोर — कान्छी; किशोर विरुद्ध स्नेहा — जेठो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा कान्छो को हो?",
+    "answer": "उत्तर: शीला",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 3,
+    "entities": [
+      "शीला",
+      "किशोर",
+      "स्नेहा"
+    ],
+    "values": [
+      27,
+      75,
+      67
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: दीपक र सुमित। दीपक सुमितभन्दा होचो छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: दीपक",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "दीपक",
+      "सुमित"
+    ],
+    "values": [
+      116,
+      157
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: रेखा र निखिल। रेखा निखिलभन्दा होची छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: निखिल",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "रेखा",
+      "निखिल"
+    ],
+    "values": [
+      108,
+      142
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: प्रिया र प्रीति। प्रिया प्रीतिभन्दा अग्ली छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: प्रीति",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "प्रिया",
+      "प्रीति"
+    ],
+    "values": [
+      158,
+      132
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: उर्मिला र किशोर। उर्मिला किशोरभन्दा अग्ली छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: किशोर",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "उर्मिला",
+      "किशोर"
+    ],
+    "values": [
+      197,
+      148
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: निखिल र रेखा। निखिल रेखाभन्दा अग्लो छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: रेखा",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "निखिल",
+      "रेखा"
+    ],
+    "values": [
+      140,
+      128
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: गायत्री र निखिल। गायत्री निखिलभन्दा अग्ली छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: गायत्री",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "गायत्री",
+      "निखिल"
+    ],
+    "values": [
+      198,
+      123
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: रेखा र दीपक। रेखा दीपकभन्दा अग्ली छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: रेखा",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "रेखा",
+      "दीपक"
+    ],
+    "values": [
+      152,
+      124
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: प्रीति र ललिता। प्रीति ललिताभन्दा अग्ली छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: प्रीति",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "प्रीति",
+      "ललिता"
+    ],
+    "values": [
+      191,
+      182
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: गायत्री र प्रिया। गायत्री प्रियाभन्दा अग्ली छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: गायत्री",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "गायत्री",
+      "प्रिया"
+    ],
+    "values": [
+      144,
+      101
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: किशोर र आरती। किशोर आरतीभन्दा अग्लो छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: आरती",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "किशोर",
+      "आरती"
+    ],
+    "values": [
+      178,
+      159
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: निखिल र मंजू। निखिल मंजूभन्दा होचो छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: निखिल",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "निखिल",
+      "मंजू"
+    ],
+    "values": [
+      104,
+      193
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: राधा र स्नेहा। राधा स्नेहाभन्दा होची छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: राधा",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "राधा",
+      "स्नेहा"
+    ],
+    "values": [
+      108,
+      169
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: प्रिया र दीपक। प्रिया दीपकभन्दा होची छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "प्रिया",
+      "दीपक"
+    ],
+    "values": [
+      115,
+      125
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: मंजू र श्याम। मंजू श्यामभन्दा अग्ली छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: मंजू",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "मंजू",
+      "श्याम"
+    ],
+    "values": [
+      195,
+      193
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: श्याम र ललिता। श्याम ललिताभन्दा होचो छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: ललिता",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "श्याम",
+      "ललिता"
+    ],
+    "values": [
+      114,
+      129
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: स्नेहा र प्रिया। स्नेहा प्रियाभन्दा होची छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "स्नेहा",
+      "प्रिया"
+    ],
+    "values": [
+      127,
+      138
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: प्रिया र आरती। प्रिया आरतीभन्दा होची छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "प्रिया",
+      "आरती"
+    ],
+    "values": [
+      120,
+      161
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: रेखा र शीला। रेखा शीलाभन्दा अग्ली छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: शीला",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "रेखा",
+      "शीला"
+    ],
+    "values": [
+      152,
+      125
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सुमन र आरती। सुमन आरतीभन्दा अग्ली छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: आरती",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "सुमन",
+      "आरती"
+    ],
+    "values": [
+      181,
+      92
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: प्रिया र सुमन। प्रिया सुमनभन्दा अग्ली छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: सुमन",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "प्रिया",
+      "सुमन"
+    ],
+    "values": [
+      184,
+      146
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: ललिता र शीला। ललिता शीलाभन्दा होची छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: शीला",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "ललिता",
+      "शीला"
+    ],
+    "values": [
+      101,
+      113
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: ललिता र प्रिया। ललिता प्रियाभन्दा होची छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: ललिता",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "ललिता",
+      "प्रिया"
+    ],
+    "values": [
+      114,
+      145
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: प्रिया र सुमित। प्रिया सुमितभन्दा होची छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "प्रिया",
+      "सुमित"
+    ],
+    "values": [
+      113,
+      195
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: शीला र गणेश। शीला गणेशभन्दा अग्ली छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "शीला",
+      "गणेश"
+    ],
+    "values": [
+      191,
+      142
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: गणेश र प्रीति। गणेश प्रीतिभन्दा अग्लो छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: प्रीति",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "गणेश",
+      "प्रीति"
+    ],
+    "values": [
+      175,
+      93
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: ललिता र दीपक। ललिता दीपकभन्दा होची छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: ललिता",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "ललिता",
+      "दीपक"
+    ],
+    "values": [
+      95,
+      161
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सन्तोष र उर्मिला। सन्तोष उर्मिलाभन्दा अग्लो छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: सन्तोष",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "सन्तोष",
+      "उर्मिला"
+    ],
+    "values": [
+      196,
+      161
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: रेखा र सुमित। रेखा सुमितभन्दा होची छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: रेखा",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "रेखा",
+      "सुमित"
+    ],
+    "values": [
+      123,
+      174
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: गणेश र उर्मिला। गणेश उर्मिलाभन्दा अग्लो छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: उर्मिला",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "गणेश",
+      "उर्मिला"
+    ],
+    "values": [
+      179,
+      170
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: किशोर र दीपक। किशोर दीपकभन्दा होचो छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: दीपक",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "किशोर",
+      "दीपक"
+    ],
+    "values": [
+      94,
+      143
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सन्तोष र किशोर। सन्तोष किशोरभन्दा होचो छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: किशोर",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "सन्तोष",
+      "किशोर"
+    ],
+    "values": [
+      120,
+      165
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: किशोर र प्रिया। किशोर प्रियाभन्दा अग्लो छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "किशोर",
+      "प्रिया"
+    ],
+    "values": [
+      196,
+      101
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सन्तोष र गणेश। सन्तोष गणेशभन्दा होचो छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "सन्तोष",
+      "गणेश"
+    ],
+    "values": [
+      98,
+      129
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: शीला र स्नेहा। शीला स्नेहाभन्दा होची छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: शीला",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "शीला",
+      "स्नेहा"
+    ],
+    "values": [
+      107,
+      170
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: यश र राधा। यश राधाभन्दा होचो छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: राधा",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "यश",
+      "राधा"
+    ],
+    "values": [
+      111,
+      180
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: श्याम र प्रिया। श्याम प्रियाभन्दा होचो छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "श्याम",
+      "प्रिया"
+    ],
+    "values": [
+      103,
+      149
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: प्रिया र ललिता। प्रिया ललिताभन्दा अग्ली छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "प्रिया",
+      "ललिता"
+    ],
+    "values": [
+      156,
+      154
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: गायत्री र श्याम। गायत्री श्यामभन्दा अग्ली छ। प्रश्न — यीमध्ये अग्लो को हो?",
+    "answer": "उत्तर: गायत्री",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "गायत्री",
+      "श्याम"
+    ],
+    "values": [
+      189,
+      111
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: ललिता र निखिल। ललिता निखिलभन्दा अग्ली छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: निखिल",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "ललिता",
+      "निखिल"
+    ],
+    "values": [
+      185,
+      111
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सुमित र ललिता। सुमित ललिताभन्दा अग्लो छ। प्रश्न — यीमध्ये होचो को हो?",
+    "answer": "उत्तर: ललिता",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "सुमित",
+      "ललिता"
+    ],
+    "values": [
+      154,
+      122
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: प्रिया विरुद्ध यश — अग्ली; यश विरुद्ध गायत्री — होचो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: गायत्री",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "प्रिया",
+      "यश",
+      "गायत्री"
+    ],
+    "values": [
+      131,
+      114,
+      117
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: सुमित विरुद्ध आरती — होचो; आरती विरुद्ध गणेश — अग्ली। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "सुमित",
+      "आरती",
+      "गणेश"
+    ],
+    "values": [
+      138,
+      176,
+      164
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: मंजू विरुद्ध स्नेहा — होची; स्नेहा विरुद्ध प्रीति — अग्ली। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा अग्लो को हो?",
+    "answer": "उत्तर: स्नेहा",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "मंजू",
+      "स्नेहा",
+      "प्रीति"
+    ],
+    "values": [
+      163,
+      197,
+      124
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: श्याम विरुद्ध मंजू — अग्लो; मंजू विरुद्ध गायत्री — होची। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा अग्लो को हो?",
+    "answer": "उत्तर: गायत्री",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "श्याम",
+      "मंजू",
+      "गायत्री"
+    ],
+    "values": [
+      114,
+      98,
+      187
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: गायत्री विरुद्ध रेखा — होची; रेखा विरुद्ध मंजू — अग्ली। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: गायत्री",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "गायत्री",
+      "रेखा",
+      "मंजू"
+    ],
+    "values": [
+      99,
+      130,
+      102
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: स्नेहा विरुद्ध प्रिया — होची; प्रिया विरुद्ध प्रीति — होची। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा अग्लो को हो?",
+    "answer": "उत्तर: प्रीति",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "स्नेहा",
+      "प्रिया",
+      "प्रीति"
+    ],
+    "values": [
+      115,
+      125,
+      131
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: उर्मिला विरुद्ध मंजू — अग्ली; मंजू विरुद्ध गणेश — होची। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: मंजू",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "उर्मिला",
+      "मंजू",
+      "गणेश"
+    ],
+    "values": [
+      161,
+      101,
+      118
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: ललिता विरुद्ध आरती — होची; आरती विरुद्ध स्नेहा — अग्ली। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा अग्लो को हो?",
+    "answer": "उत्तर: आरती",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "ललिता",
+      "आरती",
+      "स्नेहा"
+    ],
+    "values": [
+      116,
+      198,
+      117
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: गायत्री विरुद्ध सुमित — अग्ली; सुमित विरुद्ध सन्तोष — होचो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "गायत्री",
+      "सुमित",
+      "सन्तोष"
+    ],
+    "values": [
+      181,
+      94,
+      115
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: सुमित विरुद्ध यश — होचो; यश विरुद्ध रेखा — अग्लो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: रेखा",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "सुमित",
+      "यश",
+      "रेखा"
+    ],
+    "values": [
+      105,
+      158,
+      109
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: प्रीति विरुद्ध उर्मिला — होची; उर्मिला विरुद्ध आरती — अग्ली। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: प्रीति",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "प्रीति",
+      "उर्मिला",
+      "आरती"
+    ],
+    "values": [
+      132,
+      146,
+      105
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: मंजू विरुद्ध प्रिया — होची; प्रिया विरुद्ध सुमित — अग्ली। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "मंजू",
+      "प्रिया",
+      "सुमित"
+    ],
+    "values": [
+      91,
+      126,
+      100
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: स्नेहा विरुद्ध रेखा — अग्ली; रेखा विरुद्ध दीपक — होची। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा अग्लो को हो?",
+    "answer": "उत्तर: दीपक",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "स्नेहा",
+      "रेखा",
+      "दीपक"
+    ],
+    "values": [
+      120,
+      92,
+      169
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: प्रीति विरुद्ध यश — अग्ली; यश विरुद्ध आरती — होचो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: यश",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "प्रीति",
+      "यश",
+      "आरती"
+    ],
+    "values": [
+      176,
+      91,
+      115
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: प्रीति विरुद्ध मंजू — होची; मंजू विरुद्ध किशोर — अग्ली। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: प्रीति",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "प्रीति",
+      "मंजू",
+      "किशोर"
+    ],
+    "values": [
+      115,
+      166,
+      103
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: स्नेहा विरुद्ध दीपक — अग्ली; दीपक विरुद्ध सुमित — होचो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: दीपक",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "स्नेहा",
+      "दीपक",
+      "सुमित"
+    ],
+    "values": [
+      139,
+      91,
+      92
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: किशोर विरुद्ध आरती — अग्लो; आरती विरुद्ध सन्तोष — होची। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: किशोर",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "किशोर",
+      "आरती",
+      "सन्तोष"
+    ],
+    "values": [
+      163,
+      114,
+      166
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: श्याम विरुद्ध ललिता — अग्लो; ललिता विरुद्ध प्रिया — होची। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा अग्लो को हो?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "श्याम",
+      "ललिता",
+      "प्रिया"
+    ],
+    "values": [
+      168,
+      162,
+      175
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: शीला विरुद्ध राधा — होची; राधा विरुद्ध प्रीति — अग्ली। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: प्रीति",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "शीला",
+      "राधा",
+      "प्रीति"
+    ],
+    "values": [
+      108,
+      140,
+      133
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: आरती विरुद्ध स्नेहा — होची; स्नेहा विरुद्ध रेखा — अग्ली। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: रेखा",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "आरती",
+      "स्नेहा",
+      "रेखा"
+    ],
+    "values": [
+      128,
+      169,
+      105
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: गणेश विरुद्ध मंजू — अग्लो; मंजू विरुद्ध आरती — होची। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: मंजू",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "गणेश",
+      "मंजू",
+      "आरती"
+    ],
+    "values": [
+      200,
+      107,
+      125
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: गायत्री विरुद्ध राधा — होची; राधा विरुद्ध निखिल — होची। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: गायत्री",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "गायत्री",
+      "राधा",
+      "निखिल"
+    ],
+    "values": [
+      129,
+      181,
+      200
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: शीला विरुद्ध निखिल — अग्ली; निखिल विरुद्ध उर्मिला — होचो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: शीला",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "शीला",
+      "निखिल",
+      "उर्मिला"
+    ],
+    "values": [
+      165,
+      148,
+      194
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: शीला विरुद्ध उर्मिला — अग्ली; उर्मिला विरुद्ध निखिल — होची। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: उर्मिला",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "शीला",
+      "उर्मिला",
+      "निखिल"
+    ],
+    "values": [
+      101,
+      94,
+      177
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: स्नेहा विरुद्ध किशोर — अग्ली; किशोर विरुद्ध सुमन — होचो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: स्नेहा",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "स्नेहा",
+      "किशोर",
+      "सुमन"
+    ],
+    "values": [
+      151,
+      101,
+      153
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: रेखा विरुद्ध श्याम — होची; श्याम विरुद्ध राधा — होचो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "रेखा",
+      "श्याम",
+      "राधा"
+    ],
+    "values": [
+      104,
+      169,
+      193
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: श्याम विरुद्ध ललिता — अग्लो; ललिता विरुद्ध शीला — होची। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा अग्लो को हो?",
+    "answer": "उत्तर: शीला",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "श्याम",
+      "ललिता",
+      "शीला"
+    ],
+    "values": [
+      191,
+      187,
+      197
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: ललिता विरुद्ध किशोर — अग्ली; किशोर विरुद्ध रेखा — अग्लो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: रेखा",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "ललिता",
+      "किशोर",
+      "रेखा"
+    ],
+    "values": [
+      197,
+      111,
+      92
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: स्नेहा विरुद्ध गणेश — अग्ली; गणेश विरुद्ध उर्मिला — होचो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "स्नेहा",
+      "गणेश",
+      "उर्मिला"
+    ],
+    "values": [
+      189,
+      107,
+      116
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: सन्तोष विरुद्ध किशोर — अग्लो; किशोर विरुद्ध प्रीति — होचो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा अग्लो को हो?",
+    "answer": "उत्तर: प्रीति",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "सन्तोष",
+      "किशोर",
+      "प्रीति"
+    ],
+    "values": [
+      121,
+      93,
+      164
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: प्रिया विरुद्ध सुमन — होची; सुमन विरुद्ध दीपक — अग्ली। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा अग्लो को हो?",
+    "answer": "उत्तर: सुमन",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "प्रिया",
+      "सुमन",
+      "दीपक"
+    ],
+    "values": [
+      148,
+      198,
+      171
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: ललिता विरुद्ध यश — अग्ली; यश विरुद्ध गणेश — होचो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "ललिता",
+      "यश",
+      "गणेश"
+    ],
+    "values": [
+      165,
+      120,
+      154
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: प्रीति विरुद्ध शीला — अग्ली; शीला विरुद्ध दीपक — होची। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: शीला",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "प्रीति",
+      "शीला",
+      "दीपक"
+    ],
+    "values": [
+      146,
+      143,
+      154
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: आरती विरुद्ध ललिता — होची; ललिता विरुद्ध श्याम — अग्ली। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "आरती",
+      "ललिता",
+      "श्याम"
+    ],
+    "values": [
+      136,
+      150,
+      128
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: किशोर विरुद्ध रेखा — अग्लो; रेखा विरुद्ध स्नेहा — होची। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: रेखा",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "किशोर",
+      "रेखा",
+      "स्नेहा"
+    ],
+    "values": [
+      109,
+      94,
+      168
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: दीपक विरुद्ध सुमन — अग्लो; सुमन विरुद्ध सन्तोष — अग्ली। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: सन्तोष",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "दीपक",
+      "सुमन",
+      "सन्तोष"
+    ],
+    "values": [
+      168,
+      139,
+      110
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: सुमन विरुद्ध श्याम — होची; श्याम विरुद्ध राधा — होचो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा अग्लो को हो?",
+    "answer": "उत्तर: राधा",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "सुमन",
+      "श्याम",
+      "राधा"
+    ],
+    "values": [
+      157,
+      164,
+      195
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: राधा विरुद्ध यश — अग्ली; यश विरुद्ध स्नेहा — होचो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको को हो?",
+    "answer": "उत्तर: स्नेहा",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "राधा",
+      "यश",
+      "स्नेहा"
+    ],
+    "values": [
+      185,
+      138,
+      161
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: स्नेहा विरुद्ध सन्तोष — अग्ली; सन्तोष विरुद्ध मंजू — होचो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: सन्तोष",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "स्नेहा",
+      "सन्तोष",
+      "मंजू"
+    ],
+    "values": [
+      103,
+      95,
+      170
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: स्नेहा विरुद्ध सुमन — होची; सुमन विरुद्ध निखिल — अग्ली। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा होचो को हो?",
+    "answer": "उत्तर: निखिल",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 3,
+    "entities": [
+      "स्नेहा",
+      "सुमन",
+      "निखिल"
+    ],
+    "values": [
+      164,
+      198,
+      99
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: रबर र थैलो। रबर थैलोभन्दा सस्तो छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: रबर",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "रबर",
+      "थैलो"
+    ],
+    "values": [
+      157,
+      448
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: गोलभेडा र टोपी। गोलभेडा टोपीभन्दा महँगो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: गोलभेडा",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "गोलभेडा",
+      "टोपी"
+    ],
+    "values": [
+      275,
+      199
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: कम्बल र भुइँकटहर। कम्बल भुइँकटहरभन्दा सस्तो छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: कम्बल",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "कम्बल",
+      "भुइँकटहर"
+    ],
+    "values": [
+      351,
+      453
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सिमी र झोला। सिमी झोलाभन्दा सस्ती छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: सिमी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "सिमी",
+      "झोला"
+    ],
+    "values": [
+      197,
+      244
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सिमी र दराज। सिमी दराजभन्दा सस्ती छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: सिमी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "सिमी",
+      "दराज"
+    ],
+    "values": [
+      60,
+      92
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: बट्टा र झोला। बट्टा झोलाभन्दा सस्तो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: झोला",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "बट्टा",
+      "झोला"
+    ],
+    "values": [
+      424,
+      441
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: भण्टा र दराज। भण्टा दराजभन्दा महँगो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: भण्टा",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "भण्टा",
+      "दराज"
+    ],
+    "values": [
+      348,
+      277
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: भण्टा र जुत्ता। भण्टा जुत्ताभन्दा सस्तो छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: भण्टा",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "भण्टा",
+      "जुत्ता"
+    ],
+    "values": [
+      99,
+      228
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: टेबल र थैलो। टेबल थैलोभन्दा सस्ती छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: थैलो",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "टेबल",
+      "थैलो"
+    ],
+    "values": [
+      106,
+      124
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: कम्बल र ऐना। कम्बल ऐनाभन्दा महँगो छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: ऐना",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "कम्बल",
+      "ऐना"
+    ],
+    "values": [
+      437,
+      404
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: टोपी र दराज। टोपी दराजभन्दा सस्ती छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: टोपी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "टोपी",
+      "दराज"
+    ],
+    "values": [
+      154,
+      449
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: दराज र अम्बा। दराज अम्बाभन्दा महँगो छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: अम्बा",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "दराज",
+      "अम्बा"
+    ],
+    "values": [
+      460,
+      375
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: आलु र कंघी। आलु कंघीभन्दा सस्तो छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: आलु",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "आलु",
+      "कंघी"
+    ],
+    "values": [
+      30,
+      63
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: अम्बा र भुइँकटहर। अम्बा भुइँकटहरभन्दा महँगो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: अम्बा",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "अम्बा",
+      "भुइँकटहर"
+    ],
+    "values": [
+      496,
+      83
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: अम्बा र ऐना। अम्बा ऐनाभन्दा महँगो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: अम्बा",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "अम्बा",
+      "ऐना"
+    ],
+    "values": [
+      436,
+      266
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: केरा र गोलभेडा। केरा गोलभेडाभन्दा सस्तो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: गोलभेडा",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "केरा",
+      "गोलभेडा"
+    ],
+    "values": [
+      121,
+      423
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सिमी र रबर। सिमी रबरभन्दा महँगी छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: रबर",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "सिमी",
+      "रबर"
+    ],
+    "values": [
+      265,
+      66
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: पर्स र अम्बा। पर्स अम्बाभन्दा सस्तो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: अम्बा",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "पर्स",
+      "अम्बा"
+    ],
+    "values": [
+      31,
+      265
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: कंघी र रबर। कंघी रबरभन्दा महँगी छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "कंघी",
+      "रबर"
+    ],
+    "values": [
+      215,
+      175
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: केरा र झोला। केरा झोलाभन्दा सस्तो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: झोला",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "केरा",
+      "झोला"
+    ],
+    "values": [
+      222,
+      405
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: झोला र पर्स। झोला पर्सभन्दा सस्तो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: पर्स",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "झोला",
+      "पर्स"
+    ],
+    "values": [
+      181,
+      423
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: दराज र टेबल। दराज टेबलभन्दा महँगो छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: टेबल",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "दराज",
+      "टेबल"
+    ],
+    "values": [
+      236,
+      11
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सिमी र टोपी। सिमी टोपीभन्दा सस्ती छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: सिमी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "सिमी",
+      "टोपी"
+    ],
+    "values": [
+      123,
+      447
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: ऐना र बट्टा। ऐना बट्टाभन्दा महँगो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: ऐना",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "ऐना",
+      "बट्टा"
+    ],
+    "values": [
+      177,
+      60
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: थैलो र गोलभेडा। थैलो गोलभेडाभन्दा महँगो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: थैलो",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "थैलो",
+      "गोलभेडा"
+    ],
+    "values": [
+      403,
+      279
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: कम्बल र आलु। कम्बल आलुभन्दा सस्तो छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: कम्बल",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "कम्बल",
+      "आलु"
+    ],
+    "values": [
+      39,
+      167
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: भण्टा र झोला। भण्टा झोलाभन्दा सस्तो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: झोला",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "भण्टा",
+      "झोला"
+    ],
+    "values": [
+      60,
+      264
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: दराज र कंघी। दराज कंघीभन्दा सस्तो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "दराज",
+      "कंघी"
+    ],
+    "values": [
+      196,
+      330
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: केरा र जुत्ता। केरा जुत्ताभन्दा महँगो छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: जुत्ता",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "केरा",
+      "जुत्ता"
+    ],
+    "values": [
+      409,
+      156
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: चना र आलु। चना आलुभन्दा महँगो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: चना",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "चना",
+      "आलु"
+    ],
+    "values": [
+      461,
+      159
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: बट्टा र रबर। बट्टा रबरभन्दा सस्तो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: रबर",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "बट्टा",
+      "रबर"
+    ],
+    "values": [
+      206,
+      365
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सिमी र केरा। सिमी केराभन्दा महँगी छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: केरा",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "सिमी",
+      "केरा"
+    ],
+    "values": [
+      352,
+      66
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: भुइँकटहर र सिमी। भुइँकटहर सिमीभन्दा सस्तो छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: भुइँकटहर",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "भुइँकटहर",
+      "सिमी"
+    ],
+    "values": [
+      201,
+      384
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: रबर र पर्स। रबर पर्सभन्दा सस्तो छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: रबर",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "रबर",
+      "पर्स"
+    ],
+    "values": [
+      270,
+      286
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सिमी र टोपी। सिमी टोपीभन्दा महँगी छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: सिमी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "सिमी",
+      "टोपी"
+    ],
+    "values": [
+      418,
+      289
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: टोपी र दराज। टोपी दराजभन्दा महँगी छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: टोपी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "टोपी",
+      "दराज"
+    ],
+    "values": [
+      494,
+      466
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: केरा र सिमी। केरा सिमीभन्दा सस्तो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: सिमी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "केरा",
+      "सिमी"
+    ],
+    "values": [
+      115,
+      264
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: दराज र टोपी। दराज टोपीभन्दा महँगो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: दराज",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "दराज",
+      "टोपी"
+    ],
+    "values": [
+      497,
+      433
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: केरा र थैलो। केरा थैलोभन्दा महँगो छ। प्रश्न — यीमध्ये सस्तो कुन हो?",
+    "answer": "उत्तर: थैलो",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "केरा",
+      "थैलो"
+    ],
+    "values": [
+      419,
+      37
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: भुइँकटहर र पर्स। भुइँकटहर पर्सभन्दा महँगो छ। प्रश्न — यीमध्ये महँगो कुन हो?",
+    "answer": "उत्तर: भुइँकटहर",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "भुइँकटहर",
+      "पर्स"
+    ],
+    "values": [
+      176,
+      28
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: भुइँकटहर विरुद्ध थैलो — महँगो; थैलो विरुद्ध चना — सस्तो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: थैलो",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "भुइँकटहर",
+      "थैलो",
+      "चना"
+    ],
+    "values": [
+      474,
+      317,
+      423
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: केरा विरुद्ध चना — सस्तो; चना विरुद्ध टोपी — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: केरा",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "केरा",
+      "चना",
+      "टोपी"
+    ],
+    "values": [
+      304,
+      373,
+      363
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: सिमी विरुद्ध अम्बा — सस्ती; अम्बा विरुद्ध जुत्ता — सस्तो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: सिमी",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "सिमी",
+      "अम्बा",
+      "जुत्ता"
+    ],
+    "values": [
+      321,
+      356,
+      439
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: रबर विरुद्ध चना — सस्तो; चना विरुद्ध जुत्ता — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा महँगो कुन हो?",
+    "answer": "उत्तर: चना",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "रबर",
+      "चना",
+      "जुत्ता"
+    ],
+    "values": [
+      314,
+      374,
+      46
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: केरा विरुद्ध बट्टा — महँगो; बट्टा विरुद्ध झोला — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मूल्य कुनको हो?",
+    "answer": "उत्तर: बट्टा",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "केरा",
+      "बट्टा",
+      "झोला"
+    ],
+    "values": [
+      257,
+      249,
+      229
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: ऐना विरुद्ध सिमी — सस्तो; सिमी विरुद्ध जुत्ता — महँगी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: ऐना",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "ऐना",
+      "सिमी",
+      "जुत्ता"
+    ],
+    "values": [
+      207,
+      425,
+      234
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: ऐना विरुद्ध झोला — सस्तो; झोला विरुद्ध रबर — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मूल्य कुनको हो?",
+    "answer": "उत्तर: रबर",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "ऐना",
+      "झोला",
+      "रबर"
+    ],
+    "values": [
+      29,
+      385,
+      296
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: टोपी विरुद्ध पर्स — सस्ती; पर्स विरुद्ध जुत्ता — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा महँगो कुन हो?",
+    "answer": "उत्तर: पर्स",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "टोपी",
+      "पर्स",
+      "जुत्ता"
+    ],
+    "values": [
+      213,
+      448,
+      239
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: सिमी विरुद्ध अम्बा — सस्ती; अम्बा विरुद्ध कम्बल — सस्तो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा महँगो कुन हो?",
+    "answer": "उत्तर: कम्बल",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "सिमी",
+      "अम्बा",
+      "कम्बल"
+    ],
+    "values": [
+      160,
+      166,
+      277
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: जुत्ता विरुद्ध भुइँकटहर — सस्तो; भुइँकटहर विरुद्ध भण्टा — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मूल्य कुनको हो?",
+    "answer": "उत्तर: भण्टा",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "जुत्ता",
+      "भुइँकटहर",
+      "भण्टा"
+    ],
+    "values": [
+      43,
+      346,
+      128
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: बट्टा विरुद्ध आलु — सस्तो; आलु विरुद्ध भुइँकटहर — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: भुइँकटहर",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "बट्टा",
+      "आलु",
+      "भुइँकटहर"
+    ],
+    "values": [
+      376,
+      408,
+      310
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: टोपी विरुद्ध ऐना — सस्ती; ऐना विरुद्ध रबर — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा महँगो कुन हो?",
+    "answer": "उत्तर: ऐना",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "टोपी",
+      "ऐना",
+      "रबर"
+    ],
+    "values": [
+      280,
+      481,
+      472
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: पर्स विरुद्ध कंघी — सस्तो; कंघी विरुद्ध टोपी — महँगी। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मूल्य कुनको हो?",
+    "answer": "उत्तर: टोपी",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "पर्स",
+      "कंघी",
+      "टोपी"
+    ],
+    "values": [
+      27,
+      177,
+      68
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: झोला विरुद्ध सिमी — सस्तो; सिमी विरुद्ध टेबल — महँगी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा महँगो कुन हो?",
+    "answer": "उत्तर: सिमी",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "झोला",
+      "सिमी",
+      "टेबल"
+    ],
+    "values": [
+      131,
+      305,
+      283
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: टोपी विरुद्ध अम्बा — महँगी; अम्बा विरुद्ध बट्टा — सस्तो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: अम्बा",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "टोपी",
+      "अम्बा",
+      "बट्टा"
+    ],
+    "values": [
+      392,
+      152,
+      276
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: जुत्ता विरुद्ध अम्बा — महँगो; अम्बा विरुद्ध भुइँकटहर — सस्तो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा महँगो कुन हो?",
+    "answer": "उत्तर: जुत्ता",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "जुत्ता",
+      "अम्बा",
+      "भुइँकटहर"
+    ],
+    "values": [
+      193,
+      75,
+      86
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: रबर विरुद्ध गोलभेडा — महँगो; गोलभेडा विरुद्ध कंघी — सस्तो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मूल्य कुनको हो?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "रबर",
+      "गोलभेडा",
+      "कंघी"
+    ],
+    "values": [
+      144,
+      17,
+      43
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: गोलभेडा विरुद्ध दराज — सस्तो; दराज विरुद्ध आलु — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मूल्य कुनको हो?",
+    "answer": "उत्तर: गोलभेडा",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "गोलभेडा",
+      "दराज",
+      "आलु"
+    ],
+    "values": [
+      57,
+      360,
+      45
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: पर्स विरुद्ध कंघी — सस्तो; कंघी विरुद्ध कम्बल — महँगी। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा महँगो कुन हो?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "पर्स",
+      "कंघी",
+      "कम्बल"
+    ],
+    "values": [
+      410,
+      430,
+      372
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: रबर विरुद्ध बट्टा — सस्तो; बट्टा विरुद्ध गोलभेडा — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा महँगो कुन हो?",
+    "answer": "उत्तर: बट्टा",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "रबर",
+      "बट्टा",
+      "गोलभेडा"
+    ],
+    "values": [
+      23,
+      225,
+      152
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: चना विरुद्ध झोला — सस्तो; झोला विरुद्ध गोलभेडा — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: गोलभेडा",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "चना",
+      "झोला",
+      "गोलभेडा"
+    ],
+    "values": [
+      374,
+      405,
+      361
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: दराज विरुद्ध गोलभेडा — महँगो; गोलभेडा विरुद्ध ऐना — सस्तो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मूल्य कुनको हो?",
+    "answer": "उत्तर: दराज",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "दराज",
+      "गोलभेडा",
+      "ऐना"
+    ],
+    "values": [
+      370,
+      163,
+      469
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: कम्बल विरुद्ध जुत्ता — सस्तो; जुत्ता विरुद्ध रबर — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मूल्य कुनको हो?",
+    "answer": "उत्तर: कम्बल",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "कम्बल",
+      "जुत्ता",
+      "रबर"
+    ],
+    "values": [
+      393,
+      451,
+      158
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: जुत्ता विरुद्ध थैलो — महँगो; थैलो विरुद्ध चना — सस्तो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: थैलो",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "जुत्ता",
+      "थैलो",
+      "चना"
+    ],
+    "values": [
+      418,
+      164,
+      289
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: ऐना विरुद्ध भण्टा — सस्तो; भण्टा विरुद्ध आलु — सस्तो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: ऐना",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "ऐना",
+      "भण्टा",
+      "आलु"
+    ],
+    "values": [
+      143,
+      333,
+      495
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: पर्स विरुद्ध केरा — महँगो; केरा विरुद्ध थैलो — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: थैलो",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "पर्स",
+      "केरा",
+      "थैलो"
+    ],
+    "values": [
+      311,
+      64,
+      15
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: केरा विरुद्ध कम्बल — महँगो; कम्बल विरुद्ध कंघी — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "केरा",
+      "कम्बल",
+      "कंघी"
+    ],
+    "values": [
+      469,
+      272,
+      179
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: केरा विरुद्ध झोला — सस्तो; झोला विरुद्ध रबर — सस्तो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा महँगो कुन हो?",
+    "answer": "उत्तर: रबर",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "केरा",
+      "झोला",
+      "रबर"
+    ],
+    "values": [
+      25,
+      206,
+      337
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: पर्स विरुद्ध टेबल — सस्तो; टेबल विरुद्ध गोलभेडा — सस्ती। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: पर्स",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "पर्स",
+      "टेबल",
+      "गोलभेडा"
+    ],
+    "values": [
+      107,
+      319,
+      320
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: बट्टा विरुद्ध कम्बल — सस्तो; कम्बल विरुद्ध ऐना — सस्तो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मूल्य कुनको हो?",
+    "answer": "उत्तर: कम्बल",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "बट्टा",
+      "कम्बल",
+      "ऐना"
+    ],
+    "values": [
+      297,
+      327,
+      399
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: थैलो विरुद्ध अम्बा — सस्तो; अम्बा विरुद्ध पर्स — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: थैलो",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "थैलो",
+      "अम्बा",
+      "पर्स"
+    ],
+    "values": [
+      143,
+      324,
+      194
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: बट्टा विरुद्ध टोपी — सस्तो; टोपी विरुद्ध दराज — महँगी। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मूल्य कुनको हो?",
+    "answer": "उत्तर: दराज",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "बट्टा",
+      "टोपी",
+      "दराज"
+    ],
+    "values": [
+      50,
+      116,
+      69
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: टेबल विरुद्ध सिमी — महँगी; सिमी विरुद्ध बट्टा — सस्ती। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मूल्य कुनको हो?",
+    "answer": "उत्तर: टेबल",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "टेबल",
+      "सिमी",
+      "बट्टा"
+    ],
+    "values": [
+      260,
+      126,
+      452
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: पर्स विरुद्ध ऐना — सस्तो; ऐना विरुद्ध चना — सस्तो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा महँगो कुन हो?",
+    "answer": "उत्तर: चना",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "पर्स",
+      "ऐना",
+      "चना"
+    ],
+    "values": [
+      203,
+      298,
+      424
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: सिमी विरुद्ध कम्बल — सस्ती; कम्बल विरुद्ध केरा — सस्तो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: सिमी",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "सिमी",
+      "कम्बल",
+      "केरा"
+    ],
+    "values": [
+      213,
+      232,
+      315
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: टेबल विरुद्ध रबर — सस्ती; रबर विरुद्ध कंघी — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मूल्य कुनको हो?",
+    "answer": "उत्तर: टेबल",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "टेबल",
+      "रबर",
+      "कंघी"
+    ],
+    "values": [
+      168,
+      498,
+      20
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: जुत्ता विरुद्ध चना — महँगो; चना विरुद्ध टेबल — सस्तो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: चना",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "जुत्ता",
+      "चना",
+      "टेबल"
+    ],
+    "values": [
+      282,
+      88,
+      139
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: पर्स विरुद्ध बट्टा — महँगो; बट्टा विरुद्ध कंघी — सस्तो। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा सस्तो कुन हो?",
+    "answer": "उत्तर: बट्टा",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "पर्स",
+      "बट्टा",
+      "कंघी"
+    ],
+    "values": [
+      349,
+      314,
+      436
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: ऐना विरुद्ध कंघी — सस्तो; कंघी विरुद्ध दराज — सस्ती। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा महँगो कुन हो?",
+    "answer": "उत्तर: दराज",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "ऐना",
+      "कंघी",
+      "दराज"
+    ],
+    "values": [
+      152,
+      254,
+      495
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: रबर विरुद्ध चना — सस्तो; चना विरुद्ध पर्स — महँगो। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मूल्य कुनको हो?",
+    "answer": "उत्तर: पर्स",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 3,
+    "entities": [
+      "रबर",
+      "चना",
+      "पर्स"
+    ],
+    "values": [
+      107,
+      196,
+      176
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: रबर र झोला। रबर झोलाभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: झोला",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "रबर",
+      "झोला"
+    ],
+    "values": [
+      28,
+      91
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: अम्बा र जुत्ता। अम्बा जुत्ताभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: अम्बा",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "अम्बा",
+      "जुत्ता"
+    ],
+    "values": [
+      73,
+      83
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: ऐना र अम्बा। ऐना अम्बाभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: ऐना",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "ऐना",
+      "अम्बा"
+    ],
+    "values": [
+      16,
+      30
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: थैलो र केरा। थैलो केराभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: थैलो",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "थैलो",
+      "केरा"
+    ],
+    "values": [
+      27,
+      7
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: गोलभेडा र पर्स। गोलभेडा पर्सभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: गोलभेडा",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "गोलभेडा",
+      "पर्स"
+    ],
+    "values": [
+      97,
+      18
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: टेबल र अम्बा। टेबल अम्बाभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: अम्बा",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "टेबल",
+      "अम्बा"
+    ],
+    "values": [
+      5,
+      30
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: टेबल र दराज। टेबल दराजभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: टेबल",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "टेबल",
+      "दराज"
+    ],
+    "values": [
+      38,
+      12
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: कम्बल र बट्टा। कम्बल बट्टाभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: कम्बल",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "कम्बल",
+      "बट्टा"
+    ],
+    "values": [
+      85,
+      74
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: कंघी र कम्बल। कंघी कम्बलभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "कंघी",
+      "कम्बल"
+    ],
+    "values": [
+      93,
+      50
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: झोला र आलु। झोला आलुभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: झोला",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "झोला",
+      "आलु"
+    ],
+    "values": [
+      62,
+      68
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: जुत्ता र थैलो। जुत्ता थैलोभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: थैलो",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "जुत्ता",
+      "थैलो"
+    ],
+    "values": [
+      34,
+      80
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: बट्टा र टोपी। बट्टा टोपीभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: टोपी",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "बट्टा",
+      "टोपी"
+    ],
+    "values": [
+      38,
+      9
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: केरा र चना। केरा चनाभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: चना",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "केरा",
+      "चना"
+    ],
+    "values": [
+      94,
+      64
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: अम्बा र कंघी। अम्बा कंघीभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: अम्बा",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "अम्बा",
+      "कंघी"
+    ],
+    "values": [
+      72,
+      8
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: भुइँकटहर र चना। भुइँकटहर चनाभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: चना",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "भुइँकटहर",
+      "चना"
+    ],
+    "values": [
+      4,
+      35
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: अम्बा र थैलो। अम्बा थैलोभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: थैलो",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "अम्बा",
+      "थैलो"
+    ],
+    "values": [
+      17,
+      87
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: कम्बल र झोला। कम्बल झोलाभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: झोला",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "कम्बल",
+      "झोला"
+    ],
+    "values": [
+      22,
+      8
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: चना र भण्टा। चना भण्टाभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: चना",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "चना",
+      "भण्टा"
+    ],
+    "values": [
+      59,
+      87
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: केरा र पर्स। केरा पर्सभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: केरा",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "केरा",
+      "पर्स"
+    ],
+    "values": [
+      70,
+      4
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: पर्स र दराज। पर्स दराजभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: पर्स",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "पर्स",
+      "दराज"
+    ],
+    "values": [
+      9,
+      49
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: थैलो र टोपी। थैलो टोपीभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: थैलो",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "थैलो",
+      "टोपी"
+    ],
+    "values": [
+      90,
+      43
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: भुइँकटहर र थैलो। भुइँकटहर थैलोभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: भुइँकटहर",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "भुइँकटहर",
+      "थैलो"
+    ],
+    "values": [
+      49,
+      13
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: थैलो र झोला। थैलो झोलाभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: झोला",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "थैलो",
+      "झोला"
+    ],
+    "values": [
+      38,
+      78
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: ऐना र कम्बल। ऐना कम्बलभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: ऐना",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "ऐना",
+      "कम्बल"
+    ],
+    "values": [
+      25,
+      17
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: अम्बा र केरा। अम्बा केराभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: अम्बा",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "अम्बा",
+      "केरा"
+    ],
+    "values": [
+      20,
+      47
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: टेबल र रबर। टेबल रबरभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: टेबल",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "टेबल",
+      "रबर"
+    ],
+    "values": [
+      48,
+      100
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: रबर र टोपी। रबर टोपीभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: टोपी",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "रबर",
+      "टोपी"
+    ],
+    "values": [
+      16,
+      71
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: भुइँकटहर र कंघी। भुइँकटहर कंघीभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: भुइँकटहर",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "भुइँकटहर",
+      "कंघी"
+    ],
+    "values": [
+      90,
+      21
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: रबर र अम्बा। रबर अम्बाभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: रबर",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "रबर",
+      "अम्बा"
+    ],
+    "values": [
+      91,
+      18
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: बट्टा र टोपी। बट्टा टोपीभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: बट्टा",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "बट्टा",
+      "टोपी"
+    ],
+    "values": [
+      42,
+      96
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: गोलभेडा र कम्बल। गोलभेडा कम्बलभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: गोलभेडा",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "गोलभेडा",
+      "कम्बल"
+    ],
+    "values": [
+      60,
+      52
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: गोलभेडा र टेबल। गोलभेडा टेबलभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: गोलभेडा",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "गोलभेडा",
+      "टेबल"
+    ],
+    "values": [
+      82,
+      56
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: टेबल र जुत्ता। टेबल जुत्ताभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: टेबल",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "टेबल",
+      "जुत्ता"
+    ],
+    "values": [
+      34,
+      68
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: केरा र ऐना। केरा ऐनाभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: ऐना",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "केरा",
+      "ऐना"
+    ],
+    "values": [
+      71,
+      95
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: सिमी र कम्बल। सिमी कम्बलभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: सिमी",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "सिमी",
+      "कम्बल"
+    ],
+    "values": [
+      14,
+      21
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: दराज र भण्टा। दराज भण्टाभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: भण्टा",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "दराज",
+      "भण्टा"
+    ],
+    "values": [
+      99,
+      17
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: ऐना र दराज। ऐना दराजभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: दराज",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "ऐना",
+      "दराज"
+    ],
+    "values": [
+      72,
+      57
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: भुइँकटहर र अम्बा। भुइँकटहर अम्बाभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: अम्बा",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "भुइँकटहर",
+      "अम्बा"
+    ],
+    "values": [
+      61,
+      42
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: झोला र सिमी। झोला सिमीभन्दा धेरै छ। प्रश्न — यीमध्ये कसको मात्रा थोरै छ?",
+    "answer": "उत्तर: सिमी",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "झोला",
+      "सिमी"
+    ],
+    "values": [
+      38,
+      16
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तुलना: केरा र कम्बल। केरा कम्बलभन्दा थोरै छ। प्रश्न — यीमध्ये कसको मात्रा धेरै छ?",
+    "answer": "उत्तर: कम्बल",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "केरा",
+      "कम्बल"
+    ],
+    "values": [
+      15,
+      29
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: आलु विरुद्ध केरा — थोरै; केरा विरुद्ध दराज — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मात्रा कसको हो?",
+    "answer": "उत्तर: आलु",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "आलु",
+      "केरा",
+      "दराज"
+    ],
+    "values": [
+      45,
+      77,
+      22
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: दराज विरुद्ध भण्टा — थोरै; भण्टा विरुद्ध झोला — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: भण्टा",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "दराज",
+      "भण्टा",
+      "झोला"
+    ],
+    "values": [
+      55,
+      88,
+      35
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: गोलभेडा विरुद्ध सिमी — धेरै; सिमी विरुद्ध बट्टा — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: गोलभेडा",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "गोलभेडा",
+      "सिमी",
+      "बट्टा"
+    ],
+    "values": [
+      81,
+      74,
+      30
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: गोलभेडा विरुद्ध जुत्ता — थोरै; जुत्ता विरुद्ध भण्टा — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: भण्टा",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "गोलभेडा",
+      "जुत्ता",
+      "भण्टा"
+    ],
+    "values": [
+      50,
+      92,
+      93
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: टेबल विरुद्ध कंघी — थोरै; कंघी विरुद्ध ऐना — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "टेबल",
+      "कंघी",
+      "ऐना"
+    ],
+    "values": [
+      1,
+      92,
+      60
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: जुत्ता विरुद्ध केरा — धेरै; केरा विरुद्ध रबर — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: जुत्ता",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "जुत्ता",
+      "केरा",
+      "रबर"
+    ],
+    "values": [
+      57,
+      16,
+      20
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: कम्बल विरुद्ध गोलभेडा — धेरै; गोलभेडा विरुद्ध भुइँकटहर — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मात्रा कसको हो?",
+    "answer": "उत्तर: भुइँकटहर",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "कम्बल",
+      "गोलभेडा",
+      "भुइँकटहर"
+    ],
+    "values": [
+      74,
+      1,
+      17
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: पर्स विरुद्ध कम्बल — थोरै; कम्बल विरुद्ध रबर — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा थोरै मात्रा कसको हो?",
+    "answer": "उत्तर: रबर",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "पर्स",
+      "कम्बल",
+      "रबर"
+    ],
+    "values": [
+      18,
+      100,
+      11
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: पर्स विरुद्ध केरा — धेरै; केरा विरुद्ध सिमी — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मात्रा कसको हो?",
+    "answer": "उत्तर: सिमी",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "पर्स",
+      "केरा",
+      "सिमी"
+    ],
+    "values": [
+      56,
+      7,
+      9
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: सिमी विरुद्ध केरा — थोरै; केरा विरुद्ध पर्स — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: केरा",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "सिमी",
+      "केरा",
+      "पर्स"
+    ],
+    "values": [
+      70,
+      84,
+      10
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: झोला विरुद्ध बट्टा — धेरै; बट्टा विरुद्ध ऐना — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: ऐना",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "झोला",
+      "बट्टा",
+      "ऐना"
+    ],
+    "values": [
+      56,
+      6,
+      74
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: कम्बल विरुद्ध भुइँकटहर — थोरै; भुइँकटहर विरुद्ध रबर — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: रबर",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "कम्बल",
+      "भुइँकटहर",
+      "रबर"
+    ],
+    "values": [
+      40,
+      51,
+      87
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: आलु विरुद्ध जुत्ता — धेरै; जुत्ता विरुद्ध सिमी — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: आलु",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "आलु",
+      "जुत्ता",
+      "सिमी"
+    ],
+    "values": [
+      75,
+      43,
+      38
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: आलु विरुद्ध पर्स — थोरै; पर्स विरुद्ध ऐना — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मात्रा कसको हो?",
+    "answer": "उत्तर: ऐना",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "आलु",
+      "पर्स",
+      "ऐना"
+    ],
+    "values": [
+      8,
+      51,
+      21
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: कम्बल विरुद्ध रबर — धेरै; रबर विरुद्ध आलु — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: कम्बल",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "कम्बल",
+      "रबर",
+      "आलु"
+    ],
+    "values": [
+      85,
+      53,
+      10
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: दराज विरुद्ध गोलभेडा — धेरै; गोलभेडा विरुद्ध कम्बल — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मात्रा कसको हो?",
+    "answer": "उत्तर: दराज",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "दराज",
+      "गोलभेडा",
+      "कम्बल"
+    ],
+    "values": [
+      19,
+      11,
+      92
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: बट्टा विरुद्ध अम्बा — थोरै; अम्बा विरुद्ध थैलो — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: अम्बा",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "बट्टा",
+      "अम्बा",
+      "थैलो"
+    ],
+    "values": [
+      3,
+      57,
+      32
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: रबर विरुद्ध आलु — धेरै; आलु विरुद्ध टोपी — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मात्रा कसको हो?",
+    "answer": "उत्तर: टोपी",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "रबर",
+      "आलु",
+      "टोपी"
+    ],
+    "values": [
+      68,
+      28,
+      29
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: पर्स विरुद्ध टोपी — थोरै; टोपी विरुद्ध आलु — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मात्रा कसको हो?",
+    "answer": "उत्तर: आलु",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "पर्स",
+      "टोपी",
+      "आलु"
+    ],
+    "values": [
+      23,
+      79,
+      76
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: बट्टा विरुद्ध आलु — थोरै; आलु विरुद्ध थैलो — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मात्रा कसको हो?",
+    "answer": "उत्तर: बट्टा",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "बट्टा",
+      "आलु",
+      "थैलो"
+    ],
+    "values": [
+      27,
+      57,
+      3
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: भुइँकटहर विरुद्ध पर्स — धेरै; पर्स विरुद्ध सिमी — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा थोरै मात्रा कसको हो?",
+    "answer": "उत्तर: सिमी",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "भुइँकटहर",
+      "पर्स",
+      "सिमी"
+    ],
+    "values": [
+      67,
+      60,
+      41
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: रबर विरुद्ध पर्स — थोरै; पर्स विरुद्ध कम्बल — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा थोरै मात्रा कसको हो?",
+    "answer": "उत्तर: रबर",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "रबर",
+      "पर्स",
+      "कम्बल"
+    ],
+    "values": [
+      18,
+      73,
+      26
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: गोलभेडा विरुद्ध झोला — धेरै; झोला विरुद्ध थैलो — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा थोरै मात्रा कसको हो?",
+    "answer": "उत्तर: थैलो",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "गोलभेडा",
+      "झोला",
+      "थैलो"
+    ],
+    "values": [
+      86,
+      48,
+      15
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: आलु विरुद्ध टोपी — थोरै; टोपी विरुद्ध कम्बल — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा थोरै मात्रा कसको हो?",
+    "answer": "उत्तर: आलु",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "आलु",
+      "टोपी",
+      "कम्बल"
+    ],
+    "values": [
+      4,
+      57,
+      78
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: झोला विरुद्ध टेबल — धेरै; टेबल विरुद्ध भण्टा — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: भण्टा",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "झोला",
+      "टेबल",
+      "भण्टा"
+    ],
+    "values": [
+      70,
+      26,
+      73
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: अम्बा विरुद्ध भण्टा — धेरै; भण्टा विरुद्ध गोलभेडा — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा थोरै मात्रा कसको हो?",
+    "answer": "उत्तर: गोलभेडा",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "अम्बा",
+      "भण्टा",
+      "गोलभेडा"
+    ],
+    "values": [
+      85,
+      56,
+      51
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: कंघी विरुद्ध सिमी — थोरै; सिमी विरुद्ध झोला — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: झोला",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "कंघी",
+      "सिमी",
+      "झोला"
+    ],
+    "values": [
+      44,
+      71,
+      85
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: चना विरुद्ध कंघी — थोरै; कंघी विरुद्ध रबर — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "चना",
+      "कंघी",
+      "रबर"
+    ],
+    "values": [
+      28,
+      68,
+      37
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: भण्टा विरुद्ध बट्टा — धेरै; बट्टा विरुद्ध गोलभेडा — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: गोलभेडा",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "भण्टा",
+      "बट्टा",
+      "गोलभेडा"
+    ],
+    "values": [
+      46,
+      45,
+      67
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: कम्बल विरुद्ध गोलभेडा — धेरै; गोलभेडा विरुद्ध टेबल — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: टेबल",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "कम्बल",
+      "गोलभेडा",
+      "टेबल"
+    ],
+    "values": [
+      66,
+      39,
+      68
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: पर्स विरुद्ध टेबल — धेरै; टेबल विरुद्ध कंघी — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मात्रा कसको हो?",
+    "answer": "उत्तर: टेबल",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "पर्स",
+      "टेबल",
+      "कंघी"
+    ],
+    "values": [
+      100,
+      46,
+      40
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: टेबल विरुद्ध टोपी — थोरै; टोपी विरुद्ध कंघी — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा थोरै मात्रा कसको हो?",
+    "answer": "उत्तर: टेबल",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "टेबल",
+      "टोपी",
+      "कंघी"
+    ],
+    "values": [
+      46,
+      76,
+      55
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: चना विरुद्ध केरा — धेरै; केरा विरुद्ध झोला — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मात्रा कसको हो?",
+    "answer": "उत्तर: केरा",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "चना",
+      "केरा",
+      "झोला"
+    ],
+    "values": [
+      77,
+      66,
+      17
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: सिमी विरुद्ध झोला — धेरै; झोला विरुद्ध टेबल — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा थोरै मात्रा कसको हो?",
+    "answer": "उत्तर: टेबल",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "सिमी",
+      "झोला",
+      "टेबल"
+    ],
+    "values": [
+      98,
+      49,
+      48
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: भुइँकटहर विरुद्ध अम्बा — धेरै; अम्बा विरुद्ध कम्बल — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा थोरै मात्रा कसको हो?",
+    "answer": "उत्तर: कम्बल",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "भुइँकटहर",
+      "अम्बा",
+      "कम्बल"
+    ],
+    "values": [
+      44,
+      19,
+      4
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: कम्बल विरुद्ध भुइँकटहर — थोरै; भुइँकटहर विरुद्ध दराज — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मात्रा कसको हो?",
+    "answer": "उत्तर: भुइँकटहर",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "कम्बल",
+      "भुइँकटहर",
+      "दराज"
+    ],
+    "values": [
+      31,
+      57,
+      64
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: दराज विरुद्ध सिमी — धेरै; सिमी विरुद्ध थैलो — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: दराज",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "दराज",
+      "सिमी",
+      "थैलो"
+    ],
+    "values": [
+      79,
+      48,
+      49
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: कंघी विरुद्ध अम्बा — धेरै; अम्बा विरुद्ध दराज — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "कंघी",
+      "अम्बा",
+      "दराज"
+    ],
+    "values": [
+      87,
+      76,
+      5
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: अम्बा विरुद्ध रबर — थोरै; रबर विरुद्ध झोला — धेरै। यसको आधारमा भन्नुहोस्: यीमध्ये बीचको मात्रा कसको हो?",
+    "answer": "उत्तर: अम्बा",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "अम्बा",
+      "रबर",
+      "झोला"
+    ],
+    "values": [
+      14,
+      61,
+      8
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जानकारी: रबर विरुद्ध ऐना — धेरै; ऐना विरुद्ध झोला — थोरै। यसको आधारमा भन्नुहोस्: यीमध्ये सबैभन्दा धेरै मात्रा कसको हो?",
+    "answer": "उत्तर: रबर",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 3,
+    "entities": [
+      "रबर",
+      "ऐना",
+      "झोला"
+    ],
+    "values": [
+      91,
+      12,
+      51
+    ],
+    "split": "test",
+    "entity_split": "test"
+  }
+]

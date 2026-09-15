@@ -67,6 +67,11 @@ venv/
 bonus_ablation/checkpoints/**/*.pt
 !*/checkpoints/**/.gitkeep
 
+# --- Phase 3 ---
+# Finetuned checkpoints, same rule as pretrained ones above -> Drive.
+*/checkpoints_ft/**/*.pt
+!*/checkpoints_ft/**/.gitkeep
+
 # Training logs, loss-curve CSVs, metric JSON and figures are GRADED
 # artifacts and must live in the branch — the spec is explicit that
 # graders will not open Drive or external dashboards to find them.

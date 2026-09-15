@@ -1,0 +1,28 @@
+{
+  "language": "nepali",
+  "example_text": "दिइएको छ: पवन मोहनभन्दा कान्छो छ। भन्नुहोस्, यीमध्ये कान्छो को हो?",
+  "pretrained_checkpoint": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/checkpoints/best.pt",
+  "finetuned_checkpoint": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/checkpoints_ft/best.pt",
+  "before": {
+    "overall_mean_entropy": 1.6193,
+    "overall_mean_distance": 4.9492,
+    "head_type_counts": {
+      "local_sharp": 12,
+      "local_diffuse": 12,
+      "distant_sharp": 12,
+      "distant_diffuse": 12
+    }
+  },
+  "after": {
+    "overall_mean_entropy": 1.6163,
+    "overall_mean_distance": 5.0796,
+    "head_type_counts": {
+      "local_sharp": 12,
+      "local_diffuse": 12,
+      "distant_sharp": 12,
+      "distant_diffuse": 12
+    }
+  },
+  "entropy_delta": -0.0029999999999998916,
+  "distance_delta": 0.13039999999999985
+}
