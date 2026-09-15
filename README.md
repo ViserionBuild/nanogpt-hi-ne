@@ -36,8 +36,20 @@ was built.
 | Pretraining Model H (Hindi) | **done** — 13,183 steps, ~2.6h on 2×T4 |
 | Pretraining Model L (Nepali) | **done** — 13,417 steps, ~2.6h on 2×T4 |
 | Phase 2 evaluation (validation + test, both models) | **done** — see [`report/phase2_report.md`](report/phase2_report.md) |
-| Phase 3 (reasoning finetuning) | not started |
+| Phase 3 synthetic reasoning dataset (both languages) | **done** — 2,400 train / 4×320 test examples each, see [`report/phase3_report.md`](report/phase3_report.md) §1 |
+| Phase 3 reasoning finetuning (both models) | **done** — see [`report/phase3_report.md`](report/phase3_report.md) §2 |
+| Phase 3 attention analysis (pretrained vs. finetuned) | **done** — see [`report/phase3_report.md`](report/phase3_report.md) §3 |
+| Finetuned-checkpoint Drive links | **pending** — checkpoints exist locally (`hindi/checkpoints_ft/`, `nepali/checkpoints_ft/`), not yet uploaded |
 | Bonus ablation (no positional embeddings) | not started |
+
+**Phase 3 (reasoning finetuning + attention analysis + final report) is
+complete.** Both models are finetuned on their own synthetic comparative-
+reasoning dataset and evaluated on the course's three-way accuracy rubric
+(seen entity/wording, unseen entity, unseen wording). See
+[`report/phase3_report.md`](report/phase3_report.md) for the full results
+and [`utility/phase3_plan.md`](utility/phase3_plan.md) for the design
+rationale, course PDFs consulted, and how a first attempt's memorization
+failure was diagnosed and fixed.
 
 ## How to run Phase 2
 
@@ -64,6 +76,34 @@ python hindi/eval/verify_causal_masking.py    # asserts max delta 0.0
 python -m pytest tests/test_phase2.py -v      # 22 correctness gates
 ```
 
+## How to run Phase 3
+
+Runs entirely on CPU — the synthetic reasoning dataset is a few thousand
+short sequences, not a several-hundred-million-token corpus, so no Kaggle
+GPU session is needed (~15-25 minutes per language for finetuning, plus a
+similar amount for evaluation, on an 8-core CPU with no GPU).
+
+```bash
+python hindi/reasoning_data/generate_dataset.py    # writes hindi/reasoning_data/*.json
+python nepali/reasoning_data/generate_dataset.py
+python hindi/finetune/finetune.py                  # resumes automatically from checkpoints_ft/latest.pt
+python nepali/finetune/finetune.py
+python hindi/eval/evaluate_reasoning.py --device cpu    # 3-way accuracy + perplexity before/after
+python nepali/eval/evaluate_reasoning.py --device cpu
+python hindi/eval/compare_attention.py --device cpu     # pretrained vs. finetuned attention
+python nepali/eval/compare_attention.py --device cpu
+python report/scripts/make_phase3_figures.py
+python report/scripts/build_phase3_report.py       # report/phase3_report.md
+python -m pytest tests/test_phase3.py -v           # 23 correctness gates
+```
+
+See [`report/phase3_report.md`](report/phase3_report.md) for the results
+and [`utility/phase3_plan.md`](utility/phase3_plan.md) for the design
+rationale — including a first finetuning attempt that memorized training
+entities (0.000 accuracy on both held-out splits) and the fix that was
+applied (entity pools enlarged 24→80 names, epochs/LR lowered, a per-epoch
+unseen-entity accuracy probe added).
+
 ## Repository layout
 
 ```
@@ -76,10 +116,13 @@ LMA_IDV_Proj/
 │   ├── model/                    # Phase 2: attention.py, block.py, feedforward.py,
 │   │                             #   transformer.py, positional.py, config.py
 │   ├── train/                    # Phase 2: dataset.py, scheduler.py, checkpoint.py, trainer.py
-│   └── eval/                     # Phase 2: lm_metrics.py, gen_metrics.py, attention_tools.py, plots.py
+│   ├── eval/                     # Phase 2/3: lm_metrics.py, gen_metrics.py, attention_tools.py,
+│   │                             #   plots.py, reasoning_metrics.py (Phase 3: 3-way accuracy)
+│   ├── reasoning/                 # Phase 3: entity pools, templates, chain sampling, dataset build
+│   └── finetune/                  # Phase 3: SFT dataset (answer-only loss mask) + trainer
 │
 ├── hindi/                     # Model H — fully self-contained
-│   ├── configs/{hindi_data,hindi_model}.yaml  # every pipeline/model threshold, path, target
+│   ├── configs/{hindi_data,hindi_model,hindi_finetune}.yaml  # every threshold, path, target
 │   ├── scripts/                  # Phase 1: 01–12, run in order
 │   │   ├── 01_download_indiccorp.py … 12_tokenize_corpus.py
 │   │   └── manual/               # Wikipedia dump + news-outlet collection
@@ -93,12 +136,16 @@ LMA_IDV_Proj/
 │   │   ├── intermediate/         # transient stage outputs (gitignored)
 │   │   ├── final/                # train/validation/test .txt (gitignored → Drive)
 │   │   └── tokenized/            # *.bin uint32 token IDs (gitignored → Drive)
+│   ├── reasoning_data/             # Phase 3: lexicon.py + generated train/test JSON (tracked)
+│   ├── finetune/finetune.py        # Phase 3: reasoning SFT entry point
 │   ├── train/pretrain.py, count_params.py     # Phase 2
-│   ├── eval/evaluate_lm.py, evaluate_generation.py,
-│   │   analyze_attention.py, verify_causal_masking.py  # Phase 2
-│   ├── eval/results/             # metric JSON (tracked)
-│   ├── checkpoints/               # best.pt, latest.pt (gitignored → Drive)
-│   └── logs/                     # training_log_*.csv, training_summary_*.json (tracked)
+│   ├── eval/evaluate_lm.py, evaluate_generation.py, analyze_attention.py,
+│   │   verify_causal_masking.py,              # Phase 2
+│   │   evaluate_reasoning.py, compare_attention.py   # Phase 3
+│   ├── eval/results/             # metric JSON (tracked) — Phase 2 + Phase 3
+│   ├── checkpoints/               # Phase 2 best.pt, latest.pt (gitignored → Drive)
+│   ├── checkpoints_ft/            # Phase 3 finetuned best.pt, latest.pt (gitignored → Drive)
+│   └── logs/                     # training/finetune log CSVs + summaries (tracked)
 │
 ├── nepali/                    # Model L — same structure, own data/tokenizer/vocab/weights
 │
@@ -109,12 +156,13 @@ LMA_IDV_Proj/
 ├── notebooks/phase2_kaggle.ipynb  # the notebook run on Kaggle
 │
 └── report/                    # the report and its figures — read this first
-    ├── phase1_report.md, phase2_report.md
-    ├── scripts/                   # make_phase2_figures.py, build_phase2_report.py — regenerate
-    │                               #   the figures/report from tracked logs and eval JSON, no GPU
+    ├── phase1_report.md, phase2_report.md, phase3_report.md
+    ├── scripts/                   # make_phase2/3_figures.py, build_phase2/3_report.py —
+    │                               #   regenerate the figures/report from tracked logs and
+    │                               #   eval JSON, no GPU needed for any of it
     └── figures/
-        ├── hindi/, nepali/         # per-model figures
-        └── comparison/             # both-model comparison figures
+        ├── hindi/, nepali/         # per-model figures (Phase 2 + Phase 3)
+        └── comparison/             # both-model comparison figures (Phase 2 + Phase 3)
 ```
 
 **What is tracked vs. what is on Drive.** Code, configs, all statistics/report
@@ -200,4 +248,20 @@ large binary artifacts" rule. Training logs, loss curves, and every metric
 JSON they produced are committed and do not require Drive —
 see [`hindi/logs/`](hindi/logs/), [`nepali/logs/`](nepali/logs/), and
 [`report/phase2_report.md`](report/phase2_report.md).
+
+### Phase 3 — finetuned checkpoints
+
+| Artifact | Link |
+|---|---|
+| **Hindi (Model H)** — finetuned `best.pt`, `latest.pt` | _pending upload_ |
+| **Nepali (Model L)** — finetuned `best.pt`, `latest.pt` | _pending upload_ |
+
+Finetuned checkpoints exist locally under `hindi/checkpoints_ft/` and
+`nepali/checkpoints_ft/` (gitignored, ~290 MB each, same rule as Phase 2)
+but are not yet uploaded to Drive — links above will be filled in before
+the final submission deadline. Finetuning logs, loss curves, and every
+metric JSON (reasoning accuracy, attention comparison) are committed and
+do not require Drive — see [`hindi/logs/`](hindi/logs/),
+[`nepali/logs/`](nepali/logs/), and
+[`report/phase3_report.md`](report/phase3_report.md).
 
