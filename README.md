@@ -39,7 +39,7 @@ was built.
 | Phase 3 synthetic reasoning dataset (both languages) | **done** — 2,400 train / 4×320 test examples each, see [`report/phase3_report.md`](report/phase3_report.md) §1 |
 | Phase 3 reasoning finetuning (both models) | **done** — see [`report/phase3_report.md`](report/phase3_report.md) §2 |
 | Phase 3 attention analysis (pretrained vs. finetuned) | **done** — see [`report/phase3_report.md`](report/phase3_report.md) §3 |
-| Finetuned-checkpoint Drive links | **pending** — checkpoints exist locally (`hindi/checkpoints_ft/`, `nepali/checkpoints_ft/`), not yet uploaded |
+| Finetuned-checkpoint Drive links | **done** — see [Phase 3 — finetuned checkpoints](#phase-3--finetuned-checkpoints) below |
 | Bonus ablation (no positional embeddings, Hindi/Model H) | **done** — see [`report/bonus_report.md`](report/bonus_report.md); checkpoint Drive link pending upload |
 
 **Phase 3 (reasoning finetuning + attention analysis + final report) is
@@ -253,19 +253,14 @@ see [`hindi/logs/`](hindi/logs/), [`nepali/logs/`](nepali/logs/), and
 
 | Artifact | Link |
 |---|---|
-| **Hindi (Model H)** — finetuned `best.pt`/`latest.pt` + full Phase 3 bundle (reasoning data, eval results, figures, report) | https://drive.google.com/file/d/1w2EYrqxOXe8QSG4j-hF1rRa7ua1gPaLt/view?usp=sharing |
-| **Nepali (Model L)** — finetuned `best.pt`, `latest.pt` | _pending upload_ |
+| **Hindi (Model H)** — finetuned `best.pt`, `latest.pt` | https://drive.google.com/drive/folders/1bCWxyz84Vt0Ppr0bZSSdKwVKfDpFgsD2?usp=sharing |
+| **Nepali (Model L)** — finetuned `best.pt`, `latest.pt` | https://drive.google.com/drive/folders/1EPQZFpLFFBFa_yE1oonK8mQqk470M4sZ?usp=sharing |
 
-Hindi's finetuned checkpoint is uploaded as `phase3.zip` (534 MB), which
-bundles `checkpoints_ft/`, `reasoning_data/`, `eval_results/`, `figures/`,
-and `phase3_report.md` — everything under one archive for convenience;
-the non-checkpoint contents are also committed directly to this repo (see
-below), so the archive is provided mainly for the checkpoint itself.
-Nepali's finetuned checkpoint exists locally under `nepali/checkpoints_ft/`
-(gitignored, ~290 MB, same rule as Phase 2) but is not yet uploaded.
-Finetuning logs, loss curves, and every metric JSON (reasoning accuracy,
-attention comparison) are committed and do not require Drive — see
-[`hindi/logs/`](hindi/logs/), [`nepali/logs/`](nepali/logs/), and
+Finetuned checkpoints are gitignored (~290 MB each, same rule as Phase 2)
+and uploaded to the Drive folders above. Finetuning logs, loss curves, and
+every metric JSON (reasoning accuracy, attention comparison) are committed
+and do not require Drive — see [`hindi/logs/`](hindi/logs/),
+[`nepali/logs/`](nepali/logs/), and
 [`report/phase3_report.md`](report/phase3_report.md).
 
 ### Bonus — no-positional-embeddings ablation (Hindi/Model H)
