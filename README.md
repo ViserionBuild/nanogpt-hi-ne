@@ -39,7 +39,7 @@ was built.
 | Phase 3 synthetic reasoning dataset (both languages) | **done** — 2,400 train / 4×320 test examples each, see [`report/phase3_report.md`](report/phase3_report.md) §1 |
 | Phase 3 reasoning finetuning (both models) | **done** — see [`report/phase3_report.md`](report/phase3_report.md) §2 |
 | Phase 3 attention analysis (pretrained vs. finetuned) | **done** — see [`report/phase3_report.md`](report/phase3_report.md) §3 |
-| Finetuned-checkpoint Drive links | **pending** — checkpoints exist locally (`hindi/checkpoints_ft/`, `nepali/checkpoints_ft/`), not yet uploaded |
+| Finetuned-checkpoint Drive links | **done** — see [Phase 3 — finetuned checkpoints](#phase-3--finetuned-checkpoints) below |
 | Bonus ablation (no positional embeddings) | not started |
 
 **Phase 3 (reasoning finetuning + attention analysis + final report) is
@@ -253,15 +253,13 @@ see [`hindi/logs/`](hindi/logs/), [`nepali/logs/`](nepali/logs/), and
 
 | Artifact | Link |
 |---|---|
-| **Hindi (Model H)** — finetuned `best.pt`, `latest.pt` | _pending upload_ |
-| **Nepali (Model L)** — finetuned `best.pt`, `latest.pt` | _pending upload_ |
+| **Hindi (Model H)** — finetuned `best.pt`, `latest.pt` | https://drive.google.com/drive/folders/1bCWxyz84Vt0Ppr0bZSSdKwVKfDpFgsD2?usp=sharing |
+| **Nepali (Model L)** — finetuned `best.pt`, `latest.pt` | https://drive.google.com/drive/folders/1EPQZFpLFFBFa_yE1oonK8mQqk470M4sZ?usp=sharing |
 
-Finetuned checkpoints exist locally under `hindi/checkpoints_ft/` and
-`nepali/checkpoints_ft/` (gitignored, ~290 MB each, same rule as Phase 2)
-but are not yet uploaded to Drive — links above will be filled in before
-the final submission deadline. Finetuning logs, loss curves, and every
-metric JSON (reasoning accuracy, attention comparison) are committed and
-do not require Drive — see [`hindi/logs/`](hindi/logs/),
+Finetuned checkpoints are gitignored (~290 MB each, same rule as Phase 2)
+and uploaded to the Drive folders above. Finetuning logs, loss curves, and
+every metric JSON (reasoning accuracy, attention comparison) are committed
+and do not require Drive — see [`hindi/logs/`](hindi/logs/),
 [`nepali/logs/`](nepali/logs/), and
 [`report/phase3_report.md`](report/phase3_report.md).
 
