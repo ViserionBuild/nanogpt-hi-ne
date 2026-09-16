@@ -36,6 +36,14 @@ def _n(v, spec=".4f"):
     return f"{v:,}" if isinstance(v, int) else format(v, spec)
 
 
+def _load_yaml(path: Path) -> Optional[Dict]:
+    if not path.exists():
+        return None
+    import yaml
+    with open(path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
 def collect() -> Dict[str, Dict]:
     d = {}
     for lang in ("hindi", "nepali"):
@@ -45,6 +53,7 @@ def collect() -> Dict[str, Dict]:
             "reasoning": _load(r / "reasoning_metrics.json"),
             "attn_cmp": _load(r / "attention_comparison.json"),
             "ft_summary": _load(REPO / lang / "logs" / f"finetune_summary_{lang}.json"),
+            "ft_config": _load_yaml(REPO / lang / "configs" / f"{lang}_finetune.yaml"),
         }
     return d
 
@@ -59,6 +68,79 @@ def table_dataset(d: Dict) -> str:
         nv = n["n_examples_per_split"].get(split) if n else None
         rows.append(f"| {split} | {_n(hv, ',') if hv is not None else PENDING} | "
                    f"{_n(nv, ',') if nv is not None else PENDING} |")
+    return "\n".join(rows)
+
+
+def table_hyperparameters(d: Dict) -> str:
+    """Spec 3.1 "Document all hyperparameters" — read from the actual
+    finetune config YAML + the run summary JSON each finetune.py run wrote,
+    so this table cannot drift from what was actually run."""
+    rows = ["| Hyperparameter | Model H (Hindi) | Model L (Nepali) |", "|---|---|---|"]
+    fields = [
+        ("Learning rate (peak -> min)", lambda f: f"{f['learning_rate']:g} -> {f['min_learning_rate']:g}"),
+        ("Weight decay", lambda f: f"{f['weight_decay']:g}"),
+        ("Warmup ratio", lambda f: f"{f['warmup_ratio']:g}"),
+        ("Epochs", lambda f: f"{f['n_epochs']}"),
+        ("Batch size", lambda f: f"{f['batch_size']}"),
+        ("Grad clip (max norm)", lambda f: f"{f['grad_clip']:g}"),
+        ("Max sequence length", lambda f: f"{f['max_length']}"),
+        ("Seed", lambda f: f"{f['seed']}"),
+        ("Optimizer", lambda f: "AdamW (betas 0.9, 0.95)"),
+        ("LR schedule", lambda f: "cosine decay, warmup then floor at min LR"),
+    ]
+    for label, fn in fields:
+        vals = []
+        for lang in ("hindi", "nepali"):
+            cfg = d[lang]["ft_config"]
+            vals.append(fn(cfg["finetune"]) if cfg else PENDING)
+        rows.append(f"| {label} | {vals[0]} | {vals[1]} |")
+
+    for label, key in [("Total training steps", "final_step"),
+                       ("Pretrained checkpoint resumed from (step)", "pretrain_step"),
+                       ("Best val loss", "best_val_loss"),
+                       ("Wall-clock time (s)", "elapsed_seconds")]:
+        vals = []
+        for lang in ("hindi", "nepali"):
+            s = d[lang]["ft_summary"]
+            if not s:
+                vals.append(PENDING)
+            elif isinstance(s.get(key), float):
+                vals.append(f"{s[key]:.4f}" if "loss" in key else f"{s[key]:.1f}")
+            else:
+                vals.append(str(s.get(key, PENDING)))
+        rows.append(f"| {label} | {vals[0]} | {vals[1]} |")
+    return "\n".join(rows)
+
+
+def table_error_provenance(d: Dict) -> str:
+    """Spec 3.3 "error analysis" deliverable, quantified rather than
+    illustrated by a handful of hand-picked examples: every wrong
+    prediction on the two unseen-entity splits (test_unseen_entity +
+    test_unseen_wording), classified by where the predicted name actually
+    came from (shared/eval/error_provenance.py), computed against each
+    language's own entity pools."""
+    rows = [
+        "| Language | Task family | n wrong | Train-pool hallucination | "
+        "Malformed/truncated real name | Legal but wrong entity | Empty / other |",
+        "|---|---|---|---|---|---|---|",
+    ]
+    labels = {"hindi": "Model H (Hindi)", "nepali": "Model L (Nepali)"}
+    task_labels = {"pairwise": "pairwise", "transitive3": "transitive3"}
+    for lang in ("hindi", "nepali"):
+        r = d[lang]["reasoning"]
+        if not r or "error_provenance" not in r:
+            rows.append(f"| {labels[lang]} | — | {PENDING} | — | — | — | — |")
+            continue
+        by_task = r["error_provenance"]["by_task_family"]
+        for task, table in by_task.items():
+            pct = table["percentages"]
+            rows.append(
+                f"| {labels[lang]} | {task_labels.get(task, task)} | {table['n_wrong']} | "
+                f"{pct['train_pool_hallucination']:.1%} | "
+                f"{pct['malformed_or_truncated_real_name']:.1%} | "
+                f"{pct['legal_but_wrong_entity']:.1%} | "
+                f"{pct['empty_or_other']:.1%} |"
+            )
     return "\n".join(rows)
 
 
@@ -188,13 +270,19 @@ def table_attention_shift(d: Dict) -> str:
     return "\n".join(rows)
 
 
-def qualitative(d: Dict, lang: str, split: str = "test_unseen_entity", n: int = 4) -> str:
+def qualitative(d: Dict, lang: str, split: str = "test_unseen_entity",
+                n_correct: int = 2, n_incorrect: int = 4) -> str:
+    """Spec 3.1 asks for "qualitative successes/failures" (both, not just
+    failures) — pull a few of each rather than only incorrect examples."""
     r = d[lang]["reasoning"]
     if not r:
         return PENDING
-    exs = r["after_finetuning"]["three_way_accuracy"][split]["qualitative_examples"][:n]
-    if not exs:
+    all_exs = r["after_finetuning"]["three_way_accuracy"][split]["qualitative_examples"]
+    if not all_exs:
         return "_no qualitative examples recorded_"
+    correct = [e for e in all_exs if e["correct"]][:n_correct]
+    incorrect = [e for e in all_exs if not e["correct"]][:n_incorrect]
+    exs = correct + incorrect
     out = []
     for ex in exs:
         mark = "correct" if ex["correct"] else "**incorrect**"
@@ -259,6 +347,24 @@ def build() -> str:
         "only over the answer tokens and the terminal `<eos>`, per L9 pp. "
         "6-11.",
         "",
+        "### Table R1b — finetuning hyperparameters",
+        "",
+        "Spec 3.1: \"Document all hyperparameters.\" Both languages use an "
+        "identical recipe (`{hindi,nepali}/configs/{lang}_finetune.yaml`) "
+        "so any Model H vs. Model L gap in Table R2 is attributable to "
+        "data/language rather than a finetuning-recipe difference. The "
+        "learning rate was lowered from an initial 1.5e-4 to the 1e-4 "
+        "floor the course SFT guide gives (p.32/60), and epochs lowered "
+        "from an initial 6 to 4, after a first-round run (24-name entity "
+        "pool, 6 epochs) scored 0.422 on test_seen but exactly 0.000 on "
+        "both unseen splits — the course's own memorization case (L9 "
+        "p.22) reproduced almost exactly. The fix applied here is "
+        "two-pronged: the entity pools were enlarged 24→80 names "
+        "(`{lang}/reasoning_data/lexicon.py`), and epochs/LR were both "
+        "lowered as a second lever against the same failure mode.",
+        "",
+        table_hyperparameters(d),
+        "",
         "### Table R2 — reasoning accuracy, pretrained-only vs. finetuned",
         "",
         "Course rubric (L9 p.27/p.34): three accuracies, not one, because "
@@ -292,6 +398,27 @@ def build() -> str:
         "### Qualitative examples — Model L (Nepali), unseen-entity split",
         "",
         qualitative(d, "nepali"),
+        "",
+        "### Table R2b — error provenance (quantified, unseen-entity + unseen-wording, pooled)",
+        "",
+        "The qualitative examples above are illustrative, not a measurement "
+        "of how common each failure mode actually is. This table classifies "
+        "**every** wrong prediction on both unseen-entity splits, by task "
+        "family, into one of four buckets, computed programmatically "
+        "(`shared/eval/error_provenance.py`) against each language's own "
+        "train/test entity-pool split "
+        "(`shared/reasoning/entities.py:split_entity_pool`) rather than "
+        "eyeballed: **train-pool hallucination** (the model named an entity "
+        "from its training pool instead of one of this prompt's own "
+        "entities — memorization, not reasoning), **malformed/truncated "
+        "real name** (a garbled or cut-off attempt at the correct name — "
+        "evidence the model engaged with the prompt's content but failed "
+        "mechanically), **legal but wrong entity** (the model named the "
+        "*other* real entity in the prompt — the wrong side of the "
+        "comparison, not a hallucination), and **empty/other** (no answer "
+        "marker emitted, or a string matching none of the above).",
+        "",
+        table_error_provenance(d),
         "",
         "---",
         "",

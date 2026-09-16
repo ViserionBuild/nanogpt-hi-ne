@@ -118,7 +118,12 @@ def run_reasoning_evaluation(
     finetuned accuracy"), plus the course-required perplexity-before/after
     pair (L9 p.34) computed on the ORIGINAL Phase 2 validation set.
     """
+    import importlib
+
     from shared.model import GPTConfig, DecoderLM
+    from shared.eval.error_provenance import (
+        error_provenance_by_task_family, error_provenance_table,
+    )
     from shared.eval.reasoning_metrics import (
         evaluate_pretraining_perplexity, evaluate_three_way, save_reasoning_results,
     )
@@ -177,6 +182,29 @@ def run_reasoning_evaluation(
         "before_finetuning": _eval_checkpoint(pretrained_ckpt, "pretrained-only"),
         "after_finetuning": _eval_checkpoint(finetuned_ckpt, "finetuned"),
     }
+
+    # Error-provenance table (spec 3.3 "error analysis" deliverable): for
+    # every wrong prediction on the two unseen-entity splits, classify
+    # where the predicted name actually came from (this language's own
+    # entity pools, via that language's reasoning_data/lexicon.py, reused
+    # rather than duplicated here). Pooled across those two splits since
+    # the underlying question — "does the model default to a familiar
+    # training-pool name instead of reading this prompt's own entities?" —
+    # is the same one for both.
+    lexicon = importlib.import_module(f"{lang}.reasoning_data.lexicon")
+    pools = (lexicon.PERSON_POOL, lexicon.OBJECT_POOL)
+    unseen_examples_after = results["after_finetuning"]["three_way_accuracy"]
+    pooled_unseen = (
+        unseen_examples_after["test_unseen_entity"]["qualitative_examples"]
+        + unseen_examples_after["test_unseen_wording"]["qualitative_examples"]
+    )
+    results["error_provenance"] = {
+        "unseen_entity_and_wording_pooled": error_provenance_table(pooled_unseen, *pools),
+        "by_task_family": error_provenance_by_task_family(pooled_unseen, *pools),
+    }
+    for bucket, table in results["error_provenance"]["by_task_family"].items():
+        logger.info(f"[error-provenance] {bucket}: {table['n_wrong']} wrong — "
+                   f"{table['percentages']}")
 
     dest = resolve(repo_root, os.path.join(paths["eval_results"], "reasoning_metrics.json"))
     save_reasoning_results(results, dest)
