@@ -29,6 +29,27 @@ Built from templates (`shared/reasoning/`), not downloaded, per spec 3.1. Four a
 
 Each model finetuned independently from its own Phase 2 `best.pt`, tokenizer/vocabulary unchanged. Loss is masked to the answer span only (`shared/finetune/dataset.py`) — the model still attends to the full prompt, but cross-entropy is summed only over the answer tokens and the terminal `<eos>`, per L9 pp. 6-11.
 
+### Table R1b — finetuning hyperparameters
+
+Spec 3.1: "Document all hyperparameters." Both languages use an identical recipe (`{hindi,nepali}/configs/{lang}_finetune.yaml`) so any Model H vs. Model L gap in Table R2 is attributable to data/language rather than a finetuning-recipe difference. The learning rate was lowered from an initial 1.5e-4 to the 1e-4 floor the course SFT guide gives (p.32/60), and epochs lowered from an initial 6 to 4, after a first-round run (24-name entity pool, 6 epochs) scored 0.422 on test_seen but exactly 0.000 on both unseen splits — the course's own memorization case (L9 p.22) reproduced almost exactly. The fix applied here is two-pronged: the entity pools were enlarged 24→80 names (`{lang}/reasoning_data/lexicon.py`), and epochs/LR were both lowered as a second lever against the same failure mode.
+
+| Hyperparameter | Model H (Hindi) | Model L (Nepali) |
+|---|---|---|
+| Learning rate (peak -> min) | 0.0001 -> 1e-05 | 0.0001 -> 1e-05 |
+| Weight decay | 0.01 | 0.01 |
+| Warmup ratio | 0.05 | 0.05 |
+| Epochs | 4 | 4 |
+| Batch size | 16 | 16 |
+| Grad clip (max norm) | 1 | 1 |
+| Max sequence length | 128 | 128 |
+| Seed | 42 | 42 |
+| Optimizer | AdamW (betas 0.9, 0.95) | AdamW (betas 0.9, 0.95) |
+| LR schedule | cosine decay, warmup then floor at min LR | cosine decay, warmup then floor at min LR |
+| Total training steps | 600 | 600 |
+| Pretrained checkpoint resumed from (step) | 13000 | 13000 |
+| Best val loss | 0.3722 | 0.3740 |
+| Wall-clock time (s) | 721.4 | 1491.2 |
+
 ### Table R2 — reasoning accuracy, pretrained-only vs. finetuned
 
 Course rubric (L9 p.27/p.34): three accuracies, not one, because they "degrade independently" — a model can do well on one and poorly on another.
@@ -60,6 +81,8 @@ Course-required diagnostic (L9 p.34), explicitly **not** a proxy for reasoning-t
 
 ### Qualitative examples — Model H (Hindi), unseen-entity split
 
+- *correct* — prompt: "अगर शांति स्नेहा से छोटी है, तो इनमें से बड़ा कौन है?" — gold: **स्नेहा** — predicted: **स्नेहा**
+- *correct* — prompt: "अगर गणेश विमला से लंबा है, तो इनमें से लंबा कौन है?" — gold: **गणेश** — predicted: **गणेश**
 - ***incorrect*** — prompt: "अगर अभिषेक शीला से बड़ा है, तो इनमें से बड़ा कौन है?" — gold: **अभिषेक** — predicted: **अमित**
 - ***incorrect*** — prompt: "अगर किरण ललिता से बड़ी है, तो इनमें से बड़ा कौन है?" — gold: **किरण** — predicted: **तरिता**
 - ***incorrect*** — prompt: "अगर प्रिया स्नेहा से छोटी है, तो इनमें से बड़ा कौन है?" — gold: **स्नेहा** — predicted: **नेहा**
@@ -67,10 +90,23 @@ Course-required diagnostic (L9 p.34), explicitly **not** a proxy for reasoning-t
 
 ### Qualitative examples — Model L (Nepali), unseen-entity split
 
+- *correct* — prompt: "यदि राधा सुमितभन्दा कान्छी छ भने, यीमध्ये जेठो को हो?" — gold: **सुमित** — predicted: **सुमित**
+- *correct* — prompt: "यदि कम्बल जुत्ताभन्दा थोरै छ भने, यीमध्ये कसको मात्रा थोरै छ?" — gold: **कम्बल** — predicted: **कम्बल**
 - ***incorrect*** — prompt: "यदि उर्मिला रेखाभन्दा जेठी छ भने, यीमध्ये जेठो को हो?" — gold: **उर्मिला** — predicted: **रीता**
 - ***incorrect*** — prompt: "यदि आरती यशभन्दा जेठी छ भने, यीमध्ये कान्छो को हो?" — gold: **यश** — predicted: **जश**
 - ***incorrect*** — prompt: "यदि मंजू प्रियाभन्दा कान्छी छ भने, यीमध्ये कान्छो को हो?" — gold: **मंजू** — predicted: **संजय**
 - ***incorrect*** — prompt: "यदि गायत्री आरतीभन्दा कान्छी छ भने, यीमध्ये जेठो को हो?" — gold: **आरती** — predicted: **लस**
+
+### Table R2b — error provenance (quantified, unseen-entity + unseen-wording, pooled)
+
+The qualitative examples above are illustrative, not a measurement of how common each failure mode actually is. This table classifies **every** wrong prediction on both unseen-entity splits, by task family, into one of four buckets, computed programmatically (`shared/eval/error_provenance.py`) against each language's own train/test entity-pool split (`shared/reasoning/entities.py:split_entity_pool`) rather than eyeballed: **train-pool hallucination** (the model named an entity from its training pool instead of one of this prompt's own entities — memorization, not reasoning), **malformed/truncated real name** (a garbled or cut-off attempt at the correct name — evidence the model engaged with the prompt's content but failed mechanically), **legal but wrong entity** (the model named the *other* real entity in the prompt — the wrong side of the comparison, not a hallucination), and **empty/other** (no answer marker emitted, or a string matching none of the above).
+
+| Language | Task family | n wrong | Train-pool hallucination | Malformed/truncated real name | Legal but wrong entity | Empty / other |
+|---|---|---|---|---|---|---|
+| Model H (Hindi) | pairwise | 291 | 77.3% | 9.3% | 9.3% | 4.1% |
+| Model H (Hindi) | transitive3 | 309 | 85.4% | 3.6% | 4.9% | 6.1% |
+| Model L (Nepali) | pairwise | 240 | 58.8% | 8.3% | 25.4% | 7.5% |
+| Model L (Nepali) | transitive3 | 274 | 47.4% | 2.2% | 44.9% | 5.5% |
 
 ---
 

@@ -133,11 +133,12 @@ def evaluate_split_accuracy(
 
                 total += 1
                 correct += int(is_correct)
-                if len(qualitative) < 20:
-                    qualitative.append({
-                        "prompt": ex["prompt"], "gold": gold, "predicted": pred,
-                        "correct": is_correct, "raw_generated": text,
-                    })
+                qualitative.append({
+                    "prompt": ex["prompt"], "gold": gold, "predicted": pred,
+                    "correct": is_correct, "raw_generated": text,
+                    "task_type": ex["task_type"], "domain": ex["domain"],
+                    "entities": ex["entities"], "entity_split": ex.get("entity_split"),
+                })
 
     if was_training:
         model.train()
