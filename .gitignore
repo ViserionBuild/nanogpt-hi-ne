@@ -64,7 +64,7 @@ venv/
 # --- Phase 2 ---
 # Checkpoints are large (~300MB each) -> Google Drive, links in README.
 */checkpoints/**/*.pt
-bonus_ablation/checkpoints/**/*.pt
+bonus_ablation/*/checkpoints/**/*.pt
 !*/checkpoints/**/.gitkeep
 
 # --- Phase 3 ---
