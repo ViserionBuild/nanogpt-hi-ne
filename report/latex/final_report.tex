@@ -67,11 +67,11 @@ Full per-phase detail: \texttt{report/phase1\_report.md}, \texttt{phase2\_report
 
 I have chosen Hindi as the higher-resource language: IndicCorpV2 gives it three data shards plus a Wikipedia dump, so manual collection could focus on \emph{variety} (encyclopedia and news) instead of just volume. Nepali had less to work with: IndicCorpV2 gives it only one file, and there is no Nepali Wikisource, so all manual data came from news APIs instead. This is a real constraint, not something I set up on purpose. Both languages use the same Devanagari script, and I kept that fixed so any gap I found later would be about resources, not alphabet.
 
-I run both corpora through the same 12-step pipeline: download, normalize, filter, dedupe, split, remove train/test overlap, train the tokenizer, then tokenize. I do not allow any code under \texttt{shared/} to mention either language by name; I enforce this automatically with a test, since it is too easy to accidentally special-case one language while working fast.
+Both corpora go through the same 12-step pipeline: download, normalize, filter, dedupe, split, remove train/test overlap, train the tokenizer, then tokenize. No code under \texttt{shared/} may mention either language by name; a test enforces this automatically, since it is too easy to accidentally special-case one language while working fast.
 
 I would like to explain the two choices I made here. First, \emph{when} to remove train/test overlap: doing it before the split would let overlap-removal quietly decide which lines land in val/test, so I split first, locked val/test, and only then cleaned train against them. Second, which copy to keep when text appears twice: the manual copy always wins over IndicCorp (Hindi: Wikipedia, then news; Nepali: Onlinekhabar, then Khabarhub), a deliberate choice since the 20\% manual-data target is the harder one to hit.
 
-I set the filter thresholds by judgment, not by tuning them against results. I used a Devanagari-purity cutoff of 0.60 for Hindi but 0.70 for Nepali, lower because I expected Hindi news to mix in more English, which I later confirmed at 6.00\% Latin content (\S\ref{sec:corpus-health}). I used a fairly strict setting for duplicate detection, but a looser one for the train/test overlap check, since catching every possible overlap there matters more than being precise: a missed one means real leakage into the test set.
+Filter thresholds were judgment calls, not tuned values. The Devanagari-purity cutoff is 0.60 for Hindi but 0.70 for Nepali, lower because I expected Hindi news to mix in more English, later confirmed at 6.00\% Latin content (\S\ref{sec:corpus-health}). Duplicate detection uses a fairly strict setting; the train/test overlap check uses a looser one, since catching every possible overlap there matters more than being precise, a missed one means real leakage into the test set.
 
 \begin{table}[h]
 \centering\small
@@ -93,7 +93,7 @@ UNK rate (all vocab sizes) & 0.0000 & 0.0000 \\
 
 \subsection{Vocabulary Size Selection}
 
-I gave both models a 12,000-word vocabulary, choosing the point where bigger vocabularies stop paying off: 10K$\to$12K still gave a solid compression gain, 14K$\to$16K gave much less, for both languages. Past that point, every extra word costs part of the fixed $\sim$25M-parameter budget. I also chose one shared size for both models so a later perplexity gap could not be blamed on one model simply having a bigger vocabulary.
+Both models use a 12,000-word vocabulary, chosen at the point where bigger vocabularies stop paying off: 10K$\to$12K still gave a solid compression gain, 14K$\to$16K gave much less, for both languages. Past that point, every extra word costs part of the fixed $\sim$25M-parameter budget. Using one shared size also means a later perplexity gap cannot be blamed on one model simply having a bigger vocabulary.
 
 \begin{figure}[h]
 \centering
@@ -104,7 +104,7 @@ I gave both models a 12,000-word vocabulary, choosing the point where bigger voc
 
 \subsection{Tokenizer Fertility and Morphology}
 
-One pattern I keep seeing throughout this project: Nepali needs more tokens per word than Hindi (10.4\% more, on average). I traced this to grammar, not bad data. Nepali sticks small grammatical pieces onto the end of a word with no space (so "Nepal" plus "of" becomes one word, \dn{नेपालको}), while Hindi keeps that piece separate. This is also why Nepali has more unique words than Hindi (6.80M vs.\ 3.96M): sticking pieces together creates more distinct word forms for the tokenizer to cover. Example: Hindi's \dn{भारत एक विशाल देश है।} splits into 6 whole-word tokens; the similarly short Nepali \dn{नेपाल एक सुन्दर हिमाली देश हो।} takes 7. I found both tokenizers struggle equally on modern AI/ML terms absent from either corpus, e.g.\ "machine learning" breaking into 6--10 fragments.
+One pattern keeps showing up throughout this project: Nepali needs more tokens per word than Hindi (10.4\% more, on average). This comes from grammar, not bad data. Nepali sticks small grammatical pieces onto the end of a word with no space (so "Nepal" plus "of" becomes one word, \dn{नेपालको}), while Hindi keeps that piece separate. This is also why Nepali has more unique words than Hindi (6.80M vs.\ 3.96M): sticking pieces together creates more distinct word forms for the tokenizer to cover. Example: Hindi's \dn{भारत एक विशाल देश है।} splits into 6 whole-word tokens; the similarly short Nepali \dn{नेपाल एक सुन्दर हिमाली देश हो।} takes 7. Both tokenizers struggle equally on modern AI/ML terms absent from either corpus, e.g.\ "machine learning" breaking into 6--10 fragments.
 
 \subsection{Corpus Health Check}
 \label{sec:corpus-health}
@@ -136,13 +136,13 @@ Train decontaminated vs.\ val/test & yes & yes & \textbf{PASS} \\
 
 \subsection{Architecture}
 
-{\sloppy I built the model as a decoder-only Transformer from basic building blocks, with no ready-made Transformer layer and no library like HuggingFace, since the point of this phase was for me to understand attention and masking directly rather than hide them behind a library.\par} It has 6 layers and 8 attention heads, about \textbf{25.3 million} parameters, identical for both languages so any later difference comes from data and language, not architecture. I checked causal masking (each token sees only earlier tokens) directly: changing a future token and re-running confirms earlier predictions do not change.
+{\sloppy The model is a decoder-only Transformer built from basic building blocks, with no ready-made Transformer layer and no library like HuggingFace, since the point of this phase was to understand attention and masking directly rather than hide them behind a library.\par} It has 6 layers and 8 attention heads, about \textbf{25.3 million} parameters, identical for both languages so any later difference comes from data and language, not architecture. Causal masking (each token sees only earlier tokens) was checked directly: changing a future token and re-running confirms earlier predictions do not change.
 
 I chose a wider, shallower model (6 layers) over a narrower, deeper one (12 layers) for two reasons: tying the input and output word-embeddings together frees up parameters better spent on width, and with $\sim$650M training tokens for a 25M-parameter model, there is already more than enough data, so extra depth would not help much. I also used a training-stability trick called pre-norm, since a crashed run on a cloud GPU means starting over from scratch, and a simple learned lookup table for positions rather than a fancier method, for easier debugging, at the cost of a 512-token limit this project never actually reaches.
 
 \subsection{Pretraining Setup}
 
-For pretraining, I used the AdamW optimizer, a warmup period, slow learning-rate decay, and mixed-precision training. I ran training for exactly one epoch, since both corpora already exceed what a model this size needs, so a second pass would mostly encourage memorization. I tested the checkpoint-and-resume logic to confirm it produces identical results whether training runs straight through or is stopped and resumed, since cloud sessions can be cut off without warning.
+Pretraining uses the AdamW optimizer, a warmup period, slow learning-rate decay, and mixed-precision training. Training runs for exactly one epoch, since both corpora already exceed what a model this size needs, so a second pass would mostly encourage memorization. I tested the checkpoint-and-resume logic to confirm it produces identical results whether training runs straight through or is stopped and resumed, since cloud sessions can be cut off without warning.
 
 \begin{table}[h]
 \centering\small
@@ -166,7 +166,7 @@ Mean attention distance (tokens) & 3.98 & 3.84 \\
 
 \subsection{Language-Modeling Results}
 
-The most interesting thing I found in this phase: which model looks "better" flips depending on how I measure it. On perplexity, Nepali looks 58.4\% worse (41.52 vs.\ 26.21). But perplexity is measured in each model's own tokenizer, and Nepali's tokenizer needs 10.4\% more tokens for the same text, so it is working with less real content per step, unrelated to how well it actually learned. When I switch to bits-per-byte, a measure based on raw text bytes instead of tokens, the result flips: Nepali is actually 3.4\% \emph{better}. This holds on the test set too, and steadily from partway through training onward, not just at the end. I see the same idea show up again, differently, in the Phase 3 results (\S\ref{sec:p3}).
+The most interesting finding here: which model looks "better" flips depending on how you measure it. On perplexity, Nepali looks 58.4\% worse (41.52 vs.\ 26.21). But perplexity is measured in each model's own tokenizer, and Nepali's tokenizer needs 10.4\% more tokens for the same text, so it is working with less real content per step, unrelated to how well it actually learned. Switching to bits-per-byte, a measure based on raw text bytes instead of tokens, the result flips: Nepali is actually 3.4\% \emph{better}. This holds on the test set too, and steadily from partway through training onward, not just at the end. The same idea shows up again, differently, in the Phase 3 results (\S\ref{sec:p3}).
 
 \begin{figure}[h]
 \centering
@@ -184,9 +184,9 @@ The most interesting thing I found in this phase: which model looks "better" fli
 
 \subsection{Generation Quality and Attention}
 
-To test generation, I had both models complete 500 held-out prompts at settings from safe (greedy) to more random (higher temperature), and I scored the output against the real continuation using each language's own subword pieces rather than whitespace words, since whitespace scoring would unfairly penalize Nepali's larger word inventory. I found BLEU close to useless here: a small model rarely matches a reference continuation word-for-word, so scores stayed low across the board, an honest limit of the metric, not a sign the models are bad. chrF, which gives partial credit for a correct stem with a different ending, was far more useful to me, since that near-miss is common in both languages' grammar, and was the only metric that reliably improved with more random sampling.
+To test generation, both models completed 500 held-out prompts at settings from safe (greedy) to more random (higher temperature), scored against the real continuation using each language's own subword pieces rather than whitespace words, since whitespace scoring would unfairly penalize Nepali's larger word inventory. BLEU turned out close to useless: a small model rarely matches a reference continuation word-for-word, so scores stayed low across the board, an honest limit of the metric, not a sign the models are bad. chrF, which gives partial credit for a correct stem with a different ending, was far more useful, since that near-miss is common in both languages' grammar, and was the only metric that reliably improved with more random sampling.
 
-I found repetition mattered more than any overlap score. Under greedy decoding, both models tend to get stuck repeating the same phrase (roughly 70--76\% of the time), something overlap metrics barely notice but a diversity metric catches clearly, dropping sharply once sampling gets more random. One real Hindi example I looked at: given a prompt about the rural economy, the model produced a grammatical, on-topic sentence but visibly repeated "for development" instead of finishing the thought. On attention, I found both models' heads split into nearby-focused and farther-focused groups; Nepali leans more toward nearby words overall, fitting the earlier finding that a Nepali word split into more pieces needs its next-piece clue close by.
+Repetition mattered more than any overlap score. Under greedy decoding, both models tend to get stuck repeating the same phrase (roughly 70--76\% of the time), something overlap metrics barely notice but a diversity metric catches clearly, dropping sharply once sampling gets more random. One real Hindi example: given a prompt about the rural economy, the model produced a grammatical, on-topic sentence but visibly repeated "for development" instead of finishing the thought. On attention, both models' heads split into nearby-focused and farther-focused groups; Nepali leans more toward nearby words overall, fitting the earlier finding that a Nepali word split into more pieces needs its next-piece clue close by.
 
 \begin{figure}[h]
 \centering
@@ -202,11 +202,11 @@ I found repetition mattered more than any overlap score. Under greedy decoding, 
 
 \subsection{Reasoning Dataset Construction}
 
-Instead of using an existing benchmark, I built my own reasoning dataset per language, so I could control the correct answer. The task is simple comparisons: given two or three people or things and a property (age, height, price, quantity), say which is biggest or smallest. I wrote four possible phrasings for each question; I use three for training and hold one out entirely, to test unseen wording. This gives me 2,400 training examples and 320 test examples in each of three categories: seen names and wording, unseen names, and unseen wording, with no overlap between the training and test names I used. Keeping these separate lets the three accuracy numbers in Table~\ref{tab:reasoning-acc} fail independently instead of blending into one number.
+Instead of using an existing benchmark, I built my own reasoning dataset per language, so I could control the correct answer. The task is simple comparisons: given two or three people or things and a property (age, height, price, quantity), say which is biggest or smallest. Each question has four possible phrasings; three are used for training and one is held out entirely, to test unseen wording. This gives 2,400 training examples and 320 test examples in each of three categories: seen names and wording, unseen names, and unseen wording, with no overlap between training and test names. Keeping these separate lets the three accuracy numbers in Table~\ref{tab:reasoning-acc} fail independently instead of blending into one number.
 
 \subsection{Finetuning Setup}
 
-I finetune each model from its own pretrained checkpoint, keeping the tokenizer and vocabulary unchanged. I only grade the answer part of each example during training, though the model still reads the full question. I used full finetuning (every weight updated) rather than a lighter memory-saving method, which I judged unnecessary at this model's small size. I gave both languages identical settings, so any later difference comes from data and language, not training choices.
+Each model is finetuned from its own pretrained checkpoint, keeping the tokenizer and vocabulary unchanged. Training only grades the answer part of each example, though the model still reads the full question. This is full finetuning (every weight updated) rather than a lighter memory-saving method, which I judged unnecessary at this model's small size. Both languages use identical settings, so any later difference comes from data and language, not training choices.
 
 \begin{table}[h]
 \centering\small
@@ -235,7 +235,7 @@ Wall-clock time (CPU) & 721.4 s ($\sim$12 min) & 1491.2 s ($\sim$25 min) \\
 
 \subsection{Fixing a Memorization Failure}
 
-This setup is the result of me fixing a real mistake. An earlier version I ran, with only 24 names and 6 epochs, scored well on seen names but exactly \textbf{0.000} on both unseen tests, a classic memorization sign: with names repeated so often, the model learned to guess a familiar one instead of comparing. I fixed it with many more names (80 instead of 24) and fewer epochs at a lower learning rate. Every number below is from this corrected run.
+This setup is the result of fixing a real mistake. An earlier version, with only 24 names and 6 epochs, scored well on seen names but exactly \textbf{0.000} on both unseen tests, a classic memorization sign: with names repeated so often, the model learned to guess a familiar one instead of comparing. I fixed it with many more names (80 instead of 24) and fewer epochs at a lower learning rate. Every number below is from this corrected run.
 
 \begin{table}[h]
 \centering\small
@@ -257,7 +257,7 @@ Unseen entity + unseen wording & L (Nepali) & 0.000 & 0.203 & +0.203 \\
 
 \subsection{Reasoning Accuracy Results}
 
-The most surprising result I found in the whole project: Model L (Nepali) handles both unseen tests \emph{better} than Model H, despite trailing Hindi on every raw data metric in Phases 1--2. I re-ran the evaluation and got the exact same numbers, so I am confident this is real, not noise. My best explanation is that this reflects what each model already understood before finetuning started, not that Nepali's language modeling is stronger; I already showed the opposite on perplexity in Phase 2, and the two were close to tied on the fairer byte-based measure.
+The most surprising result in the whole project: Model L (Nepali) handles both unseen tests \emph{better} than Model H, despite trailing Hindi on every raw data metric in Phases 1--2. Re-running the evaluation gave the exact same numbers, so this is real, not noise. My best explanation is that this reflects what each model already understood before finetuning started, not that Nepali's language modeling is stronger; Phase 2 already showed the opposite on perplexity, and the two were close to tied on the fairer byte-based measure.
 
 \begin{table}[h]
 \centering\small
@@ -274,11 +274,11 @@ Model L pretraining-val PPL & 42.32 & 65.47 \\
 
 \subsection{Catastrophic-Forgetting Check}
 
-I found these reasoning gains are not free: both models get noticeably worse at general language modeling on the original Phase 2 validation text, which I expected after a few epochs on a small, repetitive task. Hindi and Nepali worsen by a similar amount, so this tells me little about which language "forgets better," but it confirms the new reasoning skill cost real fluency.
+These reasoning gains are not free: both models get noticeably worse at general language modeling on the original Phase 2 validation text, expected after a few epochs on a small, repetitive task. Hindi and Nepali worsen by a similar amount, so this says little about which language "forgets better," but it confirms the new reasoning skill cost real fluency.
 
 \subsection{Error Analysis}
 
-Looking at specific wrong answers made this gap easier for me to see. In one Hindi example, the model answers with a common training-data name instead of either person actually named in the question, as if it learned "this name is usually the answer" rather than comparing. Nepali sometimes makes the same mistake, but other times gives a small typo-like distortion of the correct name instead, suggesting it was trying to recall the answer and got it slightly wrong, rather than ignoring the question. Table~\ref{tab:qualitative} gives a broader sample.
+Specific wrong answers make this gap easier to see. In one Hindi example, the model answers with a common training-data name instead of either person actually named in the question, as if it learned "this name is usually the answer" rather than comparing. Nepali sometimes makes the same mistake, but other times gives a small typo-like distortion of the correct name instead, suggesting it was trying to recall the answer and got it slightly wrong, rather than ignoring the question. Table~\ref{tab:qualitative} gives a broader sample.
 
 \begin{table}[h]
 \centering\footnotesize
@@ -322,7 +322,7 @@ L & transitive3 & 274 & 47.4\% & 2.2\% & 44.9\% & 5.5\% \\
 \caption{Error-provenance classification. Hindi's errors are dominated by hallucinating a training-pool name (memorization); Nepali more often names the \emph{other} real entity in the prompt (25--45\%) rather than hallucinating, a more prompt-engaged failure mode consistent with Nepali's stronger unseen-split accuracy.}
 \end{table}
 
-The results confirmed the pattern I suspected: 77--85\% of Hindi's wrong answers are a familiar training-data name, almost never a garbled attempt at the right one. Nepali is different: it names the \emph{other} real thing from the question far more often (25--45\% vs.\ 5--9\% for Hindi), which tells me it is at least reading the question, just picking the wrong side, matching its stronger overall performance.
+The results confirm the pattern: 77--85\% of Hindi's wrong answers are a familiar training-data name, almost never a garbled attempt at the right one. Nepali is different: it names the \emph{other} real thing from the question far more often (25--45\% vs.\ 5--9\% for Hindi), meaning it is at least reading the question, just picking the wrong side, matching its stronger overall performance.
 
 \begin{figure}[h]
 \centering
@@ -333,7 +333,7 @@ The results confirmed the pattern I suspected: 77--85\% of Hindi's wrong answers
 
 \subsection{Attention Analysis After Finetuning}
 
-To see how finetuning changes the model internally, I ran the same attention-analysis tool on the pretrained and finetuned versions, using the same comparison-question both times, so any difference I find is due to finetuning alone. Before finetuning, deeper layers spread attention loosely across the sentence, often anchored on the first word, a pattern I also saw in Phase 2. After finetuning, in both languages without being told to, attention becomes more focused on specific, relevant words (a "spread" score drops from about 1.59 to 1.56 for Hindi, roughly flat for Nepali) and shifts slightly further back, from about 4.9 tokens to 5.0--5.1. I read this as a plausible story: the model learns to actively search for and lock onto the two things being compared.
+To see how finetuning changes the model internally, I ran the same attention-analysis tool on the pretrained and finetuned versions, using the same comparison-question both times, so any difference is due to finetuning alone. Before finetuning, deeper layers spread attention loosely across the sentence, often anchored on the first word, a pattern also seen in Phase 2. After finetuning, in both languages without being told to, attention becomes more focused on specific, relevant words (a "spread" score drops from about 1.59 to 1.56 for Hindi, roughly flat for Nepali) and shifts slightly further back, from about 4.9 tokens to 5.0--5.1. This fits a plausible story: the model learns to actively search for and lock onto the two things being compared.
 
 \begin{figure}[H]
 \centering
@@ -342,7 +342,7 @@ To see how finetuning changes the model internally, I ran the same attention-ana
 \caption{Hindi, layer 5, same probe sentence: attention before finetuning (top, diffuse first-token sink) vs.\ after (bottom, sharper content-specific anchor), the sharpen-and-lengthen pattern described above.}
 \end{figure}
 
-It is worth noting that this shift happens on top of an already uneven starting point, not a flat one. Even before finetuning, I found how far each head looks back varies a lot by layer, dipping toward nearby words in the middle layers before widening again at the last layer, in both languages.
+Worth noting: this shift happens on top of an already uneven starting point, not a flat one. Even before finetuning, how far each head looks back varies a lot by layer, dipping toward nearby words in the middle layers before widening again at the last layer, in both languages.
 
 \begin{figure}[H]
 \centering
@@ -355,7 +355,7 @@ It is worth noting that this shift happens on top of an already uneven starting 
 \section{Cross-Phase Metrics Comparison}
 %=====================================================================
 
-I put every Hindi-vs-Nepali number from all three phases in one table below. It makes one thing clear to me: there is no simple story where the "higher-resource" model just wins everywhere; it depends on the metric.
+The table below puts every Hindi-vs-Nepali number from all three phases in one place. It makes one thing clear: there is no simple story where the "higher-resource" model just wins everywhere; it depends on the metric.
 
 \begin{table}[H]
 \centering\footnotesize
@@ -388,13 +388,13 @@ I put every Hindi-vs-Nepali number from all three phases in one table below. It 
 \label{sec:final-comparison}
 %=====================================================================
 
-\textbf{1. How did data scale and quality differ between Model H and Model L?} I found that the amount of data was not the real difference: Hindi had 648.0M training tokens, Nepali 659.5M, so if anything Nepali had slightly more. The real difference is grammar: Nepali sticks endings onto words, creating far more unique word forms (6.80M vs.\ 3.96M) from a similar-sized corpus, which is also why its tokenizer needs 10.4\% more tokens per word.
+\textbf{1. How did data scale and quality differ between Model H and Model L?} Amount of data was not the real difference: Hindi had 648.0M training tokens, Nepali 659.5M, so if anything Nepali had slightly more. The real difference is grammar: Nepali sticks endings onto words, creating far more unique word forms (6.80M vs.\ 3.96M) from a similar-sized corpus, which is also why its tokenizer needs 10.4\% more tokens per word.
 
-\textbf{2. How do language-modeling and reasoning results compare across the two resource tiers?} On perplexity, Nepali looks 58.4\% worse to me; on the fairer byte-based measure, it is actually 3.4\% \emph{better}. On reasoning, the first test that measures real learned skill rather than pattern-fitting, Nepali also comes out ahead on both unseen categories. Across every metric I collected (Table~\ref{tab:crossphase}), only token-based perplexity clearly favors Hindi; scale metrics are tied, and the byte-based measure plus all reasoning results favor Nepali.
+\textbf{2. How do language-modeling and reasoning results compare across the two resource tiers?} On perplexity, Nepali looks 58.4\% worse; on the fairer byte-based measure, it is actually 3.4\% \emph{better}. On reasoning, the first test that measures real learned skill rather than pattern-fitting, Nepali also comes out ahead on both unseen categories. Across every metric (Table~\ref{tab:crossphase}), only token-based perplexity clearly favors Hindi; scale metrics are tied, and the byte-based measure plus all reasoning results favor Nepali.
 
-\textbf{3. What tokenizer/corpus factors most affected the lower-resource model?} I found Nepali's higher token-per-word count explains the perplexity-vs-byte flip above, but it does not explain a separate gap I found on the harder three-way comparison task. I tested one guess, that a specific Nepali grammatical word tokenizes inconsistently, and ruled it out. I am reporting that gap honestly as open rather than forcing it into an explanation that does not hold up.
+\textbf{3. What tokenizer/corpus factors most affected the lower-resource model?} Nepali's higher token-per-word count explains the perplexity-vs-byte flip above, but not a separate gap on the harder three-way comparison task. I tested one guess, that a specific Nepali grammatical word tokenizes inconsistently, and ruled it out. That gap is reported honestly as open rather than forced into an explanation that does not hold up.
 
-\textbf{4. What evidence explains the observed differences?} The most convincing evidence for me came from reading individual wrong answers. Hindi mostly repeats a familiar training-data name (77--85\% of mistakes), which I read as pointing to memorization. Nepali leans more toward naming the \emph{other} real thing in the question (25--45\%), still engaging with the question even when wrong. I also found a second, independent signal that agrees: after finetuning, both models' attention shifts to focus more precisely on relevant words, direct evidence the internal processing changed, not just the outputs.
+\textbf{4. What evidence explains the observed differences?} The most convincing evidence came from reading individual wrong answers. Hindi mostly repeats a familiar training-data name (77--85\% of mistakes), pointing to memorization. Nepali leans more toward naming the \emph{other} real thing in the question (25--45\%), still engaging with the question even when wrong. A second, independent signal agrees: after finetuning, both models' attention shifts to focus more precisely on relevant words, direct evidence the internal processing changed, not just the outputs.
 
 %=====================================================================
 \section{Where Automation Substitutes for Human Judgment}
