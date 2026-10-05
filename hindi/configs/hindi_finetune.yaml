@@ -1,0 +1,48 @@
+# =============================================================================
+# Model H — Hindi reasoning SFT (Phase 3)
+# =============================================================================
+# Starts from hindi/checkpoints/best.pt (Phase 2 pretrained). Tokenizer and
+# vocabulary are UNCHANGED from Phase 2 — spec 3.1 requires keeping them
+# fixed, so this config intentionally does not name a tokenizer or vocab
+# size of its own; hindi_model.yaml's model block (identical architecture)
+# is loaded alongside this file by the finetune script.
+# =============================================================================
+
+language: hindi
+
+paths:
+  pretrained_checkpoint: hindi/checkpoints/best.pt
+  reasoning_data: hindi/reasoning_data
+  checkpoints: hindi/checkpoints_ft
+  logs: hindi/logs
+  eval_results: hindi/eval/results
+  figures: report/figures/hindi
+
+finetune:
+  # Round 2 (see utility/phase3_plan.md and the git history of this file):
+  # round 1 used a 24-name entity pool and 6 epochs, and the finetuned
+  # model scored 0.422 on test_seen but exactly 0.000 on test_unseen_entity
+  # and test_unseen_wording — the course's own memorization case (L9 p.22)
+  # reproduced almost exactly. Fix: entity pools enlarged 24->80 names
+  # (hindi/reasoning_data/lexicon.py), which alone cuts the per-name
+  # repetition rate ~3x, plus epochs and LR both lowered here as a second
+  # lever against the same failure mode, plus a per-epoch unseen-entity
+  # accuracy probe (FinetuneTrainer's probe_fn) so a repeat of this failure
+  # is visible in finetune_log_hindi.csv during training, not just after.
+  learning_rate: 0.0001       # lowered from 1.5e-4 (SFT Guide p.32/60 floor: 1e-4)
+  min_learning_rate: 0.00001
+  weight_decay: 0.01
+  warmup_ratio: 0.05
+  n_epochs: 4                 # lowered from 6; watched via the unseen-entity probe, not fixed blindly
+  batch_size: 16
+  grad_clip: 1.0
+  eval_every_n_steps: 50
+  max_length: 128              # reasoning sequences are short; well under block_size=512
+  seed: 42
+  device: cuda
+
+evaluation:
+  max_new_tokens: 12           # answers are one short name; generous margin
+  eval_batch_size: 32
+  accuracy_seeds: [0, 1, 2]
+  pretrain_ppl_batches: 50      # batches of the ORIGINAL pretraining validation set

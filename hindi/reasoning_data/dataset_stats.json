@@ -1,0 +1,107 @@
+{
+  "n_examples_per_split": {
+    "train": 2400,
+    "validation": 320,
+    "test_seen": 320,
+    "test_unseen_entity": 320,
+    "test_unseen_wording": 320
+  },
+  "combinations": [
+    {
+      "domain": "age",
+      "task_type": "pairwise",
+      "train_pool_size": 60,
+      "test_pool_size": 20,
+      "n_train": 300,
+      "n_validation": 40,
+      "n_test_seen": 40,
+      "n_test_unseen_entity": 40,
+      "n_test_unseen_wording": 40
+    },
+    {
+      "domain": "age",
+      "task_type": "transitive3",
+      "train_pool_size": 60,
+      "test_pool_size": 20,
+      "n_train": 300,
+      "n_validation": 40,
+      "n_test_seen": 40,
+      "n_test_unseen_entity": 40,
+      "n_test_unseen_wording": 40
+    },
+    {
+      "domain": "height",
+      "task_type": "pairwise",
+      "train_pool_size": 60,
+      "test_pool_size": 20,
+      "n_train": 300,
+      "n_validation": 40,
+      "n_test_seen": 40,
+      "n_test_unseen_entity": 40,
+      "n_test_unseen_wording": 40
+    },
+    {
+      "domain": "height",
+      "task_type": "transitive3",
+      "train_pool_size": 60,
+      "test_pool_size": 20,
+      "n_train": 300,
+      "n_validation": 40,
+      "n_test_seen": 40,
+      "n_test_unseen_entity": 40,
+      "n_test_unseen_wording": 40
+    },
+    {
+      "domain": "price",
+      "task_type": "pairwise",
+      "train_pool_size": 60,
+      "test_pool_size": 20,
+      "n_train": 300,
+      "n_validation": 40,
+      "n_test_seen": 40,
+      "n_test_unseen_entity": 40,
+      "n_test_unseen_wording": 40
+    },
+    {
+      "domain": "price",
+      "task_type": "transitive3",
+      "train_pool_size": 60,
+      "test_pool_size": 20,
+      "n_train": 300,
+      "n_validation": 40,
+      "n_test_seen": 40,
+      "n_test_unseen_entity": 40,
+      "n_test_unseen_wording": 40
+    },
+    {
+      "domain": "quantity",
+      "task_type": "pairwise",
+      "train_pool_size": 60,
+      "test_pool_size": 20,
+      "n_train": 300,
+      "n_validation": 40,
+      "n_test_seen": 40,
+      "n_test_unseen_entity": 40,
+      "n_test_unseen_wording": 40
+    },
+    {
+      "domain": "quantity",
+      "task_type": "transitive3",
+      "train_pool_size": 60,
+      "test_pool_size": 20,
+      "n_train": 300,
+      "n_validation": 40,
+      "n_test_seen": 40,
+      "n_test_unseen_entity": 40,
+      "n_test_unseen_wording": 40
+    }
+  ],
+  "n_domains": 4,
+  "n_task_types": 2,
+  "n_templates_per_combo": 4,
+  "n_templates_trained": 3,
+  "n_templates_held_out": 1,
+  "test_entity_fraction": 0.25,
+  "seed": 42,
+  "leakage_avoidance": "Each attribute domain's entity pool (person/object) is split once into disjoint train/test name sets before any example is generated (shared/reasoning/entities.py:split_entity_pool); 'train', 'validation' and 'test_seen' draw only from the train names, 'test_unseen_entity' and 'test_unseen_wording' draw only from the test names. Separately, one of each task's four surface-form templates is held out of training entirely and used only in 'test_unseen_wording'. The two axes (entity identity, surface wording) are varied independently so a model can fail one without automatically failing the other."
+}

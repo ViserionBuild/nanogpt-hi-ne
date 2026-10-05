@@ -93,7 +93,7 @@ from typing import Any, Dict, List
 import yaml
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
-from shared.data_utils import count_lines
+from shared.tokenizer.data_utils import count_lines
 
 # ---------------------------------------------------------------------------
 # Source configuration

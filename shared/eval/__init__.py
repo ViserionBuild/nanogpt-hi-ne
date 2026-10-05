@@ -12,6 +12,10 @@ from .generate import DECODING_SETTINGS, run_all_settings, save_samples
 from .lm_metrics import (
     bits_per_byte, count_file_bytes, evaluate_loss, full_evaluation, save_metrics,
 )
+from .reasoning_metrics import (
+    evaluate_pretraining_perplexity, evaluate_split_accuracy, evaluate_three_way,
+    extract_predicted_answer, save_reasoning_results,
+)
 
 __all__ = [
     "verify_causal_masking", "verify_mask_structure",
@@ -21,4 +25,6 @@ __all__ = [
     "save_samples", "DECODING_SETTINGS", "capture_attention",
     "attention_entropy", "mean_attention_distance", "analyze_all_layers",
     "get_token_pieces", "save_analysis",
+    "evaluate_three_way", "evaluate_split_accuracy", "extract_predicted_answer",
+    "evaluate_pretraining_perplexity", "save_reasoning_results",
 ]

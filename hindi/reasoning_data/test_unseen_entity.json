@@ -1,0 +1,5762 @@
+[
+  {
+    "prompt": "अगर अभिषेक शीला से बड़ा है, तो इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: अभिषेक",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "अभिषेक",
+      "शीला"
+    ],
+    "values": [
+      59,
+      37
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर सोनू सुमन से बड़ा है, तो इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: सोनू",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "सोनू",
+      "सुमन"
+    ],
+    "values": [
+      78,
+      44
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर स्नेहा शीला से बड़ी है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: शीला",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "स्नेहा",
+      "शीला"
+    ],
+    "values": [
+      39,
+      24
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: अंजलि राधा से छोटी है। बताइए, इनमें से छोटा कौन है?",
+    "answer": "उत्तर: अंजलि",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "अंजलि",
+      "राधा"
+    ],
+    "values": [
+      64,
+      73
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर राधा श्याम से बड़ी है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "राधा",
+      "श्याम"
+    ],
+    "values": [
+      46,
+      38
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर किरण ललिता से बड़ी है, तो इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: किरण",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "किरण",
+      "ललिता"
+    ],
+    "values": [
+      63,
+      41
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर अंजलि विमला से बड़ी है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: विमला",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "अंजलि",
+      "विमला"
+    ],
+    "values": [
+      51,
+      26
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: संदीप ललिता से बड़ा है। बताइए, इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: संदीप",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "संदीप",
+      "ललिता"
+    ],
+    "values": [
+      44,
+      37
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "ललिता संदीप से छोटी है। इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: संदीप",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "ललिता",
+      "संदीप"
+    ],
+    "values": [
+      46,
+      56
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर प्रिया स्नेहा से छोटी है, तो इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: स्नेहा",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "प्रिया",
+      "स्नेहा"
+    ],
+    "values": [
+      11,
+      43
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अभिषेक संदीप से बड़ा है। इनमें से छोटा कौन है?",
+    "answer": "उत्तर: संदीप",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "अभिषेक",
+      "संदीप"
+    ],
+    "values": [
+      42,
+      20
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर विमला सुमित से बड़ी है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "विमला",
+      "सुमित"
+    ],
+    "values": [
+      41,
+      13
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "किरण सुमित से छोटी है। इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "किरण",
+      "सुमित"
+    ],
+    "values": [
+      18,
+      64
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर सुमित शीला से छोटा है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "सुमित",
+      "शीला"
+    ],
+    "values": [
+      45,
+      80
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर ललिता राजेश से छोटी है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: ललिता",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "ललिता",
+      "राजेश"
+    ],
+    "values": [
+      16,
+      69
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "शीला गणेश से बड़ी है। इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: शीला",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "शीला",
+      "गणेश"
+    ],
+    "values": [
+      42,
+      17
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "गणेश स्नेहा से बड़ा है। इनमें से छोटा कौन है?",
+    "answer": "उत्तर: स्नेहा",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "गणेश",
+      "स्नेहा"
+    ],
+    "values": [
+      25,
+      15
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: शांति हरीश से छोटी है। बताइए, इनमें से छोटा कौन है?",
+    "answer": "उत्तर: शांति",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "शांति",
+      "हरीश"
+    ],
+    "values": [
+      20,
+      70
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: किरण गणेश से बड़ी है। बताइए, इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: किरण",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "किरण",
+      "गणेश"
+    ],
+    "values": [
+      37,
+      6
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर संदीप कमला से छोटा है, तो इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: कमला",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "संदीप",
+      "कमला"
+    ],
+    "values": [
+      46,
+      59
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "सुमित ललिता से छोटा है। इनमें से छोटा कौन है?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "सुमित",
+      "ललिता"
+    ],
+    "values": [
+      56,
+      57
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर ललिता राधा से बड़ी है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: राधा",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "ललिता",
+      "राधा"
+    ],
+    "values": [
+      53,
+      42
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "किरण हरीश से बड़ी है। इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: किरण",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "किरण",
+      "हरीश"
+    ],
+    "values": [
+      37,
+      29
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: सुमित शांति से छोटा है। बताइए, इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: शांति",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "सुमित",
+      "शांति"
+    ],
+    "values": [
+      73,
+      74
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर सुमन किरण से छोटी है, तो इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: किरण",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "सुमन",
+      "किरण"
+    ],
+    "values": [
+      11,
+      51
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अभिषेक शीला से बड़ा है। इनमें से छोटा कौन है?",
+    "answer": "उत्तर: शीला",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "अभिषेक",
+      "शीला"
+    ],
+    "values": [
+      30,
+      18
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर ललिता मंजू से बड़ी है, तो इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: ललिता",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "ललिता",
+      "मंजू"
+    ],
+    "values": [
+      46,
+      9
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर सोनू शीला से छोटा है, तो इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: शीला",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "सोनू",
+      "शीला"
+    ],
+    "values": [
+      16,
+      71
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर शीला गणेश से छोटी है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: शीला",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "शीला",
+      "गणेश"
+    ],
+    "values": [
+      26,
+      63
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: संदीप शांति से बड़ा है। बताइए, इनमें से छोटा कौन है?",
+    "answer": "उत्तर: शांति",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "संदीप",
+      "शांति"
+    ],
+    "values": [
+      48,
+      43
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर गणेश अंजलि से छोटा है, तो इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: अंजलि",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "गणेश",
+      "अंजलि"
+    ],
+    "values": [
+      5,
+      15
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "किरण प्रिया से छोटी है। इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "किरण",
+      "प्रिया"
+    ],
+    "values": [
+      48,
+      62
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: श्याम स्नेहा से बड़ा है। बताइए, इनमें से छोटा कौन है?",
+    "answer": "उत्तर: स्नेहा",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "श्याम",
+      "स्नेहा"
+    ],
+    "values": [
+      21,
+      17
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: हरीश राजेश से छोटा है। बताइए, इनमें से छोटा कौन है?",
+    "answer": "उत्तर: हरीश",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "हरीश",
+      "राजेश"
+    ],
+    "values": [
+      21,
+      37
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: गणेश शांति से छोटा है। बताइए, इनमें से छोटा कौन है?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "गणेश",
+      "शांति"
+    ],
+    "values": [
+      65,
+      74
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर शांति स्नेहा से छोटी है, तो इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: स्नेहा",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "शांति",
+      "स्नेहा"
+    ],
+    "values": [
+      6,
+      37
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर अभिषेक गणेश से छोटा है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: अभिषेक",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "अभिषेक",
+      "गणेश"
+    ],
+    "values": [
+      26,
+      32
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "संदीप हरीश से छोटा है। इनमें से छोटा कौन है?",
+    "answer": "उत्तर: संदीप",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "संदीप",
+      "हरीश"
+    ],
+    "values": [
+      45,
+      58
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "सुमित विमला से छोटा है। इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: विमला",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "सुमित",
+      "विमला"
+    ],
+    "values": [
+      48,
+      54
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "सुमन मंजू से छोटी है। इनमें से बड़ा कौन है?",
+    "answer": "उत्तर: मंजू",
+    "task_type": "pairwise",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "सुमन",
+      "मंजू"
+    ],
+    "values": [
+      59,
+      62
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "ललिता स्नेहा से बड़ी है। स्नेहा राजेश से बड़ी है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: स्नेहा",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "ललिता",
+      "स्नेहा",
+      "राजेश"
+    ],
+    "values": [
+      45,
+      28,
+      6
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: राधा संदीप से बड़ी है। दूसरी बात: संदीप हरीश से बड़ा है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: संदीप",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "राधा",
+      "संदीप",
+      "हरीश"
+    ],
+    "values": [
+      78,
+      76,
+      70
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — शीला, स्नेहा और सुमन। शीला स्नेहा से बड़ी है, और स्नेहा सुमन से बड़ी है। इनमें से सबसे बड़ा कौन है?",
+    "answer": "उत्तर: शीला",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "शीला",
+      "स्नेहा",
+      "सुमन"
+    ],
+    "values": [
+      48,
+      29,
+      26
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "राजेश शीला से बड़ा है। शीला सुमित से छोटी है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "राजेश",
+      "शीला",
+      "सुमित"
+    ],
+    "values": [
+      46,
+      22,
+      42
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — हरीश, राधा और शांति। हरीश राधा से बड़ा है, और राधा शांति से छोटी है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: हरीश",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "हरीश",
+      "राधा",
+      "शांति"
+    ],
+    "values": [
+      57,
+      53,
+      75
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — कमला, शांति और किरण। कमला शांति से छोटी है, और शांति किरण से छोटी है। इनमें से सबसे बड़ा कौन है?",
+    "answer": "उत्तर: किरण",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "कमला",
+      "शांति",
+      "किरण"
+    ],
+    "values": [
+      34,
+      48,
+      62
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — राजेश, शांति और विमला। राजेश शांति से बड़ा है, और शांति विमला से छोटी है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: शांति",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "राजेश",
+      "शांति",
+      "विमला"
+    ],
+    "values": [
+      71,
+      14,
+      65
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — मंजू, राधा और श्याम। मंजू राधा से बड़ी है, और राधा श्याम से छोटी है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: राधा",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "मंजू",
+      "राधा",
+      "श्याम"
+    ],
+    "values": [
+      62,
+      21,
+      74
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — गणेश, अभिषेक और शीला। गणेश अभिषेक से बड़ा है, और अभिषेक शीला से छोटा है। इनमें से सबसे बड़ा कौन है?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "गणेश",
+      "अभिषेक",
+      "शीला"
+    ],
+    "values": [
+      29,
+      11,
+      12
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: शांति गणेश से बड़ी है। दूसरी बात: गणेश शीला से छोटा है। इनमें से सबसे बड़ा कौन है?",
+    "answer": "उत्तर: शांति",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "शांति",
+      "गणेश",
+      "शीला"
+    ],
+    "values": [
+      49,
+      27,
+      33
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — मंजू, हरीश और स्नेहा। मंजू हरीश से छोटी है, और हरीश स्नेहा से छोटा है। इनमें से सबसे बड़ा कौन है?",
+    "answer": "उत्तर: स्नेहा",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "मंजू",
+      "हरीश",
+      "स्नेहा"
+    ],
+    "values": [
+      8,
+      36,
+      52
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "कमला शांति से छोटी है। शांति राजेश से छोटी है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: कमला",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "कमला",
+      "शांति",
+      "राजेश"
+    ],
+    "values": [
+      8,
+      19,
+      73
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — गणेश, सुमन और हरीश। गणेश सुमन से बड़ा है, और सुमन हरीश से बड़ी है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: हरीश",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "गणेश",
+      "सुमन",
+      "हरीश"
+    ],
+    "values": [
+      62,
+      35,
+      8
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: अभिषेक शांति से छोटा है। दूसरी बात: शांति विमला से बड़ी है। इनमें से सबसे बड़ा कौन है?",
+    "answer": "उत्तर: शांति",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "अभिषेक",
+      "शांति",
+      "विमला"
+    ],
+    "values": [
+      5,
+      65,
+      19
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "राजेश संदीप से छोटा है। संदीप किरण से बड़ा है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: राजेश",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "राजेश",
+      "संदीप",
+      "किरण"
+    ],
+    "values": [
+      52,
+      55,
+      30
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "कमला सुमित से बड़ी है। सुमित संदीप से छोटा है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: संदीप",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "कमला",
+      "सुमित",
+      "संदीप"
+    ],
+    "values": [
+      33,
+      7,
+      16
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — गणेश, विमला और अभिषेक। गणेश विमला से बड़ा है, और विमला अभिषेक से छोटी है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: विमला",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "गणेश",
+      "विमला",
+      "अभिषेक"
+    ],
+    "values": [
+      52,
+      7,
+      38
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "संदीप गणेश से छोटा है। गणेश शीला से बड़ा है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: संदीप",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "संदीप",
+      "गणेश",
+      "शीला"
+    ],
+    "values": [
+      48,
+      69,
+      61
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "किरण अभिषेक से बड़ी है। अभिषेक श्याम से छोटा है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "किरण",
+      "अभिषेक",
+      "श्याम"
+    ],
+    "values": [
+      30,
+      13,
+      17
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — अभिषेक, विमला और सोनू। अभिषेक विमला से छोटा है, और विमला सोनू से बड़ी है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: सोनू",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "अभिषेक",
+      "विमला",
+      "सोनू"
+    ],
+    "values": [
+      21,
+      49,
+      29
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "स्नेहा सुमित से बड़ी है। सुमित ललिता से छोटा है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "स्नेहा",
+      "सुमित",
+      "ललिता"
+    ],
+    "values": [
+      73,
+      35,
+      42
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "ललिता कमला से बड़ी है। कमला श्याम से छोटी है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: कमला",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "ललिता",
+      "कमला",
+      "श्याम"
+    ],
+    "values": [
+      61,
+      12,
+      14
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अभिषेक सुमित से बड़ा है। सुमित सोनू से छोटा है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "अभिषेक",
+      "सुमित",
+      "सोनू"
+    ],
+    "values": [
+      28,
+      12,
+      30
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: सोनू कमला से बड़ा है। दूसरी बात: कमला ललिता से छोटी है। इनमें से सबसे बड़ा कौन है?",
+    "answer": "उत्तर: ललिता",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "सोनू",
+      "कमला",
+      "ललिता"
+    ],
+    "values": [
+      44,
+      37,
+      75
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "मंजू सोनू से छोटी है। सोनू प्रिया से छोटा है। इनमें से सबसे बड़ा कौन है?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "मंजू",
+      "सोनू",
+      "प्रिया"
+    ],
+    "values": [
+      5,
+      49,
+      61
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "शांति प्रिया से बड़ी है। प्रिया कमला से बड़ी है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "शांति",
+      "प्रिया",
+      "कमला"
+    ],
+    "values": [
+      68,
+      57,
+      25
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "किरण ललिता से बड़ी है। ललिता श्याम से बड़ी है। इनमें से सबसे बड़ा कौन है?",
+    "answer": "उत्तर: किरण",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "किरण",
+      "ललिता",
+      "श्याम"
+    ],
+    "values": [
+      74,
+      19,
+      9
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "संदीप सुमित से बड़ा है। सुमित मंजू से बड़ा है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "संदीप",
+      "सुमित",
+      "मंजू"
+    ],
+    "values": [
+      34,
+      20,
+      11
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: हरीश विमला से छोटा है। दूसरी बात: विमला शांति से बड़ी है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: शांति",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "हरीश",
+      "विमला",
+      "शांति"
+    ],
+    "values": [
+      17,
+      54,
+      39
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — कमला, श्याम और सोनू। कमला श्याम से बड़ी है, और श्याम सोनू से छोटा है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: कमला",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "कमला",
+      "श्याम",
+      "सोनू"
+    ],
+    "values": [
+      29,
+      15,
+      47
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "राधा अंजलि से छोटी है। अंजलि मंजू से बड़ी है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: मंजू",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "राधा",
+      "अंजलि",
+      "मंजू"
+    ],
+    "values": [
+      73,
+      76,
+      46
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — प्रिया, सुमन और सोनू। प्रिया सुमन से बड़ी है, और सुमन सोनू से छोटी है। इनमें से सबसे बड़ा कौन है?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "प्रिया",
+      "सुमन",
+      "सोनू"
+    ],
+    "values": [
+      61,
+      20,
+      48
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: अंजलि राजेश से छोटी है। दूसरी बात: राजेश गणेश से छोटा है। इनमें से सबसे बड़ा कौन है?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "अंजलि",
+      "राजेश",
+      "गणेश"
+    ],
+    "values": [
+      41,
+      43,
+      79
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — संदीप, सुमित और किरण। संदीप सुमित से छोटा है, और सुमित किरण से छोटा है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: संदीप",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "संदीप",
+      "सुमित",
+      "किरण"
+    ],
+    "values": [
+      16,
+      20,
+      70
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: सुमन शीला से छोटी है। दूसरी बात: शीला गणेश से बड़ी है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "सुमन",
+      "शीला",
+      "गणेश"
+    ],
+    "values": [
+      18,
+      45,
+      42
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: हरीश शीला से बड़ा है। दूसरी बात: शीला सुमन से छोटी है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: हरीश",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "हरीश",
+      "शीला",
+      "सुमन"
+    ],
+    "values": [
+      9,
+      6,
+      14
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — प्रिया, विमला और राजेश। प्रिया विमला से बड़ी है, और विमला राजेश से छोटी है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: विमला",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 2,
+    "entities": [
+      "प्रिया",
+      "विमला",
+      "राजेश"
+    ],
+    "values": [
+      70,
+      8,
+      23
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "गणेश अभिषेक से बड़ा है। अभिषेक ललिता से छोटा है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: ललिता",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "गणेश",
+      "अभिषेक",
+      "ललिता"
+    ],
+    "values": [
+      33,
+      10,
+      25
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: ललिता संदीप से छोटी है। दूसरी बात: संदीप शांति से बड़ा है। इनमें से सबसे बड़ा कौन है?",
+    "answer": "उत्तर: संदीप",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 1,
+    "entities": [
+      "ललिता",
+      "संदीप",
+      "शांति"
+    ],
+    "values": [
+      5,
+      64,
+      38
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "मंजू सोनू से छोटी है। सोनू राधा से बड़ा है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: मंजू",
+    "task_type": "transitive3",
+    "domain": "age",
+    "template_id": 0,
+    "entities": [
+      "मंजू",
+      "सोनू",
+      "राधा"
+    ],
+    "values": [
+      35,
+      73,
+      54
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: सोनू श्याम से छोटा है। बताइए, इनमें से लंबा कौन है?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "सोनू",
+      "श्याम"
+    ],
+    "values": [
+      142,
+      196
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: शांति श्याम से छोटी है। बताइए, इनमें से लंबा कौन है?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "शांति",
+      "श्याम"
+    ],
+    "values": [
+      95,
+      179
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: अभिषेक मंजू से लंबा है। बताइए, इनमें से लंबा कौन है?",
+    "answer": "उत्तर: अभिषेक",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "अभिषेक",
+      "मंजू"
+    ],
+    "values": [
+      189,
+      135
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर किरण अंजलि से छोटी है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: किरण",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "किरण",
+      "अंजलि"
+    ],
+    "values": [
+      174,
+      178
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "श्याम स्नेहा से लंबा है। इनमें से छोटा कौन है?",
+    "answer": "उत्तर: स्नेहा",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "श्याम",
+      "स्नेहा"
+    ],
+    "values": [
+      174,
+      137
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "किरण राधा से लंबी है। इनमें से लंबा कौन है?",
+    "answer": "उत्तर: किरण",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "किरण",
+      "राधा"
+    ],
+    "values": [
+      159,
+      118
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "हरीश सुमन से छोटा है। इनमें से छोटा कौन है?",
+    "answer": "उत्तर: हरीश",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "हरीश",
+      "सुमन"
+    ],
+    "values": [
+      115,
+      175
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: गणेश कमला से लंबा है। बताइए, इनमें से छोटा कौन है?",
+    "answer": "उत्तर: कमला",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "गणेश",
+      "कमला"
+    ],
+    "values": [
+      179,
+      151
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "सोनू स्नेहा से छोटा है। इनमें से लंबा कौन है?",
+    "answer": "उत्तर: स्नेहा",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "सोनू",
+      "स्नेहा"
+    ],
+    "values": [
+      109,
+      117
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "विमला सुमित से छोटी है। इनमें से छोटा कौन है?",
+    "answer": "उत्तर: विमला",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "विमला",
+      "सुमित"
+    ],
+    "values": [
+      100,
+      170
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: सुमित राधा से छोटा है। बताइए, इनमें से छोटा कौन है?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "सुमित",
+      "राधा"
+    ],
+    "values": [
+      109,
+      159
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: मंजू हरीश से छोटी है। बताइए, इनमें से छोटा कौन है?",
+    "answer": "उत्तर: मंजू",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "मंजू",
+      "हरीश"
+    ],
+    "values": [
+      104,
+      159
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर ललिता विमला से छोटी है, तो इनमें से लंबा कौन है?",
+    "answer": "उत्तर: विमला",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "ललिता",
+      "विमला"
+    ],
+    "values": [
+      149,
+      170
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर संदीप राजेश से लंबा है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: राजेश",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "संदीप",
+      "राजेश"
+    ],
+    "values": [
+      180,
+      103
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: विमला शांति से लंबी है। बताइए, इनमें से छोटा कौन है?",
+    "answer": "उत्तर: शांति",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "विमला",
+      "शांति"
+    ],
+    "values": [
+      123,
+      120
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर राधा श्याम से लंबी है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "राधा",
+      "श्याम"
+    ],
+    "values": [
+      115,
+      113
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "राधा शीला से लंबी है। इनमें से छोटा कौन है?",
+    "answer": "उत्तर: शीला",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "राधा",
+      "शीला"
+    ],
+    "values": [
+      184,
+      176
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "राधा प्रिया से लंबी है। इनमें से लंबा कौन है?",
+    "answer": "उत्तर: राधा",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "राधा",
+      "प्रिया"
+    ],
+    "values": [
+      191,
+      130
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "गणेश शीला से लंबा है। इनमें से लंबा कौन है?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "गणेश",
+      "शीला"
+    ],
+    "values": [
+      135,
+      94
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर गणेश श्याम से लंबा है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "गणेश",
+      "श्याम"
+    ],
+    "values": [
+      117,
+      92
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर मंजू कमला से छोटी है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: मंजू",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "मंजू",
+      "कमला"
+    ],
+    "values": [
+      108,
+      152
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: कमला ललिता से लंबी है। बताइए, इनमें से छोटा कौन है?",
+    "answer": "उत्तर: ललिता",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "कमला",
+      "ललिता"
+    ],
+    "values": [
+      197,
+      128
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर अंजलि गणेश से छोटी है, तो इनमें से लंबा कौन है?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "अंजलि",
+      "गणेश"
+    ],
+    "values": [
+      149,
+      191
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "प्रिया सोनू से छोटी है। इनमें से लंबा कौन है?",
+    "answer": "उत्तर: सोनू",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "प्रिया",
+      "सोनू"
+    ],
+    "values": [
+      178,
+      189
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अभिषेक सोनू से छोटा है। इनमें से लंबा कौन है?",
+    "answer": "उत्तर: सोनू",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "अभिषेक",
+      "सोनू"
+    ],
+    "values": [
+      93,
+      162
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "सुमित किरण से छोटा है। इनमें से लंबा कौन है?",
+    "answer": "उत्तर: किरण",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "सुमित",
+      "किरण"
+    ],
+    "values": [
+      165,
+      167
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर संदीप सुमन से लंबा है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: सुमन",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "संदीप",
+      "सुमन"
+    ],
+    "values": [
+      195,
+      182
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: राधा प्रिया से छोटी है। बताइए, इनमें से लंबा कौन है?",
+    "answer": "उत्तर: प्रिया",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "राधा",
+      "प्रिया"
+    ],
+    "values": [
+      130,
+      134
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: शीला राधा से छोटी है। बताइए, इनमें से लंबा कौन है?",
+    "answer": "उत्तर: राधा",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "शीला",
+      "राधा"
+    ],
+    "values": [
+      104,
+      118
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "सुमन कमला से लंबी है। इनमें से छोटा कौन है?",
+    "answer": "उत्तर: कमला",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "सुमन",
+      "कमला"
+    ],
+    "values": [
+      161,
+      94
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "ललिता शीला से लंबी है। इनमें से लंबा कौन है?",
+    "answer": "उत्तर: ललिता",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "ललिता",
+      "शीला"
+    ],
+    "values": [
+      182,
+      149
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "ललिता किरण से लंबी है। इनमें से लंबा कौन है?",
+    "answer": "उत्तर: ललिता",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "ललिता",
+      "किरण"
+    ],
+    "values": [
+      181,
+      131
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: किरण श्याम से लंबी है। बताइए, इनमें से छोटा कौन है?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "किरण",
+      "श्याम"
+    ],
+    "values": [
+      132,
+      128
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर कमला संदीप से छोटी है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: कमला",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "कमला",
+      "संदीप"
+    ],
+    "values": [
+      103,
+      183
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर राधा संदीप से छोटी है, तो इनमें से छोटा कौन है?",
+    "answer": "उत्तर: राधा",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "राधा",
+      "संदीप"
+    ],
+    "values": [
+      95,
+      155
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "विमला मंजू से लंबी है। इनमें से लंबा कौन है?",
+    "answer": "उत्तर: विमला",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "विमला",
+      "मंजू"
+    ],
+    "values": [
+      138,
+      121
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "स्नेहा कमला से लंबी है। इनमें से छोटा कौन है?",
+    "answer": "उत्तर: कमला",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "स्नेहा",
+      "कमला"
+    ],
+    "values": [
+      187,
+      150
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: अंजलि शीला से लंबी है। बताइए, इनमें से लंबा कौन है?",
+    "answer": "उत्तर: अंजलि",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "अंजलि",
+      "शीला"
+    ],
+    "values": [
+      194,
+      152
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर गणेश विमला से लंबा है, तो इनमें से लंबा कौन है?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "गणेश",
+      "विमला"
+    ],
+    "values": [
+      153,
+      119
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: सुमन राजेश से लंबी है। बताइए, इनमें से लंबा कौन है?",
+    "answer": "उत्तर: सुमन",
+    "task_type": "pairwise",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "सुमन",
+      "राजेश"
+    ],
+    "values": [
+      123,
+      90
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: अंजलि सुमित से छोटी है। दूसरी बात: सुमित शीला से छोटा है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "अंजलि",
+      "सुमित",
+      "शीला"
+    ],
+    "values": [
+      94,
+      112,
+      186
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — सोनू, किरण और हरीश। सोनू किरण से लंबा है, और किरण हरीश से छोटी है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: सोनू",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "सोनू",
+      "किरण",
+      "हरीश"
+    ],
+    "values": [
+      157,
+      116,
+      196
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: शीला राधा से लंबी है। दूसरी बात: राधा विमला से छोटी है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: विमला",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "शीला",
+      "राधा",
+      "विमला"
+    ],
+    "values": [
+      162,
+      135,
+      173
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — शीला, सुमित और कमला। शीला सुमित से लंबी है, और सुमित कमला से छोटा है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: शीला",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "शीला",
+      "सुमित",
+      "कमला"
+    ],
+    "values": [
+      196,
+      136,
+      151
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — किरण, ललिता और गणेश। किरण ललिता से छोटी है, और ललिता गणेश से लंबी है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: किरण",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "किरण",
+      "ललिता",
+      "गणेश"
+    ],
+    "values": [
+      107,
+      169,
+      108
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — सुमित, शीला और कमला। सुमित शीला से छोटा है, और शीला कमला से लंबी है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: शीला",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "सुमित",
+      "शीला",
+      "कमला"
+    ],
+    "values": [
+      171,
+      199,
+      154
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "ललिता सुमित से छोटी है। सुमित सुमन से लंबा है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: ललिता",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "ललिता",
+      "सुमित",
+      "सुमन"
+    ],
+    "values": [
+      101,
+      183,
+      106
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: श्याम अंजलि से छोटा है। दूसरी बात: अंजलि कमला से लंबी है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "श्याम",
+      "अंजलि",
+      "कमला"
+    ],
+    "values": [
+      103,
+      187,
+      155
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "हरीश किरण से छोटा है। किरण संदीप से छोटी है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: संदीप",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "हरीश",
+      "किरण",
+      "संदीप"
+    ],
+    "values": [
+      131,
+      188,
+      195
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "स्नेहा शीला से छोटी है। शीला अंजलि से लंबी है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: शीला",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "स्नेहा",
+      "शीला",
+      "अंजलि"
+    ],
+    "values": [
+      167,
+      192,
+      130
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — स्नेहा, हरीश और कमला। स्नेहा हरीश से लंबी है, और हरीश कमला से छोटा है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: स्नेहा",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "स्नेहा",
+      "हरीश",
+      "कमला"
+    ],
+    "values": [
+      108,
+      107,
+      109
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — सुमन, हरीश और श्याम। सुमन हरीश से छोटी है, और हरीश श्याम से लंबा है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: सुमन",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "सुमन",
+      "हरीश",
+      "श्याम"
+    ],
+    "values": [
+      160,
+      190,
+      132
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — प्रिया, शीला और सुमन। प्रिया शीला से लंबी है, और शीला सुमन से छोटी है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: शीला",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "प्रिया",
+      "शीला",
+      "सुमन"
+    ],
+    "values": [
+      192,
+      94,
+      172
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — श्याम, मंजू और सोनू। श्याम मंजू से लंबा है, और मंजू सोनू से छोटी है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: सोनू",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "श्याम",
+      "मंजू",
+      "सोनू"
+    ],
+    "values": [
+      96,
+      92,
+      122
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "राजेश गणेश से छोटा है। गणेश अंजलि से छोटा है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: राजेश",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "राजेश",
+      "गणेश",
+      "अंजलि"
+    ],
+    "values": [
+      117,
+      176,
+      194
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: स्नेहा अभिषेक से छोटी है। दूसरी बात: अभिषेक सुमित से लंबा है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "स्नेहा",
+      "अभिषेक",
+      "सुमित"
+    ],
+    "values": [
+      97,
+      137,
+      122
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "श्याम ललिता से छोटा है। ललिता कमला से छोटी है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "श्याम",
+      "ललिता",
+      "कमला"
+    ],
+    "values": [
+      93,
+      139,
+      180
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "राजेश किरण से छोटा है। किरण मंजू से छोटी है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: किरण",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "राजेश",
+      "किरण",
+      "मंजू"
+    ],
+    "values": [
+      91,
+      122,
+      131
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "सुमन कमला से छोटी है। कमला स्नेहा से छोटी है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: सुमन",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "सुमन",
+      "कमला",
+      "स्नेहा"
+    ],
+    "values": [
+      120,
+      160,
+      182
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — शांति, स्नेहा और गणेश। शांति स्नेहा से छोटी है, और स्नेहा गणेश से लंबी है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: शांति",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "शांति",
+      "स्नेहा",
+      "गणेश"
+    ],
+    "values": [
+      124,
+      154,
+      118
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — गणेश, संदीप और अंजलि। गणेश संदीप से छोटा है, और संदीप अंजलि से छोटा है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: अंजलि",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "गणेश",
+      "संदीप",
+      "अंजलि"
+    ],
+    "values": [
+      111,
+      121,
+      155
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "मंजू अभिषेक से छोटी है। अभिषेक किरण से छोटा है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: अभिषेक",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "मंजू",
+      "अभिषेक",
+      "किरण"
+    ],
+    "values": [
+      133,
+      164,
+      181
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — सुमित, संदीप और विमला। सुमित संदीप से छोटा है, और संदीप विमला से लंबा है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: संदीप",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "सुमित",
+      "संदीप",
+      "विमला"
+    ],
+    "values": [
+      144,
+      165,
+      121
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — सोनू, किरण और संदीप। सोनू किरण से छोटा है, और किरण संदीप से छोटी है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: संदीप",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "सोनू",
+      "किरण",
+      "संदीप"
+    ],
+    "values": [
+      132,
+      138,
+      140
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — श्याम, किरण और हरीश। श्याम किरण से लंबा है, और किरण हरीश से छोटी है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: श्याम",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "श्याम",
+      "किरण",
+      "हरीश"
+    ],
+    "values": [
+      179,
+      169,
+      172
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: मंजू स्नेहा से लंबी है। दूसरी बात: स्नेहा सुमित से छोटी है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: मंजू",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "मंजू",
+      "स्नेहा",
+      "सुमित"
+    ],
+    "values": [
+      128,
+      122,
+      184
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "स्नेहा सोनू से छोटी है। सोनू ललिता से लंबा है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: सोनू",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "स्नेहा",
+      "सोनू",
+      "ललिता"
+    ],
+    "values": [
+      117,
+      154,
+      101
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — कमला, राजेश और मंजू। कमला राजेश से लंबी है, और राजेश मंजू से छोटा है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: कमला",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "कमला",
+      "राजेश",
+      "मंजू"
+    ],
+    "values": [
+      162,
+      141,
+      163
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अभिषेक हरीश से लंबा है। हरीश अंजलि से छोटा है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: अंजलि",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "अभिषेक",
+      "हरीश",
+      "अंजलि"
+    ],
+    "values": [
+      148,
+      127,
+      179
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: सुमित सोनू से लंबा है। दूसरी बात: सोनू श्याम से छोटा है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: सुमित",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 1,
+    "entities": [
+      "सुमित",
+      "सोनू",
+      "श्याम"
+    ],
+    "values": [
+      159,
+      129,
+      151
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — स्नेहा, राधा और कमला। स्नेहा राधा से लंबी है, और राधा कमला से लंबी है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: कमला",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "स्नेहा",
+      "राधा",
+      "कमला"
+    ],
+    "values": [
+      158,
+      151,
+      108
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "राधा ललिता से लंबी है। ललिता स्नेहा से छोटी है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: राधा",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "राधा",
+      "ललिता",
+      "स्नेहा"
+    ],
+    "values": [
+      123,
+      99,
+      136
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "शांति गणेश से छोटी है। गणेश कमला से लंबा है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: कमला",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "शांति",
+      "गणेश",
+      "कमला"
+    ],
+    "values": [
+      132,
+      155,
+      127
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "स्नेहा सोनू से लंबी है। सोनू ललिता से छोटा है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: सोनू",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "स्नेहा",
+      "सोनू",
+      "ललिता"
+    ],
+    "values": [
+      111,
+      99,
+      168
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — शीला, अंजलि और श्याम। शीला अंजलि से छोटी है, और अंजलि श्याम से लंबी है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: अंजलि",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "शीला",
+      "अंजलि",
+      "श्याम"
+    ],
+    "values": [
+      166,
+      190,
+      113
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "संदीप विमला से लंबा है। विमला किरण से छोटी है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: संदीप",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "संदीप",
+      "विमला",
+      "किरण"
+    ],
+    "values": [
+      187,
+      121,
+      160
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — राधा, हरीश और कमला। राधा हरीश से लंबी है, और हरीश कमला से छोटा है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: कमला",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "राधा",
+      "हरीश",
+      "कमला"
+    ],
+    "values": [
+      143,
+      109,
+      149
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — शीला, किरण और संदीप। शीला किरण से छोटी है, और किरण संदीप से लंबी है। इनमें से सबसे लंबा कौन है?",
+    "answer": "उत्तर: किरण",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "शीला",
+      "किरण",
+      "संदीप"
+    ],
+    "values": [
+      120,
+      190,
+      107
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "हरीश मंजू से लंबा है। मंजू शांति से लंबी है। इनमें से बीच वाला कौन है?",
+    "answer": "उत्तर: मंजू",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 0,
+    "entities": [
+      "हरीश",
+      "मंजू",
+      "शांति"
+    ],
+    "values": [
+      150,
+      116,
+      100
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — किरण, प्रिया और गणेश। किरण प्रिया से लंबी है, और प्रिया गणेश से लंबी है। इनमें से सबसे छोटा कौन है?",
+    "answer": "उत्तर: गणेश",
+    "task_type": "transitive3",
+    "domain": "height",
+    "template_id": 2,
+    "entities": [
+      "किरण",
+      "प्रिया",
+      "गणेश"
+    ],
+    "values": [
+      154,
+      138,
+      123
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर राजमा मेज़ से सस्ता है, तो इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: मेज़",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "राजमा",
+      "मेज़"
+    ],
+    "values": [
+      87,
+      480
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: अमरूद दर्पण से सस्ता है। बताइए, इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: दर्पण",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "अमरूद",
+      "दर्पण"
+    ],
+    "values": [
+      196,
+      289
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: राजमा रबड़ से सस्ता है। बताइए, इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: रबड़",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "राजमा",
+      "रबड़"
+    ],
+    "values": [
+      333,
+      413
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर राजमा अनानास से सस्ता है, तो इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: अनानास",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "राजमा",
+      "अनानास"
+    ],
+    "values": [
+      142,
+      155
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर मेज़ थैला से सस्ती है, तो इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: थैला",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "मेज़",
+      "थैला"
+    ],
+    "values": [
+      91,
+      110
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पर्स अमरूद से महंगा है। इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: पर्स",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "पर्स",
+      "अमरूद"
+    ],
+    "values": [
+      464,
+      160
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "बैग टमाटर से महंगा है। इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: टमाटर",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "बैग",
+      "टमाटर"
+    ],
+    "values": [
+      374,
+      197
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: रबड़ अलमारी से सस्ती है। बताइए, इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: अलमारी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "रबड़",
+      "अलमारी"
+    ],
+    "values": [
+      26,
+      75
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "टोपी दर्पण से सस्ती है। इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: दर्पण",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "टोपी",
+      "दर्पण"
+    ],
+    "values": [
+      55,
+      120
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "टोपी आलू से महंगी है। इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: टोपी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "टोपी",
+      "आलू"
+    ],
+    "values": [
+      286,
+      120
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर अलमारी बैंगन से सस्ती है, तो इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: अलमारी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "अलमारी",
+      "बैंगन"
+    ],
+    "values": [
+      35,
+      113
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर अमरूद पर्स से सस्ता है, तो इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: अमरूद",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "अमरूद",
+      "पर्स"
+    ],
+    "values": [
+      44,
+      404
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "केला कंबल से सस्ता है। इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: केला",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "केला",
+      "कंबल"
+    ],
+    "values": [
+      43,
+      97
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर केला कंबल से सस्ता है, तो इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: केला",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "केला",
+      "कंबल"
+    ],
+    "values": [
+      304,
+      460
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "मेज़ बैंगन से महंगी है। इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: बैंगन",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "मेज़",
+      "बैंगन"
+    ],
+    "values": [
+      216,
+      29
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर मेज़ अमरूद से महंगी है, तो इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: अमरूद",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "मेज़",
+      "अमरूद"
+    ],
+    "values": [
+      353,
+      184
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "बैग पर्स से महंगा है। इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: बैग",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "बैग",
+      "पर्स"
+    ],
+    "values": [
+      422,
+      237
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: बैंगन केला से सस्ता है। बताइए, इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: बैंगन",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "बैंगन",
+      "केला"
+    ],
+    "values": [
+      142,
+      328
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: थैला टमाटर से सस्ता है। बताइए, इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: थैला",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "थैला",
+      "टमाटर"
+    ],
+    "values": [
+      305,
+      423
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: रबड़ कंबल से महंगी है। बताइए, इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: कंबल",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "रबड़",
+      "कंबल"
+    ],
+    "values": [
+      167,
+      25
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: मेज़ केला से सस्ती है। बताइए, इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: मेज़",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "मेज़",
+      "केला"
+    ],
+    "values": [
+      111,
+      311
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: दर्पण मेज़ से सस्ता है। बताइए, इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: दर्पण",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "दर्पण",
+      "मेज़"
+    ],
+    "values": [
+      122,
+      293
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "कंघी चना से महंगी है। इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "कंघी",
+      "चना"
+    ],
+    "values": [
+      372,
+      249
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: बैग राजमा से सस्ता है। बताइए, इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: बैग",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "बैग",
+      "राजमा"
+    ],
+    "values": [
+      36,
+      425
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर थैला टमाटर से महंगा है, तो इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: थैला",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "थैला",
+      "टमाटर"
+    ],
+    "values": [
+      185,
+      163
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर अलमारी टमाटर से महंगी है, तो इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: अलमारी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "अलमारी",
+      "टमाटर"
+    ],
+    "values": [
+      489,
+      155
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: टोपी राजमा से महंगी है। बताइए, इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: राजमा",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "टोपी",
+      "राजमा"
+    ],
+    "values": [
+      238,
+      112
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: अनानास राजमा से महंगा है। बताइए, इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: अनानास",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "अनानास",
+      "राजमा"
+    ],
+    "values": [
+      385,
+      262
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: मेज़ टमाटर से महंगी है। बताइए, इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: टमाटर",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "मेज़",
+      "टमाटर"
+    ],
+    "values": [
+      228,
+      181
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर अलमारी आलू से महंगी है, तो इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: अलमारी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "अलमारी",
+      "आलू"
+    ],
+    "values": [
+      198,
+      118
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "टमाटर डिब्बा से सस्ता है। इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: डिब्बा",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "टमाटर",
+      "डिब्बा"
+    ],
+    "values": [
+      378,
+      444
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "केला राजमा से सस्ता है। इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: केला",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "केला",
+      "राजमा"
+    ],
+    "values": [
+      449,
+      471
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "केला बैंगन से सस्ता है। इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: बैंगन",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "केला",
+      "बैंगन"
+    ],
+    "values": [
+      200,
+      315
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "थैला टोपी से सस्ता है। इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: टोपी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "थैला",
+      "टोपी"
+    ],
+    "values": [
+      310,
+      447
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "आलू दर्पण से महंगा है। इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: दर्पण",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "आलू",
+      "दर्पण"
+    ],
+    "values": [
+      477,
+      378
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "केला थैला से सस्ता है। इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: थैला",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "केला",
+      "थैला"
+    ],
+    "values": [
+      97,
+      355
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अमरूद चना से महंगा है। इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: चना",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "अमरूद",
+      "चना"
+    ],
+    "values": [
+      348,
+      20
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दर्पण राजमा से सस्ता है। इनमें से सस्ता कौन सा है?",
+    "answer": "उत्तर: दर्पण",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "दर्पण",
+      "राजमा"
+    ],
+    "values": [
+      363,
+      454
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "रबड़ कंघी से सस्ती है। इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "रबड़",
+      "कंघी"
+    ],
+    "values": [
+      252,
+      297
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: कंबल टमाटर से सस्ता है। बताइए, इनमें से महंगा कौन सा है?",
+    "answer": "उत्तर: टमाटर",
+    "task_type": "pairwise",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "कंबल",
+      "टमाटर"
+    ],
+    "values": [
+      50,
+      349
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: टोपी बैंगन से सस्ती है। दूसरी बात: बैंगन बैग से महंगा है। इनमें से बीच वाला दाम किसका है?",
+    "answer": "उत्तर: टोपी",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "टोपी",
+      "बैंगन",
+      "बैग"
+    ],
+    "values": [
+      460,
+      467,
+      284
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: अमरूद डिब्बा से सस्ता है। दूसरी बात: डिब्बा मेज़ से महंगा है। इनमें से बीच वाला दाम किसका है?",
+    "answer": "उत्तर: अमरूद",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "अमरूद",
+      "डिब्बा",
+      "मेज़"
+    ],
+    "values": [
+      303,
+      446,
+      150
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दर्पण डिब्बा से सस्ता है। डिब्बा रबड़ से महंगा है। इनमें से बीच वाला दाम किसका है?",
+    "answer": "उत्तर: रबड़",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "दर्पण",
+      "डिब्बा",
+      "रबड़"
+    ],
+    "values": [
+      171,
+      419,
+      397
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — आलू, बैग और अमरूद। आलू बैग से सस्ता है, और बैग अमरूद से सस्ता है। इनमें से सबसे महंगा कौन सा है?",
+    "answer": "उत्तर: अमरूद",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "आलू",
+      "बैग",
+      "अमरूद"
+    ],
+    "values": [
+      184,
+      264,
+      431
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "आलू कंबल से महंगा है। कंबल डिब्बा से सस्ता है। इनमें से बीच वाला दाम किसका है?",
+    "answer": "उत्तर: डिब्बा",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "आलू",
+      "कंबल",
+      "डिब्बा"
+    ],
+    "values": [
+      484,
+      293,
+      376
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — अमरूद, दर्पण और बैग। अमरूद दर्पण से सस्ता है, और दर्पण बैग से सस्ता है। इनमें से बीच वाला दाम किसका है?",
+    "answer": "उत्तर: दर्पण",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "अमरूद",
+      "दर्पण",
+      "बैग"
+    ],
+    "values": [
+      135,
+      172,
+      191
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: बैग कंघी से सस्ता है। दूसरी बात: कंघी अमरूद से महंगी है। इनमें से सबसे सस्ता कौन सा है?",
+    "answer": "उत्तर: अमरूद",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "बैग",
+      "कंघी",
+      "अमरूद"
+    ],
+    "values": [
+      281,
+      447,
+      140
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: राजमा कंघी से सस्ता है। दूसरी बात: कंघी रबड़ से सस्ती है। इनमें से बीच वाला दाम किसका है?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "राजमा",
+      "कंघी",
+      "रबड़"
+    ],
+    "values": [
+      275,
+      291,
+      327
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: राजमा मेज़ से महंगा है। दूसरी बात: मेज़ जूता से सस्ती है। इनमें से सबसे सस्ता कौन सा है?",
+    "answer": "उत्तर: मेज़",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "राजमा",
+      "मेज़",
+      "जूता"
+    ],
+    "values": [
+      283,
+      85,
+      251
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: कंबल मेज़ से महंगा है। दूसरी बात: मेज़ राजमा से सस्ती है। इनमें से सबसे महंगा कौन सा है?",
+    "answer": "उत्तर: राजमा",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "कंबल",
+      "मेज़",
+      "राजमा"
+    ],
+    "values": [
+      413,
+      107,
+      487
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — दर्पण, कंबल और चना। दर्पण कंबल से सस्ता है, और कंबल चना से महंगा है। इनमें से बीच वाला दाम किसका है?",
+    "answer": "उत्तर: दर्पण",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "दर्पण",
+      "कंबल",
+      "चना"
+    ],
+    "values": [
+      73,
+      330,
+      46
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "थैला राजमा से महंगा है। राजमा कंबल से सस्ता है। इनमें से सबसे महंगा कौन सा है?",
+    "answer": "उत्तर: कंबल",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "थैला",
+      "राजमा",
+      "कंबल"
+    ],
+    "values": [
+      238,
+      37,
+      302
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — टोपी, थैला और कंघी। टोपी थैला से महंगी है, और थैला कंघी से सस्ता है। इनमें से बीच वाला दाम किसका है?",
+    "answer": "उत्तर: टोपी",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "टोपी",
+      "थैला",
+      "कंघी"
+    ],
+    "values": [
+      201,
+      72,
+      424
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — टमाटर, केला और अमरूद। टमाटर केला से महंगा है, और केला अमरूद से सस्ता है। इनमें से सबसे सस्ता कौन सा है?",
+    "answer": "उत्तर: केला",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "टमाटर",
+      "केला",
+      "अमरूद"
+    ],
+    "values": [
+      264,
+      95,
+      457
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "मेज़ राजमा से महंगी है। राजमा अलमारी से सस्ता है। इनमें से सबसे महंगा कौन सा है?",
+    "answer": "उत्तर: मेज़",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "मेज़",
+      "राजमा",
+      "अलमारी"
+    ],
+    "values": [
+      497,
+      110,
+      177
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — टमाटर, जूता और पर्स। टमाटर जूता से सस्ता है, और जूता पर्स से महंगा है। इनमें से सबसे सस्ता कौन सा है?",
+    "answer": "उत्तर: पर्स",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "टमाटर",
+      "जूता",
+      "पर्स"
+    ],
+    "values": [
+      316,
+      360,
+      304
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: जूता चना से महंगा है। दूसरी बात: चना टमाटर से महंगा है। इनमें से सबसे महंगा कौन सा है?",
+    "answer": "उत्तर: जूता",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "जूता",
+      "चना",
+      "टमाटर"
+    ],
+    "values": [
+      339,
+      297,
+      84
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — पर्स, अमरूद और केला। पर्स अमरूद से महंगा है, और अमरूद केला से महंगा है। इनमें से सबसे सस्ता कौन सा है?",
+    "answer": "उत्तर: केला",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "पर्स",
+      "अमरूद",
+      "केला"
+    ],
+    "values": [
+      431,
+      225,
+      208
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — आलू, दर्पण और बैंगन। आलू दर्पण से सस्ता है, और दर्पण बैंगन से महंगा है। इनमें से सबसे सस्ता कौन सा है?",
+    "answer": "उत्तर: आलू",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "आलू",
+      "दर्पण",
+      "बैंगन"
+    ],
+    "values": [
+      69,
+      418,
+      334
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: दर्पण जूता से सस्ता है। दूसरी बात: जूता केला से महंगा है। इनमें से सबसे महंगा कौन सा है?",
+    "answer": "उत्तर: जूता",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "दर्पण",
+      "जूता",
+      "केला"
+    ],
+    "values": [
+      167,
+      287,
+      14
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — बैग, केला और रबड़। बैग केला से सस्ता है, और केला रबड़ से महंगा है। इनमें से सबसे सस्ता कौन सा है?",
+    "answer": "उत्तर: रबड़",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "बैग",
+      "केला",
+      "रबड़"
+    ],
+    "values": [
+      279,
+      358,
+      119
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — राजमा, मेज़ और कंबल। राजमा मेज़ से महंगा है, और मेज़ कंबल से सस्ती है। इनमें से सबसे सस्ता कौन सा है?",
+    "answer": "उत्तर: मेज़",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "राजमा",
+      "मेज़",
+      "कंबल"
+    ],
+    "values": [
+      216,
+      154,
+      215
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "रबड़ टोपी से महंगी है। टोपी अमरूद से सस्ती है। इनमें से सबसे सस्ता कौन सा है?",
+    "answer": "उत्तर: टोपी",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "रबड़",
+      "टोपी",
+      "अमरूद"
+    ],
+    "values": [
+      374,
+      191,
+      379
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: डिब्बा चना से सस्ता है। दूसरी बात: चना राजमा से महंगा है। इनमें से सबसे सस्ता कौन सा है?",
+    "answer": "उत्तर: डिब्बा",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "डिब्बा",
+      "चना",
+      "राजमा"
+    ],
+    "values": [
+      335,
+      478,
+      339
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "आलू अनानास से सस्ता है। अनानास जूता से सस्ता है। इनमें से सबसे महंगा कौन सा है?",
+    "answer": "उत्तर: जूता",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "आलू",
+      "अनानास",
+      "जूता"
+    ],
+    "values": [
+      11,
+      169,
+      203
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: अलमारी बैंगन से महंगी है। दूसरी बात: बैंगन टमाटर से महंगा है। इनमें से सबसे सस्ता कौन सा है?",
+    "answer": "उत्तर: टमाटर",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "अलमारी",
+      "बैंगन",
+      "टमाटर"
+    ],
+    "values": [
+      298,
+      217,
+      114
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — रबड़, अमरूद और डिब्बा। रबड़ अमरूद से महंगी है, और अमरूद डिब्बा से महंगा है। इनमें से बीच वाला दाम किसका है?",
+    "answer": "उत्तर: अमरूद",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "रबड़",
+      "अमरूद",
+      "डिब्बा"
+    ],
+    "values": [
+      313,
+      254,
+      84
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: टमाटर थैला से महंगा है। दूसरी बात: थैला अमरूद से सस्ता है। इनमें से सबसे सस्ता कौन सा है?",
+    "answer": "उत्तर: थैला",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "टमाटर",
+      "थैला",
+      "अमरूद"
+    ],
+    "values": [
+      476,
+      40,
+      396
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अलमारी जूता से महंगी है। जूता रबड़ से सस्ता है। इनमें से बीच वाला दाम किसका है?",
+    "answer": "उत्तर: अलमारी",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "अलमारी",
+      "जूता",
+      "रबड़"
+    ],
+    "values": [
+      297,
+      64,
+      446
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — कंघी, केला और पर्स। कंघी केला से महंगी है, और केला पर्स से सस्ता है। इनमें से सबसे महंगा कौन सा है?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "कंघी",
+      "केला",
+      "पर्स"
+    ],
+    "values": [
+      254,
+      58,
+      242
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — अलमारी, चना और थैला। अलमारी चना से महंगी है, और चना थैला से सस्ता है। इनमें से सबसे महंगा कौन सा है?",
+    "answer": "उत्तर: अलमारी",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "अलमारी",
+      "चना",
+      "थैला"
+    ],
+    "values": [
+      449,
+      152,
+      391
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — बैग, डिब्बा और टमाटर। बैग डिब्बा से महंगा है, और डिब्बा टमाटर से सस्ता है। इनमें से सबसे महंगा कौन सा है?",
+    "answer": "उत्तर: टमाटर",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "बैग",
+      "डिब्बा",
+      "टमाटर"
+    ],
+    "values": [
+      111,
+      52,
+      356
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: अनानास जूता से महंगा है। दूसरी बात: जूता थैला से सस्ता है। इनमें से सबसे महंगा कौन सा है?",
+    "answer": "उत्तर: थैला",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "अनानास",
+      "जूता",
+      "थैला"
+    ],
+    "values": [
+      400,
+      299,
+      456
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — कंबल, अनानास और रबड़। कंबल अनानास से सस्ता है, और अनानास रबड़ से महंगा है। इनमें से सबसे महंगा कौन सा है?",
+    "answer": "उत्तर: अनानास",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "कंबल",
+      "अनानास",
+      "रबड़"
+    ],
+    "values": [
+      379,
+      452,
+      317
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — बैग, राजमा और केला। बैग राजमा से महंगा है, और राजमा केला से सस्ता है। इनमें से सबसे सस्ता कौन सा है?",
+    "answer": "उत्तर: राजमा",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "बैग",
+      "राजमा",
+      "केला"
+    ],
+    "values": [
+      305,
+      285,
+      348
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — टमाटर, दर्पण और अलमारी। टमाटर दर्पण से महंगा है, और दर्पण अलमारी से महंगा है। इनमें से बीच वाला दाम किसका है?",
+    "answer": "उत्तर: दर्पण",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 2,
+    "entities": [
+      "टमाटर",
+      "दर्पण",
+      "अलमारी"
+    ],
+    "values": [
+      446,
+      277,
+      65
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "बैग रबड़ से महंगा है। रबड़ बैंगन से सस्ती है। इनमें से सबसे सस्ता कौन सा है?",
+    "answer": "उत्तर: रबड़",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "बैग",
+      "रबड़",
+      "बैंगन"
+    ],
+    "values": [
+      407,
+      248,
+      399
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: केला दर्पण से महंगा है। दूसरी बात: दर्पण पर्स से सस्ता है। इनमें से बीच वाला दाम किसका है?",
+    "answer": "उत्तर: पर्स",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "केला",
+      "दर्पण",
+      "पर्स"
+    ],
+    "values": [
+      195,
+      36,
+      40
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "थैला चना से महंगा है। चना राजमा से महंगा है। इनमें से सबसे महंगा कौन सा है?",
+    "answer": "उत्तर: थैला",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 0,
+    "entities": [
+      "थैला",
+      "चना",
+      "राजमा"
+    ],
+    "values": [
+      477,
+      463,
+      24
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: बैंगन रबड़ से महंगा है। दूसरी बात: रबड़ बैग से महंगी है। इनमें से बीच वाला दाम किसका है?",
+    "answer": "उत्तर: रबड़",
+    "task_type": "transitive3",
+    "domain": "price",
+    "template_id": 1,
+    "entities": [
+      "बैंगन",
+      "रबड़",
+      "बैग"
+    ],
+    "values": [
+      497,
+      327,
+      109
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अमरूद अनानास से कम है। इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: अनानास",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "अमरूद",
+      "अनानास"
+    ],
+    "values": [
+      25,
+      56
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: थैला डिब्बा से कम है। बताइए, इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: डिब्बा",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "थैला",
+      "डिब्बा"
+    ],
+    "values": [
+      45,
+      61
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "केला मेज़ से कम है। इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: मेज़",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "केला",
+      "मेज़"
+    ],
+    "values": [
+      52,
+      84
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर टमाटर जूता से ज़्यादा है, तो इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: टमाटर",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "टमाटर",
+      "जूता"
+    ],
+    "values": [
+      91,
+      39
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर आलू टोपी से कम है, तो इनमें से किसकी मात्रा कम है?",
+    "answer": "उत्तर: आलू",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "आलू",
+      "टोपी"
+    ],
+    "values": [
+      27,
+      51
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर बैंगन अलमारी से ज़्यादा है, तो इनमें से किसकी मात्रा कम है?",
+    "answer": "उत्तर: अलमारी",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "बैंगन",
+      "अलमारी"
+    ],
+    "values": [
+      44,
+      43
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "बैग कंघी से ज़्यादा है। इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: बैग",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "बैग",
+      "कंघी"
+    ],
+    "values": [
+      14,
+      4
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अलमारी पर्स से ज़्यादा है। इनमें से किसकी मात्रा कम है?",
+    "answer": "उत्तर: पर्स",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "अलमारी",
+      "पर्स"
+    ],
+    "values": [
+      87,
+      20
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: टमाटर आलू से कम है। बताइए, इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: आलू",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "टमाटर",
+      "आलू"
+    ],
+    "values": [
+      40,
+      88
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर अमरूद कंबल से ज़्यादा है, तो इनमें से किसकी मात्रा कम है?",
+    "answer": "उत्तर: कंबल",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "अमरूद",
+      "कंबल"
+    ],
+    "values": [
+      100,
+      25
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "बैंगन अलमारी से कम है। इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: अलमारी",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "बैंगन",
+      "अलमारी"
+    ],
+    "values": [
+      60,
+      85
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर रबड़ कंबल से कम है, तो इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: कंबल",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "रबड़",
+      "कंबल"
+    ],
+    "values": [
+      56,
+      70
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "आलू केला से कम है। इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: केला",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "आलू",
+      "केला"
+    ],
+    "values": [
+      50,
+      72
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर थैला रबड़ से कम है, तो इनमें से किसकी मात्रा कम है?",
+    "answer": "उत्तर: थैला",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "थैला",
+      "रबड़"
+    ],
+    "values": [
+      15,
+      66
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "थैला राजमा से कम है। इनमें से किसकी मात्रा कम है?",
+    "answer": "उत्तर: थैला",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "थैला",
+      "राजमा"
+    ],
+    "values": [
+      33,
+      49
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पर्स टमाटर से कम है। इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: टमाटर",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "पर्स",
+      "टमाटर"
+    ],
+    "values": [
+      96,
+      97
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "राजमा कंघी से ज़्यादा है। इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: राजमा",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "राजमा",
+      "कंघी"
+    ],
+    "values": [
+      74,
+      52
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर कंघी जूता से कम है, तो इनमें से किसकी मात्रा कम है?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "कंघी",
+      "जूता"
+    ],
+    "values": [
+      53,
+      95
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अलमारी दर्पण से कम है। इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: दर्पण",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "अलमारी",
+      "दर्पण"
+    ],
+    "values": [
+      15,
+      32
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: चना केला से ज़्यादा है। बताइए, इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: चना",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "चना",
+      "केला"
+    ],
+    "values": [
+      97,
+      85
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: दर्पण केला से कम है। बताइए, इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: केला",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "दर्पण",
+      "केला"
+    ],
+    "values": [
+      35,
+      74
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: रबड़ बैंगन से ज़्यादा है। बताइए, इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: रबड़",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "रबड़",
+      "बैंगन"
+    ],
+    "values": [
+      49,
+      44
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: राजमा टोपी से कम है। बताइए, इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: टोपी",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "राजमा",
+      "टोपी"
+    ],
+    "values": [
+      3,
+      50
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: चना मेज़ से कम है। बताइए, इनमें से किसकी मात्रा कम है?",
+    "answer": "उत्तर: चना",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "चना",
+      "मेज़"
+    ],
+    "values": [
+      10,
+      64
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर आलू टमाटर से ज़्यादा है, तो इनमें से किसकी मात्रा कम है?",
+    "answer": "उत्तर: टमाटर",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "आलू",
+      "टमाटर"
+    ],
+    "values": [
+      85,
+      57
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: बैंगन बैग से ज़्यादा है। बताइए, इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: बैंगन",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "बैंगन",
+      "बैग"
+    ],
+    "values": [
+      26,
+      16
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर केला कंघी से ज़्यादा है, तो इनमें से किसकी मात्रा कम है?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "केला",
+      "कंघी"
+    ],
+    "values": [
+      49,
+      30
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "मेज़ बैंगन से कम है। इनमें से किसकी मात्रा कम है?",
+    "answer": "उत्तर: मेज़",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "मेज़",
+      "बैंगन"
+    ],
+    "values": [
+      62,
+      92
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "जूता डिब्बा से ज़्यादा है। इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: जूता",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "जूता",
+      "डिब्बा"
+    ],
+    "values": [
+      85,
+      17
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर चना बैंगन से ज़्यादा है, तो इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: चना",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "चना",
+      "बैंगन"
+    ],
+    "values": [
+      76,
+      57
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर रबड़ थैला से कम है, तो इनमें से किसकी मात्रा कम है?",
+    "answer": "उत्तर: रबड़",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "रबड़",
+      "थैला"
+    ],
+    "values": [
+      15,
+      70
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: आलू कंबल से कम है। बताइए, इनमें से किसकी मात्रा कम है?",
+    "answer": "उत्तर: आलू",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "आलू",
+      "कंबल"
+    ],
+    "values": [
+      5,
+      50
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: जूता टमाटर से कम है। बताइए, इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: टमाटर",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "जूता",
+      "टमाटर"
+    ],
+    "values": [
+      13,
+      17
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर बैग टोपी से ज़्यादा है, तो इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: बैग",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "बैग",
+      "टोपी"
+    ],
+    "values": [
+      95,
+      51
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर रबड़ कंघी से कम है, तो इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "रबड़",
+      "कंघी"
+    ],
+    "values": [
+      18,
+      41
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "राजमा चना से ज़्यादा है। इनमें से किसकी मात्रा कम है?",
+    "answer": "उत्तर: चना",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "राजमा",
+      "चना"
+    ],
+    "values": [
+      74,
+      54
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर मेज़ कंघी से ज़्यादा है, तो इनमें से किसकी मात्रा कम है?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "मेज़",
+      "कंघी"
+    ],
+    "values": [
+      39,
+      37
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दिया गया है: बैग कंबल से ज़्यादा है। बताइए, इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: बैग",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "बैग",
+      "कंबल"
+    ],
+    "values": [
+      64,
+      48
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अगर दर्पण अलमारी से कम है, तो इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: अलमारी",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "दर्पण",
+      "अलमारी"
+    ],
+    "values": [
+      43,
+      97
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "थैला टोपी से ज़्यादा है। इनमें से किसकी मात्रा ज़्यादा है?",
+    "answer": "उत्तर: थैला",
+    "task_type": "pairwise",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "थैला",
+      "टोपी"
+    ],
+    "values": [
+      80,
+      47
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "बैग राजमा से ज़्यादा है। राजमा डिब्बा से कम है। इनमें से सबसे कम मात्रा किसकी है?",
+    "answer": "उत्तर: राजमा",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "बैग",
+      "राजमा",
+      "डिब्बा"
+    ],
+    "values": [
+      92,
+      42,
+      75
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: बैग आलू से ज़्यादा है। दूसरी बात: आलू जूता से कम है। इनमें से सबसे ज़्यादा मात्रा किसकी है?",
+    "answer": "उत्तर: बैग",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "बैग",
+      "आलू",
+      "जूता"
+    ],
+    "values": [
+      72,
+      32,
+      70
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "दर्पण टमाटर से ज़्यादा है। टमाटर कंघी से कम है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: दर्पण",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "दर्पण",
+      "टमाटर",
+      "कंघी"
+    ],
+    "values": [
+      59,
+      29,
+      92
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — दर्पण, अमरूद और बैग। दर्पण अमरूद से ज़्यादा है, और अमरूद बैग से कम है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: दर्पण",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "दर्पण",
+      "अमरूद",
+      "बैग"
+    ],
+    "values": [
+      13,
+      8,
+      71
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — रबड़, जूता और राजमा। रबड़ जूता से कम है, और जूता राजमा से ज़्यादा है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: रबड़",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "रबड़",
+      "जूता",
+      "राजमा"
+    ],
+    "values": [
+      85,
+      89,
+      48
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "आलू टोपी से कम है। टोपी डिब्बा से कम है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: टोपी",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "आलू",
+      "टोपी",
+      "डिब्बा"
+    ],
+    "values": [
+      50,
+      68,
+      86
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: राजमा डिब्बा से कम है। दूसरी बात: डिब्बा टमाटर से कम है। इनमें से सबसे ज़्यादा मात्रा किसकी है?",
+    "answer": "उत्तर: टमाटर",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "राजमा",
+      "डिब्बा",
+      "टमाटर"
+    ],
+    "values": [
+      4,
+      45,
+      75
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "केला चना से ज़्यादा है। चना पर्स से ज़्यादा है। इनमें से सबसे कम मात्रा किसकी है?",
+    "answer": "उत्तर: पर्स",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "केला",
+      "चना",
+      "पर्स"
+    ],
+    "values": [
+      72,
+      38,
+      22
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "टमाटर केला से कम है। केला बैग से ज़्यादा है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: बैग",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "टमाटर",
+      "केला",
+      "बैग"
+    ],
+    "values": [
+      3,
+      89,
+      66
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अलमारी राजमा से कम है। राजमा टोपी से कम है। इनमें से सबसे कम मात्रा किसकी है?",
+    "answer": "उत्तर: अलमारी",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "अलमारी",
+      "राजमा",
+      "टोपी"
+    ],
+    "values": [
+      7,
+      52,
+      97
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: अमरूद जूता से कम है। दूसरी बात: जूता टमाटर से ज़्यादा है। इनमें से सबसे ज़्यादा मात्रा किसकी है?",
+    "answer": "उत्तर: जूता",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "अमरूद",
+      "जूता",
+      "टमाटर"
+    ],
+    "values": [
+      54,
+      88,
+      74
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: मेज़ दर्पण से कम है। दूसरी बात: दर्पण रबड़ से ज़्यादा है। इनमें से सबसे कम मात्रा किसकी है?",
+    "answer": "उत्तर: मेज़",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "मेज़",
+      "दर्पण",
+      "रबड़"
+    ],
+    "values": [
+      4,
+      93,
+      54
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पर्स थैला से ज़्यादा है। थैला बैग से कम है। इनमें से सबसे कम मात्रा किसकी है?",
+    "answer": "उत्तर: थैला",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "पर्स",
+      "थैला",
+      "बैग"
+    ],
+    "values": [
+      85,
+      12,
+      61
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "बैग रबड़ से ज़्यादा है। रबड़ डिब्बा से ज़्यादा है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: रबड़",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "बैग",
+      "रबड़",
+      "डिब्बा"
+    ],
+    "values": [
+      68,
+      48,
+      43
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: डिब्बा कंबल से ज़्यादा है। दूसरी बात: कंबल अमरूद से ज़्यादा है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: कंबल",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "डिब्बा",
+      "कंबल",
+      "अमरूद"
+    ],
+    "values": [
+      96,
+      87,
+      70
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: आलू अनानास से ज़्यादा है। दूसरी बात: अनानास मेज़ से ज़्यादा है। इनमें से सबसे ज़्यादा मात्रा किसकी है?",
+    "answer": "उत्तर: आलू",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "आलू",
+      "अनानास",
+      "मेज़"
+    ],
+    "values": [
+      53,
+      49,
+      8
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "बैंगन थैला से कम है। थैला टोपी से ज़्यादा है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: टोपी",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "बैंगन",
+      "थैला",
+      "टोपी"
+    ],
+    "values": [
+      4,
+      63,
+      54
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — पर्स, थैला और केला। पर्स थैला से कम है, और थैला केला से ज़्यादा है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: केला",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "पर्स",
+      "थैला",
+      "केला"
+    ],
+    "values": [
+      7,
+      67,
+      66
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: अनानास रबड़ से ज़्यादा है। दूसरी बात: रबड़ जूता से कम है। इनमें से सबसे ज़्यादा मात्रा किसकी है?",
+    "answer": "उत्तर: अनानास",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "अनानास",
+      "रबड़",
+      "जूता"
+    ],
+    "values": [
+      84,
+      12,
+      19
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — चना, बैग और थैला। चना बैग से ज़्यादा है, और बैग थैला से कम है। इनमें से सबसे कम मात्रा किसकी है?",
+    "answer": "उत्तर: बैग",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "चना",
+      "बैग",
+      "थैला"
+    ],
+    "values": [
+      9,
+      5,
+      41
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — चना, केला और रबड़। चना केला से कम है, और केला रबड़ से ज़्यादा है। इनमें से सबसे कम मात्रा किसकी है?",
+    "answer": "उत्तर: रबड़",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "चना",
+      "केला",
+      "रबड़"
+    ],
+    "values": [
+      42,
+      70,
+      9
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: पर्स रबड़ से कम है। दूसरी बात: रबड़ अनानास से कम है। इनमें से सबसे ज़्यादा मात्रा किसकी है?",
+    "answer": "उत्तर: अनानास",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "पर्स",
+      "रबड़",
+      "अनानास"
+    ],
+    "values": [
+      25,
+      61,
+      75
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: आलू अनानास से ज़्यादा है। दूसरी बात: अनानास टमाटर से कम है। इनमें से सबसे ज़्यादा मात्रा किसकी है?",
+    "answer": "उत्तर: आलू",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "आलू",
+      "अनानास",
+      "टमाटर"
+    ],
+    "values": [
+      86,
+      24,
+      30
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: मेज़ कंबल से कम है। दूसरी बात: कंबल दर्पण से ज़्यादा है। इनमें से सबसे कम मात्रा किसकी है?",
+    "answer": "उत्तर: मेज़",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "मेज़",
+      "कंबल",
+      "दर्पण"
+    ],
+    "values": [
+      64,
+      79,
+      66
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: थैला रबड़ से कम है। दूसरी बात: रबड़ राजमा से कम है। इनमें से सबसे ज़्यादा मात्रा किसकी है?",
+    "answer": "उत्तर: राजमा",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "थैला",
+      "रबड़",
+      "राजमा"
+    ],
+    "values": [
+      34,
+      59,
+      63
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — जूता, मेज़ और रबड़। जूता मेज़ से ज़्यादा है, और मेज़ रबड़ से कम है। इनमें से सबसे कम मात्रा किसकी है?",
+    "answer": "उत्तर: मेज़",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "जूता",
+      "मेज़",
+      "रबड़"
+    ],
+    "values": [
+      87,
+      26,
+      82
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "टोपी मेज़ से कम है। मेज़ अमरूद से कम है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: मेज़",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "टोपी",
+      "मेज़",
+      "अमरूद"
+    ],
+    "values": [
+      6,
+      48,
+      72
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — कंघी, टमाटर और केला। कंघी टमाटर से ज़्यादा है, और टमाटर केला से ज़्यादा है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: टमाटर",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "कंघी",
+      "टमाटर",
+      "केला"
+    ],
+    "values": [
+      100,
+      90,
+      58
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: दर्पण राजमा से कम है। दूसरी बात: राजमा आलू से कम है। इनमें से सबसे कम मात्रा किसकी है?",
+    "answer": "उत्तर: दर्पण",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "दर्पण",
+      "राजमा",
+      "आलू"
+    ],
+    "values": [
+      8,
+      60,
+      68
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "रबड़ अमरूद से कम है। अमरूद कंबल से ज़्यादा है। इनमें से सबसे ज़्यादा मात्रा किसकी है?",
+    "answer": "उत्तर: अमरूद",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "रबड़",
+      "अमरूद",
+      "कंबल"
+    ],
+    "values": [
+      35,
+      81,
+      16
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: अलमारी अनानास से कम है। दूसरी बात: अनानास टमाटर से कम है। इनमें से सबसे कम मात्रा किसकी है?",
+    "answer": "उत्तर: अलमारी",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "अलमारी",
+      "अनानास",
+      "टमाटर"
+    ],
+    "values": [
+      50,
+      79,
+      82
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — दर्पण, टोपी और चना। दर्पण टोपी से कम है, और टोपी चना से ज़्यादा है। इनमें से सबसे कम मात्रा किसकी है?",
+    "answer": "उत्तर: चना",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "दर्पण",
+      "टोपी",
+      "चना"
+    ],
+    "values": [
+      47,
+      51,
+      29
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: बैग अनानास से ज़्यादा है। दूसरी बात: अनानास जूता से कम है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: जूता",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "बैग",
+      "अनानास",
+      "जूता"
+    ],
+    "values": [
+      87,
+      5,
+      47
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "कंघी अलमारी से कम है। अलमारी बैंगन से ज़्यादा है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "कंघी",
+      "अलमारी",
+      "बैंगन"
+    ],
+    "values": [
+      82,
+      96,
+      48
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — डिब्बा, केला और कंबल। डिब्बा केला से कम है, और केला कंबल से कम है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: केला",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "डिब्बा",
+      "केला",
+      "कंबल"
+    ],
+    "values": [
+      3,
+      53,
+      68
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — बैग, अनानास और चना। बैग अनानास से कम है, और अनानास चना से ज़्यादा है। इनमें से सबसे ज़्यादा मात्रा किसकी है?",
+    "answer": "उत्तर: अनानास",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "बैग",
+      "अनानास",
+      "चना"
+    ],
+    "values": [
+      50,
+      97,
+      11
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "टमाटर अनानास से ज़्यादा है। अनानास बैग से कम है। इनमें से सबसे ज़्यादा मात्रा किसकी है?",
+    "answer": "उत्तर: टमाटर",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "टमाटर",
+      "अनानास",
+      "बैग"
+    ],
+    "values": [
+      95,
+      60,
+      67
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "अनानास केला से ज़्यादा है। केला अमरूद से ज़्यादा है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: केला",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 0,
+    "entities": [
+      "अनानास",
+      "केला",
+      "अमरूद"
+    ],
+    "values": [
+      89,
+      17,
+      4
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "तीन नाम हैं — चना, बैंगन और टमाटर। चना बैंगन से कम है, और बैंगन टमाटर से ज़्यादा है। इनमें से बीच वाली मात्रा किसकी है?",
+    "answer": "उत्तर: चना",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 2,
+    "entities": [
+      "चना",
+      "बैंगन",
+      "टमाटर"
+    ],
+    "values": [
+      65,
+      93,
+      13
+    ],
+    "split": "test",
+    "entity_split": "test"
+  },
+  {
+    "prompt": "पहली बात: अलमारी कंघी से ज़्यादा है। दूसरी बात: कंघी राजमा से कम है। इनमें से सबसे कम मात्रा किसकी है?",
+    "answer": "उत्तर: कंघी",
+    "task_type": "transitive3",
+    "domain": "quantity",
+    "template_id": 1,
+    "entities": [
+      "अलमारी",
+      "कंघी",
+      "राजमा"
+    ],
+    "values": [
+      72,
+      8,
+      22
+    ],
+    "split": "test",
+    "entity_split": "test"
+  }
+]

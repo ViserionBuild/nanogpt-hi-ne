@@ -1,0 +1,655 @@
+{
+  "n_layer": 6,
+  "n_head": 8,
+  "sequence_length": 20,
+  "entropy_by_layer_head": [
+    [
+      2.0416,
+      1.9935,
+      2.0464,
+      2.0838,
+      1.9384,
+      2.1147,
+      1.9586,
+      2.1233
+    ],
+    [
+      1.9311,
+      1.8716,
+      2.0975,
+      1.9523,
+      1.8787,
+      1.5446,
+      1.2564,
+      1.5616
+    ],
+    [
+      1.3199,
+      1.8017,
+      1.8019,
+      1.162,
+      1.5501,
+      1.8752,
+      1.7184,
+      1.5723
+    ],
+    [
+      1.8234,
+      1.6023,
+      1.9307,
+      1.3551,
+      1.8492,
+      1.5618,
+      0.226,
+      1.391
+    ],
+    [
+      1.2198,
+      1.8621,
+      1.3056,
+      1.2315,
+      1.4383,
+      1.2517,
+      1.8469,
+      0.7557
+    ],
+    [
+      1.3135,
+      1.1955,
+      1.6442,
+      1.5746,
+      1.227,
+      1.7034,
+      1.5466,
+      1.6752
+    ]
+  ],
+  "distance_by_layer_head": [
+    [
+      4.7677,
+      5.547,
+      5.19,
+      5.3589,
+      5.2852,
+      4.5962,
+      4.5787,
+      5.6366
+    ],
+    [
+      3.8572,
+      5.8771,
+      5.0856,
+      5.6194,
+      4.4028,
+      6.4206,
+      7.6293,
+      7.0052
+    ],
+    [
+      7.7195,
+      6.2302,
+      4.5856,
+      3.1478,
+      4.0195,
+      4.6497,
+      2.6621,
+      2.6249
+    ],
+    [
+      5.7052,
+      3.0001,
+      3.9545,
+      1.9491,
+      5.4088,
+      6.7423,
+      1.1316,
+      3.5608
+    ],
+    [
+      2.755,
+      4.0378,
+      7.1281,
+      6.3541,
+      2.7411,
+      5.044,
+      5.1667,
+      1.8759
+    ],
+    [
+      7.0935,
+      7.6214,
+      6.1543,
+      6.4788,
+      6.7595,
+      4.8568,
+      4.5455,
+      4.9998
+    ]
+  ],
+  "normalized_distance_by_layer_head": [
+    [
+      0.5207,
+      0.589,
+      0.54,
+      0.5657,
+      0.5985,
+      0.4752,
+      0.5044,
+      0.5861
+    ],
+    [
+      0.4631,
+      0.6539,
+      0.5428,
+      0.6049,
+      0.5197,
+      0.7172,
+      0.7986,
+      0.7469
+    ],
+    [
+      0.8143,
+      0.6717,
+      0.5518,
+      0.4398,
+      0.5013,
+      0.5544,
+      0.373,
+      0.3795
+    ],
+    [
+      0.6013,
+      0.413,
+      0.4728,
+      0.2857,
+      0.6038,
+      0.7084,
+      0.2101,
+      0.4645
+    ],
+    [
+      0.3546,
+      0.444,
+      0.7461,
+      0.6937,
+      0.3556,
+      0.5757,
+      0.5559,
+      0.2827
+    ],
+    [
+      0.7571,
+      0.797,
+      0.6316,
+      0.6835,
+      0.7376,
+      0.5583,
+      0.5312,
+      0.5752
+    ]
+  ],
+  "mean_entropy_per_layer": [
+    2.0375,
+    1.7617,
+    1.6002,
+    1.4675,
+    1.364,
+    1.485
+  ],
+  "mean_distance_per_layer": [
+    5.12,
+    5.7371,
+    4.4549,
+    3.9316,
+    4.3878,
+    6.0637
+  ],
+  "overall_mean_entropy": 1.6193,
+  "overall_mean_distance": 4.9492,
+  "median_entropy": 1.6597,
+  "median_distance": 5.0648,
+  "heads": [
+    {
+      "layer": 0,
+      "head": 0,
+      "entropy_nats": 2.0416,
+      "mean_distance_tokens": 4.7677,
+      "normalized_distance": 0.5207,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_diffuse"
+    },
+    {
+      "layer": 0,
+      "head": 1,
+      "entropy_nats": 1.9935,
+      "mean_distance_tokens": 5.547,
+      "normalized_distance": 0.589,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_diffuse"
+    },
+    {
+      "layer": 0,
+      "head": 2,
+      "entropy_nats": 2.0464,
+      "mean_distance_tokens": 5.19,
+      "normalized_distance": 0.54,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_diffuse"
+    },
+    {
+      "layer": 0,
+      "head": 3,
+      "entropy_nats": 2.0838,
+      "mean_distance_tokens": 5.3589,
+      "normalized_distance": 0.5657,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_diffuse"
+    },
+    {
+      "layer": 0,
+      "head": 4,
+      "entropy_nats": 1.9384,
+      "mean_distance_tokens": 5.2852,
+      "normalized_distance": 0.5985,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_diffuse"
+    },
+    {
+      "layer": 0,
+      "head": 5,
+      "entropy_nats": 2.1147,
+      "mean_distance_tokens": 4.5962,
+      "normalized_distance": 0.4752,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_diffuse"
+    },
+    {
+      "layer": 0,
+      "head": 6,
+      "entropy_nats": 1.9586,
+      "mean_distance_tokens": 4.5787,
+      "normalized_distance": 0.5044,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_diffuse"
+    },
+    {
+      "layer": 0,
+      "head": 7,
+      "entropy_nats": 2.1233,
+      "mean_distance_tokens": 5.6366,
+      "normalized_distance": 0.5861,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_diffuse"
+    },
+    {
+      "layer": 1,
+      "head": 0,
+      "entropy_nats": 1.9311,
+      "mean_distance_tokens": 3.8572,
+      "normalized_distance": 0.4631,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_diffuse"
+    },
+    {
+      "layer": 1,
+      "head": 1,
+      "entropy_nats": 1.8716,
+      "mean_distance_tokens": 5.8771,
+      "normalized_distance": 0.6539,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_diffuse"
+    },
+    {
+      "layer": 1,
+      "head": 2,
+      "entropy_nats": 2.0975,
+      "mean_distance_tokens": 5.0856,
+      "normalized_distance": 0.5428,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_diffuse"
+    },
+    {
+      "layer": 1,
+      "head": 3,
+      "entropy_nats": 1.9523,
+      "mean_distance_tokens": 5.6194,
+      "normalized_distance": 0.6049,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_diffuse"
+    },
+    {
+      "layer": 1,
+      "head": 4,
+      "entropy_nats": 1.8787,
+      "mean_distance_tokens": 4.4028,
+      "normalized_distance": 0.5197,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_diffuse"
+    },
+    {
+      "layer": 1,
+      "head": 5,
+      "entropy_nats": 1.5446,
+      "mean_distance_tokens": 6.4206,
+      "normalized_distance": 0.7172,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_sharp"
+    },
+    {
+      "layer": 1,
+      "head": 6,
+      "entropy_nats": 1.2564,
+      "mean_distance_tokens": 7.6293,
+      "normalized_distance": 0.7986,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_sharp"
+    },
+    {
+      "layer": 1,
+      "head": 7,
+      "entropy_nats": 1.5616,
+      "mean_distance_tokens": 7.0052,
+      "normalized_distance": 0.7469,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_sharp"
+    },
+    {
+      "layer": 2,
+      "head": 0,
+      "entropy_nats": 1.3199,
+      "mean_distance_tokens": 7.7195,
+      "normalized_distance": 0.8143,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_sharp"
+    },
+    {
+      "layer": 2,
+      "head": 1,
+      "entropy_nats": 1.8017,
+      "mean_distance_tokens": 6.2302,
+      "normalized_distance": 0.6717,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_diffuse"
+    },
+    {
+      "layer": 2,
+      "head": 2,
+      "entropy_nats": 1.8019,
+      "mean_distance_tokens": 4.5856,
+      "normalized_distance": 0.5518,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_diffuse"
+    },
+    {
+      "layer": 2,
+      "head": 3,
+      "entropy_nats": 1.162,
+      "mean_distance_tokens": 3.1478,
+      "normalized_distance": 0.4398,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_sharp"
+    },
+    {
+      "layer": 2,
+      "head": 4,
+      "entropy_nats": 1.5501,
+      "mean_distance_tokens": 4.0195,
+      "normalized_distance": 0.5013,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_sharp"
+    },
+    {
+      "layer": 2,
+      "head": 5,
+      "entropy_nats": 1.8752,
+      "mean_distance_tokens": 4.6497,
+      "normalized_distance": 0.5544,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_diffuse"
+    },
+    {
+      "layer": 2,
+      "head": 6,
+      "entropy_nats": 1.7184,
+      "mean_distance_tokens": 2.6621,
+      "normalized_distance": 0.373,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_diffuse"
+    },
+    {
+      "layer": 2,
+      "head": 7,
+      "entropy_nats": 1.5723,
+      "mean_distance_tokens": 2.6249,
+      "normalized_distance": 0.3795,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_sharp"
+    },
+    {
+      "layer": 3,
+      "head": 0,
+      "entropy_nats": 1.8234,
+      "mean_distance_tokens": 5.7052,
+      "normalized_distance": 0.6013,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_diffuse"
+    },
+    {
+      "layer": 3,
+      "head": 1,
+      "entropy_nats": 1.6023,
+      "mean_distance_tokens": 3.0001,
+      "normalized_distance": 0.413,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_sharp"
+    },
+    {
+      "layer": 3,
+      "head": 2,
+      "entropy_nats": 1.9307,
+      "mean_distance_tokens": 3.9545,
+      "normalized_distance": 0.4728,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_diffuse"
+    },
+    {
+      "layer": 3,
+      "head": 3,
+      "entropy_nats": 1.3551,
+      "mean_distance_tokens": 1.9491,
+      "normalized_distance": 0.2857,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_sharp"
+    },
+    {
+      "layer": 3,
+      "head": 4,
+      "entropy_nats": 1.8492,
+      "mean_distance_tokens": 5.4088,
+      "normalized_distance": 0.6038,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_diffuse"
+    },
+    {
+      "layer": 3,
+      "head": 5,
+      "entropy_nats": 1.5618,
+      "mean_distance_tokens": 6.7423,
+      "normalized_distance": 0.7084,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_sharp"
+    },
+    {
+      "layer": 3,
+      "head": 6,
+      "entropy_nats": 0.226,
+      "mean_distance_tokens": 1.1316,
+      "normalized_distance": 0.2101,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_sharp"
+    },
+    {
+      "layer": 3,
+      "head": 7,
+      "entropy_nats": 1.391,
+      "mean_distance_tokens": 3.5608,
+      "normalized_distance": 0.4645,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_sharp"
+    },
+    {
+      "layer": 4,
+      "head": 0,
+      "entropy_nats": 1.2198,
+      "mean_distance_tokens": 2.755,
+      "normalized_distance": 0.3546,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_sharp"
+    },
+    {
+      "layer": 4,
+      "head": 1,
+      "entropy_nats": 1.8621,
+      "mean_distance_tokens": 4.0378,
+      "normalized_distance": 0.444,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_diffuse"
+    },
+    {
+      "layer": 4,
+      "head": 2,
+      "entropy_nats": 1.3056,
+      "mean_distance_tokens": 7.1281,
+      "normalized_distance": 0.7461,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_sharp"
+    },
+    {
+      "layer": 4,
+      "head": 3,
+      "entropy_nats": 1.2315,
+      "mean_distance_tokens": 6.3541,
+      "normalized_distance": 0.6937,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_sharp"
+    },
+    {
+      "layer": 4,
+      "head": 4,
+      "entropy_nats": 1.4383,
+      "mean_distance_tokens": 2.7411,
+      "normalized_distance": 0.3556,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_sharp"
+    },
+    {
+      "layer": 4,
+      "head": 5,
+      "entropy_nats": 1.2517,
+      "mean_distance_tokens": 5.044,
+      "normalized_distance": 0.5757,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_sharp"
+    },
+    {
+      "layer": 4,
+      "head": 6,
+      "entropy_nats": 1.8469,
+      "mean_distance_tokens": 5.1667,
+      "normalized_distance": 0.5559,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_diffuse"
+    },
+    {
+      "layer": 4,
+      "head": 7,
+      "entropy_nats": 0.7557,
+      "mean_distance_tokens": 1.8759,
+      "normalized_distance": 0.2827,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_sharp"
+    },
+    {
+      "layer": 5,
+      "head": 0,
+      "entropy_nats": 1.3135,
+      "mean_distance_tokens": 7.0935,
+      "normalized_distance": 0.7571,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_sharp"
+    },
+    {
+      "layer": 5,
+      "head": 1,
+      "entropy_nats": 1.1955,
+      "mean_distance_tokens": 7.6214,
+      "normalized_distance": 0.797,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_sharp"
+    },
+    {
+      "layer": 5,
+      "head": 2,
+      "entropy_nats": 1.6442,
+      "mean_distance_tokens": 6.1543,
+      "normalized_distance": 0.6316,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_sharp"
+    },
+    {
+      "layer": 5,
+      "head": 3,
+      "entropy_nats": 1.5746,
+      "mean_distance_tokens": 6.4788,
+      "normalized_distance": 0.6835,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_sharp"
+    },
+    {
+      "layer": 5,
+      "head": 4,
+      "entropy_nats": 1.227,
+      "mean_distance_tokens": 6.7595,
+      "normalized_distance": 0.7376,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "distant_sharp"
+    },
+    {
+      "layer": 5,
+      "head": 5,
+      "entropy_nats": 1.7034,
+      "mean_distance_tokens": 4.8568,
+      "normalized_distance": 0.5583,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_diffuse"
+    },
+    {
+      "layer": 5,
+      "head": 6,
+      "entropy_nats": 1.5466,
+      "mean_distance_tokens": 4.5455,
+      "normalized_distance": 0.5312,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_sharp"
+    },
+    {
+      "layer": 5,
+      "head": 7,
+      "entropy_nats": 1.6752,
+      "mean_distance_tokens": 4.9998,
+      "normalized_distance": 0.5752,
+      "max_possible_entropy_nats": 2.9957,
+      "type": "local_diffuse"
+    }
+  ],
+  "head_type_counts": {
+    "local_sharp": 12,
+    "local_diffuse": 12,
+    "distant_sharp": 12,
+    "distant_diffuse": 12
+  },
+  "note": "Entropy in nats; max is log(T) for a uniform head. Distance in tokens; positions < 1 excluded because they have too few keys to be informative. Head types are relative to this model's own median entropy/distance.",
+  "example_text": "दिइएको छ: पवन मोहनभन्दा कान्छो छ। भन्नुहोस्, यीमध्ये कान्छो को हो?",
+  "checkpoint": "/home/vikash/Desktop/git_folders/LMA_IDV_Proj/nepali/checkpoints/best.pt",
+  "tag": "pretrained"
+}

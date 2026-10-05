@@ -1,0 +1,63 @@
+14:43:55 | INFO    | config: hindi/configs/hindi_finetune.yaml
+14:43:56 | INFO    | train: {'n_examples': 2400, 'n_dropped_too_long': 0, 'max_length_cap': 128, 'mean_sequence_length': 27.60375, 'max_sequence_length_seen': 54}
+14:43:56 | INFO    | validation: {'n_examples': 320, 'n_dropped_too_long': 0, 'max_length_cap': 128, 'mean_sequence_length': 28.103125, 'max_sequence_length_seen': 49}
+14:43:56 | INFO    | CUDA requested but unavailable — falling back to CPU
+14:43:58 | INFO    | [init] loaded pretrained weights from hindi/checkpoints/best.pt (pretrain step 13,000)
+14:43:58 | INFO    | [finetune] hindi | device=cpu | 2400 train examples (0 dropped as too long) | 150 steps/epoch x 6 epochs = 900 steps
+14:44:47 | INFO    |   step    50/900 (epoch 0.33) | train_loss 0.4947 | val_loss 0.4840 | val_ppl 1.62  <- best
+14:46:12 | INFO    | config: /home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/configs/hindi_finetune.yaml
+14:46:13 | INFO    | train: {'n_examples': 2400, 'n_dropped_too_long': 0, 'max_length_cap': 128, 'mean_sequence_length': 27.60375, 'max_sequence_length_seen': 54}
+14:46:13 | INFO    | validation: {'n_examples': 320, 'n_dropped_too_long': 0, 'max_length_cap': 128, 'mean_sequence_length': 28.103125, 'max_sequence_length_seen': 49}
+14:46:13 | INFO    | CUDA requested but unavailable — falling back to CPU
+14:46:15 | INFO    | [init] loaded pretrained weights from /home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/checkpoints/best.pt (pretrain step 13,000)
+14:46:15 | INFO    | [finetune] hindi | device=cpu | 2400 train examples (0 dropped as too long) | 150 steps/epoch x 6 epochs = 900 steps
+14:47:04 | INFO    |   step    50/900 (epoch 0.33) | train_loss 0.4947 | val_loss 0.4840 | val_ppl 1.62  <- best
+14:47:55 | INFO    |   step   100/900 (epoch 0.67) | train_loss 0.2999 | val_loss 0.3940 | val_ppl 1.48  <- best
+14:48:09 | INFO    | config: /home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/configs/hindi_finetune.yaml
+14:48:10 | INFO    | train: {'n_examples': 2400, 'n_dropped_too_long': 0, 'max_length_cap': 128, 'mean_sequence_length': 27.60375, 'max_sequence_length_seen': 54}
+14:48:10 | INFO    | validation: {'n_examples': 320, 'n_dropped_too_long': 0, 'max_length_cap': 128, 'mean_sequence_length': 28.103125, 'max_sequence_length_seen': 49}
+14:48:10 | INFO    | CUDA requested but unavailable — falling back to CPU
+14:48:12 | INFO    | [init] loaded pretrained weights from /home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/checkpoints/best.pt (pretrain step 13,000)
+14:48:12 | INFO    | [finetune] hindi | device=cpu | 2400 train examples (0 dropped as too long) | 150 steps/epoch x 6 epochs = 900 steps
+14:49:04 | INFO    |   step    50/900 (epoch 0.33) | train_loss 0.4947 | val_loss 0.4840 | val_ppl 1.62  <- best
+14:49:58 | INFO    |   step   100/900 (epoch 0.67) | train_loss 0.2999 | val_loss 0.3940 | val_ppl 1.48  <- best
+14:50:52 | INFO    |   step   150/900 (epoch 1.00) | train_loss 0.3740 | val_loss 0.4057 | val_ppl 1.50
+14:51:43 | INFO    |   step   200/900 (epoch 1.33) | train_loss 0.3164 | val_loss 0.3797 | val_ppl 1.46  <- best
+14:52:37 | INFO    |   step   250/900 (epoch 1.67) | train_loss 0.3403 | val_loss 0.3903 | val_ppl 1.48
+14:53:29 | INFO    |   step   300/900 (epoch 2.00) | train_loss 0.3246 | val_loss 0.3754 | val_ppl 1.46  <- best
+14:54:29 | INFO    |   step   350/900 (epoch 2.33) | train_loss 0.2171 | val_loss 0.3449 | val_ppl 1.41  <- best
+14:55:26 | INFO    |   step   400/900 (epoch 2.67) | train_loss 0.3152 | val_loss 0.3304 | val_ppl 1.39  <- best
+14:56:27 | INFO    |   step   450/900 (epoch 3.00) | train_loss 0.2167 | val_loss 0.3515 | val_ppl 1.42
+14:57:21 | INFO    |   step   500/900 (epoch 3.33) | train_loss 0.1821 | val_loss 0.3661 | val_ppl 1.44
+14:58:18 | INFO    |   step   550/900 (epoch 3.67) | train_loss 0.0858 | val_loss 0.3487 | val_ppl 1.42
+14:59:11 | INFO    |   step   600/900 (epoch 4.00) | train_loss 0.1744 | val_loss 0.3556 | val_ppl 1.43
+15:00:00 | INFO    |   step   650/900 (epoch 4.33) | train_loss 0.2957 | val_loss 0.3527 | val_ppl 1.42
+15:00:49 | INFO    |   step   700/900 (epoch 4.67) | train_loss 0.1482 | val_loss 0.3753 | val_ppl 1.46
+15:01:36 | INFO    |   step   750/900 (epoch 5.00) | train_loss 0.2288 | val_loss 0.3577 | val_ppl 1.43
+15:02:26 | INFO    |   step   800/900 (epoch 5.33) | train_loss 0.3550 | val_loss 0.3761 | val_ppl 1.46
+15:03:15 | INFO    |   step   850/900 (epoch 5.67) | train_loss 0.1618 | val_loss 0.3625 | val_ppl 1.44
+15:04:07 | INFO    |   step   900/900 (epoch 6.00) | train_loss 0.2401 | val_loss 0.3618 | val_ppl 1.44
+15:04:11 | INFO    | [done] 900 steps | val_loss 0.3618 | val_ppl 1.44 | 959.4s
+06:25:29 | INFO    | config: /home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/configs/hindi_finetune.yaml
+06:25:29 | INFO    | train: {'n_examples': 2400, 'n_dropped_too_long': 0, 'max_length_cap': 128, 'mean_sequence_length': 28.714166666666667, 'max_sequence_length_seen': 60}
+06:25:29 | INFO    | validation: {'n_examples': 320, 'n_dropped_too_long': 0, 'max_length_cap': 128, 'mean_sequence_length': 28.7125, 'max_sequence_length_seen': 56}
+06:25:29 | INFO    | CUDA requested but unavailable — falling back to CPU
+06:25:31 | INFO    | [init] loaded pretrained weights from /home/vikash/Desktop/git_folders/LMA_IDV_Proj/hindi/checkpoints/best.pt (pretrain step 13,000)
+06:25:31 | INFO    | [finetune] hindi | device=cpu | 2400 train examples (0 dropped as too long) | 150 steps/epoch x 4 epochs = 600 steps
+06:26:34 | INFO    |   step    50/600 (epoch 0.33) | train_loss 0.5415 | val_loss 0.4899 | val_ppl 1.63  <- best
+06:27:38 | INFO    |   step   100/600 (epoch 0.67) | train_loss 0.3393 | val_loss 0.4644 | val_ppl 1.59  <- best
+06:28:43 | INFO    |   [probe] unseen-entity accuracy: 0.200
+06:28:43 | INFO    |   step   150/600 (epoch 1.00) | train_loss 0.4342 | val_loss 0.4313 | val_ppl 1.54  <- best
+06:29:47 | INFO    |   step   200/600 (epoch 1.33) | train_loss 0.3819 | val_loss 0.3978 | val_ppl 1.49  <- best
+06:30:51 | INFO    |   step   250/600 (epoch 1.67) | train_loss 0.2343 | val_loss 0.3851 | val_ppl 1.47  <- best
+06:31:56 | INFO    |   [probe] unseen-entity accuracy: 0.075
+06:31:56 | INFO    |   step   300/600 (epoch 2.00) | train_loss 0.1353 | val_loss 0.4106 | val_ppl 1.51
+06:32:53 | INFO    |   step   350/600 (epoch 2.33) | train_loss 0.1667 | val_loss 0.3722 | val_ppl 1.45  <- best
+06:33:45 | INFO    |   step   400/600 (epoch 2.67) | train_loss 0.1397 | val_loss 0.3820 | val_ppl 1.47
+06:34:42 | INFO    |   [probe] unseen-entity accuracy: 0.025
+06:34:42 | INFO    |   step   450/600 (epoch 3.00) | train_loss 0.1412 | val_loss 0.3927 | val_ppl 1.48
+06:35:36 | INFO    |   step   500/600 (epoch 3.33) | train_loss 0.1239 | val_loss 0.3995 | val_ppl 1.49
+06:36:32 | INFO    |   step   550/600 (epoch 3.67) | train_loss 0.0472 | val_loss 0.3851 | val_ppl 1.47
+06:37:28 | INFO    |   [probe] unseen-entity accuracy: 0.075
+06:37:28 | INFO    |   step   600/600 (epoch 4.00) | train_loss 0.0627 | val_loss 0.3873 | val_ppl 1.47
+06:37:33 | INFO    | [done] 600 steps | val_loss 0.3873 | val_ppl 1.47 | 721.4s

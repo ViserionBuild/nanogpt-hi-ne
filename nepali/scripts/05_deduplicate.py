@@ -156,8 +156,8 @@ from pathlib import Path
 from typing import Any, Dict, Optional, Set
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
-from shared.data_utils import iter_lines, count_lines
-from shared.near_dup import (
+from shared.tokenizer.data_utils import iter_lines, count_lines
+from shared.tokenizer.near_dup import (
     MinHasher,
     MinHashDedupIndex,
     jaccard_estimate,
@@ -165,7 +165,7 @@ from shared.near_dup import (
     overlap_estimate,
     signature_and_shingle_count,
 )
-from shared.run_stats import cleanup_prior_stage_files
+from shared.tokenizer.run_stats import cleanup_prior_stage_files
 
 # Mirrors 05_quality_filter.py's _REJECTED_FILENAME_CONFIG_KEY — needed
 # here ONLY to compute each source's quality-stage rejected-file path, so
@@ -180,7 +180,7 @@ _QUALITY_REJECTED_FILENAME_CONFIG_KEY = {
 
 
 def capped_lines(path: str, limit: Optional[int]):
-    """Like shared.data_utils.iter_lines(path), but stops after *limit*
+    """Like shared.tokenizer.data_utils.iter_lines(path), but stops after *limit*
     lines when limit is not None. Used only for --sample-lines
     smoke-testing; the full run (limit=None, the default) streams every
     line exactly as before this flag existed — production behavior is

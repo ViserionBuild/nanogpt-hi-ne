@@ -97,19 +97,19 @@ from pathlib import Path
 from typing import Any, Dict, Iterator, Optional, Set
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
-from shared.data_utils import iter_lines, count_lines
-from shared.run_stats import cleanup_prior_stage_files
-from shared.near_dup import (
+from shared.tokenizer.data_utils import iter_lines, count_lines
+from shared.tokenizer.run_stats import cleanup_prior_stage_files
+from shared.tokenizer.near_dup import (
     MinHasher,
     jaccard_estimate,
     lsh_band_keys,
     overlap_estimate,
     signature_and_shingle_count,
 )
-from shared.near_dup_mac import InMemoryMinHashDedupIndex
+from shared.tokenizer.near_dup_mac import InMemoryMinHashDedupIndex
 # Same accounting-reconciliation check the Linux script uses — reused, not
 # reimplemented, so there is one validation implementation shared by both.
-from shared.dedup_accounting import validate_dedup_accounting
+from shared.tokenizer.dedup_accounting import validate_dedup_accounting
 
 try:
     import resource
@@ -161,7 +161,7 @@ def peak_memory_mb() -> Optional[float]:
 
 
 def capped_lines(path: str, limit: Optional[int]) -> Iterator[str]:
-    """Like shared.data_utils.iter_lines(path), but stops after *limit*
+    """Like shared.tokenizer.data_utils.iter_lines(path), but stops after *limit*
     lines when limit is not None. Used only for --sample-lines
     benchmarking; the full run (limit=None) streams every line exactly as
     05_deduplicate.py does."""

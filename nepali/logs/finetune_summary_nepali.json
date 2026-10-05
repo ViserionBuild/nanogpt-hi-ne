@@ -1,0 +1,10 @@
+{
+  "language": "nepali",
+  "final_step": 600,
+  "n_epochs": 4,
+  "pretrain_step": 13000,
+  "final_val_loss": 0.39051838029229846,
+  "final_val_perplexity": 1.477746630098346,
+  "best_val_loss": 0.3739991908435283,
+  "elapsed_seconds": 1491.185332775116
+}

@@ -412,6 +412,153 @@ def plot_head_taxonomy(analysis_h: Dict, analysis_l: Optional[Dict],
     return _save(fig, out_name, outdir)
 
 
+# --------------------------------------------------- Phase 3 pretrain-vs-finetune
+
+def plot_entropy_distance_before_after(
+    analysis_before: Dict, analysis_after: Dict, out_name: str,
+    outdir: str = FIGDIR, language: str = "",
+) -> str:
+    """F23: mean entropy and mean distance per layer, pretrained vs. finetuned.
+
+    Phase 3 3.2: "Compare pretrained vs. finetuned heatmaps... Comment on
+    whether finetuning changed local vs. long-range attention or head
+    specialization." The heatmaps themselves (plot_attention_heatmap,
+    called once per checkpoint) show this per-head; this figure shows the
+    same shift summarized per layer so a systematic sharpen/broaden trend
+    is visible without inspecting every head individually.
+    """
+    ent_b = np.array(analysis_before["mean_entropy_per_layer"])
+    ent_a = np.array(analysis_after["mean_entropy_per_layer"])
+    dist_b = np.array(analysis_before["mean_distance_per_layer"])
+    dist_a = np.array(analysis_after["mean_distance_per_layer"])
+    layers = range(len(ent_b))
+
+    fig, axes = plt.subplots(1, 2, figsize=(13, 5))
+    axes[0].plot(layers, ent_b, "o--", color=COLOR_ABL, lw=2, label="Pretrained")
+    axes[0].plot(layers, ent_a, "o-", color=COLOR_H, lw=2, label="Finetuned")
+    finalize_axes(axes[0], f"{language} — attention entropy, pretrained vs. finetuned",
+                 "Layer index", "Mean entropy (nats)", legend=True)
+
+    axes[1].plot(layers, dist_b, "o--", color=COLOR_ABL, lw=2, label="Pretrained")
+    axes[1].plot(layers, dist_a, "o-", color=COLOR_H, lw=2, label="Finetuned")
+    finalize_axes(axes[1], f"{language} — mean attention distance, pretrained vs. finetuned",
+                 "Layer index", "Mean distance (tokens)", legend=True)
+    return _save(fig, out_name, outdir)
+
+
+def plot_head_taxonomy_shift(analysis_before: Dict, analysis_after: Dict,
+                             out_name: str, outdir: str = FIGDIR,
+                             language: str = "") -> str:
+    """F24: per-head entropy/distance, arrows from pretrained to finetuned
+    position — shows which heads moved and in which direction, not just
+    the per-layer mean (two heads can shift oppositely and cancel out in
+    the layer mean)."""
+    heads_b = {(h["layer"], h["head"]): h for h in analysis_before["heads"]}
+    heads_a = {(h["layer"], h["head"]): h for h in analysis_after["heads"]}
+
+    fig, ax = plt.subplots(figsize=(9, 6.5))
+    for key in heads_b:
+        if key not in heads_a:
+            continue
+        b, a = heads_b[key], heads_a[key]
+        ax.annotate(
+            "", xy=(a["entropy_nats"], a["mean_distance_tokens"]),
+            xytext=(b["entropy_nats"], b["mean_distance_tokens"]),
+            arrowprops=dict(arrowstyle="->", color=COLOR_H, alpha=0.55, lw=1.3),
+        )
+    ax.scatter([h["entropy_nats"] for h in analysis_before["heads"]],
+              [h["mean_distance_tokens"] for h in analysis_before["heads"]],
+              c=COLOR_ABL, s=30, alpha=0.7, label="Pretrained", zorder=3)
+    ax.scatter([h["entropy_nats"] for h in analysis_after["heads"]],
+              [h["mean_distance_tokens"] for h in analysis_after["heads"]],
+              c=COLOR_H, s=30, alpha=0.85, label="Finetuned", zorder=3)
+    finalize_axes(
+        ax, f"{language} — per-head attention shift after finetuning",
+        "Attention entropy (nats) — higher = more diffuse",
+        "Mean attention distance (tokens) — higher = longer range", legend=True,
+    )
+    return _save(fig, out_name, outdir)
+
+
+# -------------------------------------------------------- Phase 3 finetuning
+
+def plot_finetune_loss_curves(log_csv: str, language: str, out_name: str,
+                              outdir: str = FIGDIR, color: str = COLOR_H) -> str:
+    """SFT train/val loss vs. step — the finetuning analogue of F1/F2."""
+    import pandas as pd
+    df = pd.read_csv(log_csv)
+    tr = df.dropna(subset=["train_loss"])
+    va = df.dropna(subset=["val_loss"])
+
+    fig, ax = plt.subplots(figsize=(8, 5))
+    ax.plot(tr["step"], tr["train_loss"], color=color, alpha=0.5, lw=1,
+           marker=".", ms=3, label="Training loss (masked, answer tokens only)")
+    if len(va):
+        ax.plot(va["step"], va["val_loss"], color=color, lw=2,
+               marker="o", ms=4, label="Validation loss")
+    finalize_axes(ax, f"{language} — reasoning SFT loss",
+                 "Finetuning step", "Masked cross-entropy loss (nats/answer-token)",
+                 legend=True)
+    return _save(fig, out_name, outdir)
+
+
+def plot_three_way_accuracy(results: Dict[str, Dict], out_name: str,
+                            outdir: str = FIGDIR) -> str:
+    """Grouped bars: 3-way accuracy (seen/unseen-entity/unseen-wording),
+    pretrained-only vs. finetuned, per model.
+
+    ``results`` maps model label -> {"before": {split: mean_accuracy},
+    "after": {split: mean_accuracy}}.
+    """
+    splits = ["test_seen", "test_unseen_entity", "test_unseen_wording"]
+    split_labels = ["Seen entity\n+ seen wording", "Unseen entity\n+ seen wording",
+                    "Unseen entity\n+ unseen wording"]
+    fig, axes = plt.subplots(1, len(results), figsize=(6.5 * len(results), 5))
+    axes = np.atleast_1d(axes)
+
+    for ax, (model_label, r) in zip(axes, results.items()):
+        x = np.arange(len(splits))
+        width = 0.35
+        before = [r["before"].get(s, 0.0) for s in splits]
+        after = [r["after"].get(s, 0.0) for s in splits]
+        ax.bar(x - width / 2, before, width, color=COLOR_ABL, alpha=0.85,
+              label="Pretrained only")
+        ax.bar(x + width / 2, after, width, color=COLOR_H, alpha=0.85,
+              label="Finetuned")
+        ax.set_xticks(x)
+        ax.set_xticklabels(split_labels, fontsize=8)
+        ax.set_ylim(0, 1.05)
+        finalize_axes(ax, f"{model_label} — reasoning accuracy",
+                     "Test split (course 3-way rubric)", "Exact-match accuracy",
+                     legend=True)
+    return _save(fig, out_name, outdir)
+
+
+def plot_perplexity_before_after(results: Dict[str, Dict], out_name: str,
+                                 outdir: str = FIGDIR) -> str:
+    """Pretraining-validation perplexity before/after SFT, per model.
+
+    Course point (L9 p.22): this number is EXPECTED to move and must not
+    be read as "finetuning made the model worse" — it measures a
+    distribution shift onto the narrow synthetic task, not task ability.
+    """
+    labels = list(results.keys())
+    before = [results[m]["before"] for m in labels]
+    after = [results[m]["after"] for m in labels]
+    x = np.arange(len(labels))
+    width = 0.35
+
+    fig, ax = plt.subplots(figsize=(7, 5))
+    ax.bar(x - width / 2, before, width, color=COLOR_ABL, alpha=0.85, label="Pretrained")
+    ax.bar(x + width / 2, after, width, color=COLOR_H, alpha=0.85, label="Finetuned")
+    ax.set_xticks(x)
+    ax.set_xticklabels(labels)
+    finalize_axes(ax, "Pretraining-validation perplexity before/after reasoning SFT",
+                 "Model", "Perplexity (original pretraining validation set)",
+                 legend=True)
+    return _save(fig, out_name, outdir)
+
+
 # --------------------------------------------------------------- ablation
 
 def plot_ablation_comparison(metrics: Dict[str, Dict], out_name: str,

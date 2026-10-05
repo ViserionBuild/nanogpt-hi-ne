@@ -1,0 +1,10 @@
+{
+  "language": "hindi",
+  "final_step": 600,
+  "n_epochs": 4,
+  "pretrain_step": 13000,
+  "final_val_loss": 0.387264939380199,
+  "final_val_perplexity": 1.4729466811632927,
+  "best_val_loss": 0.3722268742891169,
+  "elapsed_seconds": 721.395441532135
+}

@@ -67,6 +67,11 @@ venv/
 bonus_ablation/checkpoints/**/*.pt
 !*/checkpoints/**/.gitkeep
 
+# --- Phase 3 ---
+# Finetuned checkpoints, same rule as pretrained ones above -> Drive.
+*/checkpoints_ft/**/*.pt
+!*/checkpoints_ft/**/.gitkeep
+
 # Training logs, loss-curve CSVs, metric JSON and figures are GRADED
 # artifacts and must live in the branch — the spec is explicit that
 # graders will not open Drive or external dashboards to find them.
@@ -79,5 +84,18 @@ bonus_ablation/checkpoints/**/*.pt
 # Packaging output for Kaggle — rebuilt by ./package_for_kaggle.sh
 dist/
 
-# Personal scratch 
+# Personal scratch
 MY_KAGGLE_LINKS.md
+
+# Course PDFs (copyrighted course materials) — reference-only, never committed
+course_pdfs/
+
+# LaTeX build junk for report/latex/final_report.tex — only the .tex source
+# and the compiled final_report.pdf are graded artifacts.
+report/latex/*.aux
+report/latex/*.log
+report/latex/*.out
+report/latex/*.toc
+report/latex/*.fls
+report/latex/*.fdb_latexmk
+report/latex/*.synctex.gz
