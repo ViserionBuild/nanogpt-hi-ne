@@ -1,0 +1,116 @@
+# =============================================================================
+# Model H — Hindi decoder-only Transformer, BONUS ABLATION (no positional
+# embeddings)
+# =============================================================================
+# Full copy of hindi/configs/hindi_model.yaml with exactly two kinds of
+# change: `model.positional` (learned -> none) and every output path
+# (routed under bonus_ablation/hindi/ instead of hindi/), so this run can
+# never overwrite or be confused with the graded Phase 2 checkpoint. Every
+# other value — vocab, architecture, optimizer, schedule, seed — is
+# byte-identical to hindi_model.yaml, isolating positional information as
+# the single ablated variable. See utility/bonus_plan.md.
+#
+# Parameter count must match hindi_model.yaml's 25,321,472 exactly:
+# NoPositional (shared/model/positional.py) holds no nn.Parameter, so
+# removing positional embeddings changes only what signal reaches the
+# first block, not the model's size.
+# =============================================================================
+
+language: hindi
+
+# Display strings used by the shared plotting/eval code, which must not
+# branch on language itself.
+figure_code: hin_ablation
+model_label: Model H (Hindi) — bonus ablation, no positional embeddings
+
+paths:
+  # Same Phase 1 corpus/tokenizer as standard Model H — only the model's
+  # positional scheme and this run's own output locations differ.
+  tokenized: hindi/data/tokenized
+  train_bin: hindi/data/tokenized/train.bin
+  validation_bin: hindi/data/tokenized/validation.bin
+  test_bin: hindi/data/tokenized/test.bin
+
+  # .txt splits, needed ONLY for the UTF-8 byte counts that BPB divides by.
+  validation_txt: hindi/data/final/validation.txt
+  test_txt: hindi/data/final/test.txt
+
+  tokenizer_model: hindi/tokenizer/model/hindi_bpe_12000.model
+
+  # Isolated output tree — never shares a path with standard Model H.
+  checkpoints: bonus_ablation/hindi/checkpoints
+  logs: bonus_ablation/hindi/logs
+  eval_results: bonus_ablation/hindi/eval_results
+  figures: bonus_ablation/hindi/figures
+
+# Held-out UTF-8 byte counts, recorded here because the .txt files are not
+# in git. BPB = (CE_nats * n_tokens) / (ln2 * n_bytes). Same held-out set
+# as standard Model H, since this is the same corpus.
+byte_counts:
+  validation: 390820005
+  test: 390355261
+
+model:
+  vocab_size: 12000          # from Phase 1; Hindi's own vocabulary
+  n_layer: 6
+  n_head: 8                  # head_dim = 512/8 = 64
+  d_model: 512
+  d_ff: 2048                 # 4 x d_model
+  block_size: 512
+
+  dropout: 0.1
+  attn_dropout: 0.1
+  embd_dropout: 0.1
+
+  positional: none           # ABLATED — was 'learned' in hindi_model.yaml
+  norm_position: pre         # pre-norm: stable gradients for deep stacks
+  activation: gelu
+  tie_weights: true          # saves 12000*512 = 6,144,000 parameters
+  bias: true
+
+  pad_id: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  init_std: 0.02
+
+  language: hindi
+  tokenizer_model: hindi/tokenizer/model/hindi_bpe_12000.model
+
+training:
+  learning_rate: 0.0006
+  min_learning_rate: 0.00006
+  weight_decay: 0.1          # applied to 2-D weights only
+  beta1: 0.9
+  beta2: 0.95
+  grad_clip: 1.0
+
+  warmup_ratio: 0.02         # ~264 steps
+  decay_style: cosine
+
+  # Same step count as standard Model H — one epoch over the same
+  # 648,012,574 train tokens at the same 49,152 tokens/step. Changing this
+  # would confound the ablation with a different training budget.
+  max_steps: 13183
+
+  micro_batch_size: 32
+  grad_accum_steps: 3
+
+  eval_interval: 500
+  eval_batches: 100
+  checkpoint_interval: 1000
+  log_interval: 10
+
+  seed: 42                   # same seed as standard Model H
+  amp: true                  # fp16 — T4/P100 have no bf16
+  data_parallel: true        # use both GPUs when 2 are visible
+  device: cuda
+  num_workers: 2
+
+evaluation:
+  n_generation_samples: 500
+  prefix_tokens: 32
+  max_new_tokens: 128
+  generation_batch_size: 16
+  attention_seq_len: 24
+  attention_layers: [0, 5]   # one early, one late — spec minimum

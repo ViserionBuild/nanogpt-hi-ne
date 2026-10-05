@@ -40,7 +40,7 @@ was built.
 | Phase 3 reasoning finetuning (both models) | **done** — see [`report/phase3_report.md`](report/phase3_report.md) §2 |
 | Phase 3 attention analysis (pretrained vs. finetuned) | **done** — see [`report/phase3_report.md`](report/phase3_report.md) §3 |
 | Finetuned-checkpoint Drive links | **done** — see [Phase 3 — finetuned checkpoints](#phase-3--finetuned-checkpoints) below |
-| Bonus ablation (no positional embeddings) | not started |
+| Bonus ablation (no positional embeddings, Hindi/Model H) | **done** — see [`report/bonus_report.md`](report/bonus_report.md) |
 
 **Phase 3 (reasoning finetuning + attention analysis + final report) is
 complete.** Both models are finetuned on their own synthetic comparative-
@@ -294,4 +294,12 @@ every metric JSON (reasoning accuracy, attention comparison) are committed
 and do not require Drive — see [`hindi/logs/`](hindi/logs/),
 [`nepali/logs/`](nepali/logs/), and
 [`report/phase3_report.md`](report/phase3_report.md).
+
+### Bonus — no-positional-embeddings ablation (Hindi/Model H)
+
+The ablated checkpoint is gitignored per the same large-artifact rule as
+every other checkpoint in this project, but is not uploaded to Drive for
+this optional bonus. Its eval results, figures, and training logs are
+committed directly under [`bonus_ablation/hindi/`](bonus_ablation/hindi/).
+Full analysis: [`report/bonus_report.md`](report/bonus_report.md).
 
