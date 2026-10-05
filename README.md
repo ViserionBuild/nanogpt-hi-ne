@@ -195,6 +195,38 @@ pip install -r requirements.txt
 
 ## Reproduction steps (per phase)
 
+### Full pipeline, one command block
+
+The consolidated end-to-end sequence, all three phases, per language
+(replace `hindi` with `nepali` for Model L):
+
+```bash
+# Phase 1 (per language; replace hindi -> nepali for Model L)
+python hindi/scripts/01_download_indiccorp.py  ...  python hindi/scripts/12_tokenize_corpus.py
+  # (stages 01-12 in order; see hindi/Hindi_Corpus_Pipeline_Run_Instructions.md)
+# Phase 2
+python hindi/train/pretrain.py                       # resumes automatically from checkpoint
+python hindi/eval/evaluate_lm.py --checkpoint hindi/checkpoints/best.pt
+python hindi/eval/evaluate_generation.py --checkpoint hindi/checkpoints/best.pt
+python hindi/eval/analyze_attention.py --checkpoint hindi/checkpoints/best.pt
+# Phase 3
+python hindi/reasoning_data/generate_dataset.py
+python hindi/finetune/finetune.py                     # resumes automatically
+python hindi/eval/evaluate_reasoning.py --device cpu  # 3-way accuracy + PPL before/after
+python hindi/eval/compare_attention.py --device cpu
+python report/scripts/make_phase2_figures.py && python report/scripts/make_phase3_figures.py
+python report/scripts/build_phase2_report.py && python report/scripts/build_phase3_report.py
+python -m pytest tests/test_phase2.py tests/test_phase3.py -v   # 22 + 23 correctness gates
+```
+
+Full per-phase step-by-step instructions, exact config keys, and all
+Google Drive links (raw/final corpora, pretrained checkpoints, finetuned
+checkpoints, both languages) are below and in the per-language run guides
+linked throughout this file. Per-phase detail, all figures, and complete
+tables live in [`report/phase1_report.md`](report/phase1_report.md),
+[`report/phase2_report.md`](report/phase2_report.md),
+[`report/phase3_report.md`](report/phase3_report.md).
+
 ### Phase 1 — Data & Tokenizer
 
 Each language has its own fully-streaming, from-scratch corpus pipeline

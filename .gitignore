@@ -89,3 +89,13 @@ MY_KAGGLE_LINKS.md
 
 # Course PDFs (copyrighted course materials) — reference-only, never committed
 course_pdfs/
+
+# LaTeX build junk for report/latex/final_report.tex — only the .tex source
+# and the compiled final_report.pdf are graded artifacts.
+report/latex/*.aux
+report/latex/*.log
+report/latex/*.out
+report/latex/*.toc
+report/latex/*.fls
+report/latex/*.fdb_latexmk
+report/latex/*.synctex.gz
